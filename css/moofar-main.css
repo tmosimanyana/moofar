@@ -125,4 +125,34 @@ footer {
 .skip-link:focus {
   top: 0;
 }
+/* -------------------- HERO IMAGE ANIMATION -------------------- */
+.animated-hero {
+  animation: heroZoom 20s ease-in-out infinite alternate;
+  transform-origin: center center;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-soft);
+}
+
+@keyframes heroZoom {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.05) translateY(-10px);
+  }
+  100% {
+    transform: scale(1.1) translateY(0);
+  }
+}
+.animated-hero {
+  opacity: 0;
+  animation: fadeZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes fadeZoom {
+  0% { transform: scale(1) translateY(0); opacity: 0; }
+  10% { opacity: 1; }
+  50% { transform: scale(1.05) translateY(-10px); opacity: 1; }
+  100% { transform: scale(1.1) translateY(0); opacity: 1; }
+}
 
