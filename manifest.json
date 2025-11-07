@@ -5,6 +5,9 @@
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#C9A961",
+  "orientation": "portrait-primary",
+  "scope": "/moofarsite/",
+  "description": "Moofar Pty Ltd — premium landscaping, horticulture, and land maintenance services in Botswana.",
   "icons": [
     {
       "src": "images/favicon-192.png",
@@ -18,3 +21,4 @@
     }
   ]
 }
+

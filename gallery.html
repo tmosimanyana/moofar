@@ -1,68 +1,55 @@
 <!doctype html>
 <html lang="en">
 <head>
-<head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Moofar Pty Ltd — premium landscaping, horticultural, and land maintenance services in Botswana." />
   <meta name="keywords" content="landscaping, horticulture, grounds maintenance, Botswana, Moofar" />
   <meta name="author" content="Moofar Pty Ltd" />
+  <meta name="robots" content="index, follow" />
 
-  <title>Moofar Pty Ltd — Premium Landscaping & Horticulture</title>
+  <title>Moofar Pty Ltd — Gallery</title>
 
-  <!-- Open Graph (Facebook / LinkedIn) -->
-  <meta property="og:title" content="Moofar Pty Ltd — Premium Landscaping & Horticulture" />
-  <meta property="og:description" content="Sustainable landscaping and horticultural services throughout Botswana." />
+  <!-- Preload hero image for faster LCP -->
+  <link rel="preload" as="image" href="images/gallery1.jpg" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Moofar Pty Ltd — Gallery" />
+  <meta property="og:description" content="Explore our landscaping, horticultural, and maintenance projects across Botswana." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tmosimanyana.github.io/moofarsite/" />
+  <meta property="og:url" content="https://tmosimanyana.github.io/moofarsite/gallery.html" />
   <meta property="og:image" content="https://tmosimanyana.github.io/moofarsite/images/og-preview.jpg" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Moofar Pty Ltd — Premium Landscaping & Horticulture" />
-  <meta name="twitter:description" content="Sustainable landscaping and horticultural services throughout Botswana." />
+  <meta name="twitter:title" content="Moofar Pty Ltd — Gallery" />
+  <meta name="twitter:description" content="Explore our landscaping, horticultural, and maintenance projects across Botswana." />
   <meta name="twitter:image" content="https://tmosimanyana.github.io/moofarsite/images/og-preview.jpg" />
 
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
   <!-- Canonical -->
-  <link rel="canonical" href="https://tmosimanyana.github.io/moofarsite/" />
+  <link rel="canonical" href="https://tmosimanyana.github.io/moofarsite/gallery.html" />
 
-  <!-- Structured Data (JSON-LD) -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Moofar Pty Ltd",
-    "url": "https://tmosimanyana.github.io/moofarsite/",
-    "logo": "https://tmosimanyana.github.io/moofarsite/images/og-preview.jpg",
-    "image": "https://tmosimanyana.github.io/moofarsite/images/hero-fallback.jpg",
-    "description": "Moofar Pty Ltd provides professional landscaping, horticultural, and land maintenance services across Botswana.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Plot 12345",
-      "addressLocality": "Gaborone",
-      "addressCountry": "BW"
-    },
-    "telephone": "+26771234567",
-    "email": "info@moofar.co.bw",
-    "openingHours": "Mo-Fr 08:00-17:00",
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -24.6282,
-      "longitude": 25.9231
-    }
+    "@type": "ImageGallery",
+    "name": "Moofar Project Gallery",
+    "url": "https://tmosimanyana.github.io/moofarsite/gallery.html",
+    "description": "A showcase of Moofar Pty Ltd's landscaping, horticultural, and maintenance projects across Botswana."
   }
   </script>
 
   <link rel="stylesheet" href="css/moofar-main.css" />
   <link rel="manifest" href="manifest.json" />
-
-</head>
-
 </head>
 <body>
+  <!-- Skip link for keyboard users -->
+  <a href="#mainContent" class="skip-link">Skip to main content</a>
+
   <header>
     <nav id="navbar" aria-label="Main navigation" class="site-nav">
       <div class="nav-inner">
@@ -83,7 +70,7 @@
           <li role="none"><a role="menuitem" href="index.html">Home</a></li>
           <li role="none"><a role="menuitem" href="services.html">Services</a></li>
           <li role="none"><a role="menuitem" href="about.html">About</a></li>
-          <li role="none"><a role="menuitem" href="gallery.html" class="active">Gallery</a></li>
+          <li role="none"><a role="menuitem" href="gallery.html" class="active" aria-current="page">Gallery</a></li>
           <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -104,27 +91,27 @@
       <h2>Project Highlights</h2>
       <div class="gallery-grid">
         <figure class="gallery-item">
-          <img src="images/gallery1.jpg" alt="Modern landscape design with stone path" />
+          <img src="images/gallery1.jpg" alt="Modern landscape design with stone path" loading="lazy" />
           <figcaption>Residential garden design, Gaborone</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="images/gallery2.jpg" alt="Commercial lawn maintenance" />
+          <img src="images/gallery2.jpg" alt="Commercial lawn maintenance" loading="lazy" />
           <figcaption>Corporate office grounds maintenance</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="images/gallery3.jpg" alt="Indigenous plant garden" />
+          <img src="images/gallery3.jpg" alt="Indigenous plant garden" loading="lazy" />
           <figcaption>Indigenous plant landscaping project</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="images/gallery4.jpg" alt="Irrigation system in a large estate" />
+          <img src="images/gallery4.jpg" alt="Irrigation system in a large estate" loading="lazy" />
           <figcaption>Irrigation installation, private estate</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="images/gallery5.jpg" alt="Urban park with walking path" />
+          <img src="images/gallery5.jpg" alt="Urban park with walking path" loading="lazy" />
           <figcaption>Public park landscaping, Francistown</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="images/gallery6.jpg" alt="Botanical display garden" />
+          <img src="images/gallery6.jpg" alt="Botanical display garden" loading="lazy" />
           <figcaption>Botanical display garden</figcaption>
         </figure>
       </div>
@@ -149,3 +136,4 @@
   <script src="js/moofar-main.js" defer></script>
 </body>
 </html>
+

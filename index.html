@@ -1,86 +1,57 @@
 <!doctype html>
 <html lang="en">
 <head>
- <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Moofar Pty Ltd — premium landscaping, horticultural, and land maintenance services in Botswana." />
   <meta name="keywords" content="landscaping, horticulture, grounds maintenance, Botswana, Moofar" />
   <meta name="author" content="Moofar Pty Ltd" />
+  <meta name="robots" content="index, follow" />
 
-  <title>Moofar Pty Ltd — Premium Landscaping & Horticulture</title>
+  <title>Moofar Pty Ltd — Home</title>
 
-  <!-- Open Graph (Facebook / LinkedIn) -->
-  <meta property="og:title" content="Moofar Pty Ltd — Premium Landscaping & Horticulture" />
-  <meta property="og:description" content="Sustainable landscaping and horticultural services throughout Botswana." />
+  <!-- Preload hero image -->
+  <link rel="preload" as="image" href="images/hero-fallback.jpg" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Moofar Pty Ltd — Home" />
+  <meta property="og:description" content="Sustainable landscaping and horticultural services across Botswana." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tmosimanyana.github.io/moofarsite/" />
+  <meta property="og:url" content="https://tmosimanyana.github.io/moofarsite/index.html" />
   <meta property="og:image" content="https://tmosimanyana.github.io/moofarsite/images/og-preview.jpg" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Moofar Pty Ltd — Premium Landscaping & Horticulture" />
-  <meta name="twitter:description" content="Sustainable landscaping and horticultural services throughout Botswana." />
+  <meta name="twitter:title" content="Moofar Pty Ltd — Home" />
+  <meta name="twitter:description" content="Sustainable landscaping and horticultural services across Botswana." />
   <meta name="twitter:image" content="https://tmosimanyana.github.io/moofarsite/images/og-preview.jpg" />
 
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
   <!-- Canonical -->
-  <link rel="canonical" href="https://tmosimanyana.github.io/moofarsite/" />
-
-  <!-- Structured Data (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Moofar Pty Ltd",
-    "url": "https://tmosimanyana.github.io/moofarsite/",
-    "logo": "https://tmosimanyana.github.io/moofarsite/images/og-preview.jpg",
-    "image": "https://tmosimanyana.github.io/moofarsite/images/hero-fallback.jpg",
-    "description": "Moofar Pty Ltd provides professional landscaping, horticultural, and land maintenance services across Botswana.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Plot 12345",
-      "addressLocality": "Gaborone",
-      "addressCountry": "BW"
-    },
-    "telephone": "+26771234567",
-    "email": "info@moofar.co.bw",
-    "openingHours": "Mo-Fr 08:00-17:00",
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -24.6282,
-      "longitude": 25.9231
-    }
-  }
-  </script>
+  <link rel="canonical" href="https://tmosimanyana.github.io/moofarsite/index.html" />
 
   <link rel="stylesheet" href="css/moofar-main.css" />
   <link rel="manifest" href="manifest.json" />
-
-</head>
-
 </head>
 <body>
+  <!-- Skip link -->
+  <a href="#mainContent" class="skip-link">Skip to main content</a>
+
   <header>
     <nav id="navbar" aria-label="Main navigation" class="site-nav">
       <div class="nav-inner">
         <a class="brand" href="index.html" aria-label="Moofar home">MOOFAR</a>
 
-        <button
-          class="menu-toggle"
-          id="menuToggle"
-          aria-controls="primaryNav"
-          aria-expanded="false"
-          aria-label="Open navigation menu">
+        <button class="menu-toggle" id="menuToggle" aria-controls="primaryNav" aria-expanded="false" aria-label="Open navigation menu">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
         </button>
 
         <ul id="primaryNav" class="nav-links" role="menubar">
-          <li role="none"><a role="menuitem" href="index.html" class="active">Home</a></li>
+          <li role="none"><a role="menuitem" href="index.html" class="active" aria-current="page">Home</a></li>
           <li role="none"><a role="menuitem" href="services.html">Services</a></li>
           <li role="none"><a role="menuitem" href="about.html">About</a></li>
           <li role="none"><a role="menuitem" href="gallery.html">Gallery</a></li>
@@ -91,84 +62,30 @@
   </header>
 
   <main id="mainContent" tabindex="-1">
-    <!-- HERO VIDEO SECTION -->
-    <section class="hero hero-home">
-      <div class="hero-overlay"></div>
-      <video class="hero-video" autoplay muted loop playsinline poster="images/hero-fallback.jpg">
-        <source src="videos/landscape.mp4" type="video/mp4" />
-        <p>Your browser does not support HTML5 video. Please <a href="services.html">view our services</a> instead.</p>
-      </video>
-      <div class="hero-content container">
-        <h1>Transforming Outdoor Spaces Into Living Works of Art</h1>
-        <p>Moofar Pty Ltd provides expert landscaping and horticultural services that blend nature, design, and sustainability — across Botswana.</p>
-        <a href="services.html" class="btn-primary">Explore Our Services</a>
+    <!-- Hero Section -->
+    <section class="hero">
+      <img src="images/hero-fallback.jpg" alt="Beautiful landscaped garden in Botswana" loading="lazy" class="hero-img" />
+      <div class="hero-text">
+        <h1>Premium Landscaping & Horticulture</h1>
+        <p>Sustainable outdoor spaces designed to thrive in Botswana's climate.</p>
       </div>
     </section>
 
-    <!-- ABOUT PREVIEW -->
-    <section class="intro container">
-      <div class="intro-grid">
-        <div>
-          <h2>About Moofar</h2>
-          <p>
-            Moofar Pty Ltd is a Botswana-based landscaping and horticultural company dedicated to
-            crafting sustainable green spaces. Our work spans residential, commercial, and public
-            projects, all built on quality, integrity, and environmental care.
-          </p>
-          <a href="about.html" class="btn-secondary">Learn More</a>
+    <!-- Featured Services -->
+    <section class="featured-services container">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Landscaping</h3>
+          <p>Design and installation of residential, commercial, and public outdoor spaces.</p>
         </div>
-        <div>
-          <img src="images/about-preview.jpg" alt="Moofar team planting a new garden" class="intro-img" />
+        <div class="service-card">
+          <h3>Horticulture</h3>
+          <p>Plant care, garden planning, and maintenance to promote biodiversity and health.</p>
         </div>
-      </div>
-    </section>
-
-    <!-- SERVICES SNAPSHOT -->
-    <section class="services container">
-      <h2>Our Core Services</h2>
-      <div class="service-grid">
-        <article class="service-card">
-          <img src="images/landscaping.jpg" alt="Landscaped outdoor area" />
-          <h3>Landscape Design &amp; Installation</h3>
-          <p>Custom designs and expert installation tailored to your vision and Botswana’s climate.</p>
-        </article>
-
-        <article class="service-card">
-          <img src="images/maintenance.jpg" alt="Grounds maintenance crew" />
+        <div class="service-card">
           <h3>Grounds Maintenance</h3>
-          <p>Reliable, scheduled maintenance services that keep your property pristine year-round.</p>
-        </article>
-
-        <article class="service-card">
-          <img src="images/horticulture.jpg" alt="Horticultural expert analyzing plant health" />
-          <h3>Horticultural Consulting</h3>
-          <p>Professional advice and soil, plant, and irrigation solutions that ensure lasting growth.</p>
-        </article>
-      </div>
-      <div class="center-btn">
-        <a href="services.html" class="btn-primary">View All Services</a>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="testimonials">
-      <div class="container">
-        <h2>What Our Clients Say</h2>
-        <div class="testimonial-grid">
-          <blockquote class="testimonial-card">
-            <p>“Moofar transformed our backyard into a stunning garden retreat. The team’s attention to detail was incredible!”</p>
-            <cite>— Keitumetse L., Gaborone</cite>
-          </blockquote>
-
-          <blockquote class="testimonial-card">
-            <p>“Professional, reliable, and eco-conscious. They truly care about the environment and it shows in their work.”</p>
-            <cite>— Thabo M., Francistown</cite>
-          </blockquote>
-
-          <blockquote class="testimonial-card">
-            <p>“Our office grounds have never looked better. The Moofar team delivers top-notch service every week.”</p>
-            <cite>— Naledi P., Maun</cite>
-          </blockquote>
+          <p>Regular upkeep of lawns, gardens, and estates with sustainable practices.</p>
         </div>
       </div>
     </section>
@@ -176,9 +93,9 @@
     <!-- CTA -->
     <section class="cta">
       <div class="container">
-        <h2>Bring Your Vision to Life</h2>
-        <p>Contact Moofar today for a consultation or quotation — and start your landscape transformation.</p>
-        <a href="contact.html" class="btn-primary">Get in Touch</a>
+        <h2>Ready to Transform Your Outdoor Space?</h2>
+        <p>Partner with Moofar for professional, sustainable landscaping solutions.</p>
+        <a href="contact.html" class="btn-primary">Get Started Today</a>
       </div>
     </section>
   </main>
@@ -192,4 +109,5 @@
   <script src="js/moofar-main.js" defer></script>
 </body>
 </html>
+
 

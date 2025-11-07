@@ -1,52 +1,128 @@
-/* moofar-main.css
-   Consolidated styles — use variables and avoid inline CSS in pages
-*/
-
-/* -------------------- RESET -------------------- */
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-
-/* -------------------- VARIABLES -------------------- */
-:root{
-  --gold:#C9A961;
-  --dark-gold:#A68B4D;
-  --light-gold:#E5D4A6;
-  --dark-bg:#111;
-  --white:#fff;
-  --text:#222;
-  --muted:#6b6b6b;
-  --spacing:1rem;
-  --transition:.25s;
-  --shadow-soft:0 10px 25px rgba(0,0,0,.08);
-  --font-heading: Georgia, serif;
-  --font-body: Arial, sans-serif;
+/* -------------------- HERO -------------------- */
+.hero {
+  position: relative;
+  padding: 4rem 1rem;
+  background: linear-gradient(180deg, var(--light-gold), #fff);
+  text-align: center;
 }
 
-/* -------------------- GLOBAL -------------------- */
-html,body{font-family:var(--font-body);color:var(--text);line-height:1.6;background:#fff}
-a{color:var(--dark-gold);text-decoration:none}
-.container{max-width:1200px;margin:0 auto;padding:0 1rem}
-
-/* -------------------- NAV -------------------- */
-.site-nav{background:transparent;position:sticky;top:0;z-index:50}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem}
-.brand{font-family:var(--font-heading);font-size:1.25rem;letter-spacing:.05em}
-.nav-links{list-style:none;display:flex;gap:1rem;align-items:center}
-.nav-links a{padding:.5rem .75rem;border-radius:.25rem}
-.menu-toggle{display:none;background:none;border:0;padding:.5rem;cursor:pointer}
-.hamburger-line{display:block;width:22px;height:2px;margin:4px 0;background:var(--text)}
-
-/* Mobile responsive nav */
-@media (max-width:900px){
-  .nav-links{position:fixed;right:0;top:0;height:100%;width:280px;background:var(--white);flex-direction:column;padding:3rem 1rem;transform:translateX(100%);transition:transform var(--transition);box-shadow:var(--shadow-soft)}
-  .nav-links.active{transform:translateX(0)}
-  .menu-toggle{display:block}
+.hero-img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 1.5rem;
 }
 
-/* -------------------- HERO / LAYOUT -------------------- */
-.hero{padding:4rem 0;background:linear-gradient(180deg,var(--light-gold),#fff)}
-section{padding:3rem 0}
+.hero-text h1 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark-gold);
+}
 
-/* -------------------- ACCESSIBILITY HELPERS -------------------- */
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.hero-text p {
+  font-size: 1.125rem;
+  color: var(--text);
+}
+
+/* -------------------- CTA BUTTONS -------------------- */
+.btn-primary {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: var(--dark-gold);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* -------------------- SERVICES / GALLERY GRID -------------------- */
+.services-grid,
+.gallery-grid,
+.about-grid,
+.values-grid,
+.info-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 600px) {
+  .services-grid,
+  .gallery-grid,
+  .about-grid,
+  .values-grid,
+  .info-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+/* -------------------- NAVIGATION -------------------- */
+.nav-links a.active,
+.nav-links a[aria-current="page"] {
+  background: var(--gold);
+  color: var(--white);
+}
+
+/* -------------------- MOBILE NAV -------------------- */
+.nav-links {
+  transition: transform var(--transition) ease-in-out;
+}
+
+.nav-links.active {
+  transform: translateX(0);
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+  background: var(--dark-bg);
+  color: var(--white);
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+/* -------------------- FORMS -------------------- */
+.contact-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--muted);
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--gold);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(201, 169, 97, 0.3);
+}
+
+/* -------------------- ACCESSIBILITY -------------------- */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--gold);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
 
