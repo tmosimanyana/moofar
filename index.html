@@ -11,7 +11,7 @@
   <title>Moofar Pty Ltd — Home</title>
 
   <!-- Preload hero image -->
-  <link rel="preload" as="image" href="https://github.com/tmosimanyana/moofar/blob/main/images/gallery1.webp?raw=true" />
+  <link rel="preload" as="image" href="images/gallery1.webp" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Moofar Pty Ltd — Home" />
@@ -32,39 +32,41 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://tmosimanyana.github.io/moofarsite/index.html" />
 
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Moofar Pty Ltd",
+    "description": "Premium landscaping, horticultural, and land maintenance services in Botswana",
+    "url": "https://tmosimanyana.github.io/moofarsite/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "BW",
+      "addressLocality": "Gaborone"
+    }
+  }
+  </script>
+
   <link rel="stylesheet" href="css/moofar-main.css" />
   <link rel="manifest" href="manifest.json" />
 </head>
 <body>
-  <!-- Skip link -->
-  <a href="#mainContent" class="skip-link">Skip to main content</a>
-
-  <header>
-    <nav id="navbar" aria-label="Main navigation" class="site-nav">
-      <div class="nav-inner">
-        <a class="brand" href="index.html" aria-label="Moofar home">MOOFAR</a>
-
-        <button class="menu-toggle" id="menuToggle" aria-controls="primaryNav" aria-expanded="false" aria-label="Open navigation menu">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-
-        <ul id="primaryNav" class="nav-links" role="menubar">
-          <li role="none"><a role="menuitem" href="index.html" class="active" aria-current="page">Home</a></li>
-          <li role="none"><a role="menuitem" href="services.html">Services</a></li>
-          <li role="none"><a role="menuitem" href="about.html">About</a></li>
-          <li role="none"><a role="menuitem" href="gallery.html">Gallery</a></li>
-          <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+  <!-- Skip link will be injected by components.js -->
+  
+  <!-- Header/Nav will be injected here -->
+  <div id="header-placeholder"></div>
 
   <main id="mainContent" tabindex="-1">
     <!-- Hero Section -->
     <section class="hero">
-      <img src="https://github.com/tmosimanyana/moofar/blob/main/images/gallery1.webp?raw=true" alt="Beautiful landscaped garden in Botswana" loading="lazy" class="hero-img" />
+      <img 
+        src="images/gallery1.webp" 
+        alt="Beautiful landscaped garden in Botswana showcasing native plants and sustainable design" 
+        loading="eager"
+        width="800"
+        height="600"
+        class="hero-img" />
       <div class="hero-text">
         <h1>Premium Landscaping & Horticulture</h1>
         <p>Sustainable outdoor spaces designed to thrive in Botswana's climate.</p>
@@ -75,18 +77,18 @@
     <section class="featured-services container">
       <h2>Our Services</h2>
       <div class="services-grid">
-        <div class="service-card">
+        <article class="service-card">
           <h3>Landscaping</h3>
-          <p>Design and installation of residential, commercial, and public outdoor spaces.</p>
-        </div>
-        <div class="service-card">
+          <p>Design and installation of residential, commercial, and public outdoor spaces tailored to Botswana's unique environment.</p>
+        </article>
+        <article class="service-card">
           <h3>Horticulture</h3>
-          <p>Plant care, garden planning, and maintenance to promote biodiversity and health.</p>
-        </div>
-        <div class="service-card">
+          <p>Expert plant care, garden planning, and maintenance to promote biodiversity and ecosystem health.</p>
+        </article>
+        <article class="service-card">
           <h3>Grounds Maintenance</h3>
-          <p>Regular upkeep of lawns, gardens, and estates with sustainable practices.</p>
-        </div>
+          <p>Regular upkeep of lawns, gardens, and estates using sustainable, water-wise practices.</p>
+        </article>
       </div>
     </section>
 
@@ -100,14 +102,11 @@
     </section>
   </main>
 
-  <footer>
-    <div class="footer-inner container">
-      <p>© 2025 Moofar Pty Ltd. All rights reserved.</p>
-    </div>
-  </footer>
+  <!-- Footer will be injected here -->
+  <div id="footer-placeholder"></div>
 
+  <!-- Load components first, then main app -->
+  <script src="js/components.js"></script>
   <script src="js/moofar-main.js" defer></script>
 </body>
 </html>
-
-
