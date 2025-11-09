@@ -44,13 +44,30 @@ The SendGrid API key is required for the contact form email functionality.
 - Functions directory: `netlify/functions`
 - Build command: None (static site)
 
+## Design Theme
+The website features a modern, professional design with:
+- **Color Palette**: Rich emerald greens (#16a34a, #059669) with teal accents
+- **Gradients**: Smooth linear gradients for hero sections, buttons, and cards
+- **Animations**: Subtle hover effects, transitions, and micro-interactions
+- **Typography**: Modern font stack with smooth letter-spacing
+- **Components**: Elevated cards with shadows, rounded corners, and interactive states
+- **Buttons**: Ripple effects and elevation changes on hover
+- **Responsive**: Fully mobile-optimized with adaptive layouts
+
 ## Recent Changes (Nov 9, 2025)
-- Imported from GitHub repository
-- Created Node.js server for local development
-- Added main.js for interactive features (menu toggle, form handling)
-- Configured Replit workflow and deployment settings
-- Created netlify.toml for Netlify deployment configuration
-- Added .gitignore for Node.js dependencies
+- **Initial Setup**: Imported from GitHub repository
+- **Server Configuration**: Created Node.js server for local development
+- **Interactive Features**: Added main.js for menu toggle and form handling
+- **Deployment Setup**: Configured Replit workflow and Netlify deployment
+- **Documentation**: Created netlify.toml and .gitignore
+- **Visual Enhancements**: Modernized CSS theme with:
+  - Enhanced color palette and gradient system
+  - Smooth animations and hover effects on all interactive elements
+  - Improved button styles with ripple effects
+  - Enhanced service card designs with icon animations
+  - Modern form input styling with focus states
+  - Polished navigation with gradient logo
+  - Animated hero section with subtle zoom effect
 
 ## Contact Information
 - **Director**: Mooketsi Mapugwa
