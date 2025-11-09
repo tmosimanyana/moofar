@@ -1,0 +1,19 @@
+{
+  "name": "moofar-website",
+  "version": "1.0.0",
+  "description": "Moofar Proprietary Limited - Premium Landscaping Services Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "landscaping",
+    "horticulture",
+    "botswana"
+  ],
+  "author": "Moofar Proprietary Limited",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0"
+  }
+}
