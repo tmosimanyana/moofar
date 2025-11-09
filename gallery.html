@@ -1,139 +1,645 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Moofar Pty Ltd — premium landscaping, horticultural, and land maintenance services in Botswana." />
-  <meta name="keywords" content="landscaping, horticulture, grounds maintenance, Botswana, Moofar" />
-  <meta name="author" content="Moofar Pty Ltd" />
-  <meta name="robots" content="index, follow" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View our portfolio of completed landscaping projects. See the quality of Moofar's work in residential and commercial spaces.">
+    <title>Gallery - Moofar Proprietary Limited</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <title>Moofar Pty Ltd — Gallery</title>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
 
-  <!-- Preload hero image for faster LCP -->
-  <link rel="preload" as="image" href="images/gallery1.jpg" />
+        /* Navigation */
+        #navbar {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Moofar Pty Ltd — Gallery" />
-  <meta property="og:description" content="Explore our landscaping, horticultural, and maintenance projects across Botswana." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tmosimanyana.github.io/moofarsite/gallery.html" />
-  <meta property="og:image" content="https://tmosimanyana.github.io/moofarsite/images/og-preview.jpg" />
+        #navbar.scrolled {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Moofar Pty Ltd — Gallery" />
-  <meta name="twitter:description" content="Explore our landscaping, horticultural, and maintenance projects across Botswana." />
-  <meta name="twitter:image" content="https://tmosimanyana.github.io/moofarsite/images/og-preview.jpg" />
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
 
-  <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2d8659;
+            text-decoration: none;
+        }
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://tmosimanyana.github.io/moofarsite/gallery.html" />
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ImageGallery",
-    "name": "Moofar Project Gallery",
-    "url": "https://tmosimanyana.github.io/moofarsite/gallery.html",
-    "description": "A showcase of Moofar Pty Ltd's landscaping, horticultural, and maintenance projects across Botswana."
-  }
-  </script>
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            transition: 0.3s;
+        }
 
-  <link rel="stylesheet" href="css/moofar-main.css" />
-  <link rel="manifest" href="manifest.json" />
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #2d8659;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-subtitle {
+            color: #2d8659;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .section-description {
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        /* Filter buttons */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: #fff;
+            border: 2px solid #2d8659;
+            color: #2d8659;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #2d8659;
+            color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+            background: #f0f0f0;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 2rem 1.5rem 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-overlay p {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 8px;
+        }
+
+        .lightbox-caption {
+            color: white;
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #2d8659;
+        }
+
+        .footer-section a {
+            display: block;
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #2d8659;
+        }
+
+        .footer-section p {
+            color: #ccc;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background: #2d8659;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #fff;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbox-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.5rem;
+            }
+
+            .lightbox-prev {
+                left: 10px;
+            }
+
+            .lightbox-next {
+                right: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Skip link for keyboard users -->
-  <a href="#mainContent" class="skip-link">Skip to main content</a>
-
-  <header>
-    <nav id="navbar" aria-label="Main navigation" class="site-nav">
-      <div class="nav-inner">
-        <a class="brand" href="index.html" aria-label="Moofar home">MOOFAR</a>
-
-        <button
-          class="menu-toggle"
-          id="menuToggle"
-          aria-controls="primaryNav"
-          aria-expanded="false"
-          aria-label="Open navigation menu">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-
-        <ul id="primaryNav" class="nav-links" role="menubar">
-          <li role="none"><a role="menuitem" href="index.html">Home</a></li>
-          <li role="none"><a role="menuitem" href="services.html">Services</a></li>
-          <li role="none"><a role="menuitem" href="about.html">About</a></li>
-          <li role="none"><a role="menuitem" href="gallery.html" class="active" aria-current="page">Gallery</a></li>
-          <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">MOOFAR</a>
+            <button 
+                class="menu-toggle" 
+                id="menuToggle" 
+                aria-label="Toggle navigation menu"
+                aria-expanded="false"
+                aria-controls="navLinks">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html" class="active" aria-current="page">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
     </nav>
-  </header>
 
-  <main id="mainContent" tabindex="-1">
-    <!-- Page Header -->
-    <section class="page-header">
-      <div class="container">
-        <h1>Our Gallery</h1>
-        <p>Explore our recent landscaping, maintenance, and horticultural projects across Botswana.</p>
-      </div>
-    </section>
+    <!-- Gallery Section -->
+    <main>
+        <section class="gallery">
+            <div class="section-header">
+                <div class="section-subtitle">Our Work</div>
+                <h1 class="section-title">Recent Projects</h1>
+                <p class="section-description">Explore our portfolio of completed landscaping and horticultural projects across Botswana.</p>
+            </div>
 
-    <!-- Gallery Grid -->
-    <section class="gallery container">
-      <h2>Project Highlights</h2>
-      <div class="gallery-grid">
-        <figure class="gallery-item">
-          <img src="images/gallery1.jpg" alt="Modern landscape design with stone path" loading="lazy" />
-          <figcaption>Residential garden design, Gaborone</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="images/gallery2.jpg" alt="Commercial lawn maintenance" loading="lazy" />
-          <figcaption>Corporate office grounds maintenance</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="images/gallery3.jpg" alt="Indigenous plant garden" loading="lazy" />
-          <figcaption>Indigenous plant landscaping project</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="images/gallery4.jpg" alt="Irrigation system in a large estate" loading="lazy" />
-          <figcaption>Irrigation installation, private estate</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="images/gallery5.jpg" alt="Urban park with walking path" loading="lazy" />
-          <figcaption>Public park landscaping, Francistown</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="images/gallery6.jpg" alt="Botanical display garden" loading="lazy" />
-          <figcaption>Botanical display garden</figcaption>
-        </figure>
-      </div>
-    </section>
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="landscaping">Landscaping</button>
+                <button class="filter-btn" data-filter="residential">Residential</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="fencing">Fencing</button>
+            </div>
 
-    <!-- CTA -->
-    <section class="cta">
-      <div class="container">
-        <h2>Inspired by Our Work?</h2>
-        <p>Contact Moofar to design or maintain your dream outdoor space.</p>
-        <a href="contact.html" class="btn-primary">Start Your Project</a>
-      </div>
-    </section>
-  </main>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery items will be generated by JavaScript -->
+            </div>
+        </section>
+    </main>
 
-  <footer>
-    <div class="footer-inner container">
-      <p>© 2025 Moofar Pty Ltd. All rights reserved.</p>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">&larr;</button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">&rarr;</button>
+            <img id="lightboxImg" src="" alt="">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
     </div>
-  </footer>
 
-  <script src="js/moofar-main.js" defer></script>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>MOOFAR PROPRIETARY LIMITED</h3>
+                <p>Botswana's premier landscaping and horticultural services provider.</p>
+                <p style="font-size: 0.9rem; margin-top: 1rem;">
+                    <strong>Director:</strong> Mooketsi Mapugwa<br>
+                    <strong>Manager:</strong> Farai Madorobo
+                </p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Visit our Facebook page">F</a>
+                    <a href="#" aria-label="Visit our Instagram page">I</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="services.html">Services</a>
+                <a href="about.html">About Us</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="services.html#maintenance">Landscape Maintenance</a>
+                <a href="services.html#nursery">Horticultural Nursery</a>
+                <a href="services.html#clearing">Bush Clearing</a>
+                <a href="services.html#fencing">Fencing Services</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Francistown, Botswana</p>
+                <p><a href="mailto:Mookfara@gmail.com">Mookfara@gmail.com</a></p>
+                <p><a href="tel:+26777723232">+267 77 723 232</a></p>
+                <p><a href="tel:+26777085655">+267 77 085 655</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Moofar Proprietary Limited. All rights reserved. | UIN: BW00009410484</p>
+        </div>
+    </footer>
+
+    <script>
+        // Gallery data
+        const galleryData = [
+            { id: 1, category: 'residential', title: 'Residential Garden Design', description: 'Modern garden with native plants', img: 'https://images.unsplash.com/photo-1558904541-efa843a96f01?w=600&h=450&fit=crop' },
+            { id: 2, category: 'commercial', title: 'Commercial Landscaping', description: 'Office park beautification', img: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&h=450&fit=crop' },
+            { id: 3, category: 'landscaping', title: 'Land Clearing Project', description: 'Large plot preparation', img: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&h=450&fit=crop' },
+            { id: 4, category: 'residential', title: 'Garden Renovation', description: 'Complete backyard transformation', img: 'https://images.unsplash.com/photo-1623947237634-bb50e8a57b2c?w=600&h=450&fit=crop' },
+            { id: 5, category: 'fencing', title: 'Wooden Fence Installation', description: 'Decorative perimeter fencing', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=450&fit=crop' },
+            { id: 6, category: 'landscaping', title: 'Irrigation System Setup', description: 'Automated watering solution', img: 'https://images.unsplash.com/photo-1603231788467-6de185c8b1dd?w=600&h=450&fit=crop' },
+            { id: 7, category: 'commercial', title: 'Hotel Grounds Maintenance', description: 'Ongoing landscape care', img: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600&h=450&fit=crop' },
+            { id: 8, category: 'residential', title: 'Native Plant Garden', description: 'Sustainable indigenous planting', img: 'https://images.unsplash.com/photo-1560525821-d5615ef80c69?w=600&h=450&fit=crop' },
+            { id: 9, category: 'fencing', title: 'Security Fencing', description: 'Steel perimeter protection', img: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&h=450&fit=crop' },
+        ];
+
+        let currentFilter = 'all';
+        let currentLightboxIndex = 0;
+        let filteredGallery = [];
+
+        // Render gallery
+        function renderGallery(filter = 'all') {
+            const grid = document.getElementById('galleryGrid');
+            filteredGallery = filter === 'all' 
+                ? galleryData 
+                : galleryData.filter(item => item.category === filter);
+            
+            grid.innerHTML = filteredGallery.map((item, index) => `
+                <div class="gallery-item" data-index="${index}" data-category="${item.category}">
+                    <img src="${item.img}" alt="${item.title}">
+                    <div class="gallery-overlay">
+                        <h3>${item.title}</h3>
+                        <p>${item.description}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            // Add click listeners
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    openLightbox(parseInt(item.dataset.index));
+                });
+            });
+        }
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                renderGallery(currentFilter);
+            });
+        });
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+
+        function openLightbox(index) {
+            currentLightboxIndex = index;
+            updateLightbox();
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function updateLightbox() {
+            const item = filteredGallery[currentLightboxIndex];
+            lightboxImg.src = item.img;
+            lightboxImg.alt = item.title;
+            lightboxCaption.textContent = item.title;
+        }
+
+        function nextImage() {
+            currentLightboxIndex = (currentLightboxIndex + 1) % filteredGallery.length;
+            updateLightbox();
+        }
+
+        function prevImage() {
+            currentLightboxIndex = (currentLightboxIndex - 1 + filteredGallery.length) % filteredGallery.length;
+            updateLightbox();
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxNext.addEventListener('click', nextImage);
+        lightboxPrev.addEventListener('click', prevImage);
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        });
+
+        // Navigation functionality
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.getElementById('navLinks');
+        const menuToggle = document.getElementById('menuToggle');
+
+        function toggleMenu() {
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('active');
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+
+        menuToggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMenu();
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!navbar.contains(e.target) && navLinks.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+
+        // Navbar scroll effect
+        let scrollTimeout;
+        function handleScroll() {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                navbar.classList.toggle('scrolled', window.scrollY > 100);
+            }, 10);
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        // Initialize gallery
+        renderGallery();
+    </script>
 </body>
 </html>
-

@@ -1,119 +1,511 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Moofar Pty Ltd — premium landscaping, horticultural, and land maintenance services in Botswana." />
-  <meta name="keywords" content="landscaping, horticulture, grounds maintenance, Botswana, Moofar" />
-  <meta name="author" content="Moofar Pty Ltd" />
-  <meta name="robots" content="index, follow" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Moofar's premium landscaping services: landscape maintenance, horticultural nursery, bush clearing, and professional fencing in Botswana.">
+    <title>Services - Moofar Proprietary Limited</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <title>Moofar Pty Ltd — Services</title>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
 
-  <!-- Preload hero image -->
-  <link rel="preload" as="image" href="images/services-hero.jpg" />
+        /* Navigation */
+        #navbar {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Moofar Pty Ltd — Services" />
-  <meta property="og:description" content="Explore Moofar Pty Ltd's professional landscaping, horticulture, and land maintenance services in Botswana." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tmosimanyana.github.io/moofarsite/services.html" />
-  <meta property="og:image" content="https://tmosimanyana.github.io/moofarsite/images/og-preview.jpg" />
+        #navbar.scrolled {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Moofar Pty Ltd — Services" />
-  <meta name="twitter:description" content="Explore Moofar Pty Ltd's professional landscaping, horticulture, and land maintenance services in Botswana." />
-  <meta name="twitter:image" content="https://tmosimanyana.github.io/moofarsite/images/og-preview.jpg" />
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
 
-  <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2d8659;
+            text-decoration: none;
+        }
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://tmosimanyana.github.io/moofarsite/services.html" />
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
 
-  <link rel="stylesheet" href="css/moofar-main.css" />
-  <link rel="manifest" href="manifest.json" />
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            transition: 0.3s;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #2d8659;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-subtitle {
+            color: #2d8659;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .section-description {
+            color: #555;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            scroll-margin-top: 100px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #2d8659 0%, #1a5f3f 100%);
+            border-radius: 50%;
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .service-card ul {
+            margin-top: 1rem;
+            margin-left: 1.5rem;
+            color: #555;
+        }
+
+        .service-card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #2d8659 0%, #1a5f3f 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #2d8659;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #2d8659;
+        }
+
+        .footer-section a {
+            display: block;
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #2d8659;
+        }
+
+        .footer-section p {
+            color: #ccc;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background: #2d8659;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #fff;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Skip link -->
-  <a href="#mainContent" class="skip-link">Skip to main content</a>
-
-  <header>
-    <nav id="navbar" aria-label="Main navigation" class="site-nav">
-      <div class="nav-inner">
-        <a class="brand" href="index.html" aria-label="Moofar home">MOOFAR</a>
-
-        <button class="menu-toggle" id="menuToggle" aria-controls="primaryNav" aria-expanded="false" aria-label="Open navigation menu">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-
-        <ul id="primaryNav" class="nav-links" role="menubar">
-          <li role="none"><a role="menuitem" href="index.html">Home</a></li>
-          <li role="none"><a role="menuitem" href="services.html" class="active" aria-current="page">Services</a></li>
-          <li role="none"><a role="menuitem" href="about.html">About</a></li>
-          <li role="none"><a role="menuitem" href="gallery.html">Gallery</a></li>
-          <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">MOOFAR</a>
+            <button 
+                class="menu-toggle" 
+                id="menuToggle" 
+                aria-label="Toggle navigation menu"
+                aria-expanded="false"
+                aria-controls="navLinks">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" class="active" aria-current="page">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
     </nav>
-  </header>
 
-  <main id="mainContent" tabindex="-1">
-    <!-- Hero Section -->
-    <section class="page-header">
-      <img src="images/services-hero.jpg" alt="Landscaping project overview" loading="lazy" class="hero-img" />
-      <div class="container">
-        <h1>Our Services</h1>
-        <p>Professional landscaping, horticulture, and land maintenance services across Botswana.</p>
-      </div>
-    </section>
+    <!-- Services Section -->
+    <main>
+        <section class="services">
+            <div class="section-header">
+                <div class="section-subtitle">What We Offer</div>
+                <h1 class="section-title">Our Premium Services</h1>
+                <p class="section-description">We deliver excellence in landscaping, horticulture, and property maintenance across Botswana.</p>
+            </div>
+            
+            <div class="services-grid">
+                <article class="service-card" id="maintenance">
+                    <div class="service-icon">🌿</div>
+                    <h2>Landscape Maintenance</h2>
+                    <p>Keep your outdoor spaces pristine year-round with our comprehensive maintenance services.</p>
+                    <ul>
+                        <li>Regular lawn care and mowing</li>
+                        <li>Seasonal planting and pruning</li>
+                        <li>Irrigation system management</li>
+                        <li>Weed and pest control</li>
+                        <li>Mulching and soil enhancement</li>
+                    </ul>
+                </article>
 
-    <!-- Services Grid -->
-    <section class="services container">
-      <div class="services-grid">
-        <div class="service-card">
-          <img src="images/service-landscaping.jpg" alt="Residential landscaping project" loading="lazy" />
-          <h3>Landscaping</h3>
-          <p>Custom design and installation for residential, corporate, and public outdoor spaces.</p>
+                <article class="service-card" id="nursery">
+                    <div class="service-icon">🌳</div>
+                    <h2>Horticultural Nursery</h2>
+                    <p>Access premium plants, trees, and shrubs carefully sourced and cultivated for Botswana's climate.</p>
+                    <ul>
+                        <li>Indigenous and exotic plant varieties</li>
+                        <li>Expert plant selection advice</li>
+                        <li>Sustainable landscaping solutions</li>
+                        <li>Custom propagation services</li>
+                        <li>Plant health consultations</li>
+                    </ul>
+                </article>
+
+                <article class="service-card" id="clearing">
+                    <div class="service-icon">🪓</div>
+                    <h2>Bush Clearing</h2>
+                    <p>Safe, efficient removal of unwanted vegetation for residential and commercial properties.</p>
+                    <ul>
+                        <li>Residential plot clearing</li>
+                        <li>Commercial land preparation</li>
+                        <li>Tree removal and stump grinding</li>
+                        <li>Debris removal and disposal</li>
+                        <li>Fire break establishment</li>
+                    </ul>
+                </article>
+
+                <article class="service-card" id="fencing">
+                    <div class="service-icon">🔨</div>
+                    <h2>Fencing Services</h2>
+                    <p>Quality fencing solutions that combine security with aesthetic appeal for any property.</p>
+                    <ul>
+                        <li>Wooden decorative fencing</li>
+                        <li>Steel security fencing</li>
+                        <li>Commercial perimeter fencing</li>
+                        <li>Gate installation and repair</li>
+                        <li>Custom fence design</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Transform Your Outdoor Space?</h2>
+                <p>Get in touch with us today for a free consultation and quote.</p>
+                <a href="contact.html" class="cta-button">Request a Quote</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>MOOFAR PROPRIETARY LIMITED</h3>
+                <p>Botswana's premier landscaping and horticultural services provider.</p>
+                <p style="font-size: 0.9rem; margin-top: 1rem;">
+                    <strong>Director:</strong> Mooketsi Mapugwa<br>
+                    <strong>Manager:</strong> Farai Madorobo
+                </p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Visit our Facebook page">F</a>
+                    <a href="#" aria-label="Visit our Instagram page">I</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="services.html">Services</a>
+                <a href="about.html">About Us</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="#maintenance">Landscape Maintenance</a>
+                <a href="#nursery">Horticultural Nursery</a>
+                <a href="#clearing">Bush Clearing</a>
+                <a href="#fencing">Fencing Services</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Francistown, Botswana</p>
+                <p><a href="mailto:Mookfara@gmail.com">Mookfara@gmail.com</a></p>
+                <p><a href="tel:+26777723232">+267 77 723 232</a></p>
+                <p><a href="tel:+26777085655">+267 77 085 655</a></p>
+            </div>
         </div>
-        <div class="service-card">
-          <img src="images/service-horticulture.jpg" alt="Horticulture plant care" loading="lazy" />
-          <h3>Horticulture</h3>
-          <p>Expert care, planting, and maintenance to promote healthy ecosystems and biodiversity.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Moofar Proprietary Limited. All rights reserved. | UIN: BW00009410484</p>
         </div>
-        <div class="service-card">
-          <img src="images/service-maintenance.jpg" alt="Grounds maintenance team at work" loading="lazy" />
-          <h3>Grounds Maintenance</h3>
-          <p>Regular upkeep and sustainable management of lawns, gardens, and estates.</p>
-        </div>
-        <div class="service-card">
-          <img src="images/service-irrigation.jpg" alt="Irrigation system installation" loading="lazy" />
-          <h3>Irrigation Solutions</h3>
-          <p>Efficient, water-saving irrigation systems designed for Botswana’s climate.</p>
-        </div>
-      </div>
-    </section>
+    </footer>
 
-    <!-- CTA Section -->
-    <section class="cta">
-      <div class="container">
-        <h2>Ready to Upgrade Your Outdoor Space?</h2>
-        <p>Contact Moofar today to discuss your project and sustainable landscaping needs.</p>
-        <a href="contact.html" class="btn-primary">Request a Quote</a>
-      </div>
-    </section>
-  </main>
+    <script>
+        // Navigation functionality
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.getElementById('navLinks');
+        const menuToggle = document.getElementById('menuToggle');
 
-  <footer>
-    <div class="footer-inner container">
-      <p>© 2025 Moofar Pty Ltd. All rights reserved.</p>
-    </div>
-  </footer>
+        function toggleMenu() {
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('active');
+        }
 
-  <script src="js/moofar-main.js" defer></script>
+        menuToggle.addEventListener('click', toggleMenu);
+
+        menuToggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMenu();
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!navbar.contains(e.target) && navLinks.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+
+        // Navbar scroll effect
+        let scrollTimeout;
+        function handleScroll() {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                navbar.classList.toggle('scrolled', window.scrollY > 100);
+            }, 10);
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-
