@@ -1,123 +1,253 @@
-// Gallery data
+// Gallery data - Add descriptions and categories for each image
 const galleryData = [
-    { id: 1, category: 'residential', title: 'Residential Garden Design', description: 'Modern garden with native plants', img: 'https://images.unsplash.com/photo-1558904541-efa843a96f01?w=600&h=450&fit=crop' },
-    { id: 2, category: 'commercial', title: 'Commercial Landscaping', description: 'Office park beautification', img: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&h=450&fit=crop' },
-    { id: 3, category: 'landscaping', title: 'Land Clearing Project', description: 'Large plot preparation', img: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&h=450&fit=crop' },
-    { id: 4, category: 'residential', title: 'Garden Renovation', description: 'Complete backyard transformation', img: 'https://images.unsplash.com/photo-1623947237634-bb50e8a57b2c?w=600&h=450&fit=crop' },
-    { id: 5, category: 'fencing', title: 'Wooden Fence Installation', description: 'Decorative perimeter fencing', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=450&fit=crop' },
-    { id: 6, category: 'landscaping', title: 'Irrigation System Setup', description: 'Automated watering solution', img: 'https://images.unsplash.com/photo-1603231788467-6de185c8b1dd?w=600&h=450&fit=crop' },
-    { id: 7, category: 'commercial', title: 'Hotel Grounds Maintenance', description: 'Ongoing landscape care', img: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600&h=450&fit=crop' },
-    { id: 8, category: 'residential', title: 'Native Plant Garden', description: 'Sustainable indigenous planting', img: 'https://images.unsplash.com/photo-1560525821-d5615ef80c69?w=600&h=450&fit=crop' },
-    { id: 9, category: 'fencing', title: 'Security Fencing', description: 'Steel perimeter protection', img: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&h=450&fit=crop' },
+    {
+        src: 'images/gallery1.svg',
+        title: 'Residential Garden Design',
+        category: 'residential landscaping',
+        description: 'Modern residential garden with native plants'
+    },
+    {
+        src: 'images/gallery4.webp',
+        title: 'Commercial Landscape',
+        category: 'commercial landscaping',
+        description: 'Professional commercial landscaping project'
+    },
+    {
+        src: 'images/gallery10.webp',
+        title: 'Garden Installation',
+        category: 'residential landscaping',
+        description: 'Complete garden installation with irrigation'
+    },
+    {
+        src: 'images/gallery12.webp',
+        title: 'Outdoor Living Space',
+        category: 'residential landscaping',
+        description: 'Custom outdoor living area with paving'
+    },
+    {
+        src: 'images/gallery13.webp',
+        title: 'Commercial Property',
+        category: 'commercial landscaping',
+        description: 'Large-scale commercial property landscaping'
+    },
+    {
+        src: 'images/gallery14.svg',
+        title: 'Fence Installation',
+        category: 'fencing residential',
+        description: 'Professional fence installation service'
+    },
+    {
+        src: 'images/gallery17.webp',
+        title: 'Landscape Design',
+        category: 'landscaping residential',
+        description: 'Creative landscape design implementation'
+    },
+    {
+        src: 'images/gallery18.webp',
+        title: 'Garden Maintenance',
+        category: 'residential landscaping',
+        description: 'Regular garden maintenance services'
+    },
+    {
+        src: 'images/gallery20.png',
+        title: 'Commercial Fencing',
+        category: 'fencing commercial',
+        description: 'Security fencing for commercial property'
+    },
+    {
+        src: 'images/gallery20.webp',
+        title: 'Property Development',
+        category: 'commercial landscaping',
+        description: 'Complete property development landscaping'
+    },
+    {
+        src: 'images/gallery21.webp',
+        title: 'Residential Fencing',
+        category: 'fencing residential',
+        description: 'Custom residential fence design'
+    },
+    {
+        src: 'images/gallery22.jpg',
+        title: 'Landscape Project',
+        category: 'landscaping commercial',
+        description: 'Professional landscape project completion'
+    },
+    {
+        src: 'images/gallery23.jpg',
+        title: 'Garden Design',
+        category: 'residential landscaping',
+        description: 'Beautiful residential garden design'
+    },
+    {
+        src: 'images/gallery23.webp',
+        title: 'Commercial Installation',
+        category: 'commercial landscaping',
+        description: 'Commercial landscaping installation'
+    }
 ];
 
+// Current filter and lightbox state
 let currentFilter = 'all';
-let currentLightboxIndex = 0;
-let filteredGallery = [];
+let currentImageIndex = 0;
+let filteredImages = [];
 
-// Render gallery
-function renderGallery(filter = 'all') {
-    const grid = document.getElementById('galleryGrid');
-    if (!grid) return;
+// Initialize gallery when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeGallery();
+    setupFilterButtons();
+    setupLightbox();
+});
 
-    filteredGallery = filter === 'all' 
-        ? galleryData 
-        : galleryData.filter(item => item.category === filter);
+// Initialize and render gallery
+function initializeGallery() {
+    filteredImages = galleryData;
+    renderGallery();
+}
+
+// Render gallery items
+function renderGallery() {
+    const galleryGrid = document.getElementById('galleryGrid');
     
-    grid.innerHTML = filteredGallery.map((item, index) => `
-        <div class="gallery-item" data-index="${index}" data-category="${item.category}">
-            <img src="${item.img}" alt="${item.title}">
-            <div class="gallery-overlay">
+    if (!galleryGrid) return;
+    
+    galleryGrid.innerHTML = '';
+    
+    filteredImages.forEach((item, index) => {
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'gallery-item';
+        galleryItem.setAttribute('data-category', item.category);
+        
+        galleryItem.innerHTML = `
+            <img src="${item.src}" alt="${item.title}" loading="lazy">
+            <div class="gallery-item-overlay">
                 <h3>${item.title}</h3>
                 <p>${item.description}</p>
             </div>
-        </div>
-    `).join('');
-
-    // Add click listeners
-    document.querySelectorAll('.gallery-item').forEach(item => {
-        item.addEventListener('click', () => {
-            openLightbox(parseInt(item.dataset.index));
-        });
+        `;
+        
+        // Add click event to open lightbox
+        galleryItem.addEventListener('click', () => openLightbox(index));
+        
+        galleryGrid.appendChild(galleryItem);
     });
 }
 
-// Filter functionality
-function initializeFilters() {
+// Setup filter button functionality
+function setupFilterButtons() {
     const filterButtons = document.querySelectorAll('.filter-btn');
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            currentFilter = btn.dataset.filter;
-            renderGallery(currentFilter);
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Get filter value
+            const filter = this.getAttribute('data-filter');
+            currentFilter = filter;
+            
+            // Filter images
+            filterGallery(filter);
         });
     });
 }
 
-// Lightbox functions
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightboxImg');
-const lightboxCaption = document.getElementById('lightboxCaption');
-const lightboxClose = document.getElementById('lightboxClose');
-const lightboxPrev = document.getElementById('lightboxPrev');
-const lightboxNext = document.getElementById('lightboxNext');
-
-function openLightbox(index) {
-    currentLightboxIndex = index;
-    updateLightbox();
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox() {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = 'auto';
-}
-
-function updateLightbox() {
-    const item = filteredGallery[currentLightboxIndex];
-    lightboxImg.src = item.img;
-    lightboxImg.alt = item.title;
-    lightboxCaption.textContent = item.title;
-}
-
-function nextImage() {
-    currentLightboxIndex = (currentLightboxIndex + 1) % filteredGallery.length;
-    updateLightbox();
-}
-
-function prevImage() {
-    currentLightboxIndex = (currentLightboxIndex - 1 + filteredGallery.length) % filteredGallery.length;
-    updateLightbox();
-}
-
-// Initialize gallery when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    // Only run if we're on the gallery page
-    if (!document.getElementById('galleryGrid')) return;
-
-    renderGallery();
-    initializeFilters();
-
-    // Lightbox event listeners
-    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
-    if (lightboxNext) lightboxNext.addEventListener('click', nextImage);
-    if (lightboxPrev) lightboxPrev.addEventListener('click', prevImage);
-
-    if (lightbox) {
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) closeLightbox();
-        });
+// Filter gallery based on category
+function filterGallery(filter) {
+    if (filter === 'all') {
+        filteredImages = galleryData;
+    } else {
+        filteredImages = galleryData.filter(item => 
+            item.category.includes(filter)
+        );
     }
+    
+    renderGallery();
+}
 
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (!lightbox || !lightbox.classList.contains('active')) return;
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowRight') nextImage();
-        if (e.key === 'ArrowLeft') prevImage();
+// Setup lightbox functionality
+function setupLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+    
+    // Close lightbox
+    lightboxClose.addEventListener('click', closeLightbox);
+    
+    // Close lightbox when clicking outside image
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
     });
+    
+    // Previous image
+    lightboxPrev.addEventListener('click', () => {
+        currentImageIndex = (currentImageIndex - 1 + filteredImages.length) % filteredImages.length;
+        updateLightboxImage();
+    });
+    
+    // Next image
+    lightboxNext.addEventListener('click', () => {
+        currentImageIndex = (currentImageIndex + 1) % filteredImages.length;
+        updateLightboxImage();
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        
+        if (e.key === 'Escape') {
+            closeLightbox();
+        } else if (e.key === 'ArrowLeft') {
+            lightboxPrev.click();
+        } else if (e.key === 'ArrowRight') {
+            lightboxNext.click();
+        }
+    });
+}
 
-    console.log('🖼️ Gallery initialized');
-});
+// Open lightbox with specific image
+function openLightbox(index) {
+    currentImageIndex = index;
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    updateLightboxImage();
+}
+
+// Close lightbox
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+}
+
+// Update lightbox image and caption
+function updateLightboxImage() {
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const currentImage = filteredImages[currentImageIndex];
+    
+    lightboxImg.src = currentImage.src;
+    lightboxImg.alt = currentImage.title;
+    lightboxCaption.innerHTML = `
+        <h3>${currentImage.title}</h3>
+        <p>${currentImage.description}</p>
+    `;
+    
+    // Show/hide navigation buttons based on number of images
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+    
+    if (filteredImages.length <= 1) {
+        lightboxPrev.style.display = 'none';
+        lightboxNext.style.display = 'none';
+    } else {
+        lightboxPrev.style.display = 'block';
+        lightboxNext.style.display = 'block';
+    }
+}
