@@ -3,10 +3,11 @@ const express = require("express");
 const path = require("path");
 const fs = require("fs");
 const sgMail = require("@sendgrid/mail");
-
+const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const HOST = "0.0.0.0";
+const expressLayouts = require("express-ejs-layouts");
 
 // Middleware to parse JSON
 app.use(express.json());
