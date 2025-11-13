@@ -20,6 +20,17 @@ app.get("/", (req, res) => {
   res.send("Welcome home!");
 });
 
+/* ***********************
+ * View Engine and Templates
+ *************************/
+app.set("view engine", "ejs")
+app.use(expressLayouts)
+app.set("layout", "./layouts/layout") // not at views root
+
+/* ***********************
+ * Routes
+ *************************/
+app.use(static)
 // Email endpoint
 app.post("/.netlify/functions/send-email", async (req, res) => {
   try {
