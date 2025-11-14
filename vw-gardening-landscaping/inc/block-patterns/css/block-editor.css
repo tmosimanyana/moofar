@@ -1,0 +1,77 @@
+.sliderbox p, .expertise-section p{
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+.sliderbox h1, .sliderbox .block-editor-rich-text__editable.wp-block-button__link, .expertise-section h2, .expertise-section h3, .expertise-section .block-editor-rich-text__editable.wp-block-button__link {
+  font-family: 'Krub', sans-serif;
+  margin: 0;
+}
+.sliderbox p{
+  margin-bottom: 20px;
+}
+/*sliderbox css*/
+.sliderbox .wp-block-buttons .wp-block-button:hover .block-editor-rich-text__editable.wp-block-button__link{
+  background: #fff !important;
+  color: #73b21a !important;
+}
+.sliderbox .wp-block-buttons .wp-block-button {
+  border: 2px dashed #73b21a !important;
+  padding: 5px;
+  border-radius: 28px;
+  margin-top: -10px !important;
+}
+.sliderbox .wp-block-buttons .wp-block-button:hover{
+  border-color: #fff !important;
+}
+.sliderbox .block-editor-rich-text__editable.wp-block-button__link:hover{
+  background: #fff !important;
+  color: #73b21a !important;
+}
+.sliderbox .block-editor-rich-text__editable.wp-block-button__link{
+  padding: 5px 25px !important;
+  font-weight: 600 !important;
+}
+.sliderbox .wp-block-group{
+  margin-left: -8% !important;
+  margin-right: -35%;
+}
+.expertise-section .wp-block-columns{
+  gap: 2em;
+}
+.expertise-section{
+  padding: 0 18%;
+}
+.expertise-section h2:after, .expertise-section h2:before {
+  content: "";
+  background: #73b21a;
+  width: 70px;
+  height: 3px;
+  display: inline-block;
+  margin: 0 15px;
+  position: static !important;
+}
+.expertise-section .block-editor-block-list__block.wp-block-column.wp-block-column{
+  border: 2px dashed #d7d7d7 !important;
+}
+.expertise-section .block-editor-rich-text__editable.wp-block-button__link{
+  padding: 5px 15px !important;
+  background-color: #d7d7d7 !important;
+  color: #000 !important;
+  font-size: 14px;
+  font-weight: 600 !important;
+}
+.expertise-section .wp-block-buttons .wp-block-button {
+  border: 2px dashed #d7d7d7 !important;
+  padding: 5px;
+  border-radius: 28px;
+}
+.expertise-section .wp-block-buttons.block-editor-block-list__block{
+  margin-bottom: -20px;
+}
+.expertise-section .block-editor-block-list__block.wp-block-column.wp-block-column:hover,.expertise-box:hover .wp-block-button{
+  border: 2px dashed #73b21a !important;
+}
+.expertise-section .block-editor-block-list__block:hover .block-editor-rich-text__editable.wp-block-button__link{
+  background-color: #73b21a !important;
+  color: #fff !important;
+}
