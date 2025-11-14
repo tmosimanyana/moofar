@@ -1,34 +1,54 @@
-<%- include('partials/header') %>
-
 <section class="hero">
-  <h1><%= title %></h1>
-  <p>Welcome to Moofar Proprietary Limited — your trusted partner in digital innovation and strategic outreach.</p>
-  <a href="/contact" class="btn-primary">Get in Touch</a>
+  <div class="hero-content">
+    <h1><%= title %></h1>
+    <p>Premium landscaping & horticultural services designed to thrive in Botswana’s climate.</p>
+    <div class="hero-buttons">
+      <a href="/contact" class="btn-primary">Get a Free Quote</a>
+      <a href="/services" class="btn-secondary">View Services</a>
+    </div>
+  </div>
 </section>
 
-<section class="services">
-  <h2>Our Services</h2>
-  <ul class="service-list">
-    <li>
-      <h3>Digital Branding</h3>
-      <p>Flyers, business cards, QR codes, and vCards tailored to elevate your brand presence.</p>
-    </li>
-    <li>
-      <h3>Web Development</h3>
-      <p>Scalable websites and backend systems built with modern frameworks like Node.js and React.</p>
-    </li>
-    <li>
-      <h3>Outreach Strategy</h3>
-      <p>Creative campaigns and onboarding flows to connect with your audience across platforms.</p>
-    </li>
+<section class="featured-services">
+  <div class="section-header">
+    <h2>Our Premium Services</h2>
+    <p>Comprehensive solutions for residential and commercial outdoor spaces</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Landscape Maintenance</h3>
+      <p>Lawn care, seasonal planting, and irrigation management for pristine outdoor spaces.</p>
+    </div>
+    <div class="service-card">
+      <h3>Horticultural Nursery</h3>
+      <p>Premium plants, trees, and shrubs with expert selection advice.</p>
+    </div>
+    <div class="service-card">
+      <h3>Bush Clearing</h3>
+      <p>Safe and efficient removal of unwanted vegetation for any property.</p>
+    </div>
+    <div class="service-card">
+      <h3>Fencing Services</h3>
+      <p>Secure and stylish fencing solutions tailored to your needs.</p>
+    </div>
+  </div>
+</section>
+
+<section class="why-choose">
+  <div class="section-header">
+    <h2>Why Choose Moofar</h2>
+    <p>Your trusted partner for professional landscaping in Botswana</p>
+  </div>
+  <ul class="features-list">
+    <li><strong>👥 Expert Team:</strong> Skilled horticulturists and landscapers with local expertise</li>
+    <li><strong>🌱 Sustainable Practices:</strong> Eco-friendly solutions for long-term impact</li>
+    <li><strong>💎 Quality Guaranteed:</strong> Premium materials and workmanship</li>
+    <li><strong>⏰ Reliable Service:</strong> Timely delivery and clear communication</li>
   </ul>
 </section>
 
-<section class="cta-banner">
-  <h2>Ready to grow your business?</h2>
-  <p>Let’s build something impactful together.</p>
-  <a href="/services" class="btn-secondary">Explore More</a>
+<section class="cta-section">
+  <h2>Ready to Transform Your Outdoor Space?</h2>
+  <p>Contact us today for a free consultation and quote</p>
+  <a href="/contact" class="btn-primary">Request a Quote</a>
 </section>
-
-<%- include('partials/footer') %>
-
