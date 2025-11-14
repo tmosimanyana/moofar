@@ -1,36 +1,41 @@
-
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
 const sgMail = require("@sendgrid/mail");
-const express = require("express");
+const expressLayouts = require("express-ejs-layouts");
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 const HOST = "0.0.0.0";
-const expressLayouts = require("express-ejs-layouts");
 
-// Middleware to parse JSON
+/* ***********************
+ * Middleware
+ *************************/
+// Parse JSON
 app.use(express.json());
 
 // Serve static files
 app.use(express.static(path.join(__dirname, "public")));
 
-// Default route
-app.get("/", (req, res) => {
-  res.send("Welcome home!");
+// Index route (renders index.ejs with title "Home")
+app.get("/", function(req, res){
+    res.render("index", {title: "Home"});
 });
 
 /* ***********************
  * View Engine and Templates
  *************************/
-app.set("view engine", "ejs")
-app.use(expressLayouts)
-app.set("layout", "./layouts/layout") // not at views root
+app.set("view engine", "ejs");
+app.use(expressLayouts);
+app.set("layout", "./layouts/layout"); // not at views root
 
 /* ***********************
  * Routes
  *************************/
-app.use(static)
+// If you have a static router, define it here
+// Example: const static = require("./routes/static");
+// app.use(static);
+
 // Email endpoint
 app.post("/.netlify/functions/send-email", async (req, res) => {
   try {
@@ -66,6 +71,9 @@ app.post("/.netlify/functions/send-email", async (req, res) => {
   }
 });
 
+/* ***********************
+ * Server Start
+ *************************/
 app.listen(PORT, HOST, () => {
   console.log(`🌿 Moofar app running at http://${HOST}:${PORT}/`);
   console.log(`📧 Email endpoint: /.netlify/functions/send-email`);
