@@ -1,5 +1,138 @@
 <!DOCTYPE html>
-<html>
-<head><title>Contact Moofar</title></head>
-<body><h1>Contact</h1></body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Moofar Proprietary Limited for landscaping services in Botswana. Get a quote today.">
+    <title>Contact Us - Moofar Proprietary Limited</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#mainContent" class="skip-link">Skip to main content</a>
+    
+    <div id="header-placeholder"></div>
+
+    <main id="mainContent" tabindex="-1">
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>Get In Touch</h1>
+            <p style="font-size: 1.2rem; margin-top: 1rem; opacity: 0.95;">
+                We're here to bring your outdoor vision to life
+            </p>
+        </section>
+
+        <!-- Contact Info -->
+        <section class="contact-info">
+            <div class="info-grid">
+                <div>
+                    <h2>Contact Information</h2>
+                    <p><strong>Company:</strong> Moofar Proprietary Limited</p>
+                    <p><strong>UIN:</strong> BW00009410484</p>
+                    <p><strong>Location:</strong> Francistown, Botswana</p>
+                    
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Phone</h3>
+                    <p><a href="tel:+26777723232">+267 77 723 232</a></p>
+                    <p><a href="tel:+26777085655">+267 77 085 655</a></p>
+                    
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Email</h3>
+                    <p><a href="mailto:Mookfara@gmail.com">Mookfara@gmail.com</a></p>
+                    
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Business Hours</h3>
+                    <p>Monday - Friday: 7:30 AM - 5:00 PM</p>
+                    <p>Saturday: 8:00 AM - 1:00 PM</p>
+                    <p>Sunday: Closed</p>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <div class="success-message" id="successMessage">
+                        Thank you! We'll get back to you within 24 hours.
+                    </div>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                            <div class="error-message" id="nameError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="error-message" id="emailError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                            <div class="error-message" id="phoneError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service Interested In *</label>
+                            <select id="service" name="service" required>
+                                <option value="">-- Select a Service --</option>
+                                <option value="landscape-maintenance">Landscape Maintenance</option>
+                                <option value="nursery">Horticultural Nursery</option>
+                                <option value="bush-clearing">Bush Clearing</option>
+                                <option value="fencing">Fencing Services</option>
+                                <option value="consultation">General Consultation</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div class="error-message" id="serviceError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <div class="error-message" id="messageError"></div>
+                        </div>
+
+                        <button type="submit" class="btn-primary" style="width: 100%; cursor: pointer;">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map">
+            <h2>Find Us in Francistown</h2>
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58693.02!2d27.5087!3d-21.1699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1eb549b8538b9e55%3A0x7c8a0c1bc524fcb3!2sFrancistown%2C%20Botswana!5e0!3m2!1sen!2s!4v1234567890"
+                    width="100%" 
+                    height="400" 
+                    style="border:0; border-radius: var(--radius-md); box-shadow: var(--shadow-md);" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Moofar location in Francistown, Botswana">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Additional CTA -->
+        <section style="padding: 5rem 2rem; text-align: center; background: var(--bg-light);">
+            <h2 style="font-size: 2rem; color: var(--text-dark); margin-bottom: 1rem;">
+                Prefer to Call?
+            </h2>
+            <p style="font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Our team is ready to answer your questions and provide expert guidance on your landscaping needs.
+            </p>
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="tel:+26777723232" class="btn-primary">📞 Call: +267 77 723 232</a>
+                <a href="mailto:Mookfara@gmail.com" class="btn-secondary" style="color: var(--primary-green); border-color: var(--primary-green);">
+                    ✉️ Email Us
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/components.js"></script>
+    <script src="js/contact.js"></script>
+</body>
 </html>
