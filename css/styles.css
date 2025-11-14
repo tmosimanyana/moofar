@@ -193,4 +193,64 @@ footer a:hover {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
+/* Before/After Slider Enhancements */
+[data-before-after] {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+    margin: 1rem auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: ew-resize;
+}
+
+/* Before image overlay */
+[data-before-after] .before-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%; /* initial width */
+    transition: width 0.2s ease;
+    background-position: center;
+    background-size: cover;
+}
+
+/* After image underneath */
+[data-before-after] .after-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Labels */
+[data-before-after] span {
+    position: absolute;
+    top: 10px;
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-weight: 600;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    font-size: 0.85rem;
+}
+
+/* Handle (draggable line) */
+[data-before-after] .handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: #f1c40f;
+    transform: translateX(-50%);
+    cursor: ew-resize;
+    z-index: 2;
+}
 
