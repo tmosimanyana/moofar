@@ -1,356 +1,257 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional landscaping and horticultural services in Botswana. Transform your outdoor space with Moofar - Francistown's premier landscaping experts.">
-    <title>Moofar - Premium Landscaping Services in Botswana | Francistown</title>
-    
-    <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/before-after-css.css">
-    <link rel="stylesheet" href="css/showcase_css.css">
-    
-    <style>
-        /* Premium Theme Enhancements */
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Professional landscaping and horticultural services in Botswana. Transform your outdoor space with Moofar - Francistown's premier landscaping experts." />
+  <title>Moofar - Premium Landscaping Services in Botswana | Francistown</title>
 
-        :root {
-            --primary-green: #2d5016;
-            --accent-green: #6b8e23;
-            --light-green: #9db872;
-            --earth-brown: #8b7355;
-            --cream: #f5f1e8;
-            --dark-text: #2c2c2c;
-            --light-text: #666;
-        }
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--dark-text);
-            overflow-x: hidden;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 90vh;
-            min-height: 700px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: linear-gradient(135deg, rgba(45, 80, 22, 0.85), rgba(107, 142, 35, 0.75)),
-                        url('https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1920&h=1080&fit=crop') center/cover;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            animation: slowZoom 20s ease-in-out infinite alternate;
-        }
-
-        @keyframes slowZoom {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: white;
-            max-width: 900px;
-            padding: 2rem;
-            animation: fadeInUp 1s ease;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 1rem;
-            color: var(--cream);
-        }
-
-        .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero-description {
-            font-size: 1.3rem;
-            margin-bottom: 3rem;
-            line-height: 1.6;
-            color: var(--cream);
-        }
-
-        /* Responsive */
-        @media (max-width: 968px) {
-            .hero-title {
-                font-size: 3rem;
-            }
-        }
-    </style>
+  <!-- Global stylesheet -->
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <a href="#mainContent" class="skip-link">Skip to main content</a>
-    
-    <div id="header-placeholder"></div>
+  <a href="#mainContent" class="skip-link">Skip to main content</a>
 
-    <main id="mainContent" tabindex="-1">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-subtitle">Premium Landscaping Services</div>
-                <h1 class="hero-title">Transform Your Outdoor Paradise</h1>
-                <p class="hero-description">
-                    Expert horticultural services designed for Botswana's unique climate. 
-                    Creating sustainable, beautiful landscapes since our founding.
-                </p>
-                <div class="hero-buttons">
-                    <a href="contact.html" class="btn-primary">Get Free Quote</a>
-                    <a href="services.html" class="btn-secondary">Our Services</a>
-                </div>
-            </div>
-        </section>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="Moofar Logo" class="logo">
+        <div>
+          <strong>Moofar</strong>
+          <div class="tagline">Premium Landscaping</div>
+        </div>
+      </div>
 
-        <!-- Before/After Showcase Section -->
-        <section class="showcase-section">
-            <div class="section-header">
-                <div class="section-subtitle">See The Transformation</div>
-                <h2 class="section-title">Our Work Speaks for Itself</h2>
-                <p class="section-description">
-                    Explore the remarkable transformations we've achieved for clients across Botswana
-                </p>
-            </div>
-            
-            <div class="showcase-grid">
-                <div class="showcase-item">
-                    <h3 class="showcase-title">Residential Garden Transformation</h3>
-                    <p class="showcase-description">
-                        Complete garden redesign with native plants and water-wise irrigation
-                    </p>
-                    <div 
-                        data-before-after
-                        data-before-image="https://images.unsplash.com/photo-1584907797015-7554cd315667?w=800&h=600&fit=crop"
-                        data-after-image="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=800&h=600&fit=crop"
-                        data-before-label="Before"
-                        data-after-label="After"
-                        data-initial-position="50">
-                    </div>
-                </div>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
 
-                <div class="showcase-item">
-                    <h3 class="showcase-title">Commercial Landscape Design</h3>
-                    <p class="showcase-description">
-                        Professional landscaping for business park in Francistown
-                    </p>
-                    <div 
-                        data-before-after
-                        data-before-image="https://images.unsplash.com/photo-1599629954294-1926620d78b3?w=800&h=600&fit=crop"
-                        data-after-image="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&h=600&fit=crop"
-                        data-before-label="Before"
-                        data-after-label="After"
-                        data-initial-position="50">
-                    </div>
-                </div>
-            </div>
+      <div class="nav-actions">
+        <a class="btn btn-outline" href="tel:+26777723232">Call Us</a>
+        <a class="btn btn-primary" href="contact.html">Get Quote</a>
+      </div>
+    </div>
+  </header>
 
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="gallery.html" class="btn-primary">View Full Gallery</a>
-            </div>
-        </section>
+  <!-- Main -->
+  <main id="mainContent" tabindex="-1">
 
-        <!-- Services Overview -->
-        <section style="padding: 5rem 2rem; background: var(--bg-light);">
-            <div class="section-header">
-                <div class="section-subtitle">What We Offer</div>
-                <h2 class="section-title">Our Services</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🌿</div>
-                    <h3>Landscape Maintenance</h3>
-                    <p>Professional care to keep your outdoor spaces thriving year-round with regular maintenance and expert attention.</p>
-                    <a href="services.html#maintenance" class="service-link">Learn More →</a>
-                </div>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__content">
+        <div class="hero__subtitle">Premium Landscaping Services</div>
+        <h1 class="hero__title">Transform Your Outdoor Paradise</h1>
+        <p class="hero__desc">Expert horticultural services designed for Botswana’s unique climate — creating sustainable, beautiful landscapes.</p>
+        <div class="hero__actions">
+          <a href="contact.html" class="btn btn-primary">Get Free Quote</a>
+          <a href="services.html" class="btn btn-outline">Our Services</a>
+        </div>
+      </div>
+    </section>
 
-                <div class="service-card">
-                    <div class="service-icon">🌱</div>
-                    <h3>Horticultural Nursery</h3>
-                    <p>Premium plants adapted to Botswana's climate. Native species and drought-resistant varieties for sustainable landscaping.</p>
-                    <a href="services.html#nursery" class="service-link">Learn More →</a>
-                </div>
+    <!-- Showcase -->
+    <section class="section showcase-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">See The Transformation</div>
+          <h2 class="section-title">Our Work Speaks for Itself</h2>
+        </div>
 
-                <div class="service-card">
-                    <div class="service-icon">🌳</div>
-                    <h3>Bush Clearing Services</h3>
-                    <p>Safe and efficient land clearing for residential and commercial development projects across Botswana.</p>
-                    <a href="services.html#clearing" class="service-link">Learn More →</a>
-                </div>
+        <div class="showcase-grid">
+          <article class="showcase-item reveal">
+            <h3>Residential Garden Transformation</h3>
+            <p>Complete redesign with native plants and water-wise irrigation.</p>
+            <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=900&fit=crop" alt="">
+          </article>
 
-                <div class="service-card">
-                    <div class="service-icon">🏗️</div>
-                    <h3>Fencing Solutions</h3>
-                    <p>Durable, attractive fencing for security and privacy. Palisade, wire mesh, wooden, and electric options available.</p>
-                    <a href="services.html#fencing" class="service-link">Learn More →</a>
-                </div>
-            </div>
-        </section>
+          <article class="showcase-item reveal">
+            <h3>Commercial Landscape Design</h3>
+            <p>Modern landscaping for business parks and office complexes.</p>
+            <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=900&fit=crop" alt="">
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <!-- Why Choose Us -->
-        <section class="why-choose">
-            <div class="section-header">
-                <div class="section-subtitle">Why Moofar?</div>
-                <h2 class="section-title">What Sets Us Apart</h2>
-            </div>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">🏆</div>
-                    <h3>Proven Expertise</h3>
-                    <p>Years of experience in Botswana's unique climate with hundreds of successful projects completed.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🌍</div>
-                    <h3>Sustainable Practices</h3>
-                    <p>Water-wise landscaping and native plant selection that thrives in our environment while conserving resources.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">💼</div>
-                    <h3>Professional Service</h3>
-                    <p>Reliable, punctual, and dedicated to exceeding expectations on every residential and commercial project.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🌱</div>
-                    <h3>Quality Guarantee</h3>
-                    <p>Premium materials, proven techniques, and ongoing support to ensure your landscape continues to thrive.</p>
-                </div>
-            </div>
-        </section>
+    <!-- Services -->
+    <section class="section services-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">What We Offer</div>
+          <h2 class="section-title">Our Services</h2>
+        </div>
 
-        <!-- Testimonials Section (Keep this as it showcases client trust) -->
-        <section style="padding: 5rem 2rem; background: var(--primary-green); color: white;">
-            <div class="section-header">
-                <div class="section-subtitle" style="color: var(--light-green);">Client Testimonials</div>
-                <h2 class="section-title" style="color: white;">What Our Clients Say</h2>
-            </div>
-            <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
-                    <div style="color: gold; font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; font-style: italic;">
-                        "Moofar transformed our property beyond expectations. Their knowledge of local plants and climate is exceptional. Highly recommended!"
-                    </p>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 50px; height: 50px; background: var(--accent-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 700;">TM</div>
-                        <div>
-                            <h4 style="font-weight: 600; margin-bottom: 0.2rem;">Thabo Molefe</h4>
-                            <p style="font-size: 0.9rem; opacity: 0.8;">Residential Client, Gaborone</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <div class="service-icon">🌿</div>
+            <h3>Landscape Maintenance</h3>
+            <p>Year-round professional care to keep your outdoor spaces thriving.</p>
+          </div>
 
-                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
-                    <div style="color: gold; font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; font-style: italic;">
-                        "Professional and exceptional quality. Our commercial property looks amazing and the water-wise landscaping has reduced our costs significantly."
-                    </p>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 50px; height: 50px; background: var(--accent-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 700;">KN</div>
-                        <div>
-                            <h4 style="font-weight: 600; margin-bottom: 0.2rem;">Kabo Nkwe</h4>
-                            <p style="font-size: 0.9rem; opacity: 0.8;">Business Owner, Francistown</p>
-                        </div>
-                    </div>
-                </div>
+          <div class="service-card reveal">
+            <div class="service-icon">🌱</div>
+            <h3>Horticultural Nursery</h3>
+            <p>Premium plants adapted to Botswana’s climate.</p>
+          </div>
 
-                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
-                    <div style="color: gold; font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; font-style: italic;">
-                        "Completed our bush clearing and fencing project efficiently and safely. Their attention to detail is outstanding. Will definitely use them again!"
-                    </p>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 50px; height: 50px; background: var(--accent-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 700;">LK</div>
-                        <div>
-                            <h4 style="font-weight: 600; margin-bottom: 0.2rem;">Lesego Kgosi</h4>
-                            <p style="font-size: 0.9rem; opacity: 0.8;">Property Developer, Maun</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+          <div class="service-card reveal">
+            <div class="service-icon">🌳</div>
+            <h3>Bush Clearing Services</h3>
+            <p>Safe and efficient land clearing for all property types.</p>
+          </div>
 
-        <!-- Call to Action -->
-        <section class="cta-section">
-            <h2>Ready to Transform Your Space?</h2>
-            <p>Let's create something beautiful together. Get your free consultation today.</p>
-            <div class="hero-buttons">
-                <a href="contact.html" class="btn-primary">Contact Us</a>
-                <a href="gallery.html" class="btn-secondary">View Gallery</a>
-            </div>
-        </section>
-    </main>
+          <div class="service-card reveal">
+            <div class="service-icon">🏗️</div>
+            <h3>Fencing Solutions</h3>
+            <p>Durable, attractive fencing for security and privacy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div id="footer-placeholder"></div>
+    <!-- Why Choose Us -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">Why Moofar?</div>
+          <h2 class="section-title">What Sets Us Apart</h2>
+        </div>
 
-    <script src="js/components.js"></script>
-    <script src="js/before-after-slider.js"></script>
-    
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
+        <div class="features-grid">
+          <div class="feature-item reveal">
+            <div class="feature-icon">🏆</div>
+            <h3>Proven Expertise</h3>
+            <p>Years of successful projects across Botswana.</p>
+          </div>
+
+          <div class="feature-item reveal">
+            <div class="feature-icon">🌍</div>
+            <h3>Sustainable Practices</h3>
+            <p>Water-wise and eco-friendly landscaping methods.</p>
+          </div>
+
+          <div class="feature-item reveal">
+            <div class="feature-icon">💼</div>
+            <h3>Professional Service</h3>
+            <p>Reliable and committed to excellence.</p>
+          </div>
+
+          <div class="feature-item reveal">
+            <div class="feature-icon">🌱</div>
+            <h3>Quality Guarantee</h3>
+            <p>Premium materials and ongoing support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle" style="color:var(--light-green)">Client Testimonials</div>
+          <h2 class="section-title" style="color:white">What Our Clients Say</h2>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem">
+          <div class="testimonial-card reveal">
+            <div style="color:gold;font-size:1.3rem;margin-bottom:.5rem">★★★★★</div>
+            <p>"Moofar transformed our property beyond expectations."</p>
+            <strong>- Thabo Molefe</strong>
+          </div>
+
+          <div class="testimonial-card reveal">
+            <div style="color:gold;font-size:1.3rem;margin-bottom:.5rem">★★★★★</div>
+            <p>"Exceptional quality and professional service."</p>
+            <strong>- Kabo Nkwe</strong>
+          </div>
+
+          <div class="testimonial-card reveal">
+            <div style="color:gold;font-size:1.3rem;margin-bottom:.5rem">★★★★★</div>
+            <p>"Bush clearing and fencing completed safely and efficiently."</p>
+            <strong>- Lesego Kgosi</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta reveal">
+          <h2>Ready to Transform Your Space?</h2>
+          <p class="small">Let's create something beautiful together. Get your free consultation today.</p>
+          <div style="display:flex;gap:1rem;justify-content:center;margin-top:1rem;flex-wrap:wrap">
+            <a class="btn btn-primary" href="contact.html">Contact Us</a>
+            <a class="btn btn-outline" href="gallery.html">View Gallery</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong style="color:var(--primary-green)">Moofar</strong>
+        <p class="muted">Premium landscaping & horticultural services serving Botswana.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul style="list-style:none;padding:0;margin:0">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <address style="font-style:normal;color:var(--muted)">
+          Francistown, Botswana<br>
+          <a href="tel:+26777723232">+267 77 723 232</a><br>
+          <a href="mailto:info@moofar.com">info@moofar.com</a>
+        </address>
+
+        <div class="social-icons" style="margin-top:1rem">
+          <a href="#"><img src="assets/facebook.svg" alt="Facebook"></a>
+          <a href="#"><img src="assets/instagram.svg" alt="Instagram"></a>
+          <a href="#"><img src="assets/whatsapp.svg" alt="WhatsApp"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Small JS to run reveal-on-scroll animations -->
+  <script>
+    (function() {
+      const revealElems = document.querySelectorAll('.reveal');
+      const obsOptions = { threshold: 0.12, rootMargin: '0px 0px -60px 0px' };
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
         });
+      }, obsOptions);
+      revealElems.forEach(el => obs.observe(el));
+    })();
+  </script>
 
-        // Animate elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.service-card, .feature-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
+
