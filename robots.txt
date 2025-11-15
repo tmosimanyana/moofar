@@ -1,0 +1,124 @@
+# ============================================
+# robots.txt
+# Save this file as "robots.txt" in your root directory
+# ============================================
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private areas if you have any
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+Sitemap: https://www.moofar.com/sitemap.xml
+
+# Crawl-delay (optional - helps prevent server overload)
+Crawl-delay: 1
+
+
+# ============================================
+# sitemap.xml
+# Save this file as "sitemap.xml" in your root directory
+# Update the domain and dates as needed
+# ============================================
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.moofar.com/</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Services Page -->
+  <url>
+    <loc>https://www.moofar.com/services.html</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- About Page -->
+  <url>
+    <loc>https://www.moofar.com/about.html</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Gallery Page -->
+  <url>
+    <loc>https://www.moofar.com/gallery.html</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://www.moofar.com/contact.html</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Add more pages as you create them:
+  
+  <url>
+    <loc>https://www.moofar.com/blog.html</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  -->
+
+</urlset>
+
+
+<!-- ============================================
+     INSTRUCTIONS FOR USE:
+     ============================================
+
+     1. Replace "www.moofar.com" with your actual domain
+     
+     2. Update the <lastmod> dates when you update pages
+     
+     3. Priority values (0.0 to 1.0):
+        - 1.0 = Homepage (most important)
+        - 0.8-0.9 = Main pages
+        - 0.5-0.7 = Secondary pages
+        - 0.3-0.4 = Least important pages
+     
+     4. Change frequency options:
+        - always
+        - hourly
+        - daily
+        - weekly
+        - monthly
+        - yearly
+        - never
+     
+     5. After creating these files, submit your sitemap to:
+        - Google Search Console: https://search.google.com/search-console
+        - Bing Webmaster Tools: https://www.bing.com/webmasters
+     
+     6. Test your sitemap at: https://www.xml-sitemaps.com/validate-xml-sitemap.html
+-->
+
+
+<!-- ============================================
+     ALTERNATIVE: Auto-generate sitemap with online tool
+     ============================================
+     
+     If you prefer, you can auto-generate a sitemap at:
+     - https://www.xml-sitemaps.com/
+     - https://www.mysitemapgenerator.com/
+     
+     Just enter your domain and it will crawl and create
+     a sitemap for you automatically.
+-->
