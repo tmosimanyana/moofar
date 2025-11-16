@@ -3,72 +3,58 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gallery - Moofar</title>
+  <title>Gallery - Moofar Proprietary Limited</title>
   <meta name="description" content="Transformative projects: residential estates, commercial landscaping, fencing, irrigation, and maintenance." />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root{--primary-green:#2d5016;--accent-green:#6b8e23;--cream:#f5f1e8;--muted:#666;--container:1200px;--radius:20px;--shadow:0 20px 60px rgba(0,0,0,0.15)}
-    *{box-sizing:border-box} html,body{height:100%}
-    body{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:0;background:var(--cream);color:var(--primary-green);padding:2.5rem}
-    .container{max-width:var(--container);margin:0 auto;padding:0 1.25rem}
-    header{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
-    .brand{display:flex;gap:.75rem;align-items:center}
-    .logo{width:48px;height:48px;background:var(--primary-green);border-radius:10px;display:grid;place-items:center;color:white;font-weight:700}
-    nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
-    .gallery-header{text-align:center;margin-bottom:2.5rem}
-    .gallery-subtitle{text-transform:uppercase;letter-spacing:3px;color:var(--accent-green);font-weight:700}
-    .gallery-title{font-family:'Playfair Display',serif;font-size:2.6rem;color:var(--primary-green);margin-top:.5rem}
-
-    .featured-project{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);height:480px;margin-bottom:2rem}
-    .featured-bg{width:100%;height:100%;object-fit:cover;display:block}
-    .featured-content{position:absolute;left:0;right:0;bottom:0;padding:2.25rem;background:linear-gradient(to top, rgba(45,80,22,0.9), transparent);color:white}
-    .featured-label{display:inline-block;background:var(--accent-green);padding:.5rem 1rem;border-radius:999px;font-size:.85rem;text-transform:uppercase;margin-bottom:.5rem}
-    .featured-title{font-family:'Playfair Display',serif;font-size:2rem;margin:0}
-    .featured-description{opacity:.95;margin-top:.5rem}
-
-    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;margin-top:1.25rem}
-    .gallery-item{position:relative;border-radius:16px;overflow:hidden;height:360px;box-shadow:var(--shadow);cursor:pointer;transition:transform .35s ease,box-shadow .35s ease}
-    .gallery-item:hover{transform:translateY(-8px)}
-    .gallery-image{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
-    .gallery-item:hover .gallery-image{transform:scale(1.06)}
-    .gallery-overlay{position:absolute;left:0;right:0;bottom:0;padding:1.25rem;background:linear-gradient(to top, rgba(45,80,22,0.9), transparent);color:white;transform:translateY(100%);transition:transform .35s}
-    .gallery-item:hover .gallery-overlay{transform:translateY(0)}
-    .gallery-category{background:var(--accent-green);padding:.4rem .8rem;border-radius:999px;display:inline-block;font-weight:700;font-size:.8rem;text-transform:uppercase}
-
-    /* Masonry */
-    .masonry-grid{column-count:3;column-gap:1.25rem;margin-top:2.5rem}
-    .masonry-item{break-inside:avoid;margin-bottom:1.25rem;border-radius:14px;overflow:hidden;position:relative;box-shadow:var(--shadow);cursor:pointer}
-    .masonry-item img{width:100%;display:block}
-    .masonry-overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(45,80,22,0.85), transparent);color:white;display:flex;align-items:flex-end;padding:1rem;opacity:0;transition:opacity .3s}
-    .masonry-item:hover .masonry-overlay{opacity:1}
-
-    /* Lightbox */
-    .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:9999;align-items:center;justify-content:center}
-    .lightbox.active{display:flex}
-    .lightbox-content{max-width:92%;max-height:92%;position:relative}
-    .lightbox-content img{width:100%;height:auto;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
-    .lightbox-close{position:absolute;right:-3.25rem;top:-.75rem;background:rgba(255,255,255,0.12);border:0;color:white;font-size:2rem;width:56px;height:56px;border-radius:999px;cursor:pointer}
-    .lightbox-info{text-align:center;color:white;margin-top:1rem}
-
-    @media (max-width:1024px){.featured-project{height:360px}.masonry-grid{column-count:2}}
-    @media (max-width:700px){.masonry-grid{column-count:1}.gallery-item{height:300px}}
-  </style>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  
+  <!-- External Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/gallery.css">
 </head>
 <body>
-  <div class="container">
-    <!-- Header -->
-    <header>
-      <div class="brand"><div class="logo">M</div><div><strong>Moofar</strong><div style="font-size:.85rem;color:var(--muted)">Premium Landscaping</div></div></div>
-      <nav aria-label="Main"><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html" aria-current="page">Gallery</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
-    </header>
 
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="Moofar Logo" class="brand-logo">
+        <div>
+          <div style="font-weight:700;">Moofar</div>
+          <div style="font-size:.85rem;color:var(--muted);margin-top:2px">Premium Landscaping</div>
+        </div>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">☰</button>
+
+      <nav aria-label="Main navigation" id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn btn-outline" href="tel:+267777232232">Call Us</a>
+        <a class="btn btn-primary" href="contact.html">Get Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Gallery Header -->
     <div class="gallery-header">
       <div class="gallery-subtitle">Our Portfolio</div>
       <h1 class="gallery-title">Transformative Projects</h1>
     </div>
 
-    <!-- Featured project (high-res Unsplash hero) -->
+    <!-- Featured project -->
     <div class="featured-project" role="button" aria-label="Open featured project" onclick="openLightbox(0)">
       <img class="featured-bg" loading="lazy" src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1920&h=1080&fit=crop&q=80" alt="Luxury Residential Estate">
       <div class="featured-content">
@@ -78,14 +64,14 @@
       </div>
     </div>
 
-    <!-- Grid -->
+    <!-- Gallery Grid -->
     <div class="gallery-grid" aria-live="polite">
       <div class="gallery-item" onclick="openLightbox(1)" role="button" aria-label="Business Park Landscaping">
         <img class="gallery-image" loading="lazy" src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1200&h=900&fit=crop&q=80" alt="Business Park Landscaping">
         <div class="gallery-overlay">
           <div class="gallery-category">Commercial</div>
-          <h3 style="margin:.5rem 0 0">Business Park Landscaping</h3>
-          <p style="margin:.5rem 0 0;opacity:.95">Professional landscaping for a 5-acre commercial development in Gaborone</p>
+          <h3>Business Park Landscaping</h3>
+          <p>Professional landscaping for a 5-acre commercial development in Gaborone</p>
         </div>
       </div>
 
@@ -93,8 +79,8 @@
         <img class="gallery-image" loading="lazy" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&h=900&fit=crop&q=80" alt="Modern Garden Oasis">
         <div class="gallery-overlay">
           <div class="gallery-category">Residential</div>
-          <h3 style="margin:.5rem 0 0">Modern Garden Oasis</h3>
-          <p style="margin:.5rem 0 0;opacity:.95">Water-wise garden design with native plants and sustainable features</p>
+          <h3>Modern Garden Oasis</h3>
+          <p>Water-wise garden design with native plants and sustainable features</p>
         </div>
       </div>
 
@@ -102,8 +88,8 @@
         <img class="gallery-image" loading="lazy" src="https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=1200&h=900&fit=crop&q=80" alt="Outdoor Living Space">
         <div class="gallery-overlay">
           <div class="gallery-category">Residential</div>
-          <h3 style="margin:.5rem 0 0">Outdoor Living Space</h3>
-          <p style="margin:.5rem 0 0;opacity:.95">Complete outdoor transformation with entertainment areas and landscaping</p>
+          <h3>Outdoor Living Space</h3>
+          <p>Complete outdoor transformation with entertainment areas and landscaping</p>
         </div>
       </div>
 
@@ -111,8 +97,8 @@
         <img class="gallery-image" loading="lazy" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=900&fit=crop&q=80" alt="Security Fencing">
         <div class="gallery-overlay">
           <div class="gallery-category">Fencing</div>
-          <h3 style="margin:.5rem 0 0">Security Fencing</h3>
-          <p style="margin:.5rem 0 0;opacity:.95">Commercial-grade palisade fencing with landscaping integration</p>
+          <h3>Security Fencing</h3>
+          <p>Commercial-grade palisade fencing with landscaping integration</p>
         </div>
       </div>
 
@@ -120,8 +106,8 @@
         <img class="gallery-image" loading="lazy" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200&h=900&fit=crop&q=80" alt="Property Development">
         <div class="gallery-overlay">
           <div class="gallery-category">Commercial</div>
-          <h3 style="margin:.5rem 0 0">Property Development</h3>
-          <p style="margin:.5rem 0 0;opacity:.95">Large-scale landscaping for new residential development in Francistown</p>
+          <h3>Property Development</h3>
+          <p>Large-scale landscaping for new residential development in Francistown</p>
         </div>
       </div>
 
@@ -129,106 +115,104 @@
         <img class="gallery-image" loading="lazy" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&h=900&fit=crop&q=80" alt="Garden Care">
         <div class="gallery-overlay">
           <div class="gallery-category">Maintenance</div>
-          <h3 style="margin:.5rem 0 0">Garden Care</h3>
-          <p style="margin:.5rem 0 0;opacity:.95">Professional maintenance services ensuring year-round beauty</p>
+          <h3>Garden Care</h3>
+          <p>Professional maintenance services ensuring year-round beauty</p>
         </div>
       </div>
     </div>
 
-    <!-- Masonry -->
-    <div class="gallery-header" style="margin-top:2.5rem">
+    <!-- Masonry Section -->
+    <div class="gallery-header" style="margin-top:3rem">
       <h2 class="gallery-title">More Projects</h2>
     </div>
 
-    <div class="masonry-grid" aria-hidden="false">
+    <div class="masonry-grid">
       <div class="masonry-item" onclick="openLightbox(7)">
         <img loading="lazy" src="https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=1000&h=700&fit=crop&q=80" alt="Residential Transformation">
-        <div class="masonry-overlay"><div><strong>Residential Transformation</strong><div style="opacity:.95">Complete yard redesign</div></div></div>
+        <div class="masonry-overlay">
+          <div><strong>Residential Transformation</strong><div>Complete yard redesign</div></div>
+        </div>
       </div>
 
       <div class="masonry-item" onclick="openLightbox(8)">
         <img loading="lazy" src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1000&h=1000&fit=crop&q=80" alt="Commercial Plaza">
-        <div class="masonry-overlay"><div><strong>Commercial Plaza</strong><div style="opacity:.95">Professional landscaping</div></div></div>
+        <div class="masonry-overlay">
+          <div><strong>Commercial Plaza</strong><div>Professional landscaping</div></div>
+        </div>
       </div>
 
       <div class="masonry-item" onclick="openLightbox(9)">
         <img loading="lazy" src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=1000&h=800&fit=crop&q=80" alt="Fence & Gate Install">
-        <div class="masonry-overlay"><div><strong>Fence & Gate Install</strong><div style="opacity:.95">Security solutions</div></div></div>
+        <div class="masonry-overlay">
+          <div><strong>Fence & Gate Install</strong><div>Security solutions</div></div>
+        </div>
       </div>
 
       <div class="masonry-item" onclick="openLightbox(10)">
         <img loading="lazy" src="https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=1000&h=1200&fit=crop&q=80" alt="Garden Paradise">
-        <div class="masonry-overlay"><div><strong>Garden Paradise</strong><div style="opacity:.95">Native plant showcase</div></div></div>
+        <div class="masonry-overlay">
+          <div><strong>Garden Paradise</strong><div>Native plant showcase</div></div>
+        </div>
       </div>
 
       <div class="masonry-item" onclick="openLightbox(11)">
         <img loading="lazy" src="https://images.unsplash.com/photo-1600566752229-250ed79470f6?w=1000&h=750&fit=crop&q=80" alt="Bush Clearing">
-        <div class="masonry-overlay"><div><strong>Bush Clearing</strong><div style="opacity:.95">Land preparation</div></div></div>
+        <div class="masonry-overlay">
+          <div><strong>Bush Clearing</strong><div>Land preparation</div></div>
+        </div>
       </div>
 
       <div class="masonry-item" onclick="openLightbox(12)">
         <img loading="lazy" src="https://images.unsplash.com/photo-1600607686527-6fb886090705?w=1000&h=900&fit=crop&q=80" alt="Irrigation System">
-        <div class="masonry-overlay"><div><strong>Irrigation System</strong><div style="opacity:.95">Smart water management</div></div></div>
+        <div class="masonry-overlay">
+          <div><strong>Irrigation System</strong><div>Smart water management</div></div>
+        </div>
       </div>
     </div>
+  </main>
 
-    <!-- Footer -->
-    <footer style="margin-top:2.5rem">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem">
-        <div><strong>Moofar</strong><div style="color:var(--muted)">Premium landscaping & horticultural services.</div></div>
-        <div><h4>Quick Links</h4><ul style="list-style:none;padding:0;margin:0;color:var(--muted)"><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div><h4>Contact</h4><address style="font-style:normal;color:var(--muted)">Francistown, Botswana<br><a href="tel:+26712345678">+267 12 345 678</a><br><a href="mailto:info@moofar.com">info@moofar.com</a></address></div>
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>Moofar</strong>
+        <p class="muted">Premium landscaping & horticultural services serving Botswana.</p>
       </div>
-    </footer>
-  </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul style="list-style:none;padding:0;margin:0;color:var(--muted)">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <address style="font-style:normal;color:var(--muted)">
+          Francistown, Botswana<br>
+          <a href="tel:+267777232232">+267 777 232 232</a><br>
+          <a href="tel:+26777085655">+267 770 85655</a><br>
+          <a href="mailto:Mookfara@gmail.com">Mookfara@gmail.com</a>
+        </address>
+      </div>
+    </div>
+  </footer>
 
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox()" aria-hidden="true">
     <div class="lightbox-content" onclick="event.stopPropagation()">
       <button class="lightbox-close" aria-label="Close" onclick="closeLightbox()">×</button>
       <img id="lightboxImg" src="" alt="">
-      <div class="lightbox-info"><h3 id="lightboxTitle"></h3><p id="lightboxDesc"></p></div>
+      <div class="lightbox-info">
+        <h3 id="lightboxTitle"></h3>
+        <p id="lightboxDesc"></p>
+      </div>
     </div>
   </div>
 
-  <script>
-    // Project data (high-res Unsplash images used; replace with local assets in /assets/ for best performance)
-    const projects = [
-      {img:'https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1920&h=1080&fit=crop&q=80', title:'Luxury Residential Estate', desc:'Featured transformation project'},
-      {img:'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1600&h=1200&fit=crop&q=80', title:'Business Park Landscaping', desc:'Commercial development'},
-      {img:'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&h=1200&fit=crop&q=80', title:'Modern Garden Oasis', desc:'Water-wise design'},
-      {img:'https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=1600&h=1200&fit=crop&q=80', title:'Outdoor Living Space', desc:'Entertainment area'},
-      {img:'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&h=1200&fit=crop&q=80', title:'Security Fencing', desc:'Commercial fencing'},
-      {img:'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1600&h=1200&fit=crop&q=80', title:'Property Development', desc:'Large-scale project'},
-      {img:'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1600&h=1200&fit=crop&q=80', title:'Garden Care', desc:'Maintenance services'},
-      {img:'https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=1200&h=800&fit=crop&q=80', title:'Residential Transformation', desc:'Complete yard redesign'},
-      {img:'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&h=1200&fit=crop&q=80', title:'Commercial Plaza', desc:'Professional landscaping'},
-      {img:'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=1200&h=1000&fit=crop&q=80', title:'Fence & Gate Install', desc:'Security solutions'},
-      {img:'https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=1200&h=1400&fit=crop&q=80', title:'Garden Paradise', desc:'Native plant showcase'},
-      {img:'https://images.unsplash.com/photo-1600566752229-250ed79470f6?w=1200&h=900&fit=crop&q=80', title:'Bush Clearing', desc:'Land preparation'},
-      {img:'https://images.unsplash.com/photo-1600607686527-6fb886090705?w=1200&h=1100&fit=crop&q=80', title:'Irrigation System', desc:'Smart water management'}
-    ];
+  <!-- External JavaScript -->
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
 
-    function openLightbox(index){
-      const p = projects[index] || projects[0];
-      document.getElementById('lightboxImg').src = p.img;
-      document.getElementById('lightboxTitle').textContent = p.title;
-      document.getElementById('lightboxDesc').textContent = p.desc;
-      document.getElementById('lightbox').classList.add('active');
-      document.getElementById('lightbox').setAttribute('aria-hidden','false');
-      document.body.style.overflow='hidden';
-    }
-    function closeLightbox(){
-      document.getElementById('lightbox').classList.remove('active');
-      document.getElementById('lightbox').setAttribute('aria-hidden','true');
-      document.body.style.overflow='';
-    }
-    document.addEventListener('keydown',(e)=>{ if(e.key==='Escape') closeLightbox(); });
-
-    // Progressive reveal for grid items
-    const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity=1;e.target.style.transform='translateY(0)'}})}, {threshold:0.12});
-    document.querySelectorAll('.gallery-item,.masonry-item').forEach(el=>{el.style.opacity=0;el.style.transform='translateY(12px)';el.style.transition='all .6s ease';io.observe(el)});
-  </script>
 </body>
 </html>
-
