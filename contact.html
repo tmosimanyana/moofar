@@ -8,146 +8,11 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Theme Styling -->
-  <style>
-    :root{
-      --primary-green:#2d5016;
-      --accent-green:#6b8e23;
-      --light-green:#9db872;
-      --cream:#f5f1e8;
-      --bg:#ffffff;
-      --muted:#6b6b6b;
-      --radius:14px;
-      --radius-lg:18px;
-      --shadow:0 8px 30px rgba(18,30,15,0.08);
-      --shadow-lg:0 16px 40px rgba(18,30,15,0.1);
-      --container:1200px;
-    }
-
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:'Poppins',sans-serif;
-      background:var(--cream);
-      color:#1f2b1a;
-      -webkit-font-smoothing:antialiased;
-    }
-    img{max-width:100%;display:block;border-radius:var(--radius)}
-    a{text-decoration:none;color:inherit}
-    .container{max-width:var(--container);margin:0 auto;padding:0 1.3rem}
-
-    /* Header */
-    header{
-      background:rgba(255,255,255,0.9);
-      backdrop-filter:blur(8px);
-      position:sticky;top:0;z-index:100;
-      border-bottom:1px solid rgba(45,80,22,0.08);
-    }
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;padding:1rem 0;
-    }
-    .brand{display:flex;gap:.75rem;align-items:center}
-    .logo{
-      width:48px;height:48px;border-radius:12px;
-      background:var(--primary-green);display:grid;place-items:center;
-      color:white;font-weight:700;font-size:1.2rem;
-    }
-    nav ul{
-      display:flex;gap:1.25rem;
-      list-style:none;margin:0;padding:0;font-weight:500
-    }
-    .btn{
-      display:inline-block;padding:.7rem 1.2rem;border-radius:12px;font-weight:600;
-      cursor:pointer;border:0;
-    }
-    .btn-primary{background:var(--primary-green);color:white}
-    .btn-outline{background:transparent;border:2px solid var(--primary-green);color:var(--primary-green)}
-
-    /* Page header */
-    .page-header{
-      padding:3rem 0 1.5rem;text-align:center;
-      background:linear-gradient(120deg,rgba(45,80,22,0.05),rgba(107,142,35,0.05));
-    }
-    .page-header h1{
-      margin:0;font-family:'Playfair Display',serif;font-size:2.6rem;color:var(--primary-green);
-    }
-    .page-header p{color:var(--muted);max-width:600px;margin:.75rem auto 0}
-
-    /* Contact layout */
-    .contact-section{
-      padding:3rem 0;
-    }
-    .info-grid{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;
-    }
-    .info-box{
-      background:white;padding:2rem;border-radius:var(--radius-lg);
-      box-shadow:var(--shadow)
-    }
-    .info-box h2{
-      font-family:'Playfair Display',serif;color:var(--primary-green);margin-top:0
-    }
-    .info-box p{margin:.4rem 0;color:var(--muted)}
-    .info-box a{color:var(--primary-green);font-weight:600}
-
-    /* Contact form */
-    .contact-form{
-      background:white;padding:2rem;border-radius:var(--radius-lg);
-      box-shadow:var(--shadow)
-    }
-    .contact-form h2{
-      font-family:'Playfair Display',serif;margin-top:0;color:var(--primary-green)
-    }
-    .form-group{margin-bottom:1.2rem}
-    label{font-weight:600;margin-bottom:.35rem;display:block}
-    input,textarea,select{
-      width:100%;padding:.8rem;border-radius:10px;border:1px solid #ccc;
-      font-size:1rem;font-family:'Poppins';transition:border-color .2s;
-    }
-    input:focus,textarea:focus,select:focus{
-      outline:none;border-color:var(--primary-green)
-    }
-    .success-message{
-      display:none;background:#e1f3e8;padding:1rem;border-radius:10px;
-      color:#1e4620;margin-bottom:1rem;font-weight:500
-    }
-    .error-message{
-      color:#c62828;font-size:.85rem;margin-top:.25rem;
-    }
-
-    /* Map */
-    .map-section{padding:3rem 0;text-align:center}
-    iframe{
-      width:100%;border:0;border-radius:var(--radius-lg);
-      box-shadow:var(--shadow-lg);
-    }
-
-    /* CTA */
-    .cta-section{
-      padding:3rem 0;
-      background:white;
-      text-align:center;
-      border-radius:var(--radius-lg);
-      margin-top:2rem;
-      box-shadow:var(--shadow);
-    }
-    .cta-section h2{
-      font-family:'Playfair Display',serif;font-size:2rem;color:var(--primary-green)
-    }
-    .cta-section p{color:var(--muted);max-width:550px;margin:1rem auto}
-
-    /* Footer */
-    footer{
-      margin-top:3rem;padding:2rem 0;
-      border-top:1px solid rgba(45,80,22,0.1);
-    }
-    .footer-grid{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:1.5rem;color:var(--muted)
-    }
-    footer strong{color:var(--primary-green)}
-  </style>
+  
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -155,14 +20,16 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <div class="logo">M</div>
+        <img src="assets/logo.svg" alt="Moofar Logo" class="brand-logo">
         <div>
-          <strong>Moofar</strong>
-          <div style="font-size:.85rem;color:var(--muted)">Premium Landscaping</div>
+          <div style="font-weight:700;">Moofar</div>
+          <div style="font-size:.85rem;color:var(--muted);margin-top:2px">Premium Landscaping</div>
         </div>
       </div>
 
-      <nav aria-label="Main">
+      <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">☰</button>
+
+      <nav aria-label="Main navigation" id="mainNav">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
@@ -172,8 +39,8 @@
         </ul>
       </nav>
 
-      <div style="display:flex;gap:.7rem">
-        <a class="btn btn-outline" href="tel:+26777723232">Call Us</a>
+      <div class="nav-cta">
+        <a class="btn btn-outline" href="tel:+267777232232">Call Us</a>
         <a class="btn btn-primary" href="contact.html">Get Quote</a>
       </div>
     </div>
@@ -181,8 +48,10 @@
 
   <!-- Page Header -->
   <section class="page-header">
-    <h1>Get In Touch</h1>
-    <p>We're here to bring your outdoor vision to life.</p>
+    <div class="container">
+      <h1>Get In Touch</h1>
+      <p>We're here to bring your outdoor vision to life.</p>
+    </div>
   </section>
 
   <!-- Contact Content -->
@@ -199,8 +68,8 @@
         <p><strong>Location:</strong> Francistown, Botswana</p>
 
         <h3 style="margin-top:1.5rem">Phone</h3>
-        <p><a href="tel:+26777723232">+267 77 723 232</a></p>
-        <p><a href="tel:+26777085655">+267 77 085 655</a></p>
+        <p><a href="tel:+267777232232">+267 777 232 232</a></p>
+        <p><a href="tel:+26777085655">+267 770 85655</a></p>
 
         <h3 style="margin-top:1.5rem">Email</h3>
         <p><a href="mailto:Mookfara@gmail.com">Mookfara@gmail.com</a></p>
@@ -267,13 +136,15 @@
 
   <!-- Map -->
   <section class="map-section">
-    <h2 style="font-family:'Playfair Display',serif;color:var(--primary-green)">Find Us in Francistown</h2>
-    <div class="container" style="margin-top:1.5rem">
-      <iframe
-        loading="lazy"
-        height="450"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58693.02!2d27.5087!3d-21.1699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1eb549b8538b9e55%3A0x7c8a0c1bc524fcb3!2sFrancistown%2C%20Botswana!5e0!3m2!1sen!2s!4v1234567890"
-        title="Moofar Location Map"></iframe>
+    <div class="container">
+      <h2 style="font-family:'Playfair Display',serif;color:var(--primary-green);text-align:center">Find Us in Francistown</h2>
+      <div style="margin-top:1.5rem">
+        <iframe
+          loading="lazy"
+          height="450"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58693.02!2d27.5087!3d-21.1699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1eb549b8538b9e55%3A0x7c8a0c1bc524fcb3!2sFrancistown%2C%20Botswana!5e0!3m2!1sen!2s!4v1234567890"
+          title="Moofar Location Map"></iframe>
+      </div>
     </div>
   </section>
 
@@ -286,7 +157,7 @@
     </p>
 
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem">
-      <a class="btn btn-primary" href="tel:+26777723232">📞 +267 77 723 232</a>
+      <a class="btn btn-primary" href="tel:+267777232232">📞 +267 777 232 232</a>
       <a class="btn btn-outline" href="mailto:Mookfara@gmail.com">✉️ Email Us</a>
     </div>
   </section>
@@ -296,55 +167,31 @@
     <div class="container footer-grid">
       <div>
         <strong>Moofar</strong>
-        <p>Premium landscaping & horticultural services serving Botswana.</p>
+        <p class="muted">Premium landscaping & horticultural services serving Botswana.</p>
       </div>
       <div>
         <h4>Quick Links</h4>
-        <ul style="list-style:none;padding:0;margin:0">
+        <ul style="list-style:none;padding:0;margin:0;color:var(--muted)">
           <li><a href="services.html">Services</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
-     <div>
-  <h4>Contact</h4>
-  <p style="color:var(--muted);margin-bottom:0.5rem">Francistown, Botswana</p>
-  <div class="footer-contact-buttons">
-    <a href="tel:+26777723232" class="btn btn-call">
-      <img src="assets/icons/phone.svg" alt="Call" class="btn-icon"> Call
-    </a>
-    <a href="sms:+26777723232" class="btn btn-sms">
-      <img src="assets/icons/message.svg" alt="SMS" class="btn-icon"> SMS
-    </a>
-    <a href="https://wa.me/26777723232" target="_blank" class="btn btn-whatsapp">
-      <img src="assets/icons/whatsapp.svg" alt="WhatsApp" class="btn-icon"> WhatsApp
-    </a>
-    <a href="mailto:info@moofar.com" class="btn btn-email">
-      <img src="assets/icons/email.svg" alt="Email" class="btn-icon"> Email
-    </a>
-  </div>
-
-  <div class="social-icons" style="margin-top:1rem">
-    <a href="#"><img src="assets/facebook.svg" alt="Facebook"></a>
-    <a href="#"><img src="assets/instagram.svg" alt="Instagram"></a>
-    <a href="#"><img src="assets/whatsapp.svg" alt="WhatsApp"></a>
-  </div>
-</div>
-
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <address style="font-style:normal;color:var(--muted)">
+          Francistown, Botswana<br>
+          <a href="tel:+267777232232">+267 777 232 232</a><br>
+          <a href="tel:+26777085655">+267 770 85655</a><br>
+          <a href="mailto:Mookfara@gmail.com">Mookfara@gmail.com</a>
+        </address>
+      </div>
+    </div>
   </footer>
 
-  <!-- Form validation -->
-  <script>
-    const form = document.getElementById('contactForm');
-    const success = document.getElementById('successMessage');
-
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      success.style.display = 'block';
-      form.reset();
-      setTimeout(() => success.style.display = 'none', 4000);
-    });
-  </script>
+  <!-- External JavaScript -->
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
 
 </body>
 </html>
-
