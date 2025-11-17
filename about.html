@@ -1,91 +1,106 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — Moofar</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
   <!-- HEADER -->
-  <header class="lawnella-header">
-    <div class="container nav">
-      <div class="brand">
-        <img src="assets/logo.svg" alt="Moofar Logo" class="brand-logo" />
-        <div>
-          <div class="brand-title">Moofar</div>
-          <div class="brand-sub">Premium Landscaping</div>
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">
+        <img src="assets/logo.svg" alt="Moofar Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-title">Moofar</span>
+          <span class="logo-sub">Premium Landscaping</span>
         </div>
       </div>
-      <button class="menu-toggle" id="menuToggle">☰</button>
-      <nav id="mainNav">
+      <nav class="nav">
         <ul>
-          <li><a href="index.html" >Home</a></li>
-          <li><a href="services.html" >Services</a></li>
-          <li><a href="gallery.html" >Gallery</a></li>
-          <li><a href="about.html" aria-current="page">About</a></li>
-          <li><a href="projects.html" >Projects</a></li>
-          <li><a href="team.html" >Team</a></li>
-          <li><a href="testimonials.html" >Testimonials</a></li>
-          <li><a href="faq.html" >FAQ</a></li>
-          <li><a href="contact.html" >Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <div class="nav-cta">
-        <a class="btn btn-outline" href="tel:+267777232232">Call Us</a>
-        <a class="btn btn-primary" href="contact.html">Get Quote</a>
+        <a href="tel:+267777232232" class="btn btn-outline">Call Us</a>
+        <a href="contact.html" class="btn btn-primary">Get Quote</a>
       </div>
     </div>
   </header>
 
-  <section class="about-section lawnella-section">
-    <div class="container">
-      <div class="section-header center">
-        <div class="section-subtitle">Who We Are</div>
-        <h2 class="section-title">About Moofar</h2>
+  <!-- ABOUT HERO -->
+  <section class="about-hero">
+    <div class="container about-hero-container">
+      <div class="about-text">
+        <h2>About Moofar</h2>
+        <p>Moofar is a Botswana-based landscaping company delivering premium design, installation, and maintenance services. We combine local knowledge with sustainable practices to create beautiful, resilient outdoor spaces.</p>
+        <h3>Our Mission</h3>
+        <p>To create sustainable landscapes that thrive in Botswana’s climate — beautiful, water-wise, and low-maintenance.</p>
+        <h3>Our Values</h3>
+        <ul>
+          <li>Quality craftsmanship</li>
+          <li>Environmental responsibility</li>
+          <li>Client-focused solutions</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">Request Consultation</a>
       </div>
-
-      <div class="about-grid">
-        <div class="about-text">
-          <p>Moofar is a Botswana-based landscaping company delivering premium design, installation and maintenance services. We combine local knowledge with sustainable practices to create beautiful, resilient outdoor spaces.</p>
-          <h3>Our Mission</h3>
-          <p>To create sustainable landscapes that thrive in Botswana’s climate — beautiful, water-wise, and low-maintenance.</p>
-          <h3>Our Values</h3>
-          <ul>
-            <li>Quality craftsmanship</li>
-            <li>Environmental responsibility</li>
-            <li>Client-focused solutions</li>
-          </ul>
-          <a href="contact.html" class="btn btn-primary">Request Consultation</a>
-        </div>
-        <div class="about-image"><img src="assets/about-hero.webp" alt="Moofar team at work" /></div>
+      <div class="about-image">
+        <img src="assets/about-hero.webp" alt="Moofar team at work">
       </div>
     </div>
   </section>
 
-  <section class="why-choose-section lawnella-section">
-    <div class="container why-content">
-      <div class="why-features">
-        <div class="why-feature"><div class="feature-check">✓</div><div><h4>Local Expertise</h4><p>Deep understanding of Botswana’s soils and plants.</p></div></div>
-        <div class="why-feature"><div class="feature-check">✓</div><div><h4>Sustainable Practices</h4><p>Water-wise planting and efficient irrigation.</p></div></div>
-        <div class="why-feature"><div class="feature-check">✓</div><div><h4>Quality Assurance</h4><p>We stand behind our work with warranties and follow-up care.</p></div></div>
+  <!-- WHY CHOOSE US -->
+  <section class="why-choose">
+    <div class="container why-container">
+      <h3>Why Choose Moofar?</h3>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">✓</div>
+          <h4>Local Expertise</h4>
+          <p>Deep understanding of Botswana’s soils and plants.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">✓</div>
+          <h4>Sustainable Practices</h4>
+          <p>Water-wise planting and efficient irrigation.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">✓</div>
+          <h4>Quality Assurance</h4>
+          <p>We stand behind our work with warranties and follow-up care.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
+  <footer class="footer">
+    <div class="container footer-container">
       <div class="footer-brand">
-        <img src="assets/logo.svg" alt="Moofar" class="brand-logo-small" />
-        <div>Moofar — Premium Landscaping</div>
+        <img src="assets/logo.svg" alt="Moofar" class="footer-logo">
+        <span>Moofar — Premium Landscaping</span>
       </div>
       <div class="footer-links">
-        <a href="about.html">About</a> · <a href="services.html">Services</a> · <a href="contact.html">Contact</a>
+        <a href="about.html">About</a> · 
+        <a href="services.html">Services</a> · 
+        <a href="contact.html">Contact</a>
       </div>
       <div class="footer-contact">📞 +267 777 232 232 · info@moofar.bw</div>
     </div>
   </footer>
-  <script src="js/main.js"></script>
+
 </body>
 </html>
+
