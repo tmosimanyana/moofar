@@ -1,127 +1,136 @@
 :root {
-  --primary-color: #249c41;
-  --accent1-color: #135820;
-  --accent2-color: #fff;
-  --body-font: 'Segoe UI', Arial, Helvetica, sans-serif;
-  --heading-font: 'Montserrat', Verdana, Geneva, sans-serif;
+  --primary-color: #03719c;        /* ocean blue */
+  --secondary-color: #fdbe34;      /* sunset gold */
+  --accent1-color: #264653;        /* granite slate */
+  --accent2-color: #f4f8fb;        /* cloud white */
+  --heading-font: 'Georgia', serif;
+  --body-font: Arial, Helvetica, sans-serif;
 }
 
-/* === CSS Reset (Box Model) === */
+/* Reset box-model for all elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* === Body Styling === */
+/* Body */
 body {
   font-family: var(--body-font);
   color: var(--accent1-color);
-  background: #f7f7f7;
+  background: var(--accent2-color);
 }
 
-/* === Center and Limit Page Width === */
+/* Page Width and Centering */
 header, main, footer {
   width: 840px;
   margin: 0 auto;
 }
 
-/* === Headings Style === */
+/* Headings */
 h1, h2 {
   font-family: var(--heading-font);
   color: var(--primary-color);
 }
-h1 {
-  position: absolute;
-  top: 20px;
-  width: 100%;
-  padding: 16px;
-  text-align: center;
-  opacity: 0.7;
-  background-color: var(--accent1-color);
-  color: #fff;
-  z-index: 2;
-  font-size: 2.8em;
-  letter-spacing: 1px;
-}
-h2 {
-  margin-top: 28px;
-  margin-bottom: 12px;
-}
 
-/* === Margin & Padding for Main Elements === */
+/* Layout for nav, p, section, article */
 nav, p, section, article {
   margin: 16px;
   padding: 8px;
 }
 
-/* === Social Media Link Underline Removal === */
+/* Social media links in footer */
 .socialmedia a {
   text-decoration: none;
 }
 
-/* === Hero Section Styles === */
+/* Hero Div with Overlays */
 .hero {
   position: relative;
   width: 100%;
-  min-height: 380px;
-  max-height: 480px;
+  min-height: 340px;
+  max-height: 420px;
   overflow: hidden;
+  border-radius: 18px;
+  margin-bottom: 32px;
+  background: #e3f9ff;
 }
 
+/* Use a large full-width hero image as the background */
 .hero img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  position: absolute;
+  left: 0; top: 0;
   z-index: 1;
+}
+
+/* Hero heading message positioned over image */
+.hero h1 {
+  position: absolute;
+  top: 28px;
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+  opacity: 0.85;
+  background-color: var(--secondary-color);
+  color: var(--accent1-color);
+  z-index: 3;
+  font-size: 2.3em;
+  border-radius: 12px;
 }
 
 .hero article {
   position: absolute;
-  left: 0;
-  right: 0;
+  left: 30px;
+  right: 30px;
   bottom: 28px;
-  padding: 25px 36px;
-  background: rgba(19,88,32,0.67);
-  color: #fff;
-  font-size: 1.18em;
-  max-width: 668px;
-  margin: 0 auto;
-  border-radius: 8px;
+  padding: 22px;
+  background: rgba(244, 248, 251, 0.92);
+  border-radius: 12px;
+  color: var(--primary-color);
   z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 .hero article img {
   float: right;
-  width: 125px;
-  margin: 0 0 12px 20px;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(36,156,65,0.15);
+  width: 105px;
+  border-radius: 12px;
+  margin-left: 20px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px #eee;
 }
 
-/* === Responsive Design === */
 @media (max-width: 900px) {
-  header, main, footer {
-    width: 98vw;
-  }
-  .hero article {
-    max-width: 97vw;
-    padding: 10vw 3vw;
-  }
+  header, main, footer { width: 98vw; }
+  .hero { min-height: 180px; }
+  .hero h1 { font-size: 1.3em; padding: 7px; }
+  .hero article { flex-direction: column; gap: 12px; left: 10px; right: 10px; padding: 12px;}
+  .hero article img { width: 65px; margin-left: 9px; }
 }
-@media (max-width: 600px) {
-  h1 {
-    font-size: 1.5em;
-    padding: 8px;
-    top: 4px;
-  }
-  .hero article {
-    font-size: 1em;
-    padding: 10px 4vw;
-  }
-  .hero article img {
-    width: 80px;
-    margin: 0 0 8px 11px;
-  }
+
+/* Example footer styling */
+footer {
+  background: var(--primary-color);
+  color: var(--accent2-color);
+  padding: 24px 0;
+  border-radius: 0 0 18px 18px;
 }
+.socialmedia {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 4px;
+}
+.socialmedia img {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: var(--accent2-color);
+}
+
