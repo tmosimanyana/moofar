@@ -55,7 +55,7 @@ a:hover {
 .logo-img {
     width: 110px;
     height: 110px;
-    object-fit: cover; /* ensures image fills card and keeps aspect ratio */
+    object-fit: contain;
     border-radius: 50%;
     display: block;
 }
@@ -66,15 +66,28 @@ a:hover {
     width: 124px;
     height: 124px;
     margin: 10px 15px 10px 0;
+    vertical-align: top;
 }
 .photo-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* ensures image fills card and keeps aspect ratio */
     border-radius: 50%;
     background: #e5f8ec;
     border: 3px solid #249c41;
     box-shadow: 0 1px 8px rgba(36,156,65,0.10);
+}
+.photo-card.fm img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.photo-card.mm img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 .photo-initials {
     position: absolute;
@@ -90,6 +103,7 @@ a:hover {
     font-family: inherit;
     box-shadow: 0 1px 6px rgba(36,156,65,0.09);
     pointer-events: none;
+    border: 2px solid #fff;
 }
 
 /* Info section and headings */
@@ -235,4 +249,3 @@ strong {
         right: 4px;
     }
 }
-
