@@ -8,50 +8,54 @@
     <link rel="stylesheet" href="assets/css/about-style.css">
 </head>
 <body>
-    <div class="container">
+    <header>
+        <!-- Optionally add site navigation or logo here -->
+    </header>
+    <main>
         <div class="hero">
-            <div class="logo">
-                <!-- Company logo (update src as needed) -->
-                <img src="assets/logo.svg" alt="Moofar Logo" class="logo-img">
-            </div>
-            <div class="info">
-                <h1>Moofar Pty Ltd</h1>
-                <div class="subtitle">Creative Landscaping & Garden Solutions, Botswana</div>
-            </div>
+            <!-- The hero image becomes the full background of the div.
+                 Example hero image below - update src for a high-res background image.
+             -->
+            <img src="assets/hero-bg.jpg" alt="Moofar Landscaping" class="hero-bg" />
+            <h1>Moofar Pty Ltd</h1>
+            <article>
+                <img src="assets/logo.svg" alt="Moofar Logo" class="logo-img" />
+                Welcome to Moofar Pty Ltd. We transform outdoor spaces across Botswana with expertise and creativity.
+            </article>
         </div>
-        <div class="contacts">
+        <section class="contacts">
             <div>
-                <h3>Contact Us</h3>
+                <h2>Contact Us</h2>
                 <ul>
                     <li><strong>Phone:</strong> +267 777723232, +267 77085655</li>
                     <li><strong>Email:</strong> <a href="mailto:Mookfara@gmail.com">Mookfara@gmail.com</a></li>
                 </ul>
             </div>
             <div>
-                <h3>Our Leadership</h3>
+                <h2>Our Leadership</h2>
                 <ul>
                     <li><strong>Director:</strong> Mooketsi Mapugwa</li>
                     <li><strong>Manager:</strong> Farai Madorobo</li>
                 </ul>
             </div>
-        </div>
-        <div class="team">
+        </section>
+        <section class="team">
             <h2>Meet Moofar</h2>
             <p>
                 At Moofar Pty Ltd, we transform outdoor spaces with expertise, creativity, and dedication. Our skilled team designs, constructs, and maintains landscapes, gardens, and fencing for homes and businesses across Botswana. Under Director <strong>Mooketsi Mapugwa</strong> and Manager <strong>Farai Madorobo</strong>, every project receives personalized attention and care.
             </p>
-        </div>
-     <div class="photo-card fm">
-    <img src="assets/farai.webp" alt="Farai Madorobo">
-    <span class="photo-initials">FM</span>
-</div>
-<div class="photo-card mm">
-    <img src="assets/mox.webp" alt="Mooketsi Mapugwa">
-    <span class="photo-initials">MM</span>
-</div>  
-        
-</div>
-        <div class="services">
+            <div class="team-gallery">
+                <div class="photo-card fm">
+                    <img src="assets/farai.webp" alt="Farai Madorobo">
+                    <span class="photo-initials">FM</span>
+                </div>
+                <div class="photo-card mm">
+                    <img src="assets/mox.webp" alt="Mooketsi Mapugwa">
+                    <span class="photo-initials">MM</span>
+                </div>
+            </div>
+        </section>
+        <section class="services">
             <h2>Our Services</h2>
             <ul>
                 <li>Landscaping</li>
@@ -61,12 +65,21 @@
                 <li>Maintenance</li>
                 <li>Nursery (Plant supply & care)</li>
             </ul>
-        </div>
-        <div class="gallery">
+        </section>
+        <section class="gallery">
             <img src="assets/gallery1.webp" alt="Moofar Landscaping Project">
             <img src="assets/gallery3.webp" alt="Moofar Nursery and Fencing">
+        </section>
+    </main>
+    <footer>
+        <div class="socialmedia">
+            <!-- Example social media icon links -->
+            <a href="#"><img src="assets/facebook.svg" alt="Facebook"></a>
+            <a href="#"><img src="assets/twitter.svg" alt="Twitter"></a>
+            <a href="#"><img src="assets/instagram.svg" alt="Instagram"></a>
         </div>
-    </div>
+        <!-- Other footer info -->
+    </footer>
     <!-- External JavaScript -->
     <script src="assets/about-script.js"></script>
 </body>
