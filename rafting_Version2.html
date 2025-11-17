@@ -2,79 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About Moofar Pty Ltd</title>
+  <title>About - Rafting Adventures</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- External CSS -->
-  <link rel="stylesheet" href="assets/css/site-style.css">
+  <!-- Common Site CSS -->
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
   <header>
-    <div class="header-grid">
-      <img src="assets/logo.svg" alt="Site Logo" class="header-logo">
+    <div class="header-nav">
+      <img src="assets/logo.svg" alt="Rafting Company Logo" class="nav-logo">
       <nav>
-        <ul class="nav-list">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Trips</a></li>
-          <li><a href="#">Contact Us</a></li>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About Us</a></li>
+          <li><a href="trips.html">Trips</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </nav>
     </div>
   </header>
+
   <main>
-    <!-- Hero Section -->
+    <!-- HERO Section: full-width hero image & title -->
     <section class="hero-section">
-      <h1>White Water Rafting</h1>
-      <div class="hero-content">
-        <div class="hero-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam.
+      <img src="assets/hero-rafting.jpg" alt="Hero Rafting" class="hero-bg" />
+      <h1 class="hero-title">Rafting Company Title</h1>
+      <div class="hero-overlay">
+        <div class="hero-desc">
+          <p>
+            Welcome to our rafting company! Experience the thrill of white water rafting in breathtaking locations. Our guides ensure a safe,
+            fun, and unforgettable adventure for explorers of all skill levels. Whether you are planning your first excursion or returning for greater challenges,
+            we have something for everyone.
+          </p>
         </div>
-        <img src="assets/hero-photo.jpg" alt="Rafting Action" class="hero-side-img">
+        <img src="assets/hero-detail.jpg" alt="On the Rapids" class="hero-detail-img" />
       </div>
     </section>
+
     <!-- History Section -->
     <section class="history-section">
       <h2>History</h2>
-      <div class="history-content">
-        <div class="history-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum.
-        </div>
-        <img src="assets/history-img.jpg" alt="Historic Rafting" class="history-image">
-        <div class="history-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec.
-        </div>
-      </div>
+      <p>
+        Founded over a decade ago, our rafting company began with the vision of sharing the excitement of river rapids with others.
+        Today, we are a team of outdoor lovers, safety experts, and local guides dedicated to making every trip memorable and fun. Our story is one of growth,
+        adventure, and serving our wonderful customers.
+      </p>
     </section>
-    <!-- Adventure Gallery Section -->
-    <section class="adventure-gallery">
+
+    <!-- Adventure Section -->
+    <section class="adventure-section">
       <h2>Adventure Awaits You</h2>
-      <div class="gallery-row">
-        <figure>
-          <img src="assets/gallery1.jpg" alt="Gallery 1">
-          <figcaption>caption</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/gallery2.jpg" alt="Gallery 2">
-          <figcaption>caption</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/gallery3.jpg" alt="Gallery 3">
-          <figcaption>caption</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/gallery4.jpg" alt="Gallery 4">
-          <figcaption>caption</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/gallery5.jpg" alt="Gallery 5">
-          <figcaption>caption</figcaption>
-        </figure>
-      </div>
+      <p>
+        Join our adventure seekers on rivers that challenge and inspire.
+        We offer custom packages for groups, families, and solo explorers, ensuring the best fit for your thrill level and schedule.
+      </p>
+      <!-- (Optional: Add adventure/grid images here if desired) -->
     </section>
   </main>
+
   <footer>
     <div class="footer-content">
-      Footer Content including Social Media Icons/Links
+      <span>Footer Content including Social Media Icons/Links</span>
       <div class="socialmedia">
         <a href="#"><img src="assets/facebook.svg" alt="Facebook"></a>
         <a href="#"><img src="assets/twitter.svg" alt="Twitter"></a>
@@ -82,7 +70,5 @@
       </div>
     </div>
   </footer>
-  <!-- External JavaScript -->
-  <script src="assets/site-script.js"></script>
 </body>
 </html>
