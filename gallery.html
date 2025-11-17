@@ -3,43 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gallery - Moofar Proprietary Limited</title>
-  <meta name="description" content="Transformative projects: residential estates, commercial landscaping, fencing, irrigation, and maintenance." />
-  
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-  
-  <!-- External Stylesheets -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/gallery.css">
+  <title>Gallery — Moofar</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
-  <!-- Header -->
-  <header>
+  <!-- HEADER -->
+  <header class="lawnella-header">
     <div class="container nav">
       <div class="brand">
-        <img src="assets/logo.svg" alt="Moofar Logo" class="brand-logo">
+        <img src="assets/logo.svg" alt="Moofar Logo" class="brand-logo" />
         <div>
-          <div style="font-weight:700;">Moofar</div>
-          <div style="font-size:.85rem;color:var(--muted);margin-top:2px">Premium Landscaping</div>
+          <div class="brand-title">Moofar</div>
+          <div class="brand-sub">Premium Landscaping</div>
         </div>
       </div>
-
-      <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">☰</button>
-
-      <nav aria-label="Main navigation" id="mainNav">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <nav id="mainNav">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="index.html" >Home</a></li>
+          <li><a href="services.html" >Services</a></li>
           <li><a href="gallery.html" aria-current="page">Gallery</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html" >About</a></li>
+          <li><a href="projects.html" >Projects</a></li>
+          <li><a href="team.html" >Team</a></li>
+          <li><a href="testimonials.html" >Testimonials</a></li>
+          <li><a href="faq.html" >FAQ</a></li>
+          <li><a href="contact.html" >Contact</a></li>
         </ul>
       </nav>
-
       <div class="nav-cta">
         <a class="btn btn-outline" href="tel:+267777232232">Call Us</a>
         <a class="btn btn-primary" href="contact.html">Get Quote</a>
@@ -47,172 +38,37 @@
     </div>
   </header>
 
-  <main class="container">
-    <!-- Gallery Header -->
-    <div class="gallery-header">
-      <div class="gallery-subtitle">Our Portfolio</div>
-      <h1 class="gallery-title">Transformative Projects</h1>
-    </div>
-
-    <!-- Featured project -->
-    <div class="featured-project" role="button" aria-label="Open featured project" onclick="openLightbox(0)">
-      <img class="featured-bg" loading="lazy" src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1920&h=1080&fit=crop&q=80" alt="Luxury Residential Estate">
-      <div class="featured-content">
-        <div class="featured-label">⭐ Featured Project</div>
-        <h2 class="featured-title">Luxury Residential Estate</h2>
-        <p class="featured-description">A comprehensive transformation featuring drought-resistant landscaping, custom irrigation, and native plant integration.</p>
-      </div>
-    </div>
-
-    <!-- Gallery Grid -->
-    <div class="gallery-grid" aria-live="polite">
-      <div class="gallery-item" onclick="openLightbox(1)" role="button" aria-label="Business Park Landscaping">
-        <img class="gallery-image" loading="lazy" src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1200&h=900&fit=crop&q=80" alt="Business Park Landscaping">
-        <div class="gallery-overlay">
-          <div class="gallery-category">Commercial</div>
-          <h3>Business Park Landscaping</h3>
-          <p>Professional landscaping for a 5-acre commercial development in Gaborone</p>
-        </div>
+  <section class="gallery-section lawnella-section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-subtitle">Our Work</div>
+        <h2 class="section-title">Gallery</h2>
       </div>
 
-      <div class="gallery-item" onclick="openLightbox(2)">
-        <img class="gallery-image" loading="lazy" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&h=900&fit=crop&q=80" alt="Modern Garden Oasis">
-        <div class="gallery-overlay">
-          <div class="gallery-category">Residential</div>
-          <h3>Modern Garden Oasis</h3>
-          <p>Water-wise garden design with native plants and sustainable features</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" onclick="openLightbox(3)">
-        <img class="gallery-image" loading="lazy" src="https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=1200&h=900&fit=crop&q=80" alt="Outdoor Living Space">
-        <div class="gallery-overlay">
-          <div class="gallery-category">Residential</div>
-          <h3>Outdoor Living Space</h3>
-          <p>Complete outdoor transformation with entertainment areas and landscaping</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" onclick="openLightbox(4)">
-        <img class="gallery-image" loading="lazy" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=900&fit=crop&q=80" alt="Security Fencing">
-        <div class="gallery-overlay">
-          <div class="gallery-category">Fencing</div>
-          <h3>Security Fencing</h3>
-          <p>Commercial-grade palisade fencing with landscaping integration</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" onclick="openLightbox(5)">
-        <img class="gallery-image" loading="lazy" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200&h=900&fit=crop&q=80" alt="Property Development">
-        <div class="gallery-overlay">
-          <div class="gallery-category">Commercial</div>
-          <h3>Property Development</h3>
-          <p>Large-scale landscaping for new residential development in Francistown</p>
-        </div>
-      </div>
-
-      <div class="gallery-item" onclick="openLightbox(6)">
-        <img class="gallery-image" loading="lazy" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&h=900&fit=crop&q=80" alt="Garden Care">
-        <div class="gallery-overlay">
-          <div class="gallery-category">Maintenance</div>
-          <h3>Garden Care</h3>
-          <p>Professional maintenance services ensuring year-round beauty</p>
-        </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item"><img src="assets/project1.webp" alt="Project 1"><figcaption>Business Park Landscaping</figcaption></figure>
+        <figure class="gallery-item"><img src="assets/project2.webp" alt="Project 2"><figcaption>Residential Outdoor Living</figcaption></figure>
+        <figure class="gallery-item"><img src="assets/project3.webp" alt="Project 3"><figcaption>Security Fencing & Screening</figcaption></figure>
+        <figure class="gallery-item"><img src="assets/project4.webp" alt="Project 4"><figcaption>Native Plant Garden</figcaption></figure>
+        <figure class="gallery-item"><img src="assets/project5.webp" alt="Project 5"><figcaption>Irrigation Installation</figcaption></figure>
+        <figure class="gallery-item"><img src="assets/project6.webp" alt="Project 6"><figcaption>Seasonal Colour Beds</figcaption></figure>
       </div>
     </div>
+  </section>
 
-    <!-- Masonry Section -->
-    <div class="gallery-header" style="margin-top:3rem">
-      <h2 class="gallery-title">More Projects</h2>
-    </div>
-
-    <div class="masonry-grid">
-      <div class="masonry-item" onclick="openLightbox(7)">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=1000&h=700&fit=crop&q=80" alt="Residential Transformation">
-        <div class="masonry-overlay">
-          <div><strong>Residential Transformation</strong><div>Complete yard redesign</div></div>
-        </div>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.svg" alt="Moofar" class="brand-logo-small" />
+        <div>Moofar — Premium Landscaping</div>
       </div>
-
-      <div class="masonry-item" onclick="openLightbox(8)">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1000&h=1000&fit=crop&q=80" alt="Commercial Plaza">
-        <div class="masonry-overlay">
-          <div><strong>Commercial Plaza</strong><div>Professional landscaping</div></div>
-        </div>
+      <div class="footer-links">
+        <a href="about.html">About</a> · <a href="services.html">Services</a> · <a href="contact.html">Contact</a>
       </div>
-
-      <div class="masonry-item" onclick="openLightbox(9)">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=1000&h=800&fit=crop&q=80" alt="Fence & Gate Install">
-        <div class="masonry-overlay">
-          <div><strong>Fence & Gate Install</strong><div>Security solutions</div></div>
-        </div>
-      </div>
-
-      <div class="masonry-item" onclick="openLightbox(10)">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=1000&h=1200&fit=crop&q=80" alt="Garden Paradise">
-        <div class="masonry-overlay">
-          <div><strong>Garden Paradise</strong><div>Native plant showcase</div></div>
-        </div>
-      </div>
-
-      <div class="masonry-item" onclick="openLightbox(11)">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1600566752229-250ed79470f6?w=1000&h=750&fit=crop&q=80" alt="Bush Clearing">
-        <div class="masonry-overlay">
-          <div><strong>Bush Clearing</strong><div>Land preparation</div></div>
-        </div>
-      </div>
-
-      <div class="masonry-item" onclick="openLightbox(12)">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1600607686527-6fb886090705?w=1000&h=900&fit=crop&q=80" alt="Irrigation System">
-        <div class="masonry-overlay">
-          <div><strong>Irrigation System</strong><div>Smart water management</div></div>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <strong>Moofar</strong>
-        <p class="muted">Premium landscaping & horticultural services serving Botswana.</p>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <ul style="list-style:none;padding:0;margin:0;color:var(--muted)">
-          <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <address style="font-style:normal;color:var(--muted)">
-          Francistown, Botswana<br>
-          <a href="tel:+267777232232">+267 777 232 232</a><br>
-          <a href="tel:+26777085655">+267 770 85655</a><br>
-          <a href="mailto:Mookfara@gmail.com">Mookfara@gmail.com</a>
-        </address>
-      </div>
+      <div class="footer-contact">📞 +267 777 232 232 · info@moofar.bw</div>
     </div>
   </footer>
-
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()" aria-hidden="true">
-    <div class="lightbox-content" onclick="event.stopPropagation()">
-      <button class="lightbox-close" aria-label="Close" onclick="closeLightbox()">×</button>
-      <img id="lightboxImg" src="" alt="">
-      <div class="lightbox-info">
-        <h3 id="lightboxTitle"></h3>
-        <p id="lightboxDesc"></p>
-      </div>
-    </div>
-  </div>
-
-  <!-- External JavaScript -->
   <script src="js/main.js"></script>
-  <script src="js/gallery.js"></script>
-
 </body>
 </html>

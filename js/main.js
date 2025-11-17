@@ -1,4 +1,2 @@
-// Extracted JS (hero slider, mobile nav, project scroller)
-
-console.log('JS Loaded — ready for full script import');
-
+// Placeholder JS for menu toggle
+const btn=document.getElementById('menuToggle');if(btn){btn.addEventListener('click',()=>document.getElementById('mainNav').classList.toggle('open'))}
