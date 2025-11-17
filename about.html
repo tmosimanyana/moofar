@@ -1,92 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Moofar Pty Ltd</title>
-    <!-- External CSS -->
-    <link rel="stylesheet" href="assets/css/about-style.css">
+  <meta charset="UTF-8">
+  <title>White Water Rafting Adventures</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Common CSS file for the entire site -->
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-    <header>
-        <div class="header-grid">
-            <img src="assets/logo.svg" alt="Moofar Logo" class="header-logo">
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+  <header>
+    <div class="header-grid">
+      <img src="assets/logo.svg" alt="Site Logo" class="header-logo">
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="trips.html">Trips</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Image Section -->
+    <section class="hero-banner">
+      <img src="assets/hero-rafting.jpg" alt="Rafting Adventure" class="hero-bg">
+      <h1 class="hero-message">Experience the Thrill of White Water Rafting!</h1>
+    </section>
+
+    <!-- Grid Layout: Purpose and Offerings -->
+    <section class="purpose-offerings">
+      <div class="offerings-grid">
+        <div class="offering-txt">
+          <h2>Why Choose Us?</h2>
+          <p>We offer unforgettable white water rafting adventures for thrill seekers and nature lovers alike. Our expert guides guarantee a safe and exhilarating experience for everyone!</p>
         </div>
-    </header>
-    <main>
-        <div class="hero">
-            <img src="assets/hero-bg.jpg" alt="Moofar Landscaping" class="hero-bg" />
-            <h1>Moofar Pty Ltd</h1>
-            <article>
-                <img src="assets/logo.svg" alt="Moofar Logo" class="logo-img" />
-                Welcome to Moofar Pty Ltd. We transform outdoor spaces across Botswana with expertise and creativity.
-            </article>
+        <img src="assets/rafting1.jpg" alt="Rafting Group" class="grid-img">
+        <div class="offering-txt">
+          <h2>Our Promise</h2>
+          <p>From beginners to seasoned rafters, our personalized trips and stunning locations offer memories that last a lifetime. Join us for the ride of your life!</p>
         </div>
-        <section class="contacts">
-            <div>
-                <h2>Contact Us</h2>
-                <ul>
-                    <li><strong>Phone:</strong> +267 777723232, +267 77085655</li>
-                    <li><strong>Email:</strong> <a href="mailto:Mookfara@gmail.com">Mookfara@gmail.com</a></li>
-                </ul>
-            </div>
-            <div>
-                <h2>Our Leadership</h2>
-                <ul>
-                    <li><strong>Director:</strong> Mooketsi Mapugwa</li>
-                    <li><strong>Manager:</strong> Farai Madorobo</li>
-                </ul>
-            </div>
-        </section>
-        <section class="team">
-            <h2>Meet Moofar</h2>
-            <p>
-                At Moofar Pty Ltd, we transform outdoor spaces with expertise, creativity, and dedication. Our skilled team designs, constructs, and maintains landscapes, gardens, and fencing for homes and businesses across Botswana. Under Director <strong>Mooketsi Mapugwa</strong> and Manager <strong>Farai Madorobo</strong>, every project receives personalized attention and care.
-            </p>
-            <div class="team-gallery">
-                <div class="photo-card fm">
-                    <img src="assets/farai.webp" alt="Farai Madorobo">
-                    <span class="photo-initials">FM</span>
-                </div>
-                <div class="photo-card mm">
-                    <img src="assets/mox.webp" alt="Mooketsi Mapugwa">
-                    <span class="photo-initials">MM</span>
-                </div>
-            </div>
-        </section>
-        <section class="services">
-            <h2>Our Services</h2>
-            <ul>
-                <li>Landscaping</li>
-                <li>Bush Clearing</li>
-                <li>Gardening</li>
-                <li>Fencing & Property Security</li>
-                <li>Maintenance</li>
-                <li>Nursery (Plant supply & care)</li>
-            </ul>
-        </section>
-        <section class="gallery">
-            <img src="assets/gallery1.webp" alt="Moofar Landscaping Project">
-            <img src="assets/gallery3.webp" alt="Moofar Nursery and Fencing">
-        </section>
-    </main>
-    <footer>
-        <div class="socialmedia">
-            <a href="#"><img src="assets/facebook.svg" alt="Facebook"></a>
-            <a href="#"><img src="assets/twitter.svg" alt="Twitter"></a>
-            <a href="#"><img src="assets/instagram.svg" alt="Instagram"></a>
-        </div>
-    </footer>
-    <!-- External JavaScript -->
-    <script src="assets/about-script.js"></script>
+        <img src="assets/rafting2.jpg" alt="Rafting Rapids" class="grid-img">
+      </div>
+    </section>
+
+    <!-- Newsletter Sign-up Form -->
+    <section class="newsletter-signup">
+      <h2>Sign Up for Our Newsletter</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <a href="trips.html" class="cta-link">
+        <span>Ready for Adventure? Check Out Our Rafting Trips!</span>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <span>© 2025 White Water Rafting. All rights reserved.</span>
+      <div class="socialmedia">
+        <a href="#"><img src="assets/facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="assets/twitter.svg" alt="Twitter"></a>
+        <a href="#"><img src="assets/instagram.svg" alt="Instagram"></a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
