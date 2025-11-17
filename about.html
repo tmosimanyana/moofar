@@ -2,43 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Learn about Moofar Proprietary Limited - Botswana's trusted landscaping and horticultural services provider." />
-  <title>About Us - Moofar Proprietary Limited</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-  
-  <!-- External Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Moofar — Premium Landscaping in Botswana</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
-  <!-- Header / Navigation -->
-  <header>
+  <!-- HEADER -->
+  <header class="lawnella-header">
     <div class="container nav">
       <div class="brand">
-        <img src="assets/logo.svg" alt="Moofar Logo" class="brand-logo">
+        <img src="assets/logo.svg" alt="Moofar Logo" class="brand-logo" />
         <div>
-          <div style="font-weight:700;">Moofar</div>
-          <div style="font-size:.85rem;color:var(--muted);margin-top:2px">Premium Landscaping</div>
+          <div class="brand-title">Moofar</div>
+          <div class="brand-sub">Premium Landscaping</div>
         </div>
       </div>
-
-      <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">☰</button>
-
-      <nav aria-label="Main navigation" id="mainNav">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <nav id="mainNav">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-
       <div class="nav-cta">
         <a class="btn btn-outline" href="tel:+267777232232">Call Us</a>
         <a class="btn btn-primary" href="contact.html">Get Quote</a>
@@ -46,151 +34,139 @@
     </div>
   </header>
 
-  <!-- Page header -->
-  <section class="page-header" role="banner">
+  <!-- HERO SLIDER -->
+  <section class="hero" id="hero">
+    <div class="hero-dots">
+      <div class="dot active" data-slide="0"></div>
+      <div class="dot" data-slide="1"></div>
+      <div class="dot" data-slide="2"></div>
+    </div>
+
+    <div class="hero-slides" id="heroSlides">
+      <!-- Slide 1 -->
+      <div class="hero-slide" data-index="0">
+        <div class="hero-bg" style="background-image:url('assets/hero1.webp')"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-inner">
+          <div class="hero-text glass-box">
+            <h1 class="hero-title">Transform Your Outdoor Spaces</h1>
+            <p class="hero-subtitle">Professional landscaping and horticultural services tailored to Botswana's climate.</p>
+            <div class="hero-cta">
+              <a href="contact.html" class="btn btn-primary btn-lg">Get Free Quote</a>
+              <a href="services.html" class="btn btn-outline btn-lg">Our Services</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="hero-slide" data-index="1">
+        <div class="hero-bg" style="background-image:url('assets/hero2.webp')"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-inner">
+          <div class="hero-text glass-box">
+            <h1 class="hero-title">Design. Install. Maintain.</h1>
+            <p class="hero-subtitle">Complete landscaping solutions for residential and commercial properties.</p>
+            <div class="hero-cta">
+              <a href="services.html" class="btn btn-primary btn-lg">View Services</a>
+              <a href="gallery.html" class="btn btn-outline btn-lg">Our Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="hero-slide" data-index="2">
+        <div class="hero-bg" style="background-image:url('assets/hero3.webp')"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-inner">
+          <div class="hero-text glass-box">
+            <h1 class="hero-title">Quality Materials & Sustainable Solutions</h1>
+            <p class="hero-subtitle">We combine expertise with eco‑friendly practices for lasting landscapes.</p>
+            <div class="hero-cta">
+              <a href="contact.html" class="btn btn-primary btn-lg">Request Estimate</a>
+              <a href="about.html" class="btn btn-outline btn-lg">About Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <svg class="curve" viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path d="M0,30 C360,90 1080,-30 1440,30 L1440,80 L0,80 Z" fill="#fff"></path>
+    </svg>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services-overview leaf-texture lawnella-section">
     <div class="container">
-      <h1>About Moofar</h1>
-      <p>Excellence in landscaping and horticulture since our founding</p>
+      <div class="section-header center">
+        <div class="section-subtitle">What We Offer</div>
+        <h2 class="section-title">Our Services</h2>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-item"><div class="service-icon">🌿</div><h3>Landscaping</h3><p>Custom design, installation, and garden creation.</p><a href="services.html" class="service-link">Learn More →</a></div>
+        <div class="service-item"><div class="service-icon">🪓</div><h3>Bush Clearing</h3><p>Efficient and safe land clearing.</p><a href="services.html" class="service-link">Learn More →</a></div>
+        <div class="service-item"><div class="service-icon">🌺</div><h3>Gardening</h3><p>Planting, pruning, and seasonal care.</p><a href="services.html" class="service-link">Learn More →</a></div>
+        <div class="service-item"><div class="service-icon">🔒</div><h3>Fencing</h3><p>Durable and attractive fencing solutions.</p><a href="services.html" class="service-link">Learn More →</a></div>
+        <div class="service-item"><div class="service-icon">✂️</div><h3>Maintenance</h3><p>Year‑round landscape maintenance.</p><a href="services.html" class="service-link">Learn More →</a></div>
+        <div class="service-item"><div class="service-icon">🌱</div><h3>Nursery</h3><p>Climate‑adapted trees and plants.</p><a href="services.html" class="service-link">Learn More →</a></div>
+      </div>
     </div>
   </section>
 
-  <main class="container" id="mainContent" tabindex="-1" role="main">
+  <!-- WHY CHOOSE US -->
+  <section class="why-choose-section lawnella-section">
+    <div class="container why-content">
+      <div class="why-image"><img src="assets/why.webp" alt="Why choose us" /></div>
+      <div class="why-text">
+        <div class="section-subtitle">Why Moofar</div>
+        <h2 class="section-title">Excellence in Every Project</h2>
+        <p>We blend sustainability, local expertise, and professional service to deliver outstanding landscapes.</p>
 
-    <!-- About Content -->
-    <section class="about" aria-label="About the company">
-      <div class="about-container">
-        <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1200&h=800&fit=crop" alt="Professional landscaping team at work" loading="lazy">
+        <div class="why-features">
+          <div class="why-feature"><div class="feature-check">✓</div><div><h4>Local Expertise</h4><p>Deep understanding of Botswana’s landscape.</p></div></div>
+          <div class="why-feature"><div class="feature-check">✓</div><div><h4>Sustainable Practices</h4><p>Water‑wise solutions for long‑term growth.</p></div></div>
+          <div class="why-feature"><div class="feature-check">✓</div><div><h4>Professional Team</h4><p>Skilled horticultural and landscaping staff.</p></div></div>
+          <div class="why-feature"><div class="feature-check">✓</div><div><h4>Quality Assurance</h4><p>Premium materials and tested techniques.</p></div></div>
         </div>
 
-        <div class="about-content" role="article">
-          <h2>Our Story</h2>
-          <p>Moofar Proprietary Limited is a leading landscaping and horticultural services company based in Francistown, Botswana. We specialize in creating and maintaining beautiful, sustainable outdoor spaces that thrive in Botswana's unique climate.</p>
-
-          <p>Under the leadership of Director <strong>Mooketsi Mapugwa</strong> and Manager <strong>Farai Madorobo</strong>, our team brings years of experience and local expertise to every project. We understand the challenges and opportunities of landscaping in Botswana, from water conservation to selecting plants that flourish in our environment.</p>
-
-          <h2 class="mt-1">Our Mission</h2>
-          <p>To transform outdoor spaces across Botswana through sustainable landscaping practices, quality horticultural products, and exceptional customer service. We are committed to enhancing property values while respecting our natural environment.</p>
-
-          <h2 class="mt-1">Why Choose Moofar?</h2>
-          <ul>
-            <li><strong>Local Expertise:</strong> Deep understanding of Botswana's climate and soil conditions</li>
-            <li><strong>Sustainable Practices:</strong> Water-wise landscaping and native plant selection</li>
-            <li><strong>Comprehensive Services:</strong> From design to maintenance, we handle it all</li>
-            <li><strong>Quality Assurance:</strong> Using premium materials and proven techniques</li>
-            <li><strong>Professional Team:</strong> Experienced, trained, and dedicated staff</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Strengths / Features -->
-    <section class="why-choose" aria-label="What sets us apart">
-      <div class="section-header">
-        <div class="section-subtitle">Our Strengths</div>
-        <h3 class="section-title">What Sets Us Apart</h3>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-item">
-          <div class="feature-icon">🏆</div>
-          <div>
-            <h4>Proven Track Record</h4>
-            <p class="muted">Successful completion of numerous residential and commercial projects across Botswana.</p>
-          </div>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">🌍</div>
-          <div>
-            <h4>Environmental Focus</h4>
-            <p class="muted">Committed to sustainable landscaping practices that conserve water and support local ecosystems.</p>
-          </div>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">💼</div>
-          <div>
-            <h4>Professional Service</h4>
-            <p class="muted">Reliable, punctual, and dedicated to exceeding client expectations on every project.</p>
-          </div>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">🌱</div>
-          <div>
-            <h4>Quality Plants</h4>
-            <p class="muted">Our nursery stocks healthy, climate-appropriate plants that thrive in Botswana's conditions.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Leadership -->
-    <section class="leadership" aria-label="Leadership">
-      <div class="section-header">
-        <div class="section-subtitle">Meet The Team</div>
-        <h3 class="section-title">Our Leadership</h3>
-      </div>
-
-      <div class="team-grid mt-1">
-        <div class="team-card">
-          <img src="assets/Mox.webp" alt="Mooketsi Mapugwa" class="team-photo">
-          <h4 style="margin-bottom:.25rem;color:var(--text-dark)">Mooketsi Mapugwa</h4>
-          <div style="color:var(--primary-green);font-weight:600;margin-bottom:.75rem">Director</div>
-          <p class="muted">Leading Moofar's strategic vision and ensuring excellence in every project we undertake.</p>
-        </div>
-
-        <div class="team-card">
-          <img src="assets/farai.webp" alt="Farai Madorobo" class="team-photo">
-          <h4 style="margin-bottom:.25rem;color:var(--text-dark)">Farai Madorobo</h4>
-          <div style="color:var(--primary-green);font-weight:600;margin-bottom:.75rem">Manager</div>
-          <p class="muted">Overseeing daily operations and ensuring our clients receive the highest quality service.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta-section" aria-label="Call to action">
-      <h2>Let's Work Together</h2>
-      <p class="muted">Experience the Moofar difference on your next landscaping project</p>
-      <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap">
-        <a class="btn btn-primary" href="contact.html">Contact Us</a>
-        <a class="btn btn-outline" href="services.html">Our Services</a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <strong>Moofar</strong>
-        <p class="muted">Premium landscaping & horticultural services serving Botswana.</p>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <ul style="list-style:none;padding:0;margin:0;color:var(--muted)">
-          <li><a href="services.html">Services</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <address style="font-style:normal;color:var(--muted)">
-          Francistown, Botswana<br>
-          <a href="tel:+267777232232">+267 777 232 232</a><br>
-          <a href="tel:+26777085655">+267 770 85655</a><br>
-          <a href="mailto:Mookfara@gmail.com">Mookfara@gmail.com</a>
-        </address>
+        <a href="about.html" class="btn btn-primary">Learn More</a>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <!-- External JavaScript -->
-  <script src="js/main.js"></script>
+  <!-- PROJECTS -->
+  <section id="projects" class="featured-projects lawnella-section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-subtitle">Our Work</div>
+        <h2 class="section-title">Featured Projects</h2>
+      </div>
 
-</body>
-</html>
+      <div class="projects-grid" id="projectsGrid">
+        <div class="project-card"><div class="project-image"><img src="assets/project1.webp" /></div><div class="project-info"><span>Commercial</span><h3>Business Park Landscaping</h3><p>5‑acre commercial development.</p></div></div>
+        <div class="project-card"><div class="project-image"><img src="assets/project2.webp" /></div><div class="project-info"><span>Residential</span><h3>Outdoor Living Space</h3><p>Full outdoor living renovation.</p></div></div>
+        <div class="project-card"><div class="project-image"><img src="assets/project3.webp" /></div><div class="project-info"><span>Fencing</span><h3>Security Fencing</h3><p>Integrated fencing + landscaping.</p></div></div>
+      </div>
+
+      <div class="projects-cta"><a href="gallery.html" class="btn btn-outline">View All Projects</a></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner lawnella-section">
+    <div class="container cta-content center">
+      <h2>Ready to Transform Your Outdoor Space?</h2>
+      <p>Contact us for a free consultation</p>
+      <div class="cta-buttons"><a href="contact.html" class="btn btn-primary btn-lg">Get Free Quote</a><a href="tel:+267777232232" class="btn btn-outline btn-lg">📞 +267 777 232 232</a></div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section lawnella-section">
+    <div class="container stats-grid">
+      <div class="stat-item"><div class="stat-number">6</div><div class="stat-label">Projects Completed</div></div>
+      <div class="stat-item"><div class="stat-number">6</div><div class="stat-label">Happy Clients</div></
+

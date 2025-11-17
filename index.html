@@ -1,19 +1,171 @@
-<!-- index.html referencing external CSS/JS files -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Moofar — Lawnella-style Landscaping</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Moofar — Premium Landscaping in Botswana</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Content moved to external CSS/JS; upload your images and I'll update paths -->
-  <header>...</header>
-  <section class="hero">...</section>
-  <main>...</main>
-  <footer>...</footer>
+  <!-- HEADER -->
+  <header class="lawnella-header">
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="Moofar Logo" class="brand-logo" />
+        <div>
+          <div class="brand-title">Moofar</div>
+          <div class="brand-sub">Premium Landscaping</div>
+        </div>
+      </div>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <nav id="mainNav">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-outline" href="tel:+267777232232">Call Us</a>
+        <a class="btn btn-primary" href="contact.html">Get Quote</a>
+      </div>
+    </div>
+  </header>
 
-  <script src="js/main.js"></script>
-</body>
-</html>
+  <!-- HERO SLIDER -->
+  <section class="hero" id="hero">
+    <div class="hero-dots">
+      <div class="dot active" data-slide="0"></div>
+      <div class="dot" data-slide="1"></div>
+      <div class="dot" data-slide="2"></div>
+    </div>
+
+    <div class="hero-slides" id="heroSlides">
+      <!-- Slide 1 -->
+      <div class="hero-slide" data-index="0">
+        <div class="hero-bg" style="background-image:url('assets/hero1.webp')"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-inner">
+          <div class="hero-text glass-box">
+            <h1 class="hero-title">Transform Your Outdoor Spaces</h1>
+            <p class="hero-subtitle">Professional landscaping and horticultural services tailored to Botswana's climate.</p>
+            <div class="hero-cta">
+              <a href="contact.html" class="btn btn-primary btn-lg">Get Free Quote</a>
+              <a href="services.html" class="btn btn-outline btn-lg">Our Services</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="hero-slide" data-index="1">
+        <div class="hero-bg" style="background-image:url('assets/hero2.webp')"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-inner">
+          <div class="hero-text glass-box">
+            <h1 class="hero-title">Design. Install. Maintain.</h1>
+            <p class="hero-subtitle">Complete landscaping solutions for residential and commercial properties.</p>
+            <div class="hero-cta">
+              <a href="services.html" class="btn btn-primary btn-lg">View Services</a>
+              <a href="gallery.html" class="btn btn-outline btn-lg">Our Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="hero-slide" data-index="2">
+        <div class="hero-bg" style="background-image:url('assets/hero3.webp')"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-inner">
+          <div class="hero-text glass-box">
+            <h1 class="hero-title">Quality Materials & Sustainable Solutions</h1>
+            <p class="hero-subtitle">We combine expertise with eco-friendly practices for lasting landscapes.</p>
+            <div class="hero-cta">
+              <a href="contact.html" class="btn btn-primary btn-lg">Request Estimate</a>
+              <a href="about.html" class="btn btn-outline btn-lg">About Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <svg class="curve" viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path d="M0,30 C360,90 1080,-30 1440,30 L1440,80 L0,80 Z" fill="#fff"></path>
+    </svg>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services-overview leaf-texture lawnella-section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-subtitle">What We Offer</div>
+        <h2 class="section-title">Our Services</h2>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-item"><div class="service-icon">🌿</div><h3>Landscaping</h3><p>Custom design, installation, and garden creation.</p><a href="services.html" class="service-link">Learn More →</a></div>
+        <div class="service-item"><div class="service-icon">🪓</div><h3>Bush Clearing</h3><p>Efficient and safe land clearing.</p><a href="services.html" class="service-link">Learn More →</a></div>
+        <div class="service-item"><div class="service-icon">🌺</div><h3>Gardening</h3><p>Planting, pruning, and seasonal care.</p><a href="services.html" class="service-link">Learn More →</a></div>
+        <div class="service-item"><div class="service-icon">🔒</div><h3>Fencing</h3><p>Durable and attractive fencing solutions.</p><a href="services.html" class="service-link">Learn More →</a></div>
+        <div class="service-item"><div class="service-icon">✂️</div><h3>Maintenance</h3><p>Year-round landscape maintenance.</p><a href="services.html" class="service-link">Learn More →</a></div>
+        <div class="service-item"><div class="service-icon">🌱</div><h3>Nursery</h3><p>Climate-adapted trees and plants.</p><a href="services.html" class="service-link">Learn More →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="why-choose-section lawnella-section">
+    <div class="container why-content">
+      <div class="why-image"><img src="assets/why.webp" alt="Why choose us" /></div>
+      <div class="why-text">
+        <div class="section-subtitle">Why Moofar</div>
+        <h2 class="section-title">Excellence in Every Project</h2>
+        <p>We blend sustainability, local expertise, and professional service to deliver outstanding landscapes.</p>
+
+        <div class="why-features">
+          <div class="why-feature"><div class="feature-check">✓</div><div><h4>Local Expertise</h4><p>Deep understanding of Botswana’s landscape.</p></div></div>
+          <div class="why-feature"><div class="feature-check">✓</div><div><h4>Sustainable Practices</h4><p>Water-wise solutions for long-term growth.</p></div></div>
+          <div class="why-feature"><div class="feature-check">✓</div><div><h4>Professional Team</h4><p>Skilled horticultural and landscaping staff.</p></div></div>
+          <div class="why-feature"><div class="feature-check">✓</div><div><h4>Quality Assurance</h4><p>Premium materials and tested techniques.</p></div></div>
+        </div>
+
+        <a href="about.html" class="btn btn-primary">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="featured-projects lawnella-section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-subtitle">Our Work</div>
+        <h2 class="section-title">Featured Projects</h2>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <div class="project-card"><div class="project-image"><img src="assets/project1.webp" /></div><div class="project-info"><span>Commercial</span><h3>Business Park Landscaping</h3><p>5-acre commercial development.</p></div></div>
+        <div class="project-card"><div class="project-image"><img src="assets/project2.webp" /></div><div class="project-info"><span>Residential</span><h3>Outdoor Living Space</h3><p>Full outdoor living renovation.</p></div></div>
+        <div class="project-card"><div class="project-image"><img src="assets/project3.webp" /></div><div class="project-info"><span>Fencing</span><h3>Security Fencing</h3><p>Integrated fencing + landscaping.</p></div></div>
+      </div>
+
+      <div class="projects-cta"><a href="gallery.html" class="btn btn-outline">View All Projects</a></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner lawnella-section">
+    <div class="container cta-content center">
+      <h2>Ready to Transform Your Outdoor Space?</h2>
+      <p>Contact us for a free consultation</p>
+      <div class="cta-buttons"><a href="contact.html" class="btn btn-primary btn-lg">Get Free Quote</a><a href="tel:+267777232232" class="btn btn-outline btn-lg">📞 +267 777 232 232</a></div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section lawnella-section">
+    <div class="container stats-grid">
+      <div class="stat-item"><div class="stat-number">6</div><div class="stat-label">Projects Completed</div></div>
+      <div class="stat-item"><div class="stat-number">6</div><div class="stat-label">Happy Clients</div></
