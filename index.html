@@ -2,61 +2,193 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Moofar – Welcome</title>
-  <meta name="description" content="Moofar: Discover our services, team, and contact info. Modern, responsive design.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/modern.css">
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  <meta property="og:title" content="Moofar: Modern Web">
-  <meta property="og:description" content="Visit Moofar online for a modern experience.">
+  <title>Moofar Pty Ltd - Premium Landscaping Services in Francistown, Botswana</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <div><a href="index.html" style="font-size:1.3em;">Moofar</a></div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section>
-      <h1>Welcome to Moofar</h1>
-      <p>Your one-stop solution for innovative web services and digital transformation.<br>
-         Explore our offerings and find out how we can help your business grow.</p>
-      <a href="services.html" class="cta-button">Explore Services</a>
-    </section>
-    <section>
-      <h2>Why Choose Us?</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2em;">
-        <div>
-          <img src="assets/innovation.jpg" alt="Innovation">
-          <h3>Innovation</h3>
-          <p>We leverage the latest technologies for creative problem-solving and next-gen digital experiences.</p>
-        </div>
-        <div>
-          <img src="assets/teamwork.jpg" alt="Teamwork">
-          <h3>Teamwork</h3>
-          <p>Our talented team works closely to turn vision into reality, ensuring every client’s success.</p>
-        </div>
-        <div>
-          <img src="assets/support.jpg" alt="Support">
-          <h3>Support</h3>
-          <p>We offer reliable ongoing support, scalable solutions, and client-first commitment.</p>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="Moofar Logo" class="brand-logo">
+        <div class="brand-text">
+          <div class="brand-title">Moofar</div>
+          <div class="brand-subtitle">Premium Landscaping</div>
         </div>
       </div>
-    </section>
-    <section>
-      <h2>Get In Touch</h2>
-      <p>Questions? Reach out to our team for a free consultation.</p>
-      <a href="contact.html" class="cta-button">Contact Us</a>
-    </section>
-  </main>
-  <footer>
-    &copy; 2025 Moofar | All rights reserved &mdash; <a href="contact.html" style="color:#00c8a0;">Contact</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="https://wa.me/26777723232?text=Hello%20Moofar,%20I'm%20interested%20in%20your%20services" target="_blank" class="btn btn-primary">📞 WhatsApp Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-background">
+      <img src="assets/gallery7.webp" alt="Beautiful landscaped garden">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1 class="hero-title">Francistown's Premier Landscaping Experts</h1>
+      <p class="hero-subtitle">Transform your outdoor spaces with professional landscaping, bush clearing, fencing, and horticultural services. Creating beautiful, sustainable environments across Botswana.</p>
+      <div class="hero-cta">
+        <a href="https://wa.me/26777723232?text=Hello%20Moofar,%20I'd%20like%20a%20free%20quote%20for%20landscaping%20services" target="_blank" class="btn btn-primary btn-lg">Get Free Quote on WhatsApp</a>
+        <a href="services.html" class="btn btn-outline btn-lg">Explore Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES PREVIEW -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-subtitle">Complete Solutions</div>
+        <h2 class="section-title">Professional Landscaping Services</h2>
+        <p class="section-description">From concept to completion, we bring your outdoor vision to life with services designed for Botswana's unique climate and terrain.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-item">
+          <div class="service-icon">🌳</div>
+          <h3>Landscape Design & Installation</h3>
+          <p>Expert garden design tailored to your property, featuring drought-resistant plants and water-efficient irrigation systems.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">🌿</div>
+          <h3>Garden Maintenance</h3>
+          <p>Regular lawn mowing, trimming, pruning, and fertilization to keep your landscape healthy and beautiful year-round.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">🪓</div>
+          <h3>Bush Clearing & Land Preparation</h3>
+          <p>Safe, efficient clearing of overgrown vegetation with environmental consideration and proper debris removal.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">🏗️</div>
+          <h3>Fencing Installation</h3>
+          <p>Secure and attractive fencing solutions including palisade, wire mesh, and wooden fence construction.</p>
+        </div>
+      </div>
+      <div class="center mt-4">
+        <a href="services.html" class="btn btn-primary btn-lg">View All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="why-choose-section">
+    <div class="container">
+      <div class="why-content">
+        <div class="why-image">
+          <img src="assets/gallery4.webp" alt="Professional landscaping team at work">
+        </div>
+        <div class="why-text">
+          <div class="section-subtitle">The Moofar Difference</div>
+          <h2 class="section-title">Why Choose Moofar Pty Ltd?</h2>
+          <p>Since 2025, we've been dedicated to transforming outdoor spaces across Francistown. Our experienced team, led by Director Mooketsi Mapugwa and Manager Farai Madorobo, combines technical expertise with creative vision to deliver outstanding results.</p>
+          <div class="why-features">
+            <div class="why-feature">
+              <div class="feature-check">✓</div>
+              <div>
+                <h4>Local Knowledge & Experience</h4>
+                <p>We understand Francistown's soil conditions, weather patterns, and native plants that thrive in Botswana.</p>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="feature-check">✓</div>
+              <div>
+                <h4>Sustainable & Water-Wise Solutions</h4>
+                <p>Environmentally responsible practices including drought-tolerant plants and efficient irrigation systems.</p>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="feature-check">✓</div>
+              <div>
+                <h4>Professional Quality Guaranteed</h4>
+                <p>Skilled craftsmanship, reliable service, and ongoing support to ensure your landscape remains pristine.</p>
+              </div>
+            </div>
+          </div>
+          <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Transform Your Outdoor Space?</h2>
+        <p>Contact Moofar Pty Ltd today for a free consultation and personalized quote for your landscaping project in Francistown.</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/26777723232?text=Hello%20Moofar,%20I'd%20like%20a%20free%20consultation%20for%20my%20property" target="_blank" class="btn btn-primary btn-lg">WhatsApp Us Now</a>
+          <a href="tel:+26777085655" class="btn btn-outline btn-lg">Call +267 770 856 55</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/logo.svg" alt="Moofar Logo" class="footer-logo">
+          <div>
+            <div class="footer-brand-title">Moofar Pty Ltd</div>
+            <div class="footer-brand-subtitle">Premium Landscaping Services</div>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p>📞 <a href="https://wa.me/26777723232?text=Hello%20Moofar,%20I'm%20interested%20in%20your%20services" target="_blank">+267 77 723 232</a></p>
+          <p>📞 <a href="tel:+26777085655">+267 770 856 55</a></p>
+          <p>✉️ <a href="mailto:Mookfara@gmail.com">Mookfara@gmail.com</a></p>
+          <p>📍 Francistown, Botswana</p>
+        </div>
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><img src="assets/facebook.svg" alt="Facebook"></a>
+            <a href="#" aria-label="Twitter"><img src="assets/twitter.svg" alt="Twitter"></a>
+            <a href="#" aria-label="Instagram"><img src="assets/instagram.svg" alt="Instagram"></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Moofar Pty Ltd. All rights reserved. UIN: BW00009410484 | Adventure | Nature | Community</p>
+      </div>
+    </div>
   </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
