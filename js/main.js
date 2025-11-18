@@ -1,313 +1,354 @@
-// ===== MOOFAR PTY LTD - MAIN JAVASCRIPT =====
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Title Tag -->
+  <title>Professional Landscaping Services Francistown | Moofar Pty Ltd - Garden Design, Bush Clearing & Fencing</title>
+  
+  <!-- Meta Description -->
+  <meta name="description" content="Expert landscaping, garden maintenance, bush clearing & fencing services in Francistown, Botswana. Professional landscape design with drought-resistant plants. Free quotes: +267 77 723 232">
+  
+  <!-- Keywords -->
+  <meta name="keywords" content="landscaping Francistown, garden maintenance Botswana, bush clearing Francistown, fencing installation, landscape design Botswana, lawn care Francistown, horticultural services">
+  
+  <!-- Geo Tags -->
+  <meta name="geo.region" content="BW-FR">
+  <meta name="geo.placename" content="Francistown">
+  <meta name="geo.position" content="-21.170178;27.508351">
+  <meta name="ICBM" content="-21.170178, 27.508351">
+  
+  <!-- Open Graph for Social Sharing -->
+  <meta property="og:title" content="Moofar - Premium Landscaping Services Francistown, Botswana">
+  <meta property="og:description" content="Professional landscaping, garden design, bush clearing & fencing services in Francistown. Transforming outdoor spaces across Botswana.">
+  <meta property="og:image" content="https://yoursite.com/assets/gallery7.webp">
+  <meta property="og:url" content="https://yoursite.com">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_BW">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Moofar - Premium Landscaping Francistown">
+  <meta name="twitter:description" content="Professional landscaping services in Francistown, Botswana">
+  <meta name="twitter:image" content="https://yoursite.com/assets/gallery7.webp">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://yoursite.com/">
+  
+  <!-- Robots -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  
+  <!-- Author -->
+  <meta name="author" content="Moofar Pty Ltd">
+  <meta name="copyright" content="Moofar Pty Ltd">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-// Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
   
-  // ===== MOBILE MENU TOGGLE =====
-  const menuToggle = document.getElementById('menuToggle');
-  const mainNav = document.getElementById('mainNav');
-  
-  if (menuToggle && mainNav) {
-    menuToggle.addEventListener('click', function() {
-      mainNav.classList.toggle('active');
-      menuToggle.classList.toggle('open');
-      
-      // Prevent body scroll when menu is open on mobile
-      if (mainNav.classList.contains('active')) {
-        document.body.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = '';
+  <!-- Favicon (Add when ready) -->
+  <!-- <link rel="icon" type="image/png" href="favicon.png"> -->
+
+  <!-- Local Business Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Landscaper",
+    "name": "Moofar Pty Ltd",
+    "image": "https://yoursite.com/assets/logo.svg",
+    "logo": "https://yoursite.com/assets/logo.svg",
+    "@id": "https://yoursite.com",
+    "url": "https://yoursite.com",
+    "telephone": "+267-77-723-232",
+    "email": "Mookfara@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "",
+      "addressLocality": "Francistown",
+      "addressRegion": "North-East District",
+      "postalCode": "",
+      "addressCountry": "BW"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -21.170178,
+      "longitude": 27.508351
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Francistown"
+      },
+      {
+        "@type": "Country",
+        "name": "Botswana"
       }
-    });
-
-    // Close menu when clicking on a nav link
-    const navLinks = mainNav.querySelectorAll('a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        if (window.innerWidth <= 768) {
-          mainNav.classList.remove('active');
-          menuToggle.classList.remove('open');
-          document.body.style.overflow = '';
+    ],
+    "priceRange": "$$",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:00",
+        "closes": "13:00"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Landscaping Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Landscape Design & Installation",
+            "description": "Expert garden design tailored to your property, featuring drought-resistant plants"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Garden Maintenance",
+            "description": "Regular lawn mowing, trimming, pruning, and fertilization services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Bush Clearing & Land Preparation",
+            "description": "Safe, efficient clearing of overgrown vegetation"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Fencing Installation",
+            "description": "Palisade, wire mesh, and wooden fence construction"
+          }
         }
-      });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-      const isClickInsideNav = mainNav.contains(event.target);
-      const isClickOnToggle = menuToggle.contains(event.target);
-      
-      if (!isClickInsideNav && !isClickOnToggle && mainNav.classList.contains('active')) {
-        mainNav.classList.remove('active');
-        menuToggle.classList.remove('open');
-        document.body.style.overflow = '';
-      }
-    });
+      ]
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Mooketsi Mapugwa"
+    },
+    "sameAs": [
+      "https://www.facebook.com/moofar",
+      "https://www.instagram.com/moofar"
+    ]
   }
-
-  // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
-  const anchorLinks = document.querySelectorAll('a[href^="#"]');
+  </script>
   
-  anchorLinks.forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      
-      // Skip if it's just "#" or empty
-      if (href === '#' || href === '') return;
-      
-      const target = document.querySelector(href);
-      
-      if (target) {
-        e.preventDefault();
-        
-        const headerOffset = 80;
-        const elementPosition = target.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-
-  // ===== HEADER SCROLL EFFECT =====
-  const header = document.querySelector('.site-header');
-  let lastScroll = 0;
-  
-  window.addEventListener('scroll', function() {
-    const currentScroll = window.pageYOffset;
-    
-    // Add shadow on scroll
-    if (currentScroll > 10) {
-      header.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
-    } else {
-      header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
-    }
-    
-    lastScroll = currentScroll;
-  });
-
-  // ===== HERO CONTENT FADE-IN ANIMATION =====
-  const heroContent = document.querySelector('.hero-content, .about-hero, .subpage-hero-content');
-  
-  if (heroContent) {
-    heroContent.style.opacity = '0';
-    heroContent.style.transform = 'translateY(30px)';
-    
-    setTimeout(() => {
-      heroContent.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
-      heroContent.style.opacity = '1';
-      heroContent.style.transform = 'translateY(0)';
-    }, 100);
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://yoursite.com/"
+    }]
   }
+  </script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="Moofar Landscaping Logo - Professional Landscaping Services Francistown" class="brand-logo">
+        <div class="brand-text">
+          <div class="brand-title">Moofar</div>
+          <div class="brand-subtitle">Premium Landscaping</div>
+        </div>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="https://wa.me/26777723232?text=Hello%20Moofar,%20I'm%20interested%20in%20your%20landscaping%20services%20in%20Francistown" target="_blank" rel="noopener" class="btn btn-primary" aria-label="Contact us on WhatsApp for a quote">📞 WhatsApp Quote</a>
+      </div>
+    </div>
+  </header>
 
-  // ===== INTERSECTION OBSERVER FOR SCROLL ANIMATIONS =====
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-  };
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-background">
+      <img src="assets/gallery7.webp" alt="Beautifully landscaped garden in Francistown, Botswana by Moofar Pty Ltd" loading="eager" width="1920" height="1080">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1 id="hero-title" class="hero-title">Francistown's Premier Landscaping Experts</h1>
+      <p class="hero-subtitle">Transform your outdoor spaces with professional landscaping, bush clearing, fencing, and horticultural services in Francistown and across Botswana. Creating beautiful, sustainable environments with drought-resistant plants.</p>
+      <div class="hero-cta">
+        <a href="https://wa.me/26777723232?text=Hello%20Moofar,%20I'd%20like%20a%20free%20quote%20for%20landscaping%20services%20in%20Francistown" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Get Free Quote on WhatsApp</a>
+        <a href="services.html" class="btn btn-outline btn-lg">Explore Our Services</a>
+      </div>
+    </div>
+  </section>
 
-  const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, observerOptions);
+  <!-- SERVICES PREVIEW -->
+  <section class="section" aria-labelledby="services-title">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-subtitle">Complete Solutions in Francistown</div>
+        <h2 id="services-title" class="section-title">Professional Landscaping Services in Botswana</h2>
+        <p class="section-description">From concept to completion, we bring your outdoor vision to life with landscaping services designed for Botswana's unique climate and terrain. Serving Francistown and surrounding areas.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service-item">
+          <div class="service-icon" aria-hidden="true">🌳</div>
+          <h3>Landscape Design & Installation Francistown</h3>
+          <p>Expert garden design tailored to your Francistown property, featuring drought-resistant plants perfect for Botswana's climate and water-efficient irrigation systems.</p>
+        </article>
+        <article class="service-item">
+          <div class="service-icon" aria-hidden="true">🌿</div>
+          <h3>Garden Maintenance Botswana</h3>
+          <p>Regular lawn mowing, trimming, pruning, and fertilization to keep your Francistown landscape healthy and beautiful year-round in Botswana's conditions.</p>
+        </article>
+        <article class="service-item">
+          <div class="service-icon" aria-hidden="true">🪓</div>
+          <h3>Bush Clearing & Land Preparation</h3>
+          <p>Safe, efficient clearing of overgrown vegetation in Francistown with environmental consideration and proper debris removal for residential and commercial properties.</p>
+        </article>
+        <article class="service-item">
+          <div class="service-icon" aria-hidden="true">🏗️</div>
+          <h3>Fencing Installation Francistown</h3>
+          <p>Secure and attractive fencing solutions in Francistown including palisade fencing, wire mesh, and wooden fence construction for Botswana properties.</p>
+        </article>
+      </div>
+      <div class="center mt-4">
+        <a href="services.html" class="btn btn-primary btn-lg">View All Landscaping Services</a>
+      </div>
+    </div>
+  </section>
 
-  // Observe service items
-  const serviceItems = document.querySelectorAll('.service-item');
-  serviceItems.forEach((item, index) => {
-    item.style.opacity = '0';
-    item.style.transform = 'translateY(30px)';
-    item.style.transition = `opacity 0.6s ease-out ${index * 0.1}s, transform 0.6s ease-out ${index * 0.1}s`;
-    observer.observe(item);
-  });
+  <!-- WHY CHOOSE US -->
+  <section class="why-choose-section" aria-labelledby="why-choose-title">
+    <div class="container">
+      <div class="why-content">
+        <div class="why-image">
+          <img src="assets/gallery4.webp" alt="Professional Moofar landscaping team working on garden project in Francistown" loading="lazy" width="800" height="600">
+        </div>
+        <div class="why-text">
+          <div class="section-subtitle">The Moofar Difference</div>
+          <h2 id="why-choose-title" class="section-title">Why Choose Moofar Pty Ltd for Landscaping in Francistown?</h2>
+          <p>Since 2025, we've been dedicated to transforming outdoor spaces across Francistown and Botswana. Our experienced landscaping team, led by Director Mooketsi Mapugwa and Manager Farai Madorobo, combines technical expertise with creative vision to deliver outstanding results.</p>
+          <div class="why-features">
+            <div class="why-feature">
+              <div class="feature-check" aria-hidden="true">✓</div>
+              <div>
+                <h3>Local Francistown Knowledge & Experience</h3>
+                <p>We understand Francistown's soil conditions, Botswana's weather patterns, and native plants that thrive in our local climate.</p>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="feature-check" aria-hidden="true">✓</div>
+              <div>
+                <h3>Sustainable & Water-Wise Solutions for Botswana</h3>
+                <p>Environmentally responsible landscaping practices including drought-tolerant plants perfect for Botswana and efficient irrigation systems.</p>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="feature-check" aria-hidden="true">✓</div>
+              <div>
+                <h3>Professional Quality Guaranteed</h3>
+                <p>Skilled craftsmanship, reliable landscaping service, and ongoing support to ensure your Francistown landscape remains pristine.</p>
+              </div>
+            </div>
+          </div>
+          <a href="about.html" class="btn btn-primary">Learn More About Moofar</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  // Observe section headers
-  const sectionHeaders = document.querySelectorAll('.section-header');
-  sectionHeaders.forEach(header => {
-    header.style.opacity = '0';
-    header.style.transform = 'translateY(30px)';
-    header.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-    observer.observe(header);
-  });
+  <!-- CTA BANNER -->
+  <section class="cta-banner" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta-content">
+        <h2 id="cta-title">Ready to Transform Your Outdoor Space in Francistown?</h2>
+        <p>Contact Moofar Pty Ltd today for a free consultation and personalized quote for your landscaping project in Francistown, Botswana. Professional garden design, maintenance, bush clearing, and fencing services.</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/26777723232?text=Hello%20Moofar,%20I'd%20like%20a%20free%20consultation%20for%20my%20Francistown%20property" target="_blank" rel="noopener" class="btn btn-primary btn-lg">WhatsApp Us Now</a>
+          <a href="tel:+26777085655" class="btn btn-outline btn-lg">Call +267 770 856 55</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  // ===== FORM VALIDATION (Contact Form) =====
-  const contactForm = document.querySelector('.contact-form form');
-  
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      const name = this.querySelector('input[name="name"]');
-      const email = this.querySelector('input[name="email"]');
-      const phone = this.querySelector('input[name="phone"]');
-      const message = this.querySelector('textarea[name="message"]');
-      
-      let isValid = true;
-      
-      // Basic validation
-      if (name && name.value.trim().length < 2) {
-        alert('Please enter a valid name');
-        name.focus();
-        e.preventDefault();
-        return false;
-      }
-      
-      if (email && !isValidEmail(email.value)) {
-        alert('Please enter a valid email address');
-        email.focus();
-        e.preventDefault();
-        return false;
-      }
-      
-      if (phone && phone.value.trim().length < 8) {
-        alert('Please enter a valid phone number');
-        phone.focus();
-        e.preventDefault();
-        return false;
-      }
-      
-      if (message && message.value.trim().length < 10) {
-        alert('Please enter a message (at least 10 characters)');
-        message.focus();
-        e.preventDefault();
-        return false;
-      }
-      
-      // Show loading state
-      const submitBtn = this.querySelector('button[type="submit"]');
-      if (submitBtn) {
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-      }
-    });
-  }
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/logo.svg" alt="Moofar Landscaping Logo" class="footer-logo" loading="lazy">
+          <div>
+            <div class="footer-brand-title">Moofar Pty Ltd</div>
+            <div class="footer-brand-subtitle">Premium Landscaping Services Francistown</div>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Landscaping Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Moofar in Francistown</h4>
+          <p>📞 <a href="https://wa.me/26777723232?text=Hello%20Moofar,%20I'm%20interested%20in%20your%20landscaping%20services" target="_blank" rel="noopener">+267 77 723 232</a></p>
+          <p>📞 <a href="tel:+26777085655">+267 770 856 55</a></p>
+          <p>✉️ <a href="mailto:Mookfara@gmail.com">Mookfara@gmail.com</a></p>
+          <p>📍 Francistown, Botswana</p>
+        </div>
+        <div class="footer-social">
+          <h4>Follow Moofar</h4>
+          <div class="social-links">
+            <a href="#" target="_blank" rel="noopener" aria-label="Follow Moofar on Facebook"><img src="assets/facebook.svg" alt="Facebook" loading="lazy"></a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Follow Moofar on Twitter"><img src="assets/twitter.svg" alt="Twitter" loading="lazy"></a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Follow Moofar on Instagram"><img src="assets/instagram.svg" alt="Instagram" loading="lazy"></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Moofar Pty Ltd. All rights reserved. UIN: BW00009410484 | Professional Landscaping Francistown, Botswana | Adventure | Nature | Community</p>
+      </div>
+    </div>
+  </footer>
 
-  // Email validation helper
-  function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  }
-
-  // ===== WHATSAPP BUTTON TRACKING =====
-  const whatsappButtons = document.querySelectorAll('a[href*="wa.me"]');
-  
-  whatsappButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      console.log('WhatsApp button clicked:', this.textContent);
-      // You can add analytics tracking here
-    });
-  });
-
-  // ===== PHONE BUTTON TRACKING =====
-  const phoneButtons = document.querySelectorAll('a[href^="tel:"]');
-  
-  phoneButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      console.log('Phone button clicked:', this.href);
-      // You can add analytics tracking here
-    });
-  });
-
-  // ===== LAZY LOADING IMAGES (if not using native loading="lazy") =====
-  const images = document.querySelectorAll('img[data-src]');
-  
-  const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        img.src = img.dataset.src;
-        img.removeAttribute('data-src');
-        imageObserver.unobserve(img);
-      }
-    });
-  });
-  
-  images.forEach(img => imageObserver.observe(img));
-
-  // ===== BUTTON RIPPLE EFFECT =====
-  const buttons = document.querySelectorAll('.btn');
-  
-  buttons.forEach(button => {
-    button.addEventListener('click', function(e) {
-      const ripple = document.createElement('span');
-      const rect = this.getBoundingClientRect();
-      const size = Math.max(rect.width, rect.height);
-      const x = e.clientX - rect.left - size / 2;
-      const y = e.clientY - rect.top - size / 2;
-      
-      ripple.style.width = ripple.style.height = size + 'px';
-      ripple.style.left = x + 'px';
-      ripple.style.top = y + 'px';
-      ripple.classList.add('ripple');
-      
-      this.appendChild(ripple);
-      
-      setTimeout(() => ripple.remove(), 600);
-    });
-  });
-
-  // ===== BACK TO TOP BUTTON (Optional) =====
-  // Uncomment if you want to add a back-to-top button
-  /*
-  const backToTopBtn = document.createElement('button');
-  backToTopBtn.innerHTML = '↑';
-  backToTopBtn.className = 'back-to-top';
-  backToTopBtn.setAttribute('aria-label', 'Back to top');
-  document.body.appendChild(backToTopBtn);
-  
-  window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 500) {
-      backToTopBtn.classList.add('show');
-    } else {
-      backToTopBtn.classList.remove('show');
-    }
-  });
-  
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-  */
-
-  // ===== CONSOLE LOG =====
-  console.log('🌳 Moofar Pty Ltd Website Loaded Successfully');
-  console.log('📞 Contact: +267 77 723 232');
-  console.log('📍 Location: Francistown, Botswana');
-
-});
-
-// ===== WINDOW RESIZE HANDLER =====
-let resizeTimer;
-window.addEventListener('resize', function() {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(function() {
-    // Reset mobile menu on desktop view
-    if (window.innerWidth > 768) {
-      const mainNav = document.getElementById('mainNav');
-      const menuToggle = document.getElementById('menuToggle');
-      
-      if (mainNav && menuToggle) {
-        mainNav.classList.remove('active');
-        menuToggle.classList.remove('open');
-        document.body.style.overflow = '';
-      }
-    }
-  }, 250);
-});
-
-// ===== PREVENT RIGHT CLICK ON IMAGES (Optional - for image protection) =====
-// Uncomment if needed
-/*
-document.querySelectorAll('img').forEach(img => {
-  img.addEventListener('contextmenu', e => {
-    e.preventDefault();
-    return false;
-  });
-});
-*/
+  <script src="js/main.js"></script>
+</body>
+</html>
