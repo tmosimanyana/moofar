@@ -3,50 +3,327 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - Moofar Premium Landscaping Francistown</title>
-  <meta name="description" content="Learn about Moofar, Francistown's premier landscaping team. Our story, mission, and commitment to quality service." />
-  <link rel="stylesheet" href="css/modern.css">
+  
+  <!-- SEO Title Tag -->
+  <title>About Moofar - Premier Landscaping Company in Francistown, Botswana | Our Story & Mission</title>
+  
+  <!-- Meta Description -->
+  <meta name="description" content="Learn about Moofar Pty Ltd, Francistown's leading landscaping company since 2025. Led by Director Mooketsi Mapugwa, we transform outdoor spaces across Botswana with sustainable practices.">
+  
+  <!-- Keywords -->
+  <meta name="keywords" content="about Moofar, landscaping company Francistown, Botswana landscapers, Mooketsi Mapugwa, Farai Madorobo, sustainable landscaping Botswana, professional landscapers">
+  
+  <!-- Geo Tags -->
+  <meta name="geo.region" content="BW-FR">
+  <meta name="geo.placename" content="Francistown">
+  <meta name="geo.position" content="-21.170178;27.508351">
+  <meta name="ICBM" content="-21.170178, 27.508351">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="About Moofar - Francistown's Premier Landscaping Company">
+  <meta property="og:description" content="Transforming outdoor spaces across Francistown with passion, expertise, and sustainable practices since 2025.">
+  <meta property="og:image" content="https://yoursite.com/assets/gallery7.webp">
+  <meta property="og:url" content="https://yoursite.com/about.html">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Moofar - Premier Landscaping Francistown">
+  <meta name="twitter:description" content="Francistown's trusted landscaping experts since 2025">
+  <meta name="twitter:image" content="https://yoursite.com/assets/gallery7.webp">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://yoursite.com/about.html">
+  
+  <!-- Robots -->
+  <meta name="robots" content="index, follow">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
+  
+  <!-- Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Moofar Pty Ltd",
+    "alternateName": "Moofar Landscaping",
+    "url": "https://yoursite.com",
+    "logo": "https://yoursite.com/assets/logo.svg",
+    "description": "Premier landscaping services in Francistown, Botswana since 2025",
+    "foundingDate": "2025-09",
+    "founders": [
+      {
+        "@type": "Person",
+        "name": "Mooketsi Mapugwa",
+        "jobTitle": "Director"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Francistown",
+      "addressRegion": "North-East District",
+      "addressCountry": "BW"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+267-77-723-232",
+      "contactType": "customer service",
+      "areaServed": "BW",
+      "availableLanguage": ["English"]
+    },
+    "sameAs": [
+      "https://www.facebook.com/moofar",
+      "https://www.instagram.com/moofar"
+    ]
+  }
+  </script>
+  
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://yoursite.com/"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About",
+      "item": "https://yoursite.com/about.html"
+    }]
+  }
+  </script>
 </head>
 <body>
-  <header>
-    <nav>
-      <div><a href="index.html" style="font-size:1.3em;">Moofar</a></div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="Moofar Landscaping Logo - Francistown, Botswana" class="brand-logo">
+        <div class="brand-text">
+          <div class="brand-title">Moofar</div>
+          <div class="brand-subtitle">Premium Landscaping</div>
+        </div>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html" class="active" aria-current="page">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="https://wa.me/26777723232?text=Hello%20Moofar,%20I'd%20like%20to%20learn%20more%20about%20your%20landscaping%20services" target="_blank" rel="noopener" class="btn btn-primary" aria-label="Contact us on WhatsApp">📞 WhatsApp Quote</a>
+      </div>
+    </div>
   </header>
-  <main>
-    <section>
+
+  <!-- PAGE HERO -->
+  <section class="about-hero">
+    <div class="container">
       <h1>About Moofar Pty Ltd</h1>
-      <p>Transforming outdoor spaces across Francistown with passion, expertise, and sustainable practices since 2025.</p>
-      <img src="assets/gallery7.webp" alt="Moofar team working on landscaping project" />
-    </section>
-    <section>
-      <h2>Our Story</h2>
-      <p>Founded in September 2025, Moofar Proprietary Limited has quickly established itself as Francistown's premier landscaping service provider. Our journey began with a simple vision: to beautify Botswana, one garden at a time.</p>
-      <p>Under the leadership of Director Mooketsi Mapugwa and Manager Farai Madorobo, we've built a reputation for excellence, innovation, and unwavering commitment to client satisfaction.</p>
-      <p>We understand Francistown's climate and terrain, and leverage this local expertise to deliver landscaping solutions that are visually stunning and sustainable.</p>
-      <img src="assets/gallery1.webp" alt="Beautiful landscaped garden in Francistown" />
-    </section>
-    <section>
-      <h2>Our Mission</h2>
-      <p>Our mission is to transform outdoor spaces into havens of beauty, functionality, and sustainability. We strive to exceed expectations by delivering exceptional landscaping services tailored to our clients’ needs.</p>
-      <p>We believe every outdoor space has untapped potential. Whether it's a residential garden, commercial property, or undeveloped land, we approach each project with creativity, technology, and care.</p>
-      <p><strong>Our motto:</strong> Adventure | Nature | Community — These three pillars guide our design, client relationships, and environmental practices.</p>
-    </section>
-    <section>
-      <h2>Ready to Work With Us?</h2>
-      <p>Experience the Moofar difference. Contact us today for a free consultation and discover how we can transform your outdoor space.</p>
-      <a href="contact.html" class="cta-button">Contact Us</a>
-      <a href="https://wa.me/26777723232?text=Hello%20Moofar,%20I'd%20like%20a%20free%20consultation" target="_blank" class="cta-button">WhatsApp Us</a>
-    </section>
-  </main>
-  <footer>
-    &copy; 2025 Moofar Pty Ltd. All rights reserved. Adventure | Nature | Community
+      <p>Transforming outdoor spaces across Francistown and Botswana with passion, expertise, and sustainable landscaping practices since 2025.</p>
+    </div>
+  </section>
+
+  <!-- OUR STORY -->
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="section-subtitle">Our Journey in Francistown</div>
+          <h2 class="section-title">The Moofar Story</h2>
+          <p>Founded in September 2025, Moofar Proprietary Limited has quickly established itself as <strong>Francistown's premier landscaping service provider</strong>. Our journey began with a simple yet powerful vision: to beautify Botswana, one garden at a time.</p>
+          <p>Under the leadership of <strong>Director Mooketsi Mapugwa</strong> and <strong>Manager Farai Madorobo</strong>, we've built a reputation for excellence, innovation, and unwavering commitment to client satisfaction throughout Francistown and surrounding areas in Botswana.</p>
+          <p>We understand Francistown's unique climate, soil conditions, and terrain. This local expertise allows us to deliver landscaping solutions that are not only visually stunning but also sustainable and perfectly adapted to Botswana's environment. From drought-resistant plants to water-efficient irrigation systems, every aspect of our work reflects our deep knowledge of the region.</p>
+        </div>
+        <div class="about-image">
+          <img src="assets/gallery7.webp" alt="Moofar landscaping team working on a professional garden project in Francistown, Botswana" loading="lazy" width="800" height="600">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR MISSION -->
+  <section class="section" style="background: var(--cream);">
+    <div class="container">
+      <div class="about-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="about-image">
+          <img src="assets/gallery1.webp" alt="Beautiful drought-resistant landscaped garden in Francistown by Moofar" loading="lazy" width="800" height="600">
+        </div>
+        <div class="about-text">
+          <div class="section-subtitle">What Drives Us</div>
+          <h2 class="section-title">Our Mission in Francistown & Botswana</h2>
+          <p>Our mission is to <strong>transform outdoor spaces into havens of beauty, functionality, and sustainability</strong>. We strive to exceed expectations by delivering exceptional landscaping services tailored to our clients' needs across Francistown and Botswana.</p>
+          <p>We believe every outdoor space has untapped potential. Whether it's a residential garden in Francistown, a commercial property in Botswana, or undeveloped land waiting to flourish, we approach each landscaping project with creativity, cutting-edge technology, and genuine care.</p>
+          <div style="background: var(--white); padding: 2rem; border-radius: var(--radius); margin-top: 2rem; box-shadow: var(--shadow-md);">
+            <h3 style="color: var(--primary-green); margin-bottom: 1rem; font-size: 1.3rem;">Our Guiding Principles</h3>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin: 0;"><strong style="color: var(--accent-green);">Adventure</strong> | <strong style="color: var(--accent-green);">Nature</strong> | <strong style="color: var(--accent-green);">Community</strong></p>
+            <p style="margin-top: 1rem; color: var(--text-light);">These three pillars guide our landscape design philosophy, our client relationships, and our environmental practices throughout Francistown and all of Botswana.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-subtitle">What Makes Us Different</div>
+        <h2 class="section-title">Why Francistown Trusts Moofar for Landscaping</h2>
+        <p class="section-description">Our commitment to excellence, local expertise, and sustainable practices set us apart as Botswana's leading landscaping company.</p>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 3rem;">
+        <article style="background: var(--white); padding: 2.5rem; border-radius: var(--radius); box-shadow: var(--shadow-md);">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🌍</div>
+          <h3 style="color: var(--primary-green); margin-bottom: 1rem; font-size: 1.3rem;">Local Francistown Expertise</h3>
+          <p style="color: var(--text-light); line-height: 1.7;">Deep understanding of Francistown's soil types, Botswana's weather patterns, and native plants that thrive in our local climate. Our landscaping solutions are specifically designed for success in Botswana.</p>
+        </article>
+        
+        <article style="background: var(--white); padding: 2.5rem; border-radius: var(--radius); box-shadow: var(--shadow-md);">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">💧</div>
+          <h3 style="color: var(--primary-green); margin-bottom: 1rem; font-size: 1.3rem;">Water-Wise Landscaping</h3>
+          <p style="color: var(--text-light); line-height: 1.7;">Sustainable, drought-resistant landscaping practices perfect for Botswana's climate. We specialize in xeriscaping and water-efficient irrigation systems throughout Francistown.</p>
+        </article>
+        
+        <article style="background: var(--white); padding: 2.5rem; border-radius: var(--radius); box-shadow: var(--shadow-md);">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">⭐</div>
+          <h3 style="color: var(--primary-green); margin-bottom: 1rem; font-size: 1.3rem;">Quality Guaranteed</h3>
+          <p style="color: var(--text-light); line-height: 1.7;">Professional craftsmanship, reliable service, and ongoing support for every landscaping project in Francistown. Your satisfaction is our top priority across all of Botswana.</p>
+        </article>
+        
+        <article style="background: var(--white); padding: 2.5rem; border-radius: var(--radius); box-shadow: var(--shadow-md);">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🌱</div>
+          <h3 style="color: var(--primary-green); margin-bottom: 1rem; font-size: 1.3rem;">Eco-Friendly Approach</h3>
+          <p style="color: var(--text-light); line-height: 1.7;">Environmentally responsible landscaping that protects Botswana's natural beauty. We use organic fertilizers, sustainable materials, and eco-conscious practices in all our Francistown projects.</p>
+        </article>
+        
+        <article style="background: var(--white); padding: 2.5rem; border-radius: var(--radius); box-shadow: var(--shadow-md);">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">👥</div>
+          <h3 style="color: var(--primary-green); margin-bottom: 1rem; font-size: 1.3rem;">Experienced Team</h3>
+          <p style="color: var(--text-light); line-height: 1.7;">Led by Director Mooketsi Mapugwa and Manager Farai Madorobo, our skilled landscaping professionals bring years of combined experience to every Francistown project.</p>
+        </article>
+        
+        <article style="background: var(--white); padding: 2.5rem; border-radius: var(--radius); box-shadow: var(--shadow-md);">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">💼</div>
+          <h3 style="color: var(--primary-green); margin-bottom: 1rem; font-size: 1.3rem;">Full-Service Solutions</h3>
+          <p style="color: var(--text-light); line-height: 1.7;">From landscape design and garden maintenance to bush clearing and fencing installation - we're your complete landscaping partner in Francistown and throughout Botswana.</p>
+        </article>
+        <article style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow-md); text-align: center;">
+          <img src="assets/team3.svg" alt="Team Member - Horticulturist" style="width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 1rem;box-shadow:var(--shadow-sm);">
+          <h3 style="color: var(--primary-green); margin-bottom: 0.5rem; font-size: 1.4rem;">Nthabiseng Kgosi</h3>
+          <p style="color: var(--accent-green); font-weight: 600; margin-bottom: 1rem;">Lead Horticulturist</p>
+          <p style="color: var(--text-light); line-height: 1.7;">Specialist in native and drought-resistant plant selection across Francistown projects.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP TEAM -->
+  <section class="section" style="background: var(--cream);">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-subtitle">Meet Our Leadership</div>
+        <h2 class="section-title">The Team Behind Moofar's Success in Francistown</h2>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; margin-top: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <article style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow-md); text-align: center;">
+          <div style="width: 120px; height: 120px; background: var(--accent-green); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 3rem;">👨‍💼</div>
+          <h3 style="color: var(--primary-green); margin-bottom: 0.5rem; font-size: 1.4rem;">Mooketsi Mapugwa</h3>
+          <p style="color: var(--accent-green); font-weight: 600; margin-bottom: 1rem;">Director</p>
+          <p style="color: var(--text-light); line-height: 1.7;">Leading Moofar's vision to transform Francistown's outdoor spaces with innovative landscaping solutions tailored for Botswana's unique environment.</p>
+        </article>
+        
+        <article style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow-md); text-align: center;">
+          <div style="width: 120px; height: 120px; background: var(--accent-green); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 3rem;">👨‍💼</div>
+          <h3 style="color: var(--primary-green); margin-bottom: 0.5rem; font-size: 1.4rem;">Farai Madorobo</h3>
+          <p style="color: var(--accent-green); font-weight: 600; margin-bottom: 1rem;">Manager</p>
+          <p style="color: var(--text-light); line-height: 1.7;">Ensuring excellence in every landscaping project across Francistown through meticulous attention to detail and commitment to client satisfaction.</p>
+        </article>
+        <article style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow-md); text-align: center;">
+          <img src="assets/team3.svg" alt="Team Member - Horticulturist" style="width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 1rem;box-shadow:var(--shadow-sm);">
+          <h3 style="color: var(--primary-green); margin-bottom: 0.5rem; font-size: 1.4rem;">Nthabiseng Kgosi</h3>
+          <p style="color: var(--accent-green); font-weight: 600; margin-bottom: 1rem;">Lead Horticulturist</p>
+          <p style="color: var(--text-light); line-height: 1.7;">Specialist in native and drought-resistant plant selection across Francistown projects.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Work With Francistown's Best Landscaping Team?</h2>
+        <p>Experience the Moofar difference. Contact us today for a free consultation and discover how we can transform your outdoor space in Francistown or anywhere in Botswana.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-primary btn-lg">Get Free Consultation</a>
+          <a href="https://wa.me/26777723232?text=Hello%20Moofar,%20I'd%20like%20to%20discuss%20my%20landscaping%20project%20in%20Francistown" target="_blank" rel="noopener" class="btn btn-outline btn-lg">WhatsApp Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/logo.svg" alt="Moofar Logo" class="footer-logo" loading="lazy">
+          <div>
+            <div class="footer-brand-title">Moofar Pty Ltd</div>
+            <div class="footer-brand-subtitle">Premium Landscaping Francistown</div>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p>📞 <a href="https://wa.me/26777723232?text=Hello%20Moofar" target="_blank" rel="noopener">+267 77 723 232</a></p>
+          <p>📞 <a href="tel:+26777085655">+267 770 856 55</a></p>
+          <p>✉️ <a href="mailto:Mookfara@gmail.com">Mookfara@gmail.com</a></p>
+          <p>📍 Francistown, Botswana</p>
+        </div>
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#" target="_blank" rel="noopener" aria-label="Facebook"><img src="assets/facebook.svg" alt="Facebook" loading="lazy"></a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Twitter"><img src="assets/twitter.svg" alt="Twitter" loading="lazy"></a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/instagram.svg" alt="Instagram" loading="lazy"></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Moofar Pty Ltd. All rights reserved. UIN: BW00009410484 | Professional Landscaping Francistown, Botswana | Adventure | Nature | Community</p>
+      </div>
+    </div>
   </footer>
+
+  <script src="js/main.js"></script>
+
 </body>
 </html>
