@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gallery — Moofar</title>
+  <meta name="description" content="Portfolio of completed landscaping projects across Botswana">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+  <div id="header-placeholder"></div>
+  <main id="mainContent" tabindex="-1">
+    <section class="container gallery">
+      <div class="section-header">
+        <p class="sub">Our Work</p>
+        <h1>Recent Projects</h1>
+        <p class="muted">Explore our portfolio of completed landscaping and horticultural projects across Botswana.</p>
+      </div>
+
+      <div class="filter-buttons" role="tablist" aria-label="Project filters">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Projects</button>
+        <button class="filter-btn" data-filter="landscaping" role="tab">Landscaping</button>
+        <button class="filter-btn" data-filter="residential" role="tab">Residential</button>
+        <button class="filter-btn" data-filter="commercial" role="tab">Commercial</button>
+        <button class="filter-btn" data-filter="fencing" role="tab">Fencing</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid" aria-live="polite">
+        <!-- Items will be injected by gallery.js for performance and lazy loading -->
+      </div>
+
+      <!-- Lightbox (hidden by default) -->
+      <div id="lightbox" class="lightbox" aria-hidden="true">
+        <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Image preview">
+          <button class="lightbox-close" aria-label="Close">&times;</button>
+          <button class="lightbox-prev" aria-label="Previous">&larr;</button>
+          <img id="lightboxImg" src="" alt=""/>
+          <button class="lightbox-next" aria-label="Next">&rarr;</button>
+          <div id="lightboxCaption" class="lightbox-caption"></div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="js/components.js" defer></script>
+  <script src="js/gallery.js" defer></script>
+</body>
+</html>
