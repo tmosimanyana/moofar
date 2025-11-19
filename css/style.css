@@ -235,3 +235,98 @@ body{margin:0;color:var(--text);background:var(--bg);line-height:1.5;font-size:1
   .lightbox-next{right:-0.5rem}
   .site-footer > div > div{flex-direction:column;text-align:center}
 }
+/* css/style.css
+   Moofar — Minimal, responsive, accessible styles
+   Place this at /css/style.css
+*/
+
+/* Reset / base */
+:root{
+  --brand: #2f855a;
+  --muted: #6b7280;
+  --bg: #ffffff;
+  --text: #111827;
+  --container: 1100px;
+  --radius: 10px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-size:16px;
+}
+
+/* Utility */
+.container{max-width:var(--container);margin:0 auto;padding:0 1rem}
+.center{text-align:center}
+.lead{font-size:1.125rem;color:var(--muted);margin-top:.25rem}
+
+/* Header */
+.site-header{background:#fff;border-bottom:1px solid #e6e6e9;padding:.65rem 0}
+.brand img{display:block}
+.main-nav a{color:var(--text);text-decoration:none;padding:.35rem .5rem;border-radius:6px}
+.main-nav a:hover, .main-nav a:focus{background:rgba(47,133,90,0.08);outline:none}
+
+/* Hero */
+.hero{background:linear-gradient(180deg, rgba(47,133,90,0.06), transparent);padding:3rem 0}
+.hero-inner{padding:1rem 0}
+.hero h1{font-size:2rem;margin:0}
+.hero .hero-ctas{margin-top:1rem}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.6rem .9rem;border-radius:8px;text-decoration:none;cursor:pointer;border:0;font-weight:600}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-outline{background:transparent;border:1px solid #d1d5db;color:var(--text)}
+
+/* Sections */
+.section-header .sub{color:var(--muted);font-weight:600;font-size:.9rem}
+.section-header h2{margin:.25rem 0 0;font-size:1.5rem}
+.showcase-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+.card{background:#fff;border-radius:12px;padding:1rem;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+.card h3{margin:.25rem 0 .5rem}
+
+/* Services grid */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.service-card{background:#fff;padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+.service-card .icon{font-size:1.5rem;margin-bottom:.5rem}
+
+/* Before-after */
+.before-after-wrapper{position:relative;overflow:hidden;border-radius:8px}
+.before-after-wrapper figure{margin:0}
+.before-after-wrapper img{width:100%;height:auto;display:block;object-fit:cover}
+.ba-after{position:absolute;inset:0;overflow:hidden}
+.ba-after img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.ba-handle{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:3px;background:rgba(255,255,255,0.8);height:100%}
+.ba-range{width:100%;-webkit-appearance:none;appearance:none;background:transparent;position:relative;z-index:6}
+
+/* Visually-hidden */
+.visually-hidden{
+  position:absolute!important;
+  height:1px;width:1px;overflow:hidden;
+  clip:rect(1px,1px,1px,1px);white-space:nowrap;border:0;padding:0;margin:-1px
+}
+
+/* CTA band */
+.cta-band{padding:2rem 0;margin-top:2rem;background:#f7faf7;border-radius:8px}
+
+/* Footer */
+.site-footer{padding:2rem 0}
+.site-footer a{color:inherit}
+
+/* Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px}
+.gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:8px}
+
+/* Responsive */
+@media (min-width:700px){
+  .hero h1{font-size:2.5rem}
+}
+

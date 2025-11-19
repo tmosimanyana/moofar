@@ -3,48 +3,45 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Gallery — Moofar</title>
-  <meta name="description" content="Portfolio of completed landscaping projects across Botswana">
+  <title>Project Gallery — Moofar Landscaping Botswana</title>
+  <meta name="description" content="Browse completed landscaping, garden maintenance, and horticultural projects by Moofar Proprietary Limited in Francistown.">
+
+  <link rel="canonical" href="https://moof.netlify.app/gallery.html">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <a class="skip-link" href="#mainContent">Skip to main content</a>
+
   <div id="header-placeholder"></div>
+
   <main id="mainContent" tabindex="-1">
-    <section class="container gallery">
-      <div class="section-header">
-        <p class="sub">Our Work</p>
-        <h1>Recent Projects</h1>
-        <p class="muted">Explore our portfolio of completed landscaping and horticultural projects across Botswana.</p>
-      </div>
+    <header class="page-header center">
+      <h1>Project Gallery</h1>
+      <p class="lead">A collection of our work from all across Botswana.</p>
+    </header>
 
-      <div class="filter-buttons" role="tablist" aria-label="Project filters">
-        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Projects</button>
-        <button class="filter-btn" data-filter="landscaping" role="tab">Landscaping</button>
-        <button class="filter-btn" data-filter="residential" role="tab">Residential</button>
-        <button class="filter-btn" data-filter="commercial" role="tab">Commercial</button>
-        <button class="filter-btn" data-filter="fencing" role="tab">Fencing</button>
-      </div>
+    <section class="gallery-grid container">
+      <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=800" alt="Landscaped garden with green lawn and trees">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="Beautiful outdoor commercial landscaping">
+      <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800" alt="Professional grounds maintenance">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800" alt="Before landscaping project">
+      <img src="https://images.unsplash.com/photo-1523418574210-1a98d0dede8b?w=800" alt="Hedge trimming and garden care">
+      <img src="https://images.unsplash.com/photo-1597098016775-e93c680a5e24?w=800" alt="Well-designed walkway and lawn">
+    </section>
 
-      <div class="gallery-grid" id="galleryGrid" aria-live="polite">
-        <!-- Items will be injected by gallery.js for performance and lazy loading -->
+    <section class="cta-band">
+      <div class="container center">
+        <h2>Want Your Property to Look This Good?</h2>
+        <a class="btn btn-primary" href="contact.html">Request a Quote</a>
       </div>
-
-      <!-- Lightbox (hidden by default) -->
-      <div id="lightbox" class="lightbox" aria-hidden="true">
-        <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Image preview">
-          <button class="lightbox-close" aria-label="Close">&times;</button>
-          <button class="lightbox-prev" aria-label="Previous">&larr;</button>
-          <img id="lightboxImg" src="" alt=""/>
-          <button class="lightbox-next" aria-label="Next">&rarr;</button>
-          <div id="lightboxCaption" class="lightbox-caption"></div>
-        </div>
-      </div>
-
     </section>
   </main>
+
   <div id="footer-placeholder"></div>
+
   <script src="js/components.js" defer></script>
-  <script src="js/gallery.js" defer></script>
 </body>
 </html>
+

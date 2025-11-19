@@ -1,68 +1,113 @@
-// Very small accessible before/after slider
+// js/before-after.js
+// Accessible before/after slider implemented with an overlay & range input.
+// Place at /js/before-after.js
+
 (function(){
-  function initBA(container){
-    const before = container.dataset.before;
-    const after = container.dataset.after;
-    const beforeLabel = container.dataset.beforeLabel || 'Before';
-    const afterLabel = container.dataset.afterLabel || 'After';
+  'use strict';
 
-    // build markup
-    const wrapper = document.createElement('div'); wrapper.className='ba';
-    wrapper.innerHTML = `
-      <img class="ba-before" src="${before}" alt="${beforeLabel}" loading="lazy">
-      <div class="ba-after" style="width:50%">
-        <img src="${after}" alt="${afterLabel}" loading="lazy">
-      </div>
-      <div class="ba-handle" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Before/After slider"></div>
-    `;
-    container.appendChild(wrapper);
+  function initBA(wrapper){
+    // If images already present as <figure> pairs, just layer them.
+    // If not, attempt to read data-before/data-after attributes and create markup.
+    if(!wrapper) return;
 
-    const handle = wrapper.querySelector('.ba-handle');
-    const afterPane = wrapper.querySelector('.ba-after');
+    // ensure we have before and after image elements
+    var beforeImg = wrapper.querySelector('.ba-before img');
+    var afterImg = wrapper.querySelector('.ba-after img');
 
-    function setPos(pct){
-      pct = Math.max(0, Math.min(100, pct));
-      afterPane.style.width = pct+'%';
-      handle.style.left = pct+'%';
-      handle.setAttribute('aria-valuenow', Math.round(pct));
+    if(!beforeImg || !afterImg){
+      // build fallback markup if data attributes exist
+      var beforeUrl = wrapper.getAttribute('data-before');
+      var afterUrl = wrapper.getAttribute('data-after');
+      if(beforeUrl && afterUrl){
+        wrapper.innerHTML = `
+          <figure class="ba-before"><img src="${beforeUrl}" alt="Before image" loading="lazy"></figure>
+          <figure class="ba-after" style="width:50%"><img src="${afterUrl}" alt="After image" loading="lazy"></figure>
+          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Compare before and after" />
+        `;
+        beforeImg = wrapper.querySelector('.ba-before img');
+        afterImg = wrapper.querySelector('.ba-after img');
+      } else {
+        return; // nothing to do
+      }
+    } else {
+      // if markup exists, append a range input and wrapper styles
+      var range = document.createElement('input');
+      range.type = 'range';
+      range.min = 0;
+      range.max = 100;
+      range.value = 50;
+      range.className = 'ba-range';
+      range.setAttribute('aria-label','Compare before and after');
+      wrapper.appendChild(range);
     }
 
-    handle.addEventListener('keydown', function(e){
-      if(e.key === 'ArrowLeft') setPos(parseFloat(handle.style.left) - 5 || 45);
-      if(e.key === 'ArrowRight') setPos(parseFloat(handle.style.left) + 5 || 55);
-      if(e.key === 'Home') setPos(0);
-      if(e.key === 'End') setPos(100);
+    // now ensure after container is positioned absolutely
+    var afterFigure = wrapper.querySelector('.ba-after');
+    var rangeEl = wrapper.querySelector('.ba-range');
+
+    wrapper.style.position = 'relative';
+    wrapper.querySelectorAll('figure').forEach(function(fig){
+      fig.style.margin = '0';
     });
 
-    // pointer drag
-    let dragging=false;
-    handle.addEventListener('pointerdown', ()=>{dragging=true; handle.setPointerCapture(event.pointerId)});
-    window.addEventListener('pointerup', ()=>dragging=false);
-    window.addEventListener('pointermove', function(e){ if(!dragging) return; const r=wrapper.getBoundingClientRect(); const pct=((e.clientX - r.left)/r.width)*100; setPos(pct); });
+    if(afterFigure){
+      afterFigure.style.position = 'absolute';
+      afterFigure.style.top = '0';
+      afterFigure.style.left = '0';
+      afterFigure.style.height = '100%';
+      afterFigure.style.width = (rangeEl ? (rangeEl.value + '%') : '50%');
+      afterFigure.style.overflow = 'hidden';
+    }
 
-    // click to move
-    wrapper.addEventListener('click', function(e){ const r=wrapper.getBoundingClientRect(); const pct=((e.clientX - r.left)/r.width)*100; setPos(pct); });
+    // create a simple handle line for visual affordance
+    var handle = document.createElement('div');
+    handle.className = 'ba-handle';
+    handle.style.left = (rangeEl ? (rangeEl.value+'%') : '50%');
+    wrapper.appendChild(handle);
+
+    function update(val){
+      if(afterFigure){
+        afterFigure.style.width = val + '%';
+      }
+      handle.style.left = val + '%';
+      // position range under handle if you want; we keep range full width (screen reader friendly)
+      if(rangeEl) rangeEl.value = val;
+    }
+
+    if(rangeEl){
+      rangeEl.addEventListener('input', function(e){
+        update(e.target.value);
+      });
+      // support keyboard arrow keys fine via native input range
+    }
+
+    // make wrapper friendly for touch dragging (optional)
+    var dragging = false;
+    wrapper.addEventListener('pointerdown', function(e){
+      dragging = true;
+    });
+    wrapper.addEventListener('pointerup', function(){ dragging = false; });
+    wrapper.addEventListener('pointercancel', function(){ dragging = false; });
+
+    wrapper.addEventListener('pointermove', function(e){
+      if(!dragging) return;
+      var rect = wrapper.getBoundingClientRect();
+      var pct = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+      update(pct);
+    });
+
+    // accessibility: allow focus to range
+    if(rangeEl){
+      rangeEl.addEventListener('focus', function(){ wrapper.classList.add('ba-focus'); });
+      rangeEl.addEventListener('blur', function(){ wrapper.classList.remove('ba-focus'); });
+    }
   }
 
-  // find all data-ba wrappers and init
   document.addEventListener('DOMContentLoaded', function(){
-    document.querySelectorAll('[data-ba] .ba, [data-ba] > .ba').forEach(el=>el.remove());
-    document.querySelectorAll('[data-ba]').forEach(wrapperEl=>{
-      const baElement = wrapperEl.querySelector('.ba');
-      if(baElement) return; // already
-      const inner = wrapperEl.querySelector('.ba');
-      // data can be on inner .ba or on wrapper
-      const data = wrapperEl.querySelector('.ba') || wrapperEl;
-      // pull attributes from child or wrapper
-      const d = wrapperEl.querySelector('.ba') ? wrapperEl.querySelector('.ba') : wrapperEl;
-      // normalize
-      const before = wrapperEl.getAttribute('data-before') || wrapperEl.dataset.before || wrapperEl.getAttribute('data-before-image') || wrapperEl.dataset.beforeImage;
-      const after = wrapperEl.getAttribute('data-after') || wrapperEl.dataset.after || wrapperEl.getAttribute('data-after-image') || wrapperEl.dataset.afterImage;
-      wrapperEl.dataset.before = before;
-      wrapperEl.dataset.after = after;
-      wrapperEl.dataset.beforeLabel = wrapperEl.getAttribute('data-before-label') || wrapperEl.dataset.beforeLabel || 'Before';
-      wrapperEl.dataset.afterLabel = wrapperEl.getAttribute('data-after-label') || wrapperEl.dataset.afterLabel || 'After';
-      if(before && after) initBA(wrapperEl);
+    var wrappers = document.querySelectorAll('.before-after-wrapper[data-ba]');
+    wrappers.forEach(function(w){
+      initBA(w);
     });
   });
 })();
+
