@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://moof.netlify.app/sitemap.xml
+
