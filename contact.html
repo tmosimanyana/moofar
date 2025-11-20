@@ -1,144 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Contact — Moofar Proprietary Limited</title>
-  <meta name="description" content="Contact Moofar for premium landscaping services in Botswana. Request a free quote.">
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://www.moofar.co.bw/contact.html">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="alternate icon" href="/favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moofar</title>
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
-  <a class="skip-link" href="#mainContent">Skip to main content</a>
-
-  <!-- Header -->
   <div id="header-placeholder"></div>
 
-  <main id="mainContent" tabindex="-1">
-    <section class="container contact-page">
-      <div class="section-header">
-        <h1>Get in Touch</h1>
-        <p>Ready to transform your outdoor space? Contact us for a free consultation and quote.</p>
-      </div>
-
-      <div class="contact-grid">
-        <!-- Contact Info -->
-        <div class="contact-info">
-          <h2>Contact Information</h2>
-          <p>Reach out through any of the following channels or fill out the form below.</p>
-<p><strong>Office Location:</strong> Francistown, Botswana</p>
-<p><strong>Email:</strong> <a href="mailto:Mookfara@gmail.com">Mookfara@gmail.com</a></p>
-<p><strong>Phone:</strong> <a href="tel:+26777085655">+267 77 085 655</a></p>
-<p><strong>WhatsApp:</strong> <a href="https://wa.me/26777723232" target="_blank" rel="noopener noreferrer">+267 77 723 232</a></p>
-        
-          <h3>Business Hours</h3>
-          <p>Mon–Fri: 08:00–17:00 · Sat: 09:00–13:00 · Sun: Closed</p>
-
-          <h3>Leadership</h3>
-          <p>Director: Mooketsi Mapugwa · Manager: Farai Madorobo</p>
-        </div>
-
-        <!-- Contact Form -->
-        <div class="contact-form-wrap">
-          <h2>Send Us a Message</h2>
-          <form id="contactForm" class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="company" novalidate>
-            <!-- Honeypot -->
-            <label class="sr-only">Leave blank<input name="company" tabindex="-1" autocomplete="off"></label>
-
-            <div class="form-row">
-              <label for="name">Your Name *</label>
-              <input id="name" name="name" type="text" required aria-required="true" aria-describedby="nameError">
-              <div class="error" id="nameError"></div>
-            </div>
-
-            <div class="form-row">
-              <label for="email">Email *</label>
-              <input id="email" name="email" type="email" required aria-required="true" aria-describedby="emailError">
-              <div class="error" id="emailError"></div>
-            </div>
-
-            <div class="form-row">
-              <label for="phone">Phone</label>
-              <input id="phone" name="phone" type="tel">
-            </div>
-
-            <div class="form-row">
-              <label for="service">Service Type *</label>
-              <select id="service" name="service" required aria-describedby="serviceError">
-                <option value="">-- Select a Service --</option>
-                <option>Landscape Maintenance</option>
-                <option>Horticultural Nursery</option>
-                <option>Bush Clearing</option>
-                <option>Fencing Services</option>
-                <option>Other</option>
-              </select>
-              <div class="error" id="serviceError"></div>
-            </div>
-
-            <div class="form-row">
-              <label for="message">Message *</label>
-              <textarea id="message" name="message" rows="6" required aria-describedby="messageError"></textarea>
-              <div class="error" id="messageError"></div>
-            </div>
-
-            <button class="btn btn-primary" type="submit">Send Message</button>
-            <div id="formStatus" role="status" aria-live="polite"></div>
-            <p class="success-message" style="display:none;" id="successMessage">Thank you! Your message has been sent.</p>
-          </form>
-        </div>
-      </div>
-
-      <!-- Map -->
-      <div class="map" style="margin-top:2rem">
-        <h2>Find Us</h2>
-        <div class="map-wrapper" style="border-radius:8px;overflow:hidden;">
-          <iframe title="Moofar office location in Francistown, Botswana" loading="lazy" 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117550.77435724939!2d27.44366897910156!3d-21.170066700000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1" 
-                  style="width:100%;height:400px;border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
-          </iframe>
-        </div>
-      </div>
-    </section>
+  <main>
+    <h1 style="color:#fff;text-align:center;margin-top:2rem;">Welcome to Moofar</h1>
+    <div id="map-placeholder"></div>
   </main>
 
-  <!-- Footer -->
   <div id="footer-placeholder"></div>
-
-  <!-- Scripts -->
   <script src="js/components.js" defer></script>
-  <script>
-    // Form submission handler for Netlify
-    document.addEventListener('DOMContentLoaded', function () {
-      const form = document.getElementById('contactForm');
-      const status = document.getElementById('formStatus');
-      const success = document.getElementById('successMessage');
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const data = new FormData(form);
-
-        fetch('/', {
-          method: 'POST',
-          body: data
-        })
-        .then(() => {
-          success.style.display = 'block';
-          status.textContent = '';
-          form.reset();
-        })
-        .catch(() => {
-          status.textContent = 'Oops! There was a problem submitting your form.';
-        });
-      });
-    });
-  </script>
 </body>
 </html>
-
