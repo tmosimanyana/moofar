@@ -1,71 +1,114 @@
 // js/components.js
-// Updated to use new logo on all pages
-
 (function(){
   'use strict';
 
+  /*** HTML Templates ***/
   function createHeader(){
     return `
-      <header id="site-header" class="site-header" role="banner">
-        <div class="container header-inner" style="display:flex;align-items:center;justify-content:space-between;gap:1rem">
-          <a href="/" class="brand" aria-label="Moofar home" style="display:flex;align-items:center;gap:.5rem;text-decoration:none">
-            <img src="assets/MOOFAR (PTY)LTD Logo.jpg" alt="Moofar logo" width="48" height="48" style="display:block;border-radius:8px;object-fit:contain">
-            <span style="font-weight:700;color:#1a1a1a">Moofar</span>
+      <header id="site-header" class="site-header">
+        <div class="container header-inner">
+
+          <!-- Brand -->
+          <a href="/" class="brand" aria-label="Moofar home">
+            <img src="assets/MOOFAR (PTY)LTD Logo.jpg" alt="Moofar logo" width="48" height="48">
+            <span>Moofar</span>
           </a>
 
-          <nav id="main-nav" class="main-nav" role="navigation" aria-label="Primary">
-            <ul style="display:flex;gap:1rem;list-style:none;margin:0;padding:0">
-              <li><a href="/" aria-current="page">Home</a></li>
-              <li><a href="/services.html">Services</a></li>
-              <li><a href="/gallery.html">Gallery</a></li>
-              <li><a href="/contact.html">Contact</a></li>
+          <!-- Mobile Menu Button -->
+          <button id="mobile-toggle" aria-label="Menu">☰</button>
+
+          <!-- Navigation -->
+          <nav id="main-nav" class="main-nav" role="navigation" aria-label="Primary navigation">
+            <ul>
+              <li><a href="/" class="nav-link">Home</a></li>
+              <li><a href="/services.html" class="nav-link">Services</a></li>
+              <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
+              <li><a href="/contact.html" class="nav-link">Contact</a></li>
             </ul>
           </nav>
+
+          <!-- WhatsApp Button -->
+          <a href="https://wa.me/26777723232" target="_blank" aria-label="WhatsApp" class="whatsapp-header-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+          </a>
         </div>
       </header>
+
+      <!-- Floating WhatsApp Button -->
+      <a href="https://wa.me/26777723232" target="_blank" aria-label="Chat on WhatsApp" id="floating-wa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+      </a>
     `;
   }
 
   function createFooter(){
     return `
-      <footer id="site-footer" class="site-footer" role="contentinfo" style="margin-top:2.5rem;padding:2rem 0;background:#111;color:#fff">
-        <div class="container" style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:flex-start">
-          <div>
+      <footer id="site-footer" class="site-footer">
+        <div class="container">
+
+          <div class="footer-brand">
+            <img src="assets/MOOFAR (PTY)LTD Logo.jpg" alt="Moofar logo" width="48" height="48">
             <strong>Moofar Proprietary Limited</strong>
-            <address style="font-style:normal;margin-top:.5rem">
-              Francistown<br>
-              North-East District, Botswana<br>
-              <a href="tel:+26777723232" style="color:inherit;text-decoration:underline">+267 777 23232</a>
-            </address>
           </div>
 
-          <nav aria-label="Footer" style="display:flex;gap:1rem">
+          <address>
+            Francistown<br>
+            North-East District, Botswana<br>
+            <a href="tel:+26777723232">+267 777 23232</a>
+          </address>
+
+          <nav aria-label="Footer Navigation">
             <a href="/services.html">Services</a>
             <a href="/gallery.html">Gallery</a>
             <a href="/contact.html">Contact</a>
           </nav>
 
-          <div style="min-width:180px;text-align:right;color:#fff">
-            <p style="margin:0">© <span id="year"></span> Moofar Proprietary Limited</p>
+          <div class="footer-right">
+            <p>© <span id="year"></span> Moofar Proprietary Limited</p>
           </div>
         </div>
       </footer>
     `;
   }
 
+  /*** Inject HTML into placeholders ***/
   document.addEventListener('DOMContentLoaded', function() {
-    var headerPlaceholder = document.getElementById('header-placeholder');
-    var footerPlaceholder = document.getElementById('footer-placeholder');
+    const headerPlaceholder = document.getElementById('header-placeholder');
+    const footerPlaceholder = document.getElementById('footer-placeholder');
 
-    if(headerPlaceholder){
-      headerPlaceholder.innerHTML = createHeader();
-    }
-    if(footerPlaceholder){
-      footerPlaceholder.innerHTML = createFooter();
-    }
+    if(headerPlaceholder) headerPlaceholder.innerHTML = createHeader();
+    if(footerPlaceholder) footerPlaceholder.innerHTML = createFooter();
 
-    var yearEl = document.getElementById('year');
+    const yearEl = document.getElementById('year');
     if(yearEl) yearEl.textContent = new Date().getFullYear();
+
+    initHeaderScripts();
   });
+
+  /*** Header Scripts (mobile toggle & scroll effect) ***/
+  function initHeaderScripts(){
+    const header = document.getElementById('site-header');
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const nav = document.getElementById('main-nav');
+
+    if(mobileToggle){
+      mobileToggle.addEventListener('click', ()=> nav.classList.toggle('open'));
+    }
+
+    function updateHeader(){
+      if(window.scrollY > 60){
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+        if(!(window.location.pathname === '/' || window.location.pathname.endsWith('index.html'))){
+          header.classList.add('scrolled');
+        }
+      }
+    }
+
+    updateHeader();
+    window.addEventListener('scroll', updateHeader);
+  }
+
 })();
 
