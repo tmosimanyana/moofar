@@ -1,6 +1,5 @@
 // js/components.js
-// Inject header and footer into pages that contain placeholders.
-// Place this at /js/components.js. Defer-load it in HTML.
+// Updated to use new logo on all pages
 
 (function(){
   'use strict';
@@ -9,10 +8,9 @@
     return `
       <header id="site-header" class="site-header" role="banner">
         <div class="container header-inner" style="display:flex;align-items:center;justify-content:space-between;gap:1rem">
-          <a <a href="/" class="brand" aria-label="Moofar home" style="display:flex;align-items:center;gap:.5rem;text-decoration:none">
-  <img src="https://raw.githubusercontent.com/tmosimanyana/moofar/748e7f844d1c003151bb26705808648139cafa36/assets/logo.svg" alt="Moofar logo" width="40" height="40" style="display:block">
-  <span style="font-weight:700;color:#1a1a1a">Moofar</span>
-</a>
+          <a href="/" class="brand" aria-label="Moofar home" style="display:flex;align-items:center;gap:.5rem;text-decoration:none">
+            <img src="assets/MOOFAR (PTY)LTD Logo.jpg" alt="Moofar logo" width="48" height="48" style="display:block;border-radius:8px;object-fit:contain">
+            <span style="font-weight:700;color:#1a1a1a">Moofar</span>
           </a>
 
           <nav id="main-nav" class="main-nav" role="navigation" aria-label="Primary">
@@ -55,7 +53,6 @@
     `;
   }
 
-  // Insert header/footer if placeholders exist
   document.addEventListener('DOMContentLoaded', function() {
     var headerPlaceholder = document.getElementById('header-placeholder');
     var footerPlaceholder = document.getElementById('footer-placeholder');
@@ -67,7 +64,6 @@
       footerPlaceholder.innerHTML = createFooter();
     }
 
-    // set year in footer if present
     var yearEl = document.getElementById('year');
     if(yearEl) yearEl.textContent = new Date().getFullYear();
   });
