@@ -1,8 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Moofar - Contact</title>
-<link rel="stylesheet" href="css/style.css"></head>
-<body><header><a href="index.html">Home</a></header>
-<main><h1>Contact</h1><p>Content coming soon.</p></main>
-<footer>&copy; 2025 Moofar</footer></body></html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moofar - Contact Us</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <img src="assets/images/logo.svg" alt="Moofar Logo" style="height:40px;">
+        <span>Moofar</span>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<main>
+  <section class="content-block">
+    <div class="container">
+      <h1>Contact Us</h1>
+      
+      <div class="contact-wrapper">
+        <section class="contact-info">
+          <h2>Get in Touch</h2>
+          <p>Have questions or ready to transform your landscape? We'd love to hear from you!</p>
+          
+          <div class="contact-details">
+            <div class="detail-item">
+              <h3>WhatsApp</h3>
+              <p><a href="https://wa.me/+26777723232" target="_blank" rel="noopener noreferrer">+267 77 723 232</a></p>
+            </div>
+            
+            <div class="detail-item">
+              <h3>Location</h3>
+              <p>Francistown, Botswana</p>
+            </div>
+            
+            <div class="detail-item">
+              <h3>Response Time</h3>
+              <p>We typically respond within 24 hours</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact-form-section">
+          <h2>Send us a Message</h2>
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" required aria-label="Your full name">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required aria-label="Your email address">
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" aria-label="Your phone number">
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service Interest *</label>
+              <select id="service" name="service" required aria-label="Select a service">
+                <option value="">-- Select a Service --</option>
+                <option value="lawn-care">Lawn Care</option>
+                <option value="garden-design">Garden Design</option>
+                <option value="hardscaping">Hardscaping</option>
+                <option value="maintenance">Maintenance</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="5" required aria-label="Your message"></textarea>
+            </div>
+
+            <button type="submit" class="btn">Send Message</button>
+            <p class="form-note" id="formNote" style="display: none;"></p>
+          </form>
+        </section>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2025 Moofar Proprietary Limited. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/+26777723232" class="floating-wa" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+  <img src="assets/icons/whatsapp.svg" alt="WhatsApp Icon">
+</a>
+
+<script>
+  // Form handling with client-side validation
+  const contactForm = document.getElementById('contactForm');
+  const formNote = document.getElementById('formNote');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(contactForm);
+      const name = formData.get('name').trim();
+      const email = formData.get('email').trim();
+      const phone = formData.get('phone').trim();
+      const service = formData.get('service');
+      const message = formData.get('message').trim();
+
+      // Validation
+      if (!name || !email || !service || !message) {
+        showFormNote('Please fill in all required fields.', 'error');
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        showFormNote('Please enter a valid email address.', 'error');
+        return;
+      }
+
+      // Create mailto link (fallback for environments without backend)
+      const mailtoLink = `mailto:info@moofar.bw?subject=Service Inquiry from ${encodeURIComponent(name)}&body=Name: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0APhone: ${encodeURIComponent(phone || 'Not provided')}%0AService: ${encodeURIComponent(service)}%0A%0AMessage:%0A${encodeURIComponent(message)}`;
+      
+      // Also provide WhatsApp option
+      const whatsappMessage = `Hi Moofar,%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0AService: ${encodeURIComponent(service)}%0A%0AMessage: ${encodeURIComponent(message)}`;
+      
+      showFormNote('Thank you! Your message is ready to send. Please choose how you\'d like to contact us: <a href="' + mailtoLink + '">Send via Email</a> or <a href="https://wa.me/+26777723232?text=' + whatsappMessage + '" target="_blank">Send via WhatsApp</a>', 'success');
+      
+      contactForm.reset();
+    });
+  }
+
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  function showFormNote(message, type) {
+    formNote.textContent = '';
+    formNote.innerHTML = message;
+    formNote.className = 'form-note ' + type;
+    formNote.style.display = 'block';
+    
+    if (type === 'error') {
+      setTimeout(() => {
+        formNote.style.display = 'none';
+      }, 5000);
+    }
+  }
+</script>
+
+</body>
+</html>
