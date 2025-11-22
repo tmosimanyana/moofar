@@ -1,106 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Moofar - Services</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Moofar (PTY) LTD services - Landscaping, construction, logistics, consultancy, and more in Botswana.">
+  <title>Our Services - Moofar (PTY) LTD</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
 
-<!-- Header -->
-<header class="site-header">
-  <div class="container">
-    <div class="header-inner">
-      <a href="index.html" class="brand">
-        <img src="assets/images/logo.svg" alt="Moofar Logo" style="height:40px;">
-        <span>Moofar</span>
-      </a>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="brand">
+          <img src="assets/MOOFAR (PTY)LTD Logo.jpg" alt="Moofar Logo">
+          <span>Moofar</span>
+        </a>
+        <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">☰</button>
+        <nav id="mainNav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- Main Content -->
-<main>
-  <section class="content-block">
+  <!-- Page Header -->
+  <section class="page-header">
     <div class="container">
       <h1>Our Services</h1>
+      <p>Comprehensive Multi-Disciplinary Solutions</p>
+    </div>
+  </section>
+
+  <!-- Services Detailed -->
+  <section>
+    <div class="container">
+      <p class="section-intro">Moofar (PTY) LTD offers a diverse range of professional services designed to meet the needs of various industries and sectors across Botswana.</p>
       
       <div class="services-detailed-grid">
-        <div class="service-detail-card">
-          <h2>Lawn Care</h2>
-          <p>We provide comprehensive lawn care services to keep your grass healthy and beautiful year-round. Our services include:</p>
+        
+        <!-- Landscaping -->
+        <div class="service-detail-card" id="landscaping">
+          <h2>🌳 Landscaping</h2>
+          <p>Transform your outdoor spaces with our professional landscaping services. We create beautiful, functional, and sustainable landscapes for residential and commercial properties.</p>
           <ul>
-            <li>Regular lawn mowing and trimming</li>
-            <li>Fertilization and weed control</li>
-            <li>Aeration and overseeding</li>
-            <li>Seasonal maintenance programs</li>
+            <li>Landscape design and planning</li>
+            <li>Garden installation and development</li>
+            <li>Lawn care and maintenance</li>
+            <li>Irrigation system installation</li>
+            <li>Tree planting and care</li>
+            <li>Outdoor lighting solutions</li>
           </ul>
         </div>
 
+        <!-- Horticulture -->
         <div class="service-detail-card">
-          <h2>Garden Design</h2>
-          <p>Create the garden of your dreams with our custom design services. We work with you to develop designs that reflect your style while thriving in Botswana's climate:</p>
+          <h2>🌱 Horticulture</h2>
+          <p>Expert horticultural services for gardens, nurseries, and agricultural projects. We provide comprehensive plant care and cultivation expertise.</p>
           <ul>
-            <li>Custom garden layouts and planning</li>
-            <li>Plant selection and recommendations</li>
-            <li>Sustainable and water-efficient designs</li>
-            <li>3D visualization and consultation</li>
-          </ul>
-        </div>
-
-        <div class="service-detail-card">
-          <h2>Hardscaping</h2>
-          <p>Build lasting outdoor structures that enhance your property's functionality and aesthetics:</p>
-          <ul>
-            <li>Patio and pathway installation</li>
-            <li>Retaining walls and borders</li>
-            <li>Outdoor seating areas and pergolas</li>
-            <li>Decorative stone and gravel work</li>
-          </ul>
-        </div>
-
-        <div class="service-detail-card">
-          <h2>Maintenance & Upkeep</h2>
-          <p>Keep your landscape in perfect condition with our ongoing maintenance services:</p>
-          <ul>
-            <li>Regular garden maintenance</li>
-            <li>Seasonal plantings and updates</li>
-            <li>Mulching and soil management</li>
+            <li>Nursery development and management</li>
+            <li>Plant propagation and cultivation</li>
+            <li>Soil testing and improvement</li>
             <li>Pest and disease management</li>
+            <li>Seasonal planting programs</li>
+            <li>Native plant selection and care</li>
           </ul>
+        </div>
+
+        <!-- Construction -->
+        <div class="service-detail-card" id="construction">
+          <h2>🏗️ Construction</h2>
+          <p>Quality construction services for residential and commercial projects. From new builds to renovations, we deliver excellence in every project.</p>
+          <ul>
+            <li>Building construction and renovations</li>
+            <li>Structural repairs and maintenance</li>
+            <li>Concrete and masonry work</li>
+            <li>Painting and finishing</li>
+            <li>Roofing services</li>
+            <li>Project management</li>
+          </ul>
+        </div>
+
+        <!-- Logistics -->
+        <div class="service-detail-card" id="logistics">
+          <h2>🚚 Logistics & Transportation</h2>
+          <p>Reliable logistics and transportation services to keep your business moving. We offer efficient delivery and distribution solutions nationwide.</p>
+          <ul>
+            <li>Freight transportation</li>
+            <li>Delivery and courier services</li>
+            <li>Fleet management</li>
+            <li>Warehousing solutions</li>
+            <li>Supply chain coordination</li>
+            <li>Equipment transport</li>
+          </ul>
+        </div>
+
+        <!-- Bush Clearing -->
+        <div class="service-detail-card">
+          <h2>🌾 Bush Clearing & Land Management</h2>
+          <p>Professional land clearing and environmental management services. We prepare land for development while maintaining environmental responsibility.</p>
+          <ul>
+            <li>Vegetation clearing and removal</li>
+            <li>Land rehabilitation</li>
+            <li>Site preparation for construction</li>
+            <li>Erosion control measures</li>
+            <li>Environmental impact management</li>
+            <li>Invasive species removal</li>
+          </ul>
+        </div>
+
+        <!-- Consultancy -->
+        <div class="service-detail-card" id="consultancy">
+          <h2>💼 Consultancy Services</h2>
+          <p>Strategic business consultancy to help organizations achieve their goals. We provide expert advice and planning support across various sectors.</p>
+          <ul>
+            <li>Business strategy and planning</li>
+            <li>Project management consulting</li>
+            <li>Feasibility studies</li>
+            <li>Process optimization</li>
+            <li>Risk assessment and management</li>
+            <li>Quality assurance consulting</li>
+          </ul>
+        </div>
+
+        <!-- Maintenance -->
+        <div class="service-detail-card">
+          <h2>🔧 Maintenance Services</h2>
+          <p>Regular maintenance programs to keep your property and facilities in optimal condition. Preventive and corrective maintenance for all types of properties.</p>
+          <ul>
+            <li>Building and facility maintenance</li>
+            <li>Grounds maintenance</li>
+            <li>Equipment servicing</li>
+            <li>Preventive maintenance programs</li>
+            <li>Emergency repairs</li>
+            <li>Seasonal upkeep services</li>
+          </ul>
+        </div>
+
+        <!-- Supply -->
+        <div class="service-detail-card">
+          <h2>📦 Supply Services</h2>
+          <p>Procurement and supply of materials, equipment, and resources for various industries. We ensure timely delivery of quality products.</p>
+          <ul>
+            <li>Construction materials supply</li>
+            <li>Landscaping materials and plants</li>
+            <li>Equipment rental and supply</li>
+            <li>General procurement services</li>
+            <li>Inventory management</li>
+            <li>Vendor coordination</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="bg-light">
+    <div class="container">
+      <h2>Why Choose Moofar?</h2>
+      <p class="lead">We combine expertise, reliability, and customer focus to deliver exceptional results</p>
+      
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="icon">✅</div>
+          <h3>Experienced Team</h3>
+          <p>Our skilled professionals bring years of industry experience to every project.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="icon">⏱️</div>
+          <h3>On-Time Delivery</h3>
+          <p>We respect deadlines and ensure projects are completed within agreed timeframes.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="icon">💰</div>
+          <h3>Competitive Pricing</h3>
+          <p>Quality services at fair prices with transparent quotations and no hidden costs.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="icon">🎯</div>
+          <h3>Quality Assurance</h3>
+          <p>Every project undergoes rigorous quality checks to ensure the highest standards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Get Started?</h2>
+      <p>Contact us today for a free consultation and quote on any of our services</p>
+      <a href="contact.html" class="cta-button">Request a Quote</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>Moofar (PTY) LTD</h4>
+          <p>Innovative, reliable, and high-quality multi-disciplinary services in Botswana.</p>
+          <p style="margin-top: 1rem; font-size: 0.9rem;">UIN: BW00009410484<br>Incorporated: September 18, 2025</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Our Services</h4>
+          <a href="services.html#landscaping">Landscaping</a>
+          <a href="services.html#construction">Construction</a>
+          <a href="services.html#consultancy">Consultancy</a>
+          <a href="services.html#logistics">Logistics</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <a href="tel:+26777723232">+267 777 23232</a>
+          <a href="tel:+26772954794">+267 729 54794</a>
+          <a href="mailto:mookfara@gmail.com">mookfara@gmail.com</a>
+          <p style="margin-top: 0.5rem;">Francistown, Botswana</p>
         </div>
       </div>
 
-      <section class="cta-block">
-        <h2>Ready to Get Started?</h2>
-        <p>Contact us today for a free consultation and quote on any of our services.</p>
-        <a href="contact.html" class="btn">Request a Free Quote</a>
-      </section>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Moofar Proprietary Limited. All rights reserved.</p>
+      </div>
     </div>
-  </section>
-</main>
+  </footer>
 
-<!-- Footer -->
-<footer class="site-footer">
-  <div class="container">
-    <p>&copy; 2025 Moofar Proprietary Limited. All rights reserved.</p>
-  </div>
-</footer>
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/26777723232" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 8.188-2.113c2.325 1.288 4.962 1.988 7.812 1.988 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.338c-2.488 0-4.925-0.675-7.063-1.95l-0.506-0.3-5.244 1.35 1.4-5.188-0.338-0.525c-1.4-2.225-2.138-4.8-2.138-7.388 0-7.512 6.125-13.637 13.637-13.637s13.637 6.125 13.637 13.637-6.125 13.637-13.637 13.637zM22.462 18.587c-0.387-0.2-2.3-1.137-2.662-1.262-0.363-0.138-0.625-0.2-0.888 0.2s-1.025 1.262-1.25 1.525c-0.225 0.262-0.45 0.3-0.838 0.1-0.387-0.2-1.638-0.6-3.125-1.925-1.15-1.025-1.925-2.3-2.15-2.687-0.225-0.387-0.025-0.6 0.175-0.787 0.175-0.175 0.387-0.45 0.587-0.675 0.2-0.225 0.263-0.387 0.4-0.65 0.138-0.262 0.063-0.487-0.037-0.687s-0.888-2.137-1.213-2.925c-0.325-0.763-0.65-0.663-0.888-0.675-0.225-0.012-0.487-0.012-0.75-0.012s-0.675 0.1-1.037 0.487c-0.363 0.387-1.387 1.35-1.387 3.3s1.413 3.825 1.613 4.087c0.2 0.262 2.825 4.312 6.863 6.05 0.962 0.412 1.712 0.662 2.3 0.85 0.962 0.3 1.838 0.262 2.525 0.162 0.775-0.112 2.3-0.937 2.625-1.85 0.325-0.912 0.325-1.7 0.225-1.85s-0.35-0.262-0.738-0.462z"/>
+    </svg>
+  </a>
 
-<!-- WhatsApp Button -->
-<a href="https://wa.me/+26777723232" class="floating-wa" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
-  <img src="assets/icons/whatsapp.svg" alt="WhatsApp Icon">
-</a>
-
+  <script src="js/main.js"></script>
 </body>
 </html>
