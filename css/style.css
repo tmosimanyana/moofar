@@ -1,5 +1,6 @@
 /* ============================================
    Moofar Website - Complete Final Design System
+   CLEANED & CONSOLIDATED VERSION
    ============================================ */
 
 * {
@@ -88,7 +89,9 @@ section {
 .bg-light { background-color: var(--bg-light); }
 .bg-gray { background-color: var(--bg-gray); }
 
-/* Header & Navigation */
+/* ============================================
+   HEADER & NAVIGATION
+   ============================================ */
 header {
   position: sticky;
   top: 0;
@@ -194,6 +197,7 @@ nav a.active {
   padding: 0.5rem;
   border-radius: 0.5rem;
   transition: all 0.25s ease;
+  z-index: 1001;
 }
 
 .mobile-toggle:hover {
@@ -201,7 +205,9 @@ nav a.active {
   transform: scale(1.1);
 }
 
-/* Hero Section */
+/* ============================================
+   HERO SECTION
+   ============================================ */
 .hero {
   position: relative;
   background: linear-gradient(135deg, #1e5428 0%, var(--primary) 50%, var(--secondary) 100%);
@@ -263,7 +269,9 @@ nav a.active {
   }
 }
 
-/* Page Header */
+/* ============================================
+   PAGE HEADER
+   ============================================ */
 .page-header {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: var(--bg-white);
@@ -295,7 +303,9 @@ nav a.active {
   margin-bottom: 0;
 }
 
-/* Buttons */
+/* ============================================
+   BUTTONS
+   ============================================ */
 .btn, .cta-button {
   display: inline-flex;
   align-items: center;
@@ -354,7 +364,9 @@ nav a.active {
   box-shadow: 0 8px 30px rgba(0,0,0,0.3);
 }
 
-/* Section Headers */
+/* ============================================
+   SECTION HEADERS
+   ============================================ */
 section h2 {
   text-align: center;
   margin-bottom: 1rem;
@@ -393,7 +405,9 @@ section h2::after {
   color: var(--text-medium);
 }
 
-/* Cards */
+/* ============================================
+   CARDS
+   ============================================ */
 .service-card, .value-card, .contact-card, .team-member {
   background: var(--bg-white);
   padding: 2rem;
@@ -448,7 +462,9 @@ section h2::after {
   margin-bottom: 0;
 }
 
-/* Grids */
+/* ============================================
+   GRIDS
+   ============================================ */
 .services-grid, .values-grid, .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -480,7 +496,9 @@ section h2::after {
   margin-top: 2rem;
 }
 
-/* Service Detail Cards */
+/* ============================================
+   SERVICE DETAIL CARDS
+   ============================================ */
 .service-detail-card {
   background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light) 100%);
   padding: 2rem;
@@ -539,7 +557,9 @@ section h2::after {
   font-size: 1.125rem;
 }
 
-/* Team Section */
+/* ============================================
+   TEAM SECTION
+   ============================================ */
 .team-member {
   text-align: center;
 }
@@ -583,7 +603,9 @@ section h2::after {
   text-align: left;
 }
 
-/* Projects/Gallery */
+/* ============================================
+   PROJECTS/GALLERY
+   ============================================ */
 .project-card, .gallery-item {
   border-radius: 1rem;
   overflow: hidden;
@@ -626,7 +648,9 @@ section h2::after {
   margin-bottom: 0;
 }
 
-/* Contact Section */
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
 .contact-wrapper {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -699,7 +723,9 @@ section h2::after {
   transform: translateX(5px);
 }
 
-/* Forms */
+/* ============================================
+   FORMS
+   ============================================ */
 .contact-form-section h2 {
   text-align: left;
   transform: none;
@@ -783,7 +809,9 @@ section h2::after {
   text-decoration: underline;
 }
 
-/* CTA Section */
+/* ============================================
+   CTA SECTION
+   ============================================ */
 .cta-section, .cta-block {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: var(--bg-white);
@@ -826,7 +854,9 @@ section h2::after {
   margin-bottom: 2rem;
 }
 
-/* Footer */
+/* ============================================
+   FOOTER
+   ============================================ */
 footer {
   background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
   color: var(--bg-white);
@@ -873,7 +903,9 @@ footer {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Floating WhatsApp Button */
+/* ============================================
+   FLOATING WHATSAPP BUTTON
+   ============================================ */
 .floating-whatsapp {
   position: fixed;
   bottom: 2rem;
@@ -907,80 +939,6 @@ footer {
 /* ============================================
    RESPONSIVE DESIGN - TABLETS (768px)
    ============================================ */
-@media (max-width: 768px) {
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.5rem; }
-  h3 { font-size: 1.25rem; }
-
-  .container {
-    padding: 0 1.5rem;
-  }
-
-  /* Show hamburger button on mobile */
-  .mobile-toggle {
-    display: block !important;
-    z-index: 1001;
-  }
-
-  /* Hide desktop menu by default */
-  nav ul {
-    display: none !important;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    padding: 1.5rem;
-    gap: 0.5rem;
-    z-index: 999;
-    border-bottom: 2px solid #2f855a;
-  }
-
-  /* Show menu when nav has active class */
-  #mainNav.active ul {
-    display: flex !important;
-  }
-
-  nav a {
-    display: block;
-    padding: 1rem 1.5rem;
-    border-radius: 0.5rem;
-    color: #1a202c;
-  }
-
-  nav a:hover {
-    background-color: rgba(47, 133, 90, 0.1);
-    color: #2f855a;
-  }
-
-  nav a::before {
-    display: none;
-  }
-
-  section {
-    padding: 2rem 0;
-  }
-
-  .services-grid, .projects-grid, .gallery-grid, .services-detailed-grid,
-  .values-grid, .team-grid, .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .contact-wrapper {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    /* ============================================
-   RESPONSIVE DESIGN - TABLETS & MOBILE
-   Add this to the end of your css/style.css
-   ============================================ */
-
 @media (max-width: 768px) {
   h1 { font-size: 2rem; }
   h2 { font-size: 1.5rem; }
@@ -1056,14 +1014,6 @@ footer {
     align-items: center;
   }
 
-  .brand span {
-    display: none;
-  }
-
-  .brand img {
-    height: 40px;
-  }
-
   section {
     padding: 2rem 0;
   }
@@ -1100,8 +1050,24 @@ footer {
     width: 30px;
     height: 30px;
   }
+
+  /* PAGE HEADER */
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
 }
 
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE (480px)
+   ============================================ */
 @media (max-width: 480px) {
   .container {
     padding: 0 1rem;
@@ -1113,6 +1079,10 @@ footer {
 
   .brand {
     font-size: 1.25rem;
+  }
+
+  .brand img {
+    height: 40px;
   }
 
   .hero h1 {
@@ -1149,4 +1119,17 @@ footer {
     width: 28px;
     height: 28px;
   }
+
+  .page-header {
+    padding: 2rem 0;
+  }
+
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .page-header p {
+    font-size: 1rem;
+  }
 }
+
