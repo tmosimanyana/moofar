@@ -976,3 +976,177 @@ footer {
 
   .footer-grid {
     grid-template-columns: 1fr;
+    /* ============================================
+   RESPONSIVE DESIGN - TABLETS & MOBILE
+   Add this to the end of your css/style.css
+   ============================================ */
+
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  /* SHOW HAMBURGER BUTTON */
+  .mobile-toggle {
+    display: block !important;
+    z-index: 1001;
+  }
+
+  /* HIDE DESKTOP MENU BY DEFAULT */
+  nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+  }
+
+  nav ul {
+    display: none !important;
+    flex-direction: column;
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0;
+    gap: 0;
+  }
+
+  /* SHOW MENU WHEN ACTIVE */
+  nav.active ul {
+    display: flex !important;
+  }
+
+  nav li {
+    list-style: none;
+  }
+
+  nav a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    border-left: 4px solid transparent;
+    transition: all 0.25s ease;
+  }
+
+  nav a:hover {
+    background-color: rgba(47, 133, 90, 0.08);
+    color: var(--primary);
+    border-left-color: var(--primary);
+  }
+
+  nav a.active {
+    background-color: rgba(47, 133, 90, 0.1);
+    color: var(--primary);
+    border-left-color: var(--primary);
+  }
+
+  nav a::before {
+    display: none;
+  }
+
+  /* HEADER ADJUSTMENTS */
+  .header-inner {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand span {
+    display: none;
+  }
+
+  .brand img {
+    height: 40px;
+  }
+
+  section {
+    padding: 2rem 0;
+  }
+
+  .services-grid,
+  .projects-grid,
+  .gallery-grid,
+  .services-detailed-grid,
+  .values-grid,
+  .team-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .floating-whatsapp {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 55px;
+    height: 55px;
+  }
+
+  .floating-whatsapp svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.25rem; }
+  h3 { font-size: 1.125rem; }
+
+  .brand {
+    font-size: 1.25rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .btn,
+  .cta-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  nav a {
+    padding: 0.875rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding: 1.5rem 0;
+  }
+
+  .floating-whatsapp {
+    bottom: 1rem;
+    right: 1rem;
+    width: 50px;
+    height: 50px;
+  }
+
+  .floating-whatsapp svg {
+    width: 28px;
+    height: 28px;
+  }
+}
