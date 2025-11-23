@@ -5,185 +5,224 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Contact Moofar (PTY) LTD in Francistown, Botswana. Get in touch for professional multi-disciplinary services.">
   <title>Contact Us - Moofar (PTY) LTD</title>
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contact Moofar (PTY) LTD">
+  <meta property="og:description" content="Get in touch for professional services in Botswana">
+  <meta property="og:image" content="https://moof.netlify.app/assets/MOOFAR%20Logo.jpg">
+  <meta property="og:url" content="https://moof.netlify.app/contact.html">
+  
+  <style>
+    body { opacity: 0; transition: opacity 0.3s ease; }
+    body.loaded { opacity: 1; }
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #2f855a;
+      color: white;
+      padding: 8px 16px;
+      z-index: 10000;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+  </style>
+  
   <link rel="stylesheet" href="css/style.css">
   <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Header -->
   <header>
     <div class="container">
       <div class="header-inner">
         <a href="index.html" class="brand">
-          <img src="assets/MOOFAR Logo.jpg" alt="Moofar Logo">
+          <img src="assets/MOOFAR%20Logo.jpg" alt="Moofar Logo" width="50" height="50">
           <span>Moofar</span>
         </a>
-        <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">☰</button>
-        <nav id="mainNav">
+        <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+        <nav id="mainNav" aria-label="Main navigation">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
           </ul>
         </nav>
       </div>
     </div>
   </header>
 
-  <!-- Page Header -->
-  <section class="page-header">
-    <div class="container">
-      <h1>Contact Us</h1>
-      <p>Get in Touch with Moofar</p>
-    </div>
-  </section>
-
-  <!-- Contact Information Cards -->
-  <section>
-    <div class="container">
-      <h2>Get in Touch</h2>
-      <p class="lead">Have questions or ready to start your project? We'd love to hear from you!</p>
-      
-      <div class="contact-grid">
-        <div class="contact-card">
-          <div class="icon">📱</div>
-          <h3>Call Us</h3>
-          <a href="tel:+26777723232">+267 777 23232</a>
-          <a href="tel:+26772954794">+267 729 54794</a>
-        </div>
-
-        <div class="contact-card">
-          <div class="icon">✉️</div>
-          <h3>Email Us</h3>
-          <a href="mailto:mookfara@gmail.com">mookfara@gmail.com</a>
-        </div>
-
-        <div class="contact-card">
-          <div class="icon">📍</div>
-          <h3>Visit Us</h3>
-          <p>Francistown, Botswana</p>
-        </div>
-
-        <div class="contact-card">
-          <div class="icon">💬</div>
-          <h3>WhatsApp</h3>
-          <a href="https://wa.me/26777723232" target="_blank" rel="noopener noreferrer">Chat with us on WhatsApp</a>
-        </div>
+  <main id="main-content">
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>Get in Touch with Moofar</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Form Section -->
-  <section class="bg-light">
-    <div class="container">
-      <div class="contact-wrapper">
-        <div class="contact-info">
-          <h2>Send Us a Message</h2>
-          <p>Fill out the form and we'll get back to you within 24 hours.</p>
-          
-          <div class="contact-details">
-            <div class="detail-item">
-              <h3>Business Hours</h3>
-              <p>Monday - Friday: 8:00 AM - 5:00 PM<br>
-              Saturday: 8:00 AM - 1:00 PM<br>
-              Sunday: Closed</p>
-            </div>
-            
-            <div class="detail-item">
-              <h3>Response Time</h3>
-              <p>We typically respond to inquiries within 24 hours during business days.</p>
-            </div>
+    <!-- Contact Information Cards -->
+    <section>
+      <div class="container">
+        <h2>Get in Touch</h2>
+        <p class="lead">Have questions or ready to start your project? We'd love to hear from you!</p>
+        
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="icon">📱</div>
+            <h3>Call Us</h3>
+            <a href="tel:+26777723232">+267 777 23232</a>
+            <a href="tel:+26772954794">+267 729 54794</a>
+          </div>
 
-            <div class="detail-item">
-              <h3>Company Information</h3>
-              <p>UIN: BW00009410484<br>
-              Incorporated: September 18, 2025<br>
-              Francistown, Botswana</p>
-            </div>
+          <div class="contact-card">
+            <div class="icon">✉️</div>
+            <h3>Email Us</h3>
+            <a href="mailto:mookfara@gmail.com">mookfara@gmail.com</a>
+          </div>
+
+          <div class="contact-card">
+            <div class="icon">📍</div>
+            <h3>Visit Us</h3>
+            <p>Francistown, Botswana</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="icon">💬</div>
+            <h3>WhatsApp</h3>
+            <a href="https://wa.me/26777723232" target="_blank" rel="noopener noreferrer">Chat with us on WhatsApp</a>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="contact-form-section">
-          <h2>Quick Inquiry Form</h2>
-          <form id="contactForm" class="contact-form">
-            <div class="form-group">
-              <label for="name">Full Name *</label>
-              <input type="text" id="name" name="name" required aria-label="Your full name" placeholder="John Doe">
+    <!-- Contact Form Section with Netlify Forms -->
+    <section class="bg-light">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <h2>Send Us a Message</h2>
+            <p>Fill out the form and we'll get back to you within 24 hours.</p>
+            
+            <div class="contact-details">
+              <div class="detail-item">
+                <h3>Business Hours</h3>
+                <p>Monday - Friday: 8:00 AM - 5:00 PM<br>
+                Saturday: 8:00 AM - 1:00 PM<br>
+                Sunday: Closed</p>
+              </div>
+              
+              <div class="detail-item">
+                <h3>Response Time</h3>
+                <p>We typically respond to inquiries within 24 hours during business days.</p>
+              </div>
+
+              <div class="detail-item">
+                <h3>Company Information</h3>
+                <p>UIN: BW00009410484<br>
+                Incorporated: September 18, 2025<br>
+                Francistown, Botswana</p>
+              </div>
             </div>
+          </div>
 
-            <div class="form-group">
-              <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" required aria-label="Your email address" placeholder="john@example.com">
-            </div>
+          <div class="contact-form-section">
+            <h2>Quick Inquiry Form</h2>
+            
+            <!-- Netlify Form -->
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm" class="contact-form">
+              <!-- Hidden fields for Netlify -->
+              <input type="hidden" name="form-name" value="contact">
+              <div style="display: none;">
+                <label>Don't fill this out if you're human: <input name="bot-field"></label>
+              </div>
 
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" aria-label="Your phone number" placeholder="+267 XXX XXXXX">
-            </div>
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required aria-label="Your full name" placeholder="John Doe">
+              </div>
 
-            <div class="form-group">
-              <label for="service">Service Interest *</label>
-              <select id="service" name="service" required aria-label="Select a service">
-                <option value="">-- Select a Service --</option>
-                <option value="landscaping">Landscaping</option>
-                <option value="horticulture">Horticulture</option>
-                <option value="construction">Construction</option>
-                <option value="logistics">Logistics & Transportation</option>
-                <option value="bush-clearing">Bush Clearing & Land Management</option>
-                <option value="consultancy">Consultancy Services</option>
-                <option value="maintenance">Maintenance Services</option>
-                <option value="supply">Supply Services</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required aria-label="Your email address" placeholder="john@example.com">
+              </div>
 
-            <div class="form-group">
-              <label for="message">Your Message *</label>
-              <textarea id="message" name="message" rows="5" required aria-label="Your message" placeholder="Tell us about your project or inquiry..."></textarea>
-            </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" aria-label="Your phone number" placeholder="+267 XXX XXXXX">
+              </div>
 
-            <button type="submit" class="btn">Send Message</button>
-            <p class="form-note" id="formNote" style="display: none;"></p>
-          </form>
+              <div class="form-group">
+                <label for="service">Service Interest *</label>
+                <select id="service" name="service" required aria-label="Select a service">
+                  <option value="">-- Select a Service --</option>
+                  <option value="landscaping">Landscaping</option>
+                  <option value="horticulture">Horticulture</option>
+                  <option value="construction">Construction</option>
+                  <option value="logistics">Logistics & Transportation</option>
+                  <option value="bush-clearing">Bush Clearing & Land Management</option>
+                  <option value="consultancy">Consultancy Services</option>
+                  <option value="maintenance">Maintenance Services</option>
+                  <option value="supply">Supply Services</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Your Message *</label>
+                <textarea id="message" name="message" rows="5" required aria-label="Your message" placeholder="Tell us about your project or inquiry..."></textarea>
+              </div>
+
+              <button type="submit" class="btn">Send Message</button>
+              <p class="form-note" id="formNote" style="display: none;"></p>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Service Areas -->
-  <section>
-    <div class="container">
-      <h2>Service Areas</h2>
-      <p class="lead">We proudly serve clients across Botswana</p>
-      
-      <div class="values-grid">
-        <div class="value-card">
-          <div class="icon">🏙️</div>
-          <h3>Urban Areas</h3>
-          <p>Comprehensive services for residential and commercial properties in cities and towns.</p>
-        </div>
+    <!-- Service Areas -->
+    <section>
+      <div class="container">
+        <h2>Service Areas</h2>
+        <p class="lead">We proudly serve clients across Botswana</p>
+        
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="icon">🏙️</div>
+            <h3>Urban Areas</h3>
+            <p>Comprehensive services for residential and commercial properties in cities and towns.</p>
+          </div>
 
-        <div class="value-card">
-          <div class="icon">🌄</div>
-          <h3>Rural Communities</h3>
-          <p>Specialized solutions for agricultural and rural development projects.</p>
-        </div>
+          <div class="value-card">
+            <div class="icon">🌄</div>
+            <h3>Rural Communities</h3>
+            <p>Specialized solutions for agricultural and rural development projects.</p>
+          </div>
 
-        <div class="value-card">
-          <div class="icon">🏢</div>
-          <h3>Commercial Zones</h3>
-          <p>Professional services for industrial parks, business districts, and corporate facilities.</p>
-        </div>
+          <div class="value-card">
+            <div class="icon">🏢</div>
+            <h3>Commercial Zones</h3>
+            <p>Professional services for industrial parks, business districts, and corporate facilities.</p>
+          </div>
 
-        <div class="value-card">
-          <div class="icon">🌍</div>
-          <h3>Nationwide Coverage</h3>
-          <p>We operate throughout Botswana and are ready to serve your location.</p>
+          <div class="value-card">
+            <div class="icon">🌍</div>
+            <h3>Nationwide Coverage</h3>
+            <p>We operate throughout Botswana and are ready to serve your location.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
@@ -234,61 +273,5 @@
   </a>
 
   <script src="js/main.js"></script>
-  <script>
-    // Contact form handling
-    const contactForm = document.getElementById('contactForm');
-    const formNote = document.getElementById('formNote');
-
-    if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = new FormData(contactForm);
-        const name = formData.get('name').trim();
-        const email = formData.get('email').trim();
-        const phone = formData.get('phone').trim();
-        const service = formData.get('service');
-        const message = formData.get('message').trim();
-
-        // Validation
-        if (!name || !email || !service || !message) {
-          showFormNote('Please fill in all required fields.', 'error');
-          return;
-        }
-
-        if (!isValidEmail(email)) {
-          showFormNote('Please enter a valid email address.', 'error');
-          return;
-        }
-
-        // Create mailto link
-        const mailtoLink = `mailto:mookfara@gmail.com?subject=Service Inquiry from ${encodeURIComponent(name)}&body=Name: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0APhone: ${encodeURIComponent(phone || 'Not provided')}%0AService: ${encodeURIComponent(service)}%0A%0AMessage:%0A${encodeURIComponent(message)}`;
-        
-        // WhatsApp message
-        const whatsappMessage = `Hi Moofar,%0A%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0APhone: ${encodeURIComponent(phone || 'Not provided')}%0AService Interest: ${encodeURIComponent(service)}%0A%0AMessage:%0A${encodeURIComponent(message)}`;
-        
-        showFormNote('Thank you! Choose how to send your message: <br><a href="' + mailtoLink + '" style="color: inherit; text-decoration: underline;">Send via Email</a> or <a href="https://wa.me/26777723232?text=' + whatsappMessage + '" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Send via WhatsApp</a>', 'success');
-        
-        contactForm.reset();
-      });
-    }
-
-    function isValidEmail(email) {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return emailRegex.test(email);
-    }
-
-    function showFormNote(message, type) {
-      formNote.innerHTML = message;
-      formNote.className = 'form-note ' + type;
-      formNote.style.display = 'block';
-      
-      if (type === 'error') {
-        setTimeout(() => {
-          formNote.style.display = 'none';
-        }, 5000);
-      }
-    }
-  </script>
 </body>
 </html>
