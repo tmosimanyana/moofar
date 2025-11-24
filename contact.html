@@ -13,29 +13,13 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Contact Moofar (PTY) LTD">
   <meta property="og:description" content="Get in touch for professional services in Botswana">
-  <meta property="og:image" content="https://moof.netlify.app/assets/MOOFAR%20Logo.jpg">
+  <meta property="og:image" content="https://moof.netlify.app/assets/MOOFAR Logo.jpg">
   <meta property="og:url" content="https://moof.netlify.app/contact.html">
-  
-  <style>
-    body { opacity: 0; transition: opacity 0.3s ease; }
-    body.loaded { opacity: 1; }
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: #2f855a;
-      color: white;
-      padding: 8px 16px;
-      z-index: 10000;
-      text-decoration: none;
-    }
-    .skip-link:focus { top: 0; }
-  </style>
   
   <link rel="stylesheet" href="css/style.css">
   <link rel="manifest" href="site.webmanifest">
 </head>
-<body>
+<body class="loaded">
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -44,7 +28,7 @@
     <div class="container">
       <div class="header-inner">
         <a href="index.html" class="brand">
-          <img src="assets/MOOFAR%20Logo.jpg" alt="Moofar Logo" width="50" height="50">
+          <img src="assets/MOOFAR Logo.jpg" alt="Moofar Logo" width="50" height="50">
           <span>Moofar</span>
         </a>
         <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
@@ -181,7 +165,7 @@
                 <textarea id="message" name="message" rows="5" required aria-label="Your message" placeholder="Tell us about your project or inquiry..."></textarea>
               </div>
 
-              <button type="submit" class="btn">Send Message</button>
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
               <p class="form-note" id="formNote" style="display: none;"></p>
             </form>
           </div>
