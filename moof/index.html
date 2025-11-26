@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Moofar (PTY) LTD - Professional multi-disciplinary services in Botswana including landscaping, construction, logistics, and consultancy.">
+  <meta name="keywords" content="Botswana, Landscaping, Construction, Logistics, Consultancy">
+  <meta property="og:title" content="Moofar (PTY) LTD - Multi-Disciplinary Solutions">
+  <meta property="og:description" content="Innovative, reliable, and professional services across Botswana.">
+  <meta property="og:image" content="assets/moofar-og-image.jpg">
+  <meta property="og:url" content="https://www.moofar.co.bw/">
   <title>Moofar (PTY) LTD - Home</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="manifest" href="site.webmanifest">
@@ -15,10 +20,10 @@
     <div class="container">
       <div class="header-inner">
         <a href="index.html" class="brand">
-          <img src="assets/MOOFAR Logo.jpg" alt="Moofar Logo">
+          <img src="assets/moofar-logo.jpg" alt="Moofar (PTY) LTD Logo" loading="lazy">
           <span>Moofar</span>
         </a>
-        <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">☰</button>
+        <button class="mobile-toggle" aria-controls="mainNav" aria-expanded="false" onclick="toggleMenu()" aria-label="Toggle navigation menu">☰</button>
         <nav id="mainNav">
           <ul>
             <li><a href="index.html">Home</a></li>
@@ -31,129 +36,134 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h1>Moofar (PTY) LTD</h1>
-      <p>Multi-Disciplinary Solutions Provider in Botswana</p>
-      <p class="tagline">Innovative • Reliable • Professional</p>
-      <a href="contact.html" class="cta-button">Get Started</a>
-    </div>
-  </section>
+  <!-- Main Content -->
+  <main>
 
-  <!-- About Preview -->
-  <section>
-    <div class="container">
-      <h2>Who We Are</h2>
-      <p class="lead">Moofar (PTY) LTD is a Botswana-based, multi-disciplinary company dedicated to providing a wide range of innovative, reliable, and high-quality services. Established with a commitment to integrity, professionalism, and customer satisfaction.</p>
-      
-      <div class="values-grid" style="margin-top: 2rem;">
-        <div class="value-card">
-          <div class="icon">🎯</div>
-          <h3>Our Mission</h3>
-          <p>To deliver outstanding services through operational excellence, skilled workmanship, innovation, and a commitment to improving the communities and industries we serve.</p>
-        </div>
-        <div class="value-card">
-          <div class="icon">🔭</div>
-          <h3>Our Vision</h3>
-          <p>To become a leading and trusted provider of diversified, sustainable, and customer-focused solutions in Botswana and the region.</p>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Moofar (PTY) LTD</h1>
+        <p>Multi-Disciplinary Solutions Provider in Botswana</p>
+        <p class="tagline">Innovative • Reliable • Professional</p>
+        <a href="contact.html" class="cta-button">Get Started</a>
+      </div>
+    </section>
+
+    <!-- About Preview -->
+    <section>
+      <div class="container">
+        <h2>Who We Are</h2>
+        <p class="lead">Moofar (PTY) LTD is a Botswana-based, multi-disciplinary company dedicated to providing a wide range of innovative, reliable, and high-quality services. Established with a commitment to integrity, professionalism, and customer satisfaction.</p>
+        
+        <div class="values-grid values-grid-top">
+          <div class="value-card">
+            <div class="icon">🎯</div>
+            <h3>Our Mission</h3>
+            <p>To deliver outstanding services through operational excellence, skilled workmanship, innovation, and a commitment to improving the communities and industries we serve.</p>
+          </div>
+          <div class="value-card">
+            <div class="icon">🔭</div>
+            <h3>Our Vision</h3>
+            <p>To become a leading and trusted provider of diversified, sustainable, and customer-focused solutions in Botswana and the region.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Services Preview -->
-  <section class="bg-light">
-    <div class="container">
-      <h2>Our Services</h2>
-      <p class="lead">Comprehensive solutions across multiple industries</p>
-      
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="icon">🌳</div>
-          <h3>Landscaping</h3>
-          <p>Professional landscape design, installation, and maintenance services for residential and commercial properties.</p>
+    <!-- Services Preview -->
+    <section class="bg-light">
+      <div class="container">
+        <h2>Our Services</h2>
+        <p class="lead">Comprehensive solutions across multiple industries</p>
+        
+        <div class="services-grid">
+          <div class="service-card" id="landscaping">
+            <div class="icon">🌳</div>
+            <h3>Landscaping</h3>
+            <p>Professional landscape design, installation, and maintenance services for residential and commercial properties.</p>
+          </div>
+
+          <div class="service-card" id="horticulture">
+            <div class="icon">🌱</div>
+            <h3>Horticulture</h3>
+            <p>Expert garden cultivation, nursery development, and comprehensive plant care services.</p>
+          </div>
+
+          <div class="service-card" id="construction">
+            <div class="icon">🏗️</div>
+            <h3>Construction</h3>
+            <p>Building construction, renovations, and complete maintenance solutions for all structures.</p>
+          </div>
+
+          <div class="service-card" id="logistics">
+            <div class="icon">🚚</div>
+            <h3>Logistics</h3>
+            <p>Efficient transportation, distribution, and courier services nationwide.</p>
+          </div>
+
+          <div class="service-card" id="bush-clearing">
+            <div class="icon">🌾</div>
+            <h3>Bush Clearing</h3>
+            <p>Environmental management, land rehabilitation, and vegetation control services.</p>
+          </div>
+
+          <div class="service-card" id="consultancy">
+            <div class="icon">💼</div>
+            <h3>Consultancy</h3>
+            <p>Business advisory, project management, and strategic planning support.</p>
+          </div>
         </div>
 
-        <div class="service-card">
-          <div class="icon">🌱</div>
-          <h3>Horticulture</h3>
-          <p>Expert garden cultivation, nursery development, and comprehensive plant care services.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="icon">🏗️</div>
-          <h3>Construction</h3>
-          <p>Building construction, renovations, and complete maintenance solutions for all structures.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="icon">🚚</div>
-          <h3>Logistics</h3>
-          <p>Efficient transportation, distribution, and courier services nationwide.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="icon">🌾</div>
-          <h3>Bush Clearing</h3>
-          <p>Environmental management, land rehabilitation, and vegetation control services.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="icon">💼</div>
-          <h3>Consultancy</h3>
-          <p>Business advisory, project management, and strategic planning support.</p>
-        </div>
-      </div>
-
-      <div style="text-align: center; margin-top: 2rem;">
-        <a href="services.html" class="cta-button">View All Services</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Values Section -->
-  <section>
-    <div class="container">
-      <h2>Core Values</h2>
-      <p class="lead">The principles that guide everything we do</p>
-      
-      <div class="values-grid">
-        <div class="value-card">
-          <div class="icon">👥</div>
-          <h3>Customer Focus</h3>
-          <p>Tailoring services to meet and exceed expectations.</p>
-        </div>
-
-        <div class="value-card">
-          <div class="icon">⭐</div>
-          <h3>Excellence</h3>
-          <p>Pursuing excellence in every task we undertake.</p>
-        </div>
-
-        <div class="value-card">
-          <div class="icon">🤝</div>
-          <h3>Integrity</h3>
-          <p>Building trust through honesty, fairness, and transparency.</p>
-        </div>
-
-        <div class="value-card">
-          <div class="icon">💡</div>
-          <h3>Innovation</h3>
-          <p>Bringing new ideas and improved solutions to every project.</p>
+        <div class="cta-center">
+          <a href="services.html" class="cta-button">View All Services</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="container">
-      <h2>Ready to Work With Us?</h2>
-      <p>Contact us today to discuss your project requirements</p>
-      <a href="contact.html" class="cta-button">Get in Touch</a>
-    </div>
-  </section>
+    <!-- Core Values Section -->
+    <section>
+      <div class="container">
+        <h2>Core Values</h2>
+        <p class="lead">The principles that guide everything we do</p>
+        
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="icon">👥</div>
+            <h3>Customer Focus</h3>
+            <p>Tailoring services to meet and exceed expectations.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="icon">⭐</div>
+            <h3>Excellence</h3>
+            <p>Pursuing excellence in every task we undertake.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="icon">🤝</div>
+            <h3>Integrity</h3>
+            <p>Building trust through honesty, fairness, and transparency.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="icon">💡</div>
+            <h3>Innovation</h3>
+            <p>Bringing new ideas and improved solutions to every project.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to Work With Us?</h2>
+        <p>Contact us today to discuss your project requirements</p>
+        <a href="contact.html" class="cta-button" role="button">Get in Touch</a>
+      </div>
+    </section>
+
+  </main>
 
   <!-- Footer -->
   <footer>
@@ -162,7 +172,7 @@
         <div class="footer-section">
           <h4>Moofar (PTY) LTD</h4>
           <p>Innovative, reliable, and high-quality multi-disciplinary services in Botswana.</p>
-          <p style="margin-top: 1rem; font-size: 0.9rem;">UIN: BW00009410484<br>Incorporated: September 18, 2025</p>
+          <p class="small-text">UIN: BW00009410484<br>Incorporated: September 18, 2025</p>
         </div>
 
         <div class="footer-section">
@@ -186,7 +196,7 @@
           <a href="tel:+26777723232">+267 777 23232</a>
           <a href="tel:+26772954794">+267 729 54794</a>
           <a href="mailto:mookfara@gmail.com">mookfara@gmail.com</a>
-          <p style="margin-top: 0.5rem;">Francistown, Botswana</p>
+          <p class="small-text">Francistown, Botswana</p>
         </div>
       </div>
 
@@ -206,3 +216,4 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+
