@@ -10,7 +10,7 @@ The site is deployed via **Netlify** using **GitHub continuous deployment**.
 
 The live website is available at:
 
-**https://moof.netlify.app/**
+**https://moofar.vercel.app/**
 
 Every push to the `main` branch triggers an automatic redeploy on Netlify.
 
