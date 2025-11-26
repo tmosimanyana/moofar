@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Moofar (PTY) LTD — Landscaping, Construction & Logistics | Botswana</title>
-  <link rel="icon" href="/assets/favicon.ico">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%231f7a4a' width='100' height='100'/><text x='50' y='65' font-size='60' font-weight='bold' fill='white' text-anchor='middle'>M</text></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"/>
@@ -26,17 +26,19 @@
     .hero{min-height:78vh;background:linear-gradient(180deg, rgba(12,30,18,0.32), rgba(12,30,18,0.45)), linear-gradient(135deg, #1f7a4a 0%, #2fa66a 100%);border-bottom-left-radius:1.25rem;border-bottom-right-radius:1.25rem}
     .glass{background:var(--card);backdrop-filter:blur(6px);box-shadow:0 10px 30px rgba(16,24,32,0.08);border-radius:12px}
     .icon-circle{width:68px;height:68px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--green-1),var(--green-2));color:white}
-    .btn-primary{background:linear-gradient(90deg,var(--green-1),var(--green-2));color:white;padding:.9rem 1.25rem;border-radius:12px;font-weight:700;text-decoration:none;display:inline-block}
-    .btn-primary:hover{opacity:0.9;transform:translateY(-2px);transition:all 0.3s}
-    .btn-ghost{background:white;padding:.7rem 1rem;border-radius:10px;border:1px solid rgba(15,23,42,0.06)}
-    .wa-btn{position:fixed;right:1.25rem;bottom:1.25rem;z-index:60;border-radius:999px;box-shadow:0 8px 26px rgba(34,197,94,0.18);width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#25d366,#20ba58);color:white;text-decoration:none;font-size:24px}
-    .avatar{width:150px;height:150px;border-radius:999px;object-fit:cover;border:6px solid rgba(255,255,255,0.9);box-shadow:0 12px 30px rgba(2,6,23,0.12)}
+    .btn-primary{background:linear-gradient(90deg,var(--green-1),var(--green-2));color:white;padding:.9rem 1.25rem;border-radius:12px;font-weight:700;text-decoration:none;display:inline-block;border:none;cursor:pointer;transition:all 0.3s}
+    .btn-primary:hover{opacity:0.9;transform:translateY(-2px);}
+    .btn-ghost{background:white;padding:.7rem 1rem;border-radius:10px;border:1px solid rgba(15,23,42,0.06);text-decoration:none;cursor:pointer;transition:all 0.3s}
+    .btn-ghost:hover{background-opacity:0.9;}
+    .wa-btn{position:fixed;right:1.25rem;bottom:1.25rem;z-index:60;border-radius:999px;box-shadow:0 8px 26px rgba(34,197,94,0.18);width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#25d366,#20ba58);color:white;text-decoration:none;font-size:24px;transition:transform 0.3s}
+    .wa-btn:hover{transform:scale(1.1);}
     .badge{background:linear-gradient(90deg,#fff,#f7fff7);padding:.6rem 1rem;border-radius:999px;border:1px solid rgba(30,70,40,0.06);display:inline-flex;gap:.6rem;align-items:center}
     @media (max-width:768px){.hero{min-height:62vh;padding-top:3.5rem}.avatar{width:120px;height:120px}}
     .gallery-item{transition:transform .3s ease-in-out; cursor:pointer;}
     .gallery-item:hover{transform:scale(1.05);}
     .service-card{transition:all 0.3s ease;border:1px solid rgba(31,122,74,0.1)}
     .service-card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(31,122,74,0.15);border-color:var(--green-1)}
+    input, textarea { font-family: inherit; }
   </style>
 </head>
 <body>
@@ -247,7 +249,7 @@
           </div>
           <div>
             <h3 class="font-bold text-lg">Phone</h3>
-            <p class="text-slate-600">+267 XXX XXXX</p>
+            <p class="text-slate-600"><a href="tel:+267XXXXXXXX" class="hover:text-green-600 transition">+267 XXX XXXX</a></p>
           </div>
         </div>
         <div class="flex gap-4">
@@ -256,7 +258,7 @@
           </div>
           <div>
             <h3 class="font-bold text-lg">Email</h3>
-            <p class="text-slate-600">info@moofar.co.bw</p>
+            <p class="text-slate-600"><a href="mailto:info@moofar.co.bw" class="hover:text-green-600 transition">info@moofar.co.bw</a></p>
           </div>
         </div>
       </div>
@@ -300,9 +302,9 @@
       <div>
         <h3 class="font-bold mb-4">Follow Us</h3>
         <div class="flex gap-4">
-          <a href="#" class="text-slate-400 hover:text-white transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-          <a href="#" class="text-slate-400 hover:text-white transition"><i data-lucide="twitter" class="w-5 h-5"></i></a>
-          <a href="#" class="text-slate-400 hover:text-white transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+          <a href="#" class="text-slate-400 hover:text-white transition" aria-label="Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+          <a href="#" class="text-slate-400 hover:text-white transition" aria-label="Twitter"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+          <a href="#" class="text-slate-400 hover:text-white transition" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
         </div>
       </div>
     </div>
@@ -313,7 +315,7 @@
 </footer>
 
 <!-- WhatsApp Button -->
-<a href="https://wa.me/267XXXXXXXX" class="wa-btn" title="Contact us on WhatsApp">
+<a href="https://wa.me/267XXXXXXXX" class="wa-btn" title="Contact us on WhatsApp" aria-label="WhatsApp">
   <i data-lucide="message-circle" class="w-6 h-6"></i>
 </a>
 
@@ -321,12 +323,26 @@
   document.getElementById('year').textContent = new Date().getFullYear();
   lucide.createIcons();
   const lightbox = GLightbox({ selector: '.glightbox' });
-  document.getElementById('contactForm').addEventListener('submit', async function(e){
+  
+  document.getElementById('contactForm').addEventListener('submit', function(e){
     e.preventDefault();
-    const form = e.target; const msg = document.getElementById('formMsg');
-    msg.classList.remove('hidden'); msg.textContent = 'Sending...';
-    setTimeout(()=>{ msg.textContent = 'Thanks — your message was received.'; form.reset(); }, 900);
+    const form = e.target;
+    const msg = document.getElementById('formMsg');
+    const btn = form.querySelector('button[type="submit"]');
+    
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    msg.classList.remove('hidden');
+    msg.textContent = 'Sending...';
+    
+    setTimeout(() => {
+      msg.textContent = 'Thanks — your message was received.';
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
+      form.reset();
+    }, 900);
   });
 </script>
 </body>
 </html>
+
