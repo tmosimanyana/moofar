@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moofar Proprietary Limited - Professional Landscaping, Construction, and Logistics in Botswana</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Font Icons (Lucide) -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
-    <!-- Implement Audit Suggestion 4: Modernize Color Palette -->
     <style>
         :root {
             /* Primary Colors - Slightly deeper green */
@@ -100,7 +97,8 @@
         
         /* Audit Suggestion 10: Critical CSS Inline - simplified for Tailwind */
         .hero { 
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80');
+            /* UPDATED: Using a more culturally representative image (hero) */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1596707833580-0a2a16d56d60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             min-height: 90vh;
@@ -114,9 +112,7 @@
         html { scroll-behavior: smooth; }
     </style>
     
-    <!-- Audit Suggestion 13: Improved Meta Descriptions -->
     <meta name="description" content="Professional landscaping, construction, maintenance, logistics & consultancy services in Botswana. Moofar (PTY) LTD delivers real outcomes for businesses and communities.">
-    <!-- Audit Suggestion 12: Structured Data (Schema.org) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -145,16 +141,13 @@
 </head>
 <body class="font-body text-gray-800 antialiased mobile-nav-inactive">
 
-    <!-- Header and Navigation -->
     <header class="sticky top-0 z-40 bg-white shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
-            <!-- Logo (Audit Suggestion 1: Standardized Path) -->
             <a href="#" class="flex items-center space-x-3">
                 <img src="https://raw.githubusercontent.com/tmosimanyana/moofar/379c8ca26884ff46c755263514118fd3ff499f19/assets/MOOFAR%20Logo.jpg" alt="Moofar Logo" class="h-10 w-10 rounded-full object-cover">
                 <span class="text-2xl font-bold text-primary font-heading tracking-tight">MOOFAR</span>
             </a>
             
-            <!-- Desktop Navigation -->
             <nav id="mainNav" class="hidden md:flex">
                 <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 text-center">
                     <li><a href="#about" class="text-gray-600 hover:text-primary font-medium transition duration-200" onclick="closeMenu()">About Us</a></li>
@@ -164,18 +157,15 @@
                 </ul>
             </nav>
 
-            <!-- Mobile Menu Toggle Button (Audit Suggestion 7) -->
             <button class="mobile-toggle text-primary focus:outline-none" aria-label="Toggle Menu" aria-expanded="false" onclick="toggleMenu()">
                 <i data-lucide="menu" id="menuIcon" class="w-8 h-8"></i>
             </button>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero flex items-center justify-center p-8 text-white relative">
         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
         <div class="max-w-4xl mx-auto text-center py-20 relative z-10">
-            <!-- Audit Suggestion: Use H1 -->
             <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl font-extrabold leading-tight mb-6 shadow-text">
                 Professional Solutions.<br class="hidden sm:inline"> Real Outcomes.
             </h1>
@@ -193,7 +183,6 @@
         </div>
     </section>
 
-    <!-- Stats Section (Audit Suggestion 24) -->
     <section class="py-12 bg-white -mt-10 relative z-20 max-w-6xl mx-auto rounded-xl shadow-xl mx-4 lg:mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-100">
             <div class="stat p-4">
@@ -211,16 +200,14 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="py-16 sm:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-heading text-center font-bold text-gray-900 mb-12">Who We Are</h2>
             
-            <!-- Introduction -->
             <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center mb-16">
                 <div class="lg:order-2">
-                    <img src="https://placehold.co/600x400/2D7A4E/ffffff?text=Landscape+Project" 
-                         alt="Moofar Project Image" 
+                    <img src="https://images.unsplash.com/photo-1549419137-7f9996d91361?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80" 
+                         alt="Moofar Project Image: Black professionals reviewing construction plans" 
                          class="w-full h-auto rounded-xl shadow-2xl mb-8 lg:mb-0 transform hover:scale-[1.02] transition duration-500">
                 </div>
                 <div class="lg:order-1">
@@ -234,7 +221,6 @@
                 </div>
             </div>
 
-            <!-- Mission, Vision, Values -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                 <div class="p-8 bg-white rounded-xl shadow-lg border-t-4 border-primary hover:shadow-xl transition-shadow">
                     <div class="text-primary mb-4"><i data-lucide="target" class="w-10 h-10"></i></div>
@@ -260,7 +246,6 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services" class="py-16 sm:py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -269,7 +254,6 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card 1 -->
                 <div class="service-card bg-white p-8 rounded-xl shadow-lg">
                     <div class="text-primary mb-4"><i data-lucide="trees" class="w-12 h-12"></i></div>
                     <h3 class="text-xl font-heading font-bold mb-3">Landscaping & Horticulture</h3>
@@ -281,7 +265,6 @@
                     </ul>
                 </div>
                 
-                <!-- Service Card 2 -->
                 <div class="service-card bg-white p-8 rounded-xl shadow-lg">
                     <div class="text-accent mb-4"><i data-lucide="hammer" class="w-12 h-12"></i></div>
                     <h3 class="text-xl font-heading font-bold mb-3">Construction & Maintenance</h3>
@@ -293,7 +276,6 @@
                     </ul>
                 </div>
                 
-                <!-- Service Card 3 -->
                 <div class="service-card bg-white p-8 rounded-xl shadow-lg">
                     <div class="text-primary mb-4"><i data-lucide="truck" class="w-12 h-12"></i></div>
                     <h3 class="text-xl font-heading font-bold mb-3">Logistics & Supply</h3>
@@ -305,7 +287,6 @@
                     </ul>
                 </div>
                 
-                <!-- Service Card 4 -->
                 <div class="service-card bg-white p-8 rounded-xl shadow-lg">
                     <div class="text-accent mb-4"><i data-lucide="leaf" class="w-12 h-12"></i></div>
                     <h3 class="text-xl font-heading font-bold mb-3">Environmental Management</h3>
@@ -317,7 +298,6 @@
                     </ul>
                 </div>
                 
-                <!-- Service Card 5 -->
                 <div class="service-card bg-white p-8 rounded-xl shadow-lg">
                     <div class="text-primary mb-4"><i data-lucide="sparkles" class="w-12 h-12"></i></div>
                     <h3 class="text-xl font-heading font-bold mb-3">General Services</h3>
@@ -329,7 +309,6 @@
                     </ul>
                 </div>
                 
-                <!-- Service Card 6 -->
                 <div class="service-card bg-white p-8 rounded-xl shadow-lg">
                     <div class="text-accent mb-4"><i data-lucide="briefcase" class="w-12 h-12"></i></div>
                     <h3 class="text-xl font-heading font-bold mb-3">Consultancy & Support</h3>
@@ -344,7 +323,6 @@
         </div>
     </section>
     
-    <!-- Testimonials Section -->
     <section class="py-16 sm:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -353,7 +331,6 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
                 <div class="p-6 bg-white rounded-xl shadow-lg border-l-4 border-accent testimonial-card h-full flex flex-col justify-between">
                     <div>
                         <div class="flex text-yellow-500 mb-3" aria-label="5 stars">
@@ -374,7 +351,6 @@
                     </div>
                 </div>
                 
-                <!-- Testimonial 2 -->
                 <div class="p-6 bg-white rounded-xl shadow-lg border-l-4 border-primary testimonial-card h-full flex flex-col justify-between">
                     <div>
                         <div class="flex text-yellow-500 mb-3" aria-label="5 stars">
@@ -395,7 +371,6 @@
                     </div>
                 </div>
                 
-                <!-- Testimonial 3 -->
                 <div class="p-6 bg-white rounded-xl shadow-lg border-l-4 border-accent testimonial-card h-full flex flex-col justify-between">
                     <div>
                         <div class="flex text-yellow-500 mb-3" aria-label="5 stars">
@@ -419,7 +394,6 @@
         </div>
     </section>
 
-    <!-- Our Team Section -->
     <section id="team" class="py-16 sm:py-24 bg-primary text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -430,7 +404,6 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-                <!-- Team Member 1 -->
                 <div class="text-center group">
                     <div class="relative w-48 h-48 mx-auto mb-6">
                         <img src="https://raw.githubusercontent.com/tmosimanyana/moofar/379c8ca26884ff46c755263514118fd3ff499f19/assets/farai.webp" 
@@ -444,11 +417,10 @@
                     </p>
                 </div>
                 
-                <!-- Team Member 2 -->
                 <div class="text-center group">
                     <div class="relative w-48 h-48 mx-auto mb-6">
-                        <img src="https://placehold.co/400x400/1A5232/ffffff?text=Mooketsi+Mapugwa" 
-                             alt="Mooketsi Mapugwa, Co-founder" 
+                        <img src="https://images.unsplash.com/photo-1628172960655-23c21c7e937d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400&q=80" 
+                             alt="Mooketsi Mapugwa, Co-founder Portrait" 
                              class="w-full h-full rounded-full object-cover border-4 border-white shadow-xl group-hover:scale-105 transition duration-300">
                     </div>
                     <h3 class="text-2xl font-heading font-bold text-accent">Mooketsi Mapugwa</h3>
@@ -461,7 +433,6 @@
         </div>
     </section>
     
-    <!-- Contact Section -->
     <section id="contact" class="py-16 sm:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -472,7 +443,6 @@
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                <!-- Contact Info -->
                 <div class="lg:col-span-1 space-y-8">
                     <div class="flex items-start space-x-4">
                         <div class="bg-primary/10 p-3 rounded-lg">
@@ -512,7 +482,6 @@
                     </div>
                 </div>
                 
-                <!-- Contact Form -->
                 <div class="lg:col-span-2 bg-gray-50 p-8 rounded-xl shadow-xl border border-gray-100">
                     <form onsubmit="handleFormSubmit(event)" id="contactForm">
                         <h3 class="text-2xl font-heading font-bold mb-6 text-gray-900">Send Us a Message</h3>
@@ -523,7 +492,6 @@
                         <input type="text" placeholder="Subject (e.g., Landscaping Quote)" required class="w-full mt-6 p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-150">
                         <textarea placeholder="Your Message or Project Details" rows="5" required class="w-full mt-6 p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-150"></textarea>
                         
-                        <!-- Audit Suggestion 19: Form Security (Honeypot/Token Example) -->
                         <input type="hidden" name="form-token" id="form-token" value="secure_token_123">
                         
                         <button type="submit" class="btn-ripple bg-primary text-white font-bold py-4 px-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 mt-6 w-full md:w-auto flex items-center justify-center">
@@ -537,11 +505,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                <!-- Brand Info -->
                 <div class="space-y-4">
                     <div class="flex items-center space-x-2">
                         <img src="https://raw.githubusercontent.com/tmosimanyana/moofar/379c8ca26884ff46c755263514118fd3ff499f19/assets/MOOFAR%20Logo.jpg" alt="Moofar Logo" class="h-8 w-8 rounded-full">
@@ -558,7 +524,6 @@
                     </div>
                 </div>
 
-                <!-- Quick Links -->
                 <div>
                     <h4 class="text-lg font-bold mb-4 border-b border-gray-700 pb-2 inline-block">Quick Links</h4>
                     <ul class="space-y-2 text-gray-400">
@@ -569,7 +534,6 @@
                     </ul>
                 </div>
 
-                <!-- Services -->
                 <div>
                     <h4 class="text-lg font-bold mb-4 border-b border-gray-700 pb-2 inline-block">Services</h4>
                     <ul class="space-y-2 text-gray-400">
@@ -580,7 +544,6 @@
                     </ul>
                 </div>
 
-                <!-- Contact Short -->
                 <div>
                     <h4 class="text-lg font-bold mb-4 border-b border-gray-700 pb-2 inline-block">Contact</h4>
                     <ul class="space-y-2 text-gray-400">
@@ -591,14 +554,12 @@
                 </div>
             </div>
 
-            <!-- Copyright -->
             <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
                 <p>&copy; <script>document.write(new Date().getFullYear())</script> Moofar Proprietary Limited. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Interactive Scripts -->
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
