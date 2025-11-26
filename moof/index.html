@@ -28,6 +28,9 @@
         .bg-accent { background-color: var(--accent); }
         .text-accent { color: var(--accent); }
         .border-primary { border-color: var(--primary); }
+        .hover\:text-primary:hover { color: var(--primary); }
+        .focus\:ring-primary:focus { --tw-ring-color: var(--primary); }
+        .focus\:border-primary:focus { border-color: var(--primary); }
 
         /* Audit Suggestion 6: Typography */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
@@ -39,31 +42,41 @@
 
         /* Mobile Menu Styling for Audit Suggestion 7 */
         .mobile-toggle { display: none; }
-        .mobile-nav-active .mobile-toggle { position: fixed; right: 1rem; top: 1rem; z-index: 51; }
-
+        
         @media (max-width: 768px) {
             .mobile-toggle { 
                 display: block; 
-                @apply bg-primary text-white p-3 rounded-full shadow-lg fixed top-4 right-4 z-50;
                 /* Audit Suggestion 8: Improve Touch Targets */
                 min-height: 48px;
                 min-width: 48px;
             }
             #mainNav {
-                @apply fixed top-0 left-0 w-full h-full bg-white transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col justify-center items-center space-y-8;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: white;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+                z-index: 49;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
             }
             #mainNav.active {
                 transform: translateX(0);
             }
             #mainNav a {
-                @apply text-2xl font-semibold text-gray-800 hover:text-primary transition duration-200;
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: #1f2937;
                 /* Audit Suggestion 8: Improve Touch Targets */
-                min-height: 48px;
-                min-width: 48px;
                 padding: 1rem;
             }
-            .desktop-nav { display: none; }
-            .hero-content { @apply text-center; }
+            .desktop-nav { display: flex; } /* Overridden by media query specifics usually, but forced flex for mobile view structure */
         }
 
         /* Audit Suggestion 5: Micro-Interactions (Button Ripple Effect) */
@@ -72,21 +85,8 @@
             overflow: hidden;
             transition: all 0.3s ease;
         }
-        .btn-ripple::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: translate(-50%,-50%);
-            transition: width 0.6s, height 0.6s;
-        }
-        .btn-ripple:hover::before {
-            width: 300px;
-            height: 300px;
+        .btn-ripple:hover {
+            transform: translateY(-2px);
         }
         
         /* Audit Suggestion 5: Micro-Interactions (Service Card Hover Effect) */
@@ -95,26 +95,34 @@
         }
         .service-card:hover {
             transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
         
         /* Audit Suggestion 10: Critical CSS Inline - simplified for Tailwind */
         .hero { 
-            background: var(--gradient-primary); 
-            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 90vh;
         }
+        
+        .shadow-text {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
     </style>
     
     <!-- Audit Suggestion 13: Improved Meta Descriptions -->
     <meta name="description" content="Professional landscaping, construction, maintenance, logistics & consultancy services in Botswana. Moofar (PTY) LTD delivers real outcomes for businesses and communities.">
     <!-- Audit Suggestion 12: Structured Data (Schema.org) -->
-    <!-- NOTE: Image URL is placeholder as we cannot host images -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Moofar Proprietary Limited",
-      "image": "https://placehold.co/1200x630/2D7A4E/ffffff?text=Moofar+Logo",
+      "image": "https://raw.githubusercontent.com/tmosimanyana/moofar/379c8ca26884ff46c755263514118fd3ff499f19/assets/MOOFAR%20Logo.jpg",
       "@id": "https://moofar.vercel.app",
       "url": "https://moofar.vercel.app",
       "telephone": "+26777723232",
@@ -134,78 +142,76 @@
       ]
     }
     </script>
-    
 </head>
 <body class="font-body text-gray-800 antialiased mobile-nav-inactive">
 
     <!-- Header and Navigation -->
     <header class="sticky top-0 z-40 bg-white shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
             <!-- Logo (Audit Suggestion 1: Standardized Path) -->
-            <a href="#" class="flex items-center space-x-2">
-                <img src="https://github.com/tmosimanyana/moofar/blob/379c8ca26884ff46c755263514118fd3ff499f19/assets/MOOFAR%20Logo.jpg?raw=true" alt="Moofar Logo" class="h-8 w-8 rounded-full">
-                <span class="text-xl font-bold text-primary">MOOFAR</span>
+            <a href="#" class="flex items-center space-x-3">
+                <img src="https://raw.githubusercontent.com/tmosimanyana/moofar/379c8ca26884ff46c755263514118fd3ff499f19/assets/MOOFAR%20Logo.jpg" alt="Moofar Logo" class="h-10 w-10 rounded-full object-cover">
+                <span class="text-2xl font-bold text-primary font-heading tracking-tight">MOOFAR</span>
             </a>
             
             <!-- Desktop Navigation -->
-            <nav id="mainNav" class="desktop-nav">
-                <ul class="flex space-x-8">
-                    <li><a href="#about" class="text-gray-600 hover:text-primary font-medium transition duration-200">About Us</a></li>
-                    <li><a href="#services" class="text-gray-600 hover:text-primary font-medium transition duration-200">Services</a></li>
-                    <li><a href="#team" class="text-gray-600 hover:text-primary font-medium transition duration-200">Our Team</a></li>
-                    <li><a href="#contact" class="text-gray-600 hover:text-primary font-medium transition duration-200">Contact</a></li>
+            <nav id="mainNav" class="hidden md:flex">
+                <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 text-center">
+                    <li><a href="#about" class="text-gray-600 hover:text-primary font-medium transition duration-200" onclick="closeMenu()">About Us</a></li>
+                    <li><a href="#services" class="text-gray-600 hover:text-primary font-medium transition duration-200" onclick="closeMenu()">Services</a></li>
+                    <li><a href="#team" class="text-gray-600 hover:text-primary font-medium transition duration-200" onclick="closeMenu()">Our Team</a></li>
+                    <li><a href="#contact" class="text-gray-600 hover:text-primary font-medium transition duration-200" onclick="closeMenu()">Contact</a></li>
                 </ul>
             </nav>
 
             <!-- Mobile Menu Toggle Button (Audit Suggestion 7) -->
-            <button class="mobile-toggle" aria-expanded="false" onclick="toggleMenu()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+            <button class="mobile-toggle text-primary focus:outline-none" aria-label="Toggle Menu" aria-expanded="false" onclick="toggleMenu()">
+                <i data-lucide="menu" id="menuIcon" class="w-8 h-8"></i>
             </button>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero flex items-center justify-center p-8 text-white">
-        <div class="max-w-4xl mx-auto text-center py-20">
+    <section class="hero flex items-center justify-center p-8 text-white relative">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="max-w-4xl mx-auto text-center py-20 relative z-10">
             <!-- Audit Suggestion: Use H1 -->
-            <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl font-extrabold leading-tight mb-4 shadow-text">
+            <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl font-extrabold leading-tight mb-6 shadow-text">
                 Professional Solutions.<br class="hidden sm:inline"> Real Outcomes.
             </h1>
-            <p class="text-xl sm:text-2xl mb-8 font-light max-w-2xl mx-auto opacity-90">
+            <p class="text-xl sm:text-2xl mb-10 font-light max-w-2xl mx-auto text-gray-100 shadow-text">
                 Moofar (PTY) LTD is your trusted, multi-disciplinary partner in Botswana for sustainable development, excellence in service, and community empowerment.
             </p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="#services" class="btn-ripple bg-accent text-gray-900 font-bold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                <a href="#services" class="btn-ripple bg-accent text-gray-900 font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform">
                     Explore Services
                 </a>
-                <a href="https://wa.me/26777723232" target="_blank" class="btn-ripple bg-white text-primary font-bold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
-                    <span class="flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square mr-2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Get a Quote</span>
+                <a href="https://wa.me/26777723232" target="_blank" class="btn-ripple bg-white text-primary font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 flex items-center justify-center">
+                    <i data-lucide="message-square" class="mr-2 w-5 h-5"></i> Get a Quote
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Stats Section (Audit Suggestion 24) -->
-    <section class="py-12 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="stat">
-                    <span id="stat-1" class="counter text-5xl font-extrabold text-primary block">150+</span>
-                    <p class="text-gray-500 mt-2 text-lg">Projects Completed</p>
-                </div>
-                <div class="stat">
-                    <span id="stat-2" class="counter text-5xl font-extrabold text-primary block">10+</span>
-                    <p class="text-gray-500 mt-2 text-lg">Years Experience</p>
-                </div>
-                <div class="stat">
-                    <span id="stat-3" class="counter text-5xl font-extrabold text-primary block">100%</span>
-                    <p class="text-gray-500 mt-2 text-lg">Client Satisfaction</p>
-                </div>
+    <section class="py-12 bg-white -mt-10 relative z-20 max-w-6xl mx-auto rounded-xl shadow-xl mx-4 lg:mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-100">
+            <div class="stat p-4">
+                <span class="text-5xl font-extrabold text-primary block mb-2 counter" data-target="150">0</span>
+                <p class="text-gray-500 font-medium tracking-wide uppercase text-sm">Projects Completed</p>
+            </div>
+            <div class="stat p-4">
+                <span class="text-5xl font-extrabold text-primary block mb-2 counter" data-target="10">0</span>
+                <p class="text-gray-500 font-medium tracking-wide uppercase text-sm">Years Experience</p>
+            </div>
+            <div class="stat p-4">
+                <span class="text-5xl font-extrabold text-primary block mb-2 counter" data-target="100">0</span>
+                <p class="text-gray-500 font-medium tracking-wide uppercase text-sm">Client Satisfaction (%)</p>
             </div>
         </div>
     </section>
 
-    <!-- About Section (Introduction, Mission, Vision, Core Values) -->
+    <!-- About Section -->
     <section id="about" class="py-16 sm:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-heading text-center font-bold text-gray-900 mb-12">Who We Are</h2>
@@ -213,18 +219,16 @@
             <!-- Introduction -->
             <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center mb-16">
                 <div class="lg:order-2">
-                    <img src="https://placehold.ca+Landscape+Project" 
-                         data-src="assets/intro-image.jpg" 
+                    <img src="https://placehold.co/600x400/2D7A4E/ffffff?text=Landscape+Project" 
                          alt="Moofar Project Image" 
-                         loading="lazy" 
-                         class="lazy-image w-full h-auto rounded-xl shadow-2xl mb-8 lg:mb-0">
+                         class="w-full h-auto rounded-xl shadow-2xl mb-8 lg:mb-0 transform hover:scale-[1.02] transition duration-500">
                 </div>
                 <div class="lg:order-1">
                     <h3 class="text-3xl font-heading font-bold text-primary mb-4">A Multi-Disciplinary Leader</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
+                    <p class="text-lg text-gray-600 leading-relaxed mb-6">
                         Moofar (PTY) LTD is a Botswana-based, multi-disciplinary company dedicated to providing a wide range of innovative, reliable, and high-quality services. Established with a commitment to integrity, professionalism, and customer satisfaction, Moofar aims to be a trusted partner for individuals, organizations, and public entities across the country.
                     </p>
-                    <p class="text-lg text-gray-600 leading-relaxed mt-4">
+                    <p class="text-lg text-gray-600 leading-relaxed">
                         Our diverse service offerings allow us to meet the needs of various sectors, ensuring efficiency, sustainability, and exceptional value.
                     </p>
                 </div>
@@ -232,24 +236,24 @@
 
             <!-- Mission, Vision, Values -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-primary">
-                    <div class="text-3xl text-primary mb-3"><i data-lucide="target"></i></div>
+                <div class="p-8 bg-white rounded-xl shadow-lg border-t-4 border-primary hover:shadow-xl transition-shadow">
+                    <div class="text-primary mb-4"><i data-lucide="target" class="w-10 h-10"></i></div>
                     <h4 class="text-xl font-heading font-bold mb-2">Our Mission</h4>
                     <p class="text-gray-600">To deliver outstanding services through operational excellence, skilled workmanship, innovation, and a commitment to improving the communities and industries we serve.</p>
                 </div>
-                <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-accent">
-                    <div class="text-3xl text-accent mb-3"><i data-lucide="eye"></i></div>
+                <div class="p-8 bg-white rounded-xl shadow-lg border-t-4 border-accent hover:shadow-xl transition-shadow">
+                    <div class="text-accent mb-4"><i data-lucide="eye" class="w-10 h-10"></i></div>
                     <h4 class="text-xl font-heading font-bold mb-2">Our Vision</h4>
                     <p class="text-gray-600">To become a leading and trusted provider of diversified, sustainable, and customer-focused solutions in Botswana and the region.</p>
                 </div>
-                <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-primary">
-                    <div class="text-3xl text-primary mb-3"><i data-lucide="medal"></i></div>
+                <div class="p-8 bg-white rounded-xl shadow-lg border-t-4 border-primary hover:shadow-xl transition-shadow">
+                    <div class="text-primary mb-4"><i data-lucide="medal" class="w-10 h-10"></i></div>
                     <h4 class="text-xl font-heading font-bold mb-2">Core Values</h4>
-                    <ul class="text-gray-600 space-y-1 mt-2 list-disc ml-5">
-                        <li>**Integrity**: Honesty, fairness, and transparency.</li>
-                        <li>**Innovation**: Bringing new, improved solutions.</li>
-                        <li>**Excellence**: Pursuing our best in every task.</li>
-                        <li>**Customer Focus**: Exceeding expectations.</li>
+                    <ul class="text-gray-600 space-y-2 mt-2 ml-1">
+                        <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 mr-2 text-primary"></i> <strong>Integrity</strong>: Honesty & fairness.</li>
+                        <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 mr-2 text-primary"></i> <strong>Innovation</strong>: New solutions.</li>
+                        <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 mr-2 text-primary"></i> <strong>Excellence</strong>: Pursuing our best.</li>
+                        <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 mr-2 text-primary"></i> <strong>Customer Focus</strong>: Exceeding expectations.</li>
                     </ul>
                 </div>
             </div>
@@ -260,140 +264,155 @@
     <section id="services" class="py-16 sm:py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <p class="text-primary font-semibold uppercase tracking-wider">What We Do</p>
-                <h2 class="text-4xl font-heading font-bold text-gray-900 mt-2">Key Services and Business Activities</h2>
+                <p class="text-primary font-bold uppercase tracking-wider text-sm mb-2">What We Do</p>
+                <h2 class="text-4xl font-heading font-bold text-gray-900">Key Services and Business Activities</h2>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card 1: Landscaping & Horticulture -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl">
-                    <div class="text-4xl text-primary mb-4"><i data-lucide="tree-pine"></i></div>
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg">
+                    <div class="text-primary mb-4"><i data-lucide="trees" class="w-12 h-12"></i></div>
                     <h3 class="text-xl font-heading font-bold mb-3">Landscaping & Horticulture</h3>
                     <ul class="text-gray-600 space-y-2 text-sm">
-                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Landscape design, installation, and maintenance</li>
-                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Lawn establishment & irrigation systems</li>
-                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Hardscaping (pathways, paving, rock features)</li>
-                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Tree planting, pruning, and disease control</li>
+                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Landscape design & install</li>
+                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Lawn establishment & irrigation</li>
+                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Hardscaping & paving</li>
+                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Tree planting & pruning</li>
                     </ul>
                 </div>
                 
-                <!-- Service Card 2: Construction & Maintenance -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl">
-                    <div class="text-4xl text-accent mb-4"><i data-lucide="hammer"></i></div>
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg">
+                    <div class="text-accent mb-4"><i data-lucide="hammer" class="w-12 h-12"></i></div>
                     <h3 class="text-xl font-heading font-bold mb-3">Construction & Maintenance</h3>
                     <ul class="text-gray-600 space-y-2 text-sm">
-                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Building construction, renovations, and extensions</li>
-                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Plumbing, electrical, roofing, and painting</li>
-                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Site preparation, fencing, paving, & civil works</li>
-                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Structural improvements and repairs</li>
+                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Building construction & renovations</li>
+                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Plumbing, electrical & roofing</li>
+                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Site preparation & fencing</li>
+                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Structural improvements</li>
                     </ul>
                 </div>
                 
-                <!-- Service Card 3: Logistics & Supply -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl">
-                    <div class="text-4xl text-primary mb-4"><i data-lucide="truck"></i></div>
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg">
+                    <div class="text-primary mb-4"><i data-lucide="truck" class="w-12 h-12"></i></div>
                     <h3 class="text-xl font-heading font-bold mb-3">Logistics & Supply</h3>
                     <ul class="text-gray-600 space-y-2 text-sm">
-                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Efficient transportation of goods nationwide</li>
-                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Procurement and delivery of quality materials</li>
-                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Wholesale and retail supply services</li>
-                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Courier services and delivery management</li>
+                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Nationwide goods transport</li>
+                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Material procurement & delivery</li>
+                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Wholesale & retail supply</li>
+                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Courier services</li>
                     </ul>
                 </div>
                 
-                <!-- Service Card 4: Environmental Management -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl">
-                    <div class="text-4xl text-accent mb-4"><i data-lucide="leaf"></i></div>
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg">
+                    <div class="text-accent mb-4"><i data-lucide="leaf" class="w-12 h-12"></i></div>
                     <h3 class="text-xl font-heading font-bold mb-3">Environmental Management</h3>
                     <ul class="text-gray-600 space-y-2 text-sm">
-                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Mechanical and manual bush clearing</li>
-                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Land rehabilitation and environmental maintenance</li>
-                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Removal of invasive plants and site preparation</li>
-                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Firebreaks and vegetation control</li>
+                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Mechanical bush clearing</li>
+                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Land rehabilitation</li>
+                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Invasive plant removal</li>
+                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Firebreaks & vegetation control</li>
                     </ul>
                 </div>
                 
-                <!-- Service Card 5: General Services -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl">
-                    <div class="text-4xl text-primary mb-4"><i data-lucide="sparkles"></i></div>
+                <!-- Service Card 5 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg">
+                    <div class="text-primary mb-4"><i data-lucide="sparkles" class="w-12 h-12"></i></div>
                     <h3 class="text-xl font-heading font-bold mb-3">General Services</h3>
                     <ul class="text-gray-600 space-y-2 text-sm">
-                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Commercial, industrial, and residential cleaning</li>
+                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Commercial & industrial cleaning</li>
                         <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Waste removal & site cleaning</li>
-                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Office support services & Labour hire</li>
-                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Event support & general assistance services</li>
+                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Labour hire & office support</li>
+                        <li class="flex items-start"><span class="text-primary mr-2 text-lg">&bull;</span> Event support</li>
                     </ul>
                 </div>
                 
-                <!-- Service Card 6: Consultancy & Business Support -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl">
-                    <div class="text-4xl text-accent mb-4"><i data-lucide="briefcase"></i></div>
+                <!-- Service Card 6 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg">
+                    <div class="text-accent mb-4"><i data-lucide="briefcase" class="w-12 h-12"></i></div>
                     <h3 class="text-xl font-heading font-bold mb-3">Consultancy & Support</h3>
                     <ul class="text-gray-600 space-y-2 text-sm">
-                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Business advisory and administrative support</li>
-                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Project management and strategic planning</li>
+                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Business advisory</li>
+                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Project management</li>
                         <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Tailored sourcing solutions</li>
-                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Fleet support and distribution planning</li>
+                        <li class="flex items-start"><span class="text-accent mr-2 text-lg">&bull;</span> Fleet support</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Testimonials Section (Audit Suggestion 15) -->
+    <!-- Testimonials Section -->
     <section class="py-16 sm:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <p class="text-accent font-semibold uppercase tracking-wider">Trust Signals</p>
-                <h2 class="text-4xl font-heading font-bold text-gray-900 mt-2">What Our Clients Say</h2>
+                <p class="text-accent font-bold uppercase tracking-wider text-sm mb-2">Trust Signals</p>
+                <h2 class="text-4xl font-heading font-bold text-gray-900">What Our Clients Say</h2>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
-                <div class="p-6 bg-white rounded-xl shadow-lg border-l-4 border-accent testimonial-card">
-                    <div class="flex text-yellow-500 mb-3 text-xl" aria-label="5 stars">
-                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                <div class="p-6 bg-white rounded-xl shadow-lg border-l-4 border-accent testimonial-card h-full flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-yellow-500 mb-3" aria-label="5 stars">
+                            <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                            <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                            <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                            <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                            <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        </div>
+                        <p class="italic text-gray-700 leading-relaxed">"Excellent landscaping service. They transformed our garden beyond expectations and the irrigation system is flawless."</p>
                     </div>
-                    <p class="italic text-gray-700 leading-relaxed">"Excellent landscaping service. They transformed our garden beyond expectations and the irrigation system is flawless."</p>
-                    <div class="client-info mt-4">
-                        <strong class="font-semibold block">Onalenna S.</strong>
-                        <span class="text-sm text-gray-500">Residential Client, Gaborone</span>
+                    <div class="client-info mt-6 flex items-center">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 font-bold mr-3">OS</div>
+                        <div>
+                            <strong class="font-semibold block text-gray-900">Onalenna S.</strong>
+                            <span class="text-sm text-gray-500">Residential Client, Gaborone</span>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Testimonial 2 -->
-                <div class="p-6 bg-white rounded-xl shadow-lg border-l-4 border-primary testimonial-card">
-                    <div class="flex text-yellow-500 mb-3 text-xl" aria-label="5 stars">
-                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                <div class="p-6 bg-white rounded-xl shadow-lg border-l-4 border-primary testimonial-card h-full flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-yellow-500 mb-3" aria-label="5 stars">
+                            <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                            <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                            <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                            <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                            <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        </div>
+                        <p class="italic text-gray-700 leading-relaxed">"Moofar handled all the civil works and fencing for our new depot. Professional, timely, and high-quality construction work."</p>
                     </div>
-                    <p class="italic text-gray-700 leading-relaxed">"Moofar handled all the civil works and fencing for our new depot. Professional, timely, and high-quality construction work."</p>
-                    <div class="client-info mt-4">
-                        <strong class="font-semibold block">Tshepo R.</strong>
-                        <span class="text-sm text-gray-500">Logistics Company Manager</span>
+                    <div class="client-info mt-6 flex items-center">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 font-bold mr-3">TR</div>
+                        <div>
+                            <strong class="font-semibold block text-gray-900">Tshepo R.</strong>
+                            <span class="text-sm text-gray-500">Logistics Company Manager</span>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Testimonial 3 -->
-                <div class="p-6 bg-white rounded-xl shadow-lg border-l-4 border-accent testimonial-card">
-                    <div class="flex text-yellow-500 mb-3 text-xl" aria-label="5 stars">
-                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                <div class="p-6 bg-white rounded-xl shadow-lg border-l-4 border-accent testimonial-card h-full flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-yellow-500 mb-3" aria-label="5 stars">
+                            <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                            <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                            <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                            <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                            <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        </div>
+                        <p class="italic text-gray-700 leading-relaxed">"The administrative support and strategic planning consultancy was invaluable for scaling our operations. Highly recommend their expertise."</p>
                     </div>
-                    <p class="italic text-gray-700 leading-relaxed">"The administrative support and strategic planning consultancy was invaluable for scaling our operations. Highly recommend their expertise."</p>
-                    <div class="client-info mt-4">
-                        <strong class="font-semibold block">Neo M.</strong>
-                        <span class="text-sm text-gray-500">Small Business Owner</span>
+                    <div class="client-info mt-6 flex items-center">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 font-bold mr-3">NM</div>
+                        <div>
+                            <strong class="font-semibold block text-gray-900">Neo M.</strong>
+                            <span class="text-sm text-gray-500">Small Business Owner</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -404,35 +423,37 @@
     <section id="team" class="py-16 sm:py-24 bg-primary text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-heading font-bold mb-2">Meet Our Visionary Co-Founders</h2>
+                <h2 class="text-4xl font-heading font-bold mb-4">Meet Our Visionary Co-Founders</h2>
                 <p class="text-lg opacity-80 max-w-2xl mx-auto">
                     Moofar (PTY) LTD was established by two visionary co-founders who share a common passion for sustainable development and service excellence.
                 </p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-                <!-- Team Member 1: Farai Madorobo -->
-                <div class="text-center">
-                    <!-- Audit Suggestion 2: Replace placeholder content/photos. Using placeholders here. -->
-                    <img src="https://raw.githubusercontent.com/tmosimanyana/moofar/379c8ca26884ff46c755263514118fd3ff499f19/assets/farai.webp" 
-                         alt="Farai Madorobo, Co-founder" 
-                         class="lazy-image w-48 h-48 rounded-full mx-auto object-cover border-4 border-white shadow-xl mb-4">
+                <!-- Team Member 1 -->
+                <div class="text-center group">
+                    <div class="relative w-48 h-48 mx-auto mb-6">
+                        <img src="https://raw.githubusercontent.com/tmosimanyana/moofar/379c8ca26884ff46c755263514118fd3ff499f19/assets/farai.webp" 
+                             alt="Farai Madorobo, Co-founder" 
+                             class="w-full h-full rounded-full object-cover border-4 border-white shadow-xl group-hover:scale-105 transition duration-300">
+                    </div>
                     <h3 class="text-2xl font-heading font-bold text-accent">Farai Madorobo</h3>
-                    <p class="text-sm uppercase tracking-wider mb-3 opacity-70">Co-founder & Operations Director</p>
-                    <p class="text-base opacity-90">
+                    <p class="text-sm uppercase tracking-wider mb-4 opacity-70">Co-founder & Operations Director</p>
+                    <p class="text-base opacity-90 leading-relaxed">
                         Farai brings a powerful blend of operational expertise and leadership, driving the company's commitment to excellence and high-quality project delivery across all sectors.
                     </p>
                 </div>
                 
-                <!-- Team Member 2: Mooketsi Mapugwa -->
-                <div class="text-center">
-                    <!-- Audit Suggestion 2: Replace placeholder content/photos. Using placeholders here. -->
-                    <img src="https://placehold.co/200x200/1A5232/ffffff?text=Mooketsi+M." 
-                         alt="Mooketsi Mapugwa, Co-founder" 
-                         class="lazy-image w-48 h-48 rounded-full mx-auto object-cover border-4 border-white shadow-xl mb-4">
+                <!-- Team Member 2 -->
+                <div class="text-center group">
+                    <div class="relative w-48 h-48 mx-auto mb-6">
+                        <img src="https://placehold.co/400x400/1A5232/ffffff?text=Mooketsi+Mapugwa" 
+                             alt="Mooketsi Mapugwa, Co-founder" 
+                             class="w-full h-full rounded-full object-cover border-4 border-white shadow-xl group-hover:scale-105 transition duration-300">
+                    </div>
                     <h3 class="text-2xl font-heading font-bold text-accent">Mooketsi Mapugwa</h3>
-                    <p class="text-sm uppercase tracking-wider mb-3 opacity-70">Co-founder & Strategy Director</p>
-                    <p class="text-base opacity-90">
+                    <p class="text-sm uppercase tracking-wider mb-4 opacity-70">Co-founder & Strategy Director</p>
+                    <p class="text-base opacity-90 leading-relaxed">
                         Mooketsi focuses on strategic planning and innovation, ensuring Moofar adopts sustainable practices and technological advancements to serve clients and communities effectively.
                     </p>
                 </div>
@@ -450,57 +471,66 @@
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
                 <!-- Contact Info -->
                 <div class="lg:col-span-1 space-y-8">
                     <div class="flex items-start space-x-4">
-                        <i data-lucide="map-pin" class="text-primary w-6 h-6 flex-shrink-0 mt-1"></i>
+                        <div class="bg-primary/10 p-3 rounded-lg">
+                            <i data-lucide="map-pin" class="text-primary w-6 h-6"></i>
+                        </div>
                         <div>
-                            <p class="font-bold text-lg">Location</p>
+                            <p class="font-bold text-lg text-gray-900">Location</p>
                             <p class="text-gray-600">Francistown, Botswana</p>
                         </div>
                     </div>
                     <div class="flex items-start space-x-4">
-                        <i data-lucide="phone" class="text-primary w-6 h-6 flex-shrink-0 mt-1"></i>
+                        <div class="bg-primary/10 p-3 rounded-lg">
+                            <i data-lucide="phone" class="text-primary w-6 h-6"></i>
+                        </div>
                         <div>
-                            <p class="font-bold text-lg">Phone Numbers</p>
+                            <p class="font-bold text-lg text-gray-900">Phone Numbers</p>
                             <p class="text-gray-600">+267 77723232 / 72954794</p>
                         </div>
                     </div>
                     <div class="flex items-start space-x-4">
-                        <i data-lucide="mail" class="text-primary w-6 h-6 flex-shrink-0 mt-1"></i>
+                        <div class="bg-primary/10 p-3 rounded-lg">
+                            <i data-lucide="mail" class="text-primary w-6 h-6"></i>
+                        </div>
                         <div>
-                            <p class="font-bold text-lg">Email</p>
-                            <p class="text-gray-600"><a href="mailto:mookfara@gmail.com" class="hover:text-primary">mookfara@gmail.com</a></p>
+                            <p class="font-bold text-lg text-gray-900">Email</p>
+                            <p class="text-gray-600"><a href="mailto:mookfara@gmail.com" class="hover:text-primary transition">mookfara@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="flex items-start space-x-4">
-                        <i data-lucide="link" class="text-primary w-6 h-6 flex-shrink-0 mt-1"></i>
+                        <div class="bg-primary/10 p-3 rounded-lg">
+                            <i data-lucide="globe" class="text-primary w-6 h-6"></i>
+                        </div>
                         <div>
-                            <p class="font-bold text-lg">Website</p>
-                            <p class="text-gray-600"><a href="https://moofar.vercel.app/" target="_blank" class="hover:text-primary">moofar.vercel.app/</a></p>
+                            <p class="font-bold text-lg text-gray-900">Website</p>
+                            <p class="text-gray-600"><a href="https://moofar.vercel.app/" target="_blank" class="hover:text-primary transition">moofar.vercel.app</a></p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Contact Form (Placeholder) -->
-                <div class="lg:col-span-2 bg-gray-50 p-8 rounded-xl shadow-xl">
-                    <form onsubmit="handleFormSubmit(event)">
+                <!-- Contact Form -->
+                <div class="lg:col-span-2 bg-gray-50 p-8 rounded-xl shadow-xl border border-gray-100">
+                    <form onsubmit="handleFormSubmit(event)" id="contactForm">
                         <h3 class="text-2xl font-heading font-bold mb-6 text-gray-900">Send Us a Message</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="text" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary transition duration-150">
-                            <input type="email" placeholder="Your Email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary transition duration-150">
+                            <input type="text" placeholder="Your Name" required class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-150">
+                            <input type="email" placeholder="Your Email" required class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-150">
                         </div>
-                        <input type="text" placeholder="Subject (e.g., Landscaping Quote)" required class="w-full mt-6 p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary transition duration-150">
-                        <textarea placeholder="Your Message or Project Details" rows="5" required class="w-full mt-6 p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary transition duration-150"></textarea>
+                        <input type="text" placeholder="Subject (e.g., Landscaping Quote)" required class="w-full mt-6 p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-150">
+                        <textarea placeholder="Your Message or Project Details" rows="5" required class="w-full mt-6 p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-150"></textarea>
                         
                         <!-- Audit Suggestion 19: Form Security (Honeypot/Token Example) -->
-                        <input type="hidden" name="form-token" id="form-token">
+                        <input type="hidden" name="form-token" id="form-token" value="secure_token_123">
                         
-                        <button type="submit" class="btn-ripple bg-primary text-white font-bold py-3 px-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 mt-6 w-full md:w-auto">
-                            Submit Inquiry
+                        <button type="submit" class="btn-ripple bg-primary text-white font-bold py-4 px-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 mt-6 w-full md:w-auto flex items-center justify-center">
+                            <span>Submit Inquiry</span>
+                            <i data-lucide="send" class="ml-2 w-4 h-4"></i>
                         </button>
-                        <div id="form-message" class="mt-4 text-center p-3 rounded-lg hidden"></div>
+                        <div id="form-message" class="mt-4 text-center p-3 rounded-lg hidden font-medium"></div>
                     </form>
                 </div>
             </div>
@@ -508,220 +538,176 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <!-- Brand Info -->
-                <div>
-                    <a href="#" class="flex items-center space-x-2 mb-3">
-                        <span class="text-2xl font-bold text-accent">MOOFAR</span>
-                    </a>
-                    <p class="text-gray-400 text-sm">Professional Solutions. Real Outcomes.</p>
-                    <p class="text-gray-400 text-sm mt-4">Botswana-based, multi-disciplinary company.</p>
-                </div>
-                
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-4 text-accent">Quick Links</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-200">About Us</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-200">Our Services</a></li>
-                        <!-- Audit Suggestion 18: Privacy Policy & Terms -->
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Privacy Policy (Placeholder)</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Terms of Service (Placeholder)</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Services Summary -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-4 text-accent">Top Services</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li>Landscaping & Hardscaping</li>
-                        <li>Construction & Maintenance</li>
-                        <li>Logistics & Transport</li>
-                        <li>Bush Clearing & EM</li>
-                        <li>Consultancy & Support</li>
-                    </ul>
-                </div>
-                
-                <!-- Contact Summary -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-4 text-accent">Connect</h4>
-                    <p class="text-sm text-gray-400 mb-2">Francistown, Botswana</p>
-                    <p class="text-sm text-gray-400 mb-2">Phone: +267 77723232</p>
-                    <a href="mailto:mookfara@gmail.com" class="text-sm text-gray-400 hover:text-white transition duration-200 block">Email: mookfara@gmail.com</a>
-                    
-                    <!-- Social/WhatsApp Link (Audit Suggestion 22) -->
-                    <div class="flex space-x-4 mt-4">
-                        <a href="https://wa.me/26777723232" target="_blank" aria-label="WhatsApp" class="text-gray-400 hover:text-primary transition duration-200">
-                            <i data-lucide="message-square" class="w-6 h-6"></i>
-                        </a>
-                        <!-- Placeholder for other social media -->
-                        <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-primary transition duration-200">
-                            <i data-lucide="facebook" class="w-6 h-6"></i>
-                        </a>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <img src="https://raw.githubusercontent.com/tmosimanyana/moofar/379c8ca26884ff46c755263514118fd3ff499f19/assets/MOOFAR%20Logo.jpg" alt="Moofar Logo" class="h-8 w-8 rounded-full">
+                        <span class="text-xl font-bold font-heading">MOOFAR</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Your trusted partner for sustainable development, construction excellence, and logistics solutions in Botswana.
+                    </p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="text-gray-400 hover:text-accent transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-accent transition"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-accent transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-accent transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
                     </div>
                 </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-gray-700 pb-2 inline-block">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#about" class="hover:text-accent transition">About Us</a></li>
+                        <li><a href="#services" class="hover:text-accent transition">Our Services</a></li>
+                        <li><a href="#team" class="hover:text-accent transition">Leadership Team</a></li>
+                        <li><a href="#contact" class="hover:text-accent transition">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-gray-700 pb-2 inline-block">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#services" class="hover:text-accent transition">Landscaping</a></li>
+                        <li><a href="#services" class="hover:text-accent transition">Construction</a></li>
+                        <li><a href="#services" class="hover:text-accent transition">Logistics</a></li>
+                        <li><a href="#services" class="hover:text-accent transition">Consultancy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Short -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-gray-700 pb-2 inline-block">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center"><i data-lucide="phone" class="w-4 h-4 mr-2"></i> +267 77723232</li>
+                        <li class="flex items-center"><i data-lucide="mail" class="w-4 h-4 mr-2"></i> mookfara@gmail.com</li>
+                        <li class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 mr-2"></i> Francistown, BW</li>
+                    </ul>
+                </div>
             </div>
-            
-            <div class="mt-8 pt-6 border-t border-gray-700 text-center">
-                <p class="text-sm text-gray-500">&copy; 2024 Moofar (PTY) LTD. All rights reserved.</p>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Moofar Proprietary Limited. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- Interactive Scripts -->
     <script>
-        // Lucide icons are automatically rendered by the script tag, but this ensures they refresh if needed
+        // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Audit Suggestion 7: Mobile Menu Toggle
+        // 1. Mobile Menu Toggle Logic
         function toggleMenu() {
             const nav = document.getElementById('mainNav');
-            const toggle = document.querySelector('.mobile-toggle');
-            const body = document.body;
+            const btn = document.querySelector('.mobile-toggle');
+            const icon = document.getElementById('menuIcon');
             
-            // Toggle 'active' class on the navigation
-            const isActive = nav.classList.toggle('active');
-
-            // Update button state and icon
-            toggle.setAttribute('aria-expanded', isActive);
-            // Using Lucide icons for better aesthetics than 'X' and '='
-            const icon = isActive ? 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>' : 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>';
-            toggle.innerHTML = icon;
+            nav.classList.toggle('active');
             
-            // Prevent scrolling when mobile menu is open
-            body.style.overflow = isActive ? 'hidden' : '';
+            // Toggle body scroll to prevent scrolling when menu is open
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : 'auto';
 
-            // Update body class for styling
-            body.classList.toggle('mobile-nav-active', isActive);
-            body.classList.toggle('mobile-nav-inactive', !isActive);
+            // Change Icon state (optional visual feedback)
+            if(nav.classList.contains('active')) {
+                // We're essentially replacing the icon via Lucide logic if we were re-rendering, 
+                // but for simple CSS toggles, the 'active' class handles visibility.
+                btn.setAttribute('aria-expanded', 'true');
+            } else {
+                btn.setAttribute('aria-expanded', 'false');
+            }
         }
 
-        // Close menu when clicking outside (Audit Suggestion 7)
-        document.addEventListener('click', (e) => {
+        function closeMenu() {
             const nav = document.getElementById('mainNav');
-            const toggle = document.querySelector('.mobile-toggle');
-
-            // Check if the menu is open and the click is outside the nav and the toggle button
-            if (nav?.classList.contains('active') && 
-                !nav.contains(e.target) && 
-                !toggle?.contains(e.target)) {
-                toggleMenu();
+            if(nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                document.body.style.overflow = 'auto';
             }
-            
-            // Also close menu on link click inside the nav for better UX
-            if (e.target.closest('#mainNav a')) {
-                if (nav.classList.contains('active')) {
-                    toggleMenu();
-                }
-            }
-        });
+        }
 
-
-        // Audit Suggestion 9: Implement Image Lazy Loading (Manual approach for single-file HTML)
-        const lazyLoad = () => {
-            const lazyImages = document.querySelectorAll('.lazy-image');
-            
-            if ("IntersectionObserver" in window) {
-                const observer = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const lazyImage = entry.target;
-                            const actualSrc = lazyImage.getAttribute('data-src');
-                            if (actualSrc) {
-                                lazyImage.src = actualSrc;
-                                lazyImage.removeAttribute('data-src');
-                                lazyImage.classList.remove('lazy-image');
-                                lazyImage.removeAttribute('loading');
-                            }
-                            observer.unobserve(lazyImage);
-                        }
-                    });
-                });
-
-                lazyImages.forEach(image => observer.observe(image));
-            } else {
-                // Fallback for older browsers: load all images immediately
-                lazyImages.forEach(lazyImage => {
-                    const actualSrc = lazyImage.getAttribute('data-src');
-                    if (actualSrc) {
-                        lazyImage.src = actualSrc;
-                        lazyImage.removeAttribute('data-src');
-                        lazyImage.classList.remove('lazy-image');
-                        lazyImage.removeAttribute('loading');
-                    }
-                });
-            }
-        };
-
-        // Audit Suggestion 24: Stats Counter Animation (using IntersectionObserver)
-        const startCounter = () => {
-            const stats = document.querySelectorAll('.stat .counter');
-            
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const target = entry.target;
-                        const finalValue = parseInt(target.textContent.replace(/\D/g, '')); // Get number, strip non-digits
-                        const duration = 2000;
-                        let startTimestamp = null;
-
-                        const step = (timestamp) => {
-                            if (!startTimestamp) startTimestamp = timestamp;
-                            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                            let currentValue = Math.floor(progress * finalValue);
-                            
-                            // Re-add the '+' or '%' sign if it was there
-                            let displayValue = currentValue;
-                            if (target.id === 'stat-1') displayValue += '+';
-                            if (target.id === 'stat-3') displayValue += '%';
-                            
-                            target.textContent = displayValue;
-
-                            if (progress < 1) {
-                                window.requestAnimationFrame(step);
-                            }
-                        };
-                        
-                        window.requestAnimationFrame(step);
-                        observer.unobserve(target); // Stop observing once animated
-                    }
-                });
-            }, { threshold: 0.5 }); // Start animation when 50% of element is visible
-
-            stats.forEach(stat => observer.observe(stat));
-        };
-
-        // Form submission handler (simulated)
+        // 2. Form Submission Handling (Audit Suggestion 19)
         function handleFormSubmit(event) {
             event.preventDefault();
-            const formMessage = document.getElementById('form-message');
-            
-            formMessage.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700');
-            formMessage.textContent = 'Sending...';
+            const form = event.target;
+            const messageDiv = document.getElementById('form-message');
+            const btn = form.querySelector('button');
+            const originalBtnText = btn.innerHTML;
 
-            // Simulate form submission success
+            // Simulate loading state
+            btn.disabled = true;
+            btn.innerHTML = 'Sending...';
+            btn.classList.add('opacity-75', 'cursor-not-allowed');
+
+            // Simulate server request
             setTimeout(() => {
-                formMessage.classList.add('bg-green-100', 'text-green-700');
-                formMessage.textContent = 'Thank you! Your inquiry has been sent. We will respond within 24 hours.';
-                event.target.reset(); // Clear the form
+                // Success state
+                btn.innerHTML = originalBtnText;
+                btn.disabled = false;
+                btn.classList.remove('opacity-75', 'cursor-not-allowed');
                 
-                // Track event (Audit Suggestion 21) - Placeholder since gtag() is not defined here
-                console.log('Event tracked: Form Submission Success');
-            }, 1500); 
+                messageDiv.classList.remove('hidden', 'bg-red-100', 'text-red-700');
+                messageDiv.classList.add('bg-green-100', 'text-green-700');
+                messageDiv.textContent = "Thank you! Your message has been sent successfully. We will contact you shortly.";
+                messageDiv.classList.remove('hidden');
 
-            // Simulate form security token (Audit Suggestion 19)
-            document.getElementById('form-token').value = new Date().getTime();
+                // Reset form
+                form.reset();
+
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    messageDiv.classList.add('hidden');
+                }, 5000);
+            }, 1500);
         }
 
-        // Initialize features on window load
-        window.onload = () => {
-            lazyLoad();
-            startCounter();
+        // 3. Number Counter Animation (Audit Suggestion 24)
+        const observeStats = () => {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200; // The lower the slower
+
+            const animateStats = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = +counter.getAttribute('data-target');
+                        
+                        const updateCount = () => {
+                            const count = +counter.innerText.replace('+', '').replace('%','');
+                            const inc = target / speed;
+
+                            if (count < target) {
+                                counter.innerText = Math.ceil(count + inc) + (counter.parentElement.innerText.includes('%') ? '%' : '+');
+                                setTimeout(updateCount, 20);
+                            } else {
+                                counter.innerText = target + (counter.parentElement.innerText.includes('Satisfaction') ? '%' : '+');
+                            }
+                        };
+                        updateCount();
+                        observer.unobserve(counter); // Only run once
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(animateStats, {
+                root: null,
+                threshold: 0.5
+            });
+
+            counters.forEach(counter => observer.observe(counter));
         };
+
+        // 4. Run Scripts on Load
+        document.addEventListener('DOMContentLoaded', () => {
+            observeStats();
+        });
+
     </script>
 </body>
 </html>
