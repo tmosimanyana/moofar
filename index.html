@@ -28,10 +28,36 @@
     .wa-btn{position:fixed;right:1.25rem;bottom:1.25rem;z-index:60;border-radius:999px;box-shadow:0 8px 26px rgba(34,197,94,0.18);}
     .avatar{width:150px;height:150px;border-radius:999px;object-fit:cover;border:6px solid rgba(255,255,255,0.9);box-shadow:0 12px 30px rgba(2,6,23,0.12);}
     .badge{background:linear-gradient(90deg,#fff,#f7fff7);padding:.6rem 1rem;border-radius:999px;border:1px solid rgba(30,70,40,0.06);display:inline-flex;gap:.6rem;align-items:center;}
-    .project-card{transition: transform 0.3s ease, box-shadow 0.3s ease; cursor:pointer;}
-    .project-card:hover{transform: scale(1.05); box-shadow:0 20px 40px rgba(0,0,0,0.15);}
-    .project-caption{transition: background 0.3s ease;}
-    .project-card:hover .project-caption{background: rgba(0,0,0,0.6);}
+
+    /* Gallery hover effect */
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+    .project-card:hover img { transform: scale(1.1); }
+    .project-caption {
+      position: absolute;
+      bottom: 0.5rem;
+      left: 0.5rem;
+      background: rgba(0,0,0,0.4);
+      color: white;
+      padding: 0.4rem 0.6rem;
+      border-radius: 0.5rem;
+      font-size: 0.875rem;
+      transition: background 0.3s ease;
+    }
+    .project-card:hover .project-caption { background: rgba(0,0,0,0.6); }
+
     @media (max-width:768px){.hero{min-height:62vh;padding-top:3.5rem}.avatar{width:120px;height:120px}}
   </style>
 </head>
@@ -80,10 +106,6 @@
         <div class="glass p-8 rounded-2xl shadow-xl max-w-3xl">
           <h1 class="text-4xl sm:text-5xl font-heading font-bold leading-tight">Professional Solutions. Real Outcomes.</h1>
           <p class="mt-4 text-lg text-white/90">Moofar (PTY) LTD is Botswana’s trusted, multi-disciplinary partner for sustainable development — delivering landscaping, construction, logistics and consultancy services with integrity and skill.</p>
-          <div class="flex gap-4 mt-6">
-            <a href="#services" class="btn-primary flex items-center gap-3"><i data-lucide="leaf" class="w-5 h-5"></i> Explore Services</a>
-            <a href="https://wa.me/26777723232" class="btn-ghost flex items-center gap-2" target="_blank"><i data-lucide="message-square" class="w-5 h-5"></i> Get a Quote</a>
-          </div>
         </div>
       </div>
     </div>
@@ -94,16 +116,6 @@
     <div class="max-w-7xl mx-auto px-6 sm:px-8">
       <h2 class="text-3xl font-heading font-bold text-slate-900 mb-4">Who We Are</h2>
       <p class="text-lg text-slate-700">Moofar (PTY) LTD is a Botswana-based, multi-disciplinary company providing innovative, reliable, and high-quality services. Established with integrity and professionalism, we are a trusted partner for individuals, organizations, and public entities.</p>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="py-16 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-6 sm:px-8">
-      <div class="text-center mb-10">
-        <p class="text-sm font-semibold text-green-2 uppercase">What We Do</p>
-        <h2 class="text-3xl font-heading font-bold">Key Services & Business Activities</h2>
-      </div>
     </div>
   </section>
 
@@ -139,31 +151,54 @@
     document.getElementById('year').textContent = new Date().getFullYear();
     lucide.createIcons();
 
-    // Projects Lightbox
     const projectsGrid = document.getElementById('projectsGrid');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const closeBtn = document.getElementById('lightboxClose');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
-    const totalProjects = 10;
+    const totalProjects = 12;
     let currentIndex = 0;
 
-    for(let i=1;i<=totalProjects;i++){
+    for (let i = 1; i <= totalProjects; i++) {
       const div = document.createElement('div');
-      div.className = 'glass h-56 flex items-end p-4 relative rounded-xl shadow-lg project-card';
-      div.style.background = `url('/assets/gallery${i}.webp') center/cover no-repeat`;
-      div.dataset.index = i;
-      div.innerHTML = `<div class="absolute bottom-4 left-4 bg-black/40 text-white px-3 py-1 rounded-md text-sm font-semibold project-caption">Project ${i}</div>`;
+      div.className = 'glass h-56 relative project-card';
+      
+      const img = document.createElement('img');
+      img.src = `/assets/gallery${i}.webp`;
+      img.alt = `Project ${i}`;
+      div.appendChild(img);
+      
+      const caption = document.createElement('div');
+      caption.className = 'project-caption';
+      caption.textContent = `Project ${i}`;
+      div.appendChild(caption);
+
       projectsGrid.appendChild(div);
-      div.addEventListener('click',()=>{currentIndex=i; lightboxImg.src=`/assets/gallery${currentIndex}.webp`; lightbox.classList.remove('hidden');});
+
+      div.addEventListener('click', () => {
+        currentIndex = i;
+        lightboxImg.src = `/assets/gallery${currentIndex}.webp`;
+        lightbox.classList.remove('hidden');
+      });
     }
 
-    closeBtn.addEventListener('click',()=>lightbox.classList.add('hidden'));
-    prevBtn.addEventListener('click',()=>{currentIndex=currentIndex===1?totalProjects:currentIndex-1; lightboxImg.src=`/assets/gallery${currentIndex}.webp`;});
-    nextBtn.addEventListener('click',()=>{currentIndex=currentIndex===totalProjects?1:currentIndex+1; lightboxImg.src=`/assets/gallery${currentIndex}.webp`;});
-    lightbox.addEventListener('click',e=>{if(e.target===lightbox) lightbox.classList.add('hidden');});
-    document.addEventListener('keydown',e=>{if(lightbox.classList.contains('hidden'))return;if(e.key==='ArrowLeft')prevBtn.click();if(e.key==='ArrowRight')nextBtn.click();if(e.key==='Escape')closeBtn.click();});
+    closeBtn.addEventListener('click', () => lightbox.classList.add('hidden'));
+    prevBtn.addEventListener('click', () => {
+      currentIndex = currentIndex === 1 ? totalProjects : currentIndex - 1;
+      lightboxImg.src = `/assets/gallery${currentIndex}.webp`;
+    });
+    nextBtn.addEventListener('click', () => {
+      currentIndex = currentIndex === totalProjects ? 1 : currentIndex + 1;
+      lightboxImg.src = `/assets/gallery${currentIndex}.webp`;
+    });
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.add('hidden'); });
+    document.addEventListener('keydown', e => {
+      if (lightbox.classList.contains('hidden')) return;
+      if (e.key === 'ArrowLeft') prevBtn.click();
+      if (e.key === 'ArrowRight') nextBtn.click();
+      if (e.key === 'Escape') closeBtn.click();
+    });
   </script>
 
 </body>
