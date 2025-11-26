@@ -10,66 +10,33 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
-
     :root{
-      --accent:#F59E42; /* warm orange */
-      --green-1:#1f7a4a; /* deep foliage */
-      --green-2:#2fa66a; /* lively green */
+      --accent:#F59E42;
+      --green-1:#1f7a4a;
+      --green-2:#2fa66a;
       --muted:#7b8a80;
       --card: rgba(255,255,255,0.85);
     }
-
     html,body{height:100%;}
     body{font-family:Inter,system-ui,Arial,sans-serif;color:#0f172a;background:linear-gradient(180deg,#f7faf7 0%, #f1f6f2 100%);}
-
-    .brand-heading{font-family:'Playfair Display',serif;color:var(--green-1);letter-spacing:-0.02em}
-
-    /* Hero visuals */
-    .hero{min-height:78vh;background:linear-gradient(180deg, rgba(12,30,18,0.32), rgba(12,30,18,0.45)), url('/assets/hero.webp') center/cover no-repeat;border-bottom-left-radius:1.25rem;border-bottom-right-radius:1.25rem}
-
-    /* Glass cards */
-    .glass{background:var(--card);backdrop-filter:blur(6px);box-shadow:0 10px 30px rgba(16,24,32,0.08);border-radius:12px}
-
-    /* Service icon circle */
-    .icon-circle{width:68px;height:68px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--green-1),var(--green-2));color:white}
-
-    /* Buttons */
-    .btn-primary{background:linear-gradient(90deg,var(--green-1),var(--green-2));color:white;padding:.9rem 1.25rem;border-radius:12px;font-weight:700}
-    .btn-ghost{background:white;padding:.7rem 1rem;border-radius:10px;border:1px solid rgba(15,23,42,0.06)}
-
-    /* Floating WhatsApp */
-    .wa-btn{position:fixed;right:1.25rem;bottom:1.25rem;z-index:60;border-radius:999px;box-shadow:0 8px 26px rgba(34,197,94,0.18)}
-
-    /* Team */
-    .avatar{width:150px;height:150px;border-radius:999px;object-fit:cover;border:6px solid rgba(255,255,255,0.9);box-shadow:0 12px 30px rgba(2,6,23,0.12)}
-
-    /* Badge */
-    .badge{background:linear-gradient(90deg,#fff,#f7fff7);padding:.6rem 1rem;border-radius:999px;border:1px solid rgba(30,70,40,0.06);display:inline-flex;gap:.6rem;align-items:center}
-
-    @media (max-width:768px){
-      .hero{min-height:62vh;padding-top:3.5rem}
-      .avatar{width:120px;height:120px}
-    }
+    .brand-heading{font-family:'Playfair Display',serif;color:var(--green-1);letter-spacing:-0.02em;}
+    .hero{min-height:78vh;background:linear-gradient(180deg, rgba(12,30,18,0.32), rgba(12,30,18,0.45)), url('/assets/hero.webp') center/cover no-repeat;border-bottom-left-radius:1.25rem;border-bottom-right-radius:1.25rem;}
+    .glass{background:var(--card);backdrop-filter:blur(6px);box-shadow:0 10px 30px rgba(16,24,32,0.08);border-radius:12px;}
+    .icon-circle{width:68px;height:68px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--green-1),var(--green-2));color:white;}
+    .btn-primary{background:linear-gradient(90deg,var(--green-1),var(--green-2));color:white;padding:.9rem 1.25rem;border-radius:12px;font-weight:700;}
+    .btn-ghost{background:white;padding:.7rem 1rem;border-radius:10px;border:1px solid rgba(15,23,42,0.06);}
+    .wa-btn{position:fixed;right:1.25rem;bottom:1.25rem;z-index:60;border-radius:999px;box-shadow:0 8px 26px rgba(34,197,94,0.18);}
+    .avatar{width:150px;height:150px;border-radius:999px;object-fit:cover;border:6px solid rgba(255,255,255,0.9);box-shadow:0 12px 30px rgba(2,6,23,0.12);}
+    .badge{background:linear-gradient(90deg,#fff,#f7fff7);padding:.6rem 1rem;border-radius:999px;border:1px solid rgba(30,70,40,0.06);display:inline-flex;gap:.6rem;align-items:center;}
+    .project-card{transition: transform 0.3s ease, box-shadow 0.3s ease; cursor:pointer;}
+    .project-card:hover{transform: scale(1.05); box-shadow:0 20px 40px rgba(0,0,0,0.15);}
+    .project-caption{transition: background 0.3s ease;}
+    .project-card:hover .project-caption{background: rgba(0,0,0,0.6);}
+    @media (max-width:768px){.hero{min-height:62vh;padding-top:3.5rem}.avatar{width:120px;height:120px}}
   </style>
-
-  <meta name="description" content="Moofar (PTY) LTD — Professional landscaping, construction, maintenance, logistics and consultancy services in Botswana.">
-
-  <!-- Structured data: LocalBusiness + registration -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"Moofar Proprietary Limited",
-    "url":"https://moofar.vercel.app",
-    "image":"/assets/logo.webp",
-    "telephone":"+26777723232",
-    "address":{"@type":"PostalAddress","addressLocality":"Francistown","addressCountry":"BW"},
-    "founders":[{"@type":"Person","name":"Farai Madorobo"},{"@type":"Person","name":"Mooketsi Mapugwa"}],
-    "sameAs":["https://wa.me/26777723232"]
-  }
-  </script>
 </head>
 <body>
+
   <!-- Header -->
   <header class="sticky top-4 z-50">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
@@ -80,7 +47,6 @@
           <div class="text-xs text-muted text-sm" style="color:var(--muted)">Landscaping • Construction • Logistics</div>
         </div>
       </a>
-
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-700">
         <a href="#about" class="hover:text-green-2">About</a>
         <a href="#services" class="hover:text-green-2">Services</a>
@@ -89,15 +55,12 @@
         <a href="#contact" class="hover:text-green-2">Contact</a>
         <a href="/assets/Moofar%20Company%20Profile.pdf" target="_blank" class="ml-4 badge">Download Profile</a>
       </nav>
-
       <div class="md:hidden">
         <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" aria-label="Open menu" class="p-2 rounded-md border">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
       </div>
     </div>
-
-    <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden bg-white p-4 mt-3 shadow-lg rounded-lg max-w-3xl mx-auto">
       <div class="flex flex-col gap-3">
         <a href="#about" class="py-2">About</a>
@@ -111,250 +74,98 @@
   </header>
 
   <!-- Hero -->
-  <main>
-    <section class="hero flex items-center">
-      <div class="max-w-7xl mx-auto px-6 sm:px-8 py-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div class="lg:col-span-7 text-white relative">
-          <div class="glass p-8 rounded-2xl shadow-xl max-w-3xl">
-            <h1 class="text-4xl sm:text-5xl font-heading font-bold leading-tight">Professional Solutions. Real Outcomes.</h1>
-            <p class="mt-4 text-lg text-white/90">Moofar (PTY) LTD is Botswana’s trusted, multi-disciplinary partner for sustainable development — delivering landscaping, construction, logistics and consultancy services with integrity and skill.</p>
-
-            <div class="flex gap-4 mt-6">
-              <a href="#services" class="btn-primary flex items-center gap-3"><i data-lucide="leaf" class="w-5 h-5"></i> Explore Services</a>
-              <a href="https://wa.me/26777723232" class="btn-ghost flex items-center gap-2" target="_blank"><i data-lucide="message-square" class="w-5 h-5"></i> Get a Quote</a>
-            </div>
-
-            <div class="mt-6 flex items-center gap-4">
-              <div class="badge"><i data-lucide="check-circle" class="w-4 h-4 text-green-1"></i><span class="text-sm">Registered: BW00009410484</span></div>
-              <div class="text-sm" style="color:var(--muted)"><strong>Established:</strong> 18 Sep 2025</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Stats & Quick contact -->
-        <aside class="lg:col-span-5">
-          <div class="glass p-6">
-            <div class="flex items-center gap-4">
-              <div>
-                <div class="text-3xl font-bold text-green-1">150+</div>
-                <div class="text-sm text-muted">Projects Completed</div>
-              </div>
-              <div>
-                <div class="text-3xl font-bold text-green-1">10+</div>
-                <div class="text-sm text-muted">Years Experience</div>
-              </div>
-              <div>
-                <div class="text-3xl font-bold text-green-1">100%</div>
-                <div class="text-sm text-muted">Client Satisfaction</div>
-              </div>
-            </div>
-
-            <div class="mt-6 border-t pt-4">
-              <div class="text-sm text-muted">Need a site visit or quote?</div>
-              <a href="https://wa.me/26777723232" class="mt-3 inline-flex w-full items-center justify-center btn-primary">Chat on WhatsApp</a>
-              <a href="#contact" class="mt-3 inline-flex w-full items-center justify-center btn-ghost">Contact Us</a>
-            </div>
-          </div>
-
-          <!-- Company profile download card -->
-          <div class="mt-6 glass p-4 flex items-center gap-4">
-            <div class="icon-circle"><i data-lucide="file-text" class="w-5 h-5"></i></div>
-            <div>
-              <div class="font-semibold">Company Profile</div>
-              <div class="text-sm text-muted">Download our company profile (PDF)</div>
-              <div class="mt-2 flex gap-2">
-                <a href="/assets/Moofar%20Company%20Profile.pdf" target="_blank" class="btn-ghost">Open</a>
-                <a href="/assets/Moofar%20Company%20Profile.pdf" download class="btn-ghost">Download</a>
-              </div>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- About (uses text from uploaded company profile) -->
-    <section id="about" class="py-20">
-      <div class="max-w-7xl mx-auto px-6 sm:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-          <div class="lg:col-span-2">
-            <h2 class="text-3xl font-heading font-bold text-slate-900">Who We Are</h2>
-            <p class="mt-4 text-lg text-slate-700">Moofar (PTY) LTD is a Botswana-based, multi-disciplinary company dedicated to providing a wide range of innovative, reliable, and high-quality services. Established with a commitment to integrity, professionalism, and customer satisfaction, Moofar aims to be a trusted partner for individuals, organizations, and public entities across the country.</p>
-
-            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div class="glass p-6">
-                <h3 class="font-semibold">Mission</h3>
-                <p class="text-sm text-slate-600 mt-2">To deliver outstanding services through operational excellence, skilled workmanship, innovation, and a commitment to improving the communities and industries we serve.</p>
-              </div>
-
-              <div class="glass p-6">
-                <h3 class="font-semibold">Vision</h3>
-                <p class="text-sm text-slate-600 mt-2">To become a leading and trusted provider of diversified, sustainable, and customer-focused solutions in Botswana and the region.</p>
-              </div>
-            </div>
-
-            <div class="mt-6">
-              <h3 class="font-heading text-xl font-bold">Core Values</h3>
-              <ul class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3 text-slate-700">
-                <li class="p-3 glass">Integrity — Honesty & fairness.</li>
-                <li class="p-3 glass">Innovation — New solutions.</li>
-                <li class="p-3 glass">Excellence — Pursuing our best.</li>
-                <li class="p-3 glass">Customer Focus — Exceeding expectations.</li>
-              </ul>
-            </div>
-          </div>
-
-          <aside>
-            <div class="glass p-6 text-sm">
-              <div class="font-semibold">Verified Company</div>
-              <div class="mt-2 text-slate-600">Moofar Proprietary Limited — Certificate of Incorporation</div>
-              <div class="mt-3 text-xs text-muted">UIN: <strong>BW00009410484</strong></div>
-              <a href="/assets/Incorporation-Moofar%20Proprietary%20Limited-BW00009410484.pdf" target="_blank" class="mt-4 btn-ghost inline-block">View Certificate</a>
-            </div>
-
-            <div class="mt-6 glass p-4">
-              <div class="font-semibold">Contact</div>
-              <div class="text-sm text-slate-600 mt-2">Francistown, Botswana</div>
-              <div class="text-sm mt-2"><strong>Phone:</strong> <a href="tel:+26777723232">+267 77 723 232</a></div>
-              <div class="text-sm mt-1"><strong>Email:</strong> <a href="mailto:mookfara@gmail.com">mookfara@gmail.com</a></div>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section id="services" class="py-16 bg-slate-50">
-      <div class="max-w-7xl mx-auto px-6 sm:px-8">
-        <div class="text-center mb-10">
-          <p class="text-sm font-semibold text-green-2 uppercase">What We Do</p>
-          <h2 class="text-3xl font-heading font-bold">Key Services & Business Activities</h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="glass p-6">
-            <div class="flex items-center gap-4"><div class="icon-circle"><i data-lucide="trees" class="w-5 h-5"></i></div><div><h4 class="font-semibold">Landscaping & Horticulture</h4><p class="text-sm text-slate-600 mt-2">Landscape design, lawn establishment, irrigation, hardscaping, tree planting & maintenance.</p></div></div>
-          </div>
-
-          <div class="glass p-6">
-            <div class="flex items-center gap-4"><div class="icon-circle"><i data-lucide="hammer" class="w-5 h-5"></i></div><div><h4 class="font-semibold">Construction & Maintenance</h4><p class="text-sm text-slate-600 mt-2">Building works, renovations, plumbing, electrical, site prep, fencing and civil works.</p></div></div>
-          </div>
-
-          <div class="glass p-6">
-            <div class="flex items-center gap-4"><div class="icon-circle"><i data-lucide="truck" class="w-5 h-5"></i></div><div><h4 class="font-semibold">Logistics & Supply</h4><p class="text-sm text-slate-600 mt-2">Nationwide transport, procurement & delivery, wholesale/retail supply and courier services.</p></div></div>
-          </div>
-
-          <div class="glass p-6">
-            <div class="flex items-center gap-4"><div class="icon-circle"><i data-lucide="leaf" class="w-5 h-5"></i></div><div><h4 class="font-semibold">Environmental Management</h4><p class="text-sm text-slate-600 mt-2">Mechanical & manual bush clearing, land rehabilitation, invasive species removal & vegetation control.</p></div></div>
-          </div>
-
-          <div class="glass p-6">
-            <div class="flex items-center gap-4"><div class="icon-circle"><i data-lucide="sparkles" class="w-5 h-5"></i></div><div><h4 class="font-semibold">General Services</h4><p class="text-sm text-slate-600 mt-2">Cleaning, waste removal, labour hire, event support and office services.</p></div></div>
-          </div>
-
-          <div class="glass p-6">
-            <div class="flex items-center gap-4"><div class="icon-circle"><i data-lucide="briefcase" class="w-5 h-5"></i></div><div><h4 class="font-semibold">Consultancy & Support</h4><p class="text-sm text-slate-600 mt-2">Business advisory, project management, procurement and tailored sourcing solutions.</p></div></div>
+  <section class="hero flex items-center">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 py-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-7 text-white relative">
+        <div class="glass p-8 rounded-2xl shadow-xl max-w-3xl">
+          <h1 class="text-4xl sm:text-5xl font-heading font-bold leading-tight">Professional Solutions. Real Outcomes.</h1>
+          <p class="mt-4 text-lg text-white/90">Moofar (PTY) LTD is Botswana’s trusted, multi-disciplinary partner for sustainable development — delivering landscaping, construction, logistics and consultancy services with integrity and skill.</p>
+          <div class="flex gap-4 mt-6">
+            <a href="#services" class="btn-primary flex items-center gap-3"><i data-lucide="leaf" class="w-5 h-5"></i> Explore Services</a>
+            <a href="https://wa.me/26777723232" class="btn-ghost flex items-center gap-2" target="_blank"><i data-lucide="message-square" class="w-5 h-5"></i> Get a Quote</a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Projects (Placeholder gallery) -->
-    <section id="projects" class="py-16">
-      <div class="max-w-7xl mx-auto px-6 sm:px-8">
-        <div class="text-center mb-10"><h2 class="text-3xl font-heading font-bold">Selected Projects</h2><p class="mt-2 text-sm text-slate-600">Portfolio coming soon — upload project photos to showcase real work.</p></div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="glass h-56 flex items-end p-4" style="background:url('/assets/portfolio-1.webp') center/cover;"></div>
-          <div class="glass h-56 flex items-end p-4" style="background:url('/assets/portfolio-2.webp') center/cover;"></div>
-          <div class="glass h-56 flex items-end p-4" style="background:url('/assets/portfolio-3.webp') center/cover;"></div>
-        </div>
+  <!-- About -->
+  <section id="about" class="py-20">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <h2 class="text-3xl font-heading font-bold text-slate-900 mb-4">Who We Are</h2>
+      <p class="text-lg text-slate-700">Moofar (PTY) LTD is a Botswana-based, multi-disciplinary company providing innovative, reliable, and high-quality services. Established with integrity and professionalism, we are a trusted partner for individuals, organizations, and public entities.</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="text-center mb-10">
+        <p class="text-sm font-semibold text-green-2 uppercase">What We Do</p>
+        <h2 class="text-3xl font-heading font-bold">Key Services & Business Activities</h2>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Team -->
-    <section id="team" class="py-16 bg-slate-50">
-      <div class="max-w-7xl mx-auto px-6 sm:px-8">
-        <div class="text-center mb-10"><h2 class="text-3xl font-heading font-bold">Meet Our Visionary Co-Founders</h2><p class="mt-2 text-sm text-slate-600">Leadership rooted in integrity, innovation and hands-on delivery.</p></div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div class="text-center">
-            <img src="/assets/farai.webp" alt="Farai Madorobo" class="avatar mx-auto">
-            <h3 class="mt-4 font-semibold">Farai Madorobo</h3>
-            <div class="text-sm text-slate-600">Co-founder & Operations Director</div>
-            <p class="mt-3 text-sm text-slate-700">Farai brings a powerful blend of operational expertise and leadership, driving Moofar's commitment to excellence and high-quality project delivery across all sectors.</p>
-          </div>
-
-          <div class="text-center">
-            <img src="/assets/mox.webp" alt="Mooketsi Mapugwa" class="avatar mx-auto">
-            <h3 class="mt-4 font-semibold">Mooketsi Mapugwa</h3>
-            <div class="text-sm text-slate-600">Co-founder & Strategy Director</div>
-            <p class="mt-3 text-sm text-slate-700">Mooketsi focuses on strategic planning and innovation, ensuring Moofar adopts sustainable practices and technological advancements to serve clients and communities effectively.</p>
-          </div>
-        </div>
+  <!-- Projects Gallery -->
+  <section id="projects" class="py-16">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-heading font-bold">Selected Projects</h2>
+        <p class="mt-2 text-sm text-slate-600">Portfolio of our completed work — click to view larger.</p>
       </div>
-    </section>
+      <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
 
-    <!-- Contact -->
-    <section id="contact" class="py-16">
-      <div class="max-w-7xl mx-auto px-6 sm:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div class="lg:col-span-1 glass p-6">
-            <h3 class="font-semibold">Get In Touch</h3>
-            <p class="text-sm text-slate-600 mt-2">We're ready to discuss your next project. Contact us today for a professional solution and real outcomes.</p>
-            <div class="mt-4 text-sm"><strong>Phone:</strong> <a href="tel:+26777723232">+267 77 723 232</a></div>
-            <div class="text-sm mt-1"><strong>Email:</strong> <a href="mailto:mookfara@gmail.com">mookfara@gmail.com</a></div>
-            <div class="mt-4">
-              <a href="https://wa.me/26777723232" class="btn-primary inline-flex items-center gap-2 wa-btn">Chat on WhatsApp</a>
-            </div>
-          </div>
+  <!-- Lightbox Overlay -->
+  <div id="lightbox" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-50">
+    <button id="lightboxClose" class="absolute top-4 right-4 text-white text-3xl">&times;</button>
+    <button id="prevBtn" class="absolute left-4 text-white text-3xl">&#10094;</button>
+    <img id="lightboxImg" src="" class="max-h-[90%] max-w-[90%] rounded-xl shadow-2xl">
+    <button id="nextBtn" class="absolute right-4 text-white text-3xl">&#10095;</button>
+  </div>
 
-          <div class="lg:col-span-2 glass p-6">
-            <!-- EmailJS form placeholders remain; user may replace with Formspree if desired -->
-            <form id="contactForm">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input name="from_name" required class="p-3 border rounded-md" placeholder="Your name">
-                <input name="reply_to" required type="email" class="p-3 border rounded-md" placeholder="Email">
-              </div>
-              <input name="subject" required class="p-3 border rounded-md mt-4" placeholder="Subject">
-              <textarea name="message" rows="6" required class="p-3 border rounded-md mt-4" placeholder="Message"></textarea>
-              <div class="mt-4 flex gap-3">
-                <button type="submit" class="btn-primary">Send Message</button>
-                <a href="/assets/Moofar%20Company%20Profile.pdf" target="_blank" class="btn-ghost">Download Profile</a>
-              </div>
-              <div id="formMsg" class="mt-4 text-sm hidden"></div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- Footer -->
+  <footer class="py-8 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3"><img src="/assets/logo.webp" alt="logo" class="h-10 w-10 rounded-full"><div><div class="brand-heading text-lg">MOOFAR</div><div class="text-xs text-slate-300">Francistown, Botswana</div></div></div>
+      <div class="text-sm text-slate-300">&copy; <span id="year"></span> Moofar Proprietary Limited — All rights reserved.</div>
+    </div>
+  </footer>
 
-    <!-- Footer -->
-    <footer class="py-8 bg-slate-900 text-white">
-      <div class="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-        <div class="flex items-center gap-3"><img src="/assets/logo.webp" alt="logo" class="h-10 w-10 rounded-full"><div><div class="brand-heading text-lg">MOOFAR</div><div class="text-xs text-slate-300">Francistown, Botswana</div></div></div>
-        <div class="text-sm text-slate-300">&copy; <span id="year"></span> Moofar Proprietary Limited — All rights reserved.</div>
-        <div class="flex items-center gap-3">
-          <a href="https://wa.me/26777723232" class="text-slate-300 hover:text-white"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
-          <a href="mailto:mookfara@gmail.com" class="text-slate-300 hover:text-white"><i data-lucide="mail" class="w-5 h-5"></i></a>
-        </div>
-      </div>
-    </footer>
-  </main>
-
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/26777723232" target="_blank" aria-label="Chat on WhatsApp" class="wa-btn bg-green-600 p-3 hidden md:flex items-center justify-center"><i data-lucide="phone" class="w-5 h-5 text-white"></i></a>
-
+  <!-- Scripts -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     lucide.createIcons();
 
-    // Simple contact form client-side behaviour with EmailJS placeholders
-    document.getElementById('contactForm').addEventListener('submit', async function(e){
-      e.preventDefault();
-      const form = e.target; const msg = document.getElementById('formMsg');
-      msg.classList.remove('hidden'); msg.textContent = 'Sending...';
+    // Projects Lightbox
+    const projectsGrid = document.getElementById('projectsGrid');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeBtn = document.getElementById('lightboxClose');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const totalProjects = 10;
+    let currentIndex = 0;
 
-      // If you'd like, we can wire EmailJS here. For now we'll simulate success.
-      setTimeout(()=>{ msg.textContent = 'Thanks — your message was received. We will respond shortly.'; form.reset(); }, 900);
-    });
+    for(let i=1;i<=totalProjects;i++){
+      const div = document.createElement('div');
+      div.className = 'glass h-56 flex items-end p-4 relative rounded-xl shadow-lg project-card';
+      div.style.background = `url('/assets/gallery${i}.webp') center/cover no-repeat`;
+      div.dataset.index = i;
+      div.innerHTML = `<div class="absolute bottom-4 left-4 bg-black/40 text-white px-3 py-1 rounded-md text-sm font-semibold project-caption">Project ${i}</div>`;
+      projectsGrid.appendChild(div);
+      div.addEventListener('click',()=>{currentIndex=i; lightboxImg.src=`/assets/gallery${currentIndex}.webp`; lightbox.classList.remove('hidden');});
+    }
+
+    closeBtn.addEventListener('click',()=>lightbox.classList.add('hidden'));
+    prevBtn.addEventListener('click',()=>{currentIndex=currentIndex===1?totalProjects:currentIndex-1; lightboxImg.src=`/assets/gallery${currentIndex}.webp`;});
+    nextBtn.addEventListener('click',()=>{currentIndex=currentIndex===totalProjects?1:currentIndex+1; lightboxImg.src=`/assets/gallery${currentIndex}.webp`;});
+    lightbox.addEventListener('click',e=>{if(e.target===lightbox) lightbox.classList.add('hidden');});
+    document.addEventListener('keydown',e=>{if(lightbox.classList.contains('hidden'))return;if(e.key==='ArrowLeft')prevBtn.click();if(e.key==='ArrowRight')nextBtn.click();if(e.key==='Escape')closeBtn.click();});
   </script>
+
 </body>
 </html>
+
