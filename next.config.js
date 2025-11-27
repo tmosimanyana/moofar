@@ -3,7 +3,7 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/(.*)', // applies to all routes
+        source: '/(.*)', // all routes
         headers: [
           {
             key: 'X-Robots-Tag',
@@ -16,3 +16,5 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
+
