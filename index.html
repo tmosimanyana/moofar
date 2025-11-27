@@ -5,165 +5,167 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Moofar PTY LTD — Landscaping, Construction & Multi-Disciplinary Services</title>
 
-  <!-- Royal Gardena Theme CSS -->
-  <link rel="stylesheet" href="https://royalgardencentre.co.bw/wp-content/plugins/bold-page-builder/css/front_end/content_elements.crush.css">
-  <link rel="stylesheet" href="https://royalgardencentre.co.bw/wp-content/plugins/bold-page-builder/slick/slick.css">
-  <link rel="stylesheet" href="https://royalgardencentre.co.bw/wp-content/plugins/contact-form-7/includes/css/styles.css">
-  <link rel="stylesheet" href="https://royalgardencentre.co.bw/wp-content/themes/gardena/style.css">
-
-  <!-- Keep Moofar structured SEO -->
-  <meta name="description" content="Moofar PTY LTD — Sustainable landscaping, construction, logistics & bush clearing in Botswana." />
+  <meta name="description" content="Moofar PTY LTD — Sustainable landscaping, construction, logistics & bush clearing services across Botswana." />
   <meta name="robots" content="index,follow" />
 
-  <!-- Royal Color Override -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --accent:#009d59;
-      --accent-dark:#007840;
+      --green:#2baa3e;
+      --green-dark:#208a33;
+      --dark:#1a1f1a;
+      --light:#f6fff8;
       --radius:12px;
-      --maxW:1200px;
-      --shadow:0 10px 30px rgba(15,25,15,0.08);
+      --shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+    body{background:#fff;color:var(--dark);line-height:1.6;}
+    img{max-width:100%;display:block;}
+    a{text-decoration:none;color:inherit;}
+
+    /* Layout */
+    .container{max-width:1200px;margin:0 auto;padding:0 1.4rem;}
+
+    /* Header */
+    header{position:fixed;top:0;left:0;width:100%;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0.7rem 2rem;box-shadow:var(--shadow);z-index:1000;}
+    header img{height:70px;}
+    nav ul{display:flex;gap:2rem;list-style:none;}
+    nav a{color:var(--dark);font-weight:500;}
+    nav a:hover{color:var(--green);}
+
+    /* HERO */
+    .hero{
+      height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
+      background:url('https://images.unsplash.com/photo-1500382017468-9049feddf25e?auto=format&w=1400&q=70') center/cover no-repeat;
+      position:relative;
+    }
+    .hero::after{
+      content:'';position:absolute;inset:0;background:rgba(0,0,0,0.5);
+    }
+    .hero-content{position:relative;z-index:2;max-width:800px;padding:1rem;}
+    .hero h1{font-size:2.4rem;font-weight:700;margin-bottom:0.8rem;}
+    .hero p{font-size:1.15rem;margin-bottom:1.8rem;}
+    .btn-primary{
+      display:inline-block;background:var(--green);padding:0.8rem 1.6rem;border-radius:999px;color:#fff;font-weight:600;
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    }
+    .btn-primary:hover{background:var(--green-dark);}
+
+    /* Sections */
+    section{padding:4rem 0;}
+    h2.section-title{text-align:center;font-size:2rem;font-weight:700;margin-bottom:2.6rem;color:var(--dark);}
+
+    /* Services */
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.6rem;}
+    .service-card{
+      padding:1.6rem;border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);transition:0.3s;
+    }
+    .service-card:hover{transform:translateY(-6px);}
+    .service-card h4{color:var(--green-dark);margin-bottom:0.6rem;font-weight:600;}
+
+    /* Contact */
+    .contact-box{
+      max-width:750px;margin:0 auto;background:#fff;padding:2rem;border-radius:var(--radius);box-shadow:var(--shadow);text-align:center;
+    }
+    .contact-box a{color:var(--green-dark);font-weight:600;}
+    .contact-box a:hover{text-decoration:underline;}
+
+    /* WhatsApp Button */
+    .whatsapp-float{
+      position:fixed;right:22px;bottom:22px;z-index:1000;
+    }
+    .whatsapp-float a{
+      display:flex;align-items:center;background:#25D366;color:#fff;padding:0.8rem 1.2rem;border-radius:999px;
+      font-weight:600;gap:0.5rem;box-shadow:var(--shadow);
     }
 
-    body{margin:0;font-family:"Poppins",Arial,Helvetica,sans-serif;background:#fff;color:#1f2d1f;}
-    img{max-width:100%;display:block}
-
-    /* Limit content width */
-    .site{max-width:var(--maxW);margin:0 auto;padding:0 1rem}
-
-    /* Override headline spacing */
-    h3.section-title{text-align:center;color:var(--accent-dark);margin-bottom:2.4rem;font-weight:800}
-
-    /* Fix bt_bb card padding */
-    .bt_bb_card{padding:1.35rem!important}
-    .btn-primary,.bt_bb_button a{background:var(--accent)!important;border-radius:999px!important;color:#fff!important;font-weight:700!important;padding:0.7rem 1.6rem!important}
-    .btn-primary:hover,.bt_bb_button a:hover{background:var(--accent-dark)!important}
-
-    /* WhatsApp Floating Button */
-    .whatsapp-float{position:fixed;right:18px;bottom:18px;z-index:150}
-    .whatsapp-float a{display:flex;align-items:center;gap:0.6rem;background:#25D366;color:#fff;padding:0.8rem 1rem;border-radius:999px;font-weight:700;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,0.18)}
+    /* Mobile */
+    @media(max-width:768px){
+      .hero h1{font-size:1.8rem;}
+      header{padding:0.6rem 1rem;}
+      header img{height:55px;}
+      nav ul{gap:1rem;}
+      .services{grid-template-columns:1fr;}
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- Royal Styled Header -->
-  <header class="mainHeader btLightAccentHeader">
-    <div class="btLogoArea">
-      <div class="logo">
-        <a href="/">
-          <img src="https://moofar.vercel.app/assets/logo.svg" alt="Moofar logo" style="height:85px;">
-        </a>
-      </div>
-      <div class="menuPort">
-        <nav>
-          <ul class="menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
+<header>
+  <a href="#home"><img src="https://moofar.vercel.app/assets/logo.svg" alt="Moofar Logo"></a>
+  <nav>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- HERO -->
-  <section id="home" class="bt_bb_section bt_bb_color_scheme_3 bt_bb_layout_boxed_1200 bt_bb_top_spacing_large bt_bb_bottom_spacing_large">
-    <div class="bt_bb_port bt_bb_padding_normal">
-      <div class="bt_bb_headline bt_bb_color_scheme_3 bt_bb_dash_none bt_bb_alignment_center">
-        <h2 class="bt_bb_headline_tag"><span class="bt_bb_headline_content">Trusted • Local • Sustainable</span></h2>
-      </div>
-
-      <div class="bt_bb_headline bt_bb_size_extralarge bt_bb_superheadline bt_bb_alignment_center">
-        <h1 class="bt_bb_headline_tag"><span class="bt_bb_headline_content">Reliable multi-disciplinary services across Botswana</span></h1>
-      </div>
-
-      <p style="text-align:center;max-width:820px;margin:0 auto;color:#fff;font-size:1.1rem;">
-        We provide landscaping, horticulture, construction, bush clearing, logistics & business support — local, practical, sustainable.
-      </p>
-
-      <div style="text-align:center;margin-top:1.6rem">
-        <a class="btn-primary" href="#contact">Get a Quote</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="bt_bb_section bt_bb_layout_boxed_1200 bt_bb_top_spacing_large bt_bb_bottom_spacing_large">
-    <div class="site">
-      <h3 class="section-title">Our Services</h3>
-      <div class="bt_bb_row bt_bb_column_gap_30">
-
-        <div class="bt_bb_card bt_bb_style_outline bt_bb_icon_top">
-          <h4>Landscape Design & Maintenance</h4>
-          <p>Design, installation & maintenance of gardens, lawns, irrigation & hardscaping.</p>
-        </div>
-
-        <div class="bt_bb_card bt_bb_style_outline bt_bb_icon_top">
-          <h4>Horticulture & Nursery</h4>
-          <p>Nursery setup, plant supply, tree planting & plant health management.</p>
-        </div>
-
-        <div class="bt_bb_card bt_bb_style_outline bt_bb_icon_top">
-          <h4>Bush Clearing & Environmental Works</h4>
-          <p>Land rehabilitation, invasive plant control & mechanical clearing.</p>
-        </div>
-
-        <div class="bt_bb_card bt_bb_style_outline bt_bb_icon_top">
-          <h4>Construction & Civil Works</h4>
-          <p>Fencing, paving, renovations & small building projects.</p>
-        </div>
-
-        <div class="bt_bb_card bt_bb_style_outline bt_bb_icon_top">
-          <h4>Logistics & Supply</h4>
-          <p>Transport, procurement & distribution solutions for projects.</p>
-        </div>
-
-        <div class="bt_bb_card bt_bb_style_outline bt_bb_icon_top">
-          <h4>Consultancy & Project Management</h4>
-          <p>Business advisory & project planning to deliver on time.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="bt_bb_section bt_bb_layout_boxed_1200 bt_bb_top_spacing_large bt_bb_bottom_spacing_large">
-    <div class="site">
-      <h3 class="section-title">About Moofar</h3>
-      <p style="max-width:820px;margin:0 auto;color:#606060;text-align:center;">
-        Moofar PTY LTD is a multi-disciplinary company focused on sustainable, quality solutions. We combine skilled workmanship with local knowledge to deliver consistent results across Botswana.
-      </p>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="bt_bb_section bt_bb_color_scheme_3 bt_bb_layout_boxed_1200 bt_bb_top_spacing_large bt_bb_bottom_spacing_large">
-    <div class="site">
-      <h3 class="section-title" style="color:#fff">Contact Us</h3>
-
-      <div class="bt_bb_card" style="background:#fff;max-width:760px;margin:0 auto;text-align:center;">
-        <p style="color:#606060">Call, email or WhatsApp to request a free quote.</p>
-        <p><strong>📱 Farai:</strong> <a href="tel:+26777723232">+267 777 23232</a> | <a href="https://wa.me/26777723232">WhatsApp</a></p>
-        <p><strong>📱 Mooketsi:</strong> <a href="tel:+26772954794">+267 729 54794</a> | <a href="https://wa.me/26772954794">WhatsApp</a></p>
-        <p><strong>📧 Email:</strong> <a href="mailto:mookfara@gmail.com">mookfara@gmail.com</a></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- WhatsApp floating -->
-  <div class="whatsapp-float">
-    <a href="https://wa.me/26777723232?text=Hello%20Moofar%2C%20I'd%20like%20a%20quotation">
-      💬 WhatsApp Us
-    </a>
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1>Reliable Multi-Disciplinary Services Across Botswana</h1>
+    <p>Landscaping, horticulture, bush clearing, construction, logistics & consultancy you can depend on.</p>
+    <a href="#contact" class="btn-primary">Get a Quote</a>
   </div>
+</section>
 
-  <!-- Royal Scripts -->
-  <script src="https://royalgardencentre.co.bw/wp-includes/js/jquery/jquery.min.js"></script>
-  <script src="https://royalgardencentre.co.bw/wp-content/plugins/bold-page-builder/slick/slick.min.js"></script>
-  <script src="https://royalgardencentre.co.bw/wp-content/plugins/bold-page-builder/js/bold.extension.min.js"></script>
+<section id="services" class="container">
+  <h2 class="section-title">Our Services</h2>
+  <div class="services">
+    <div class="service-card">
+      <h4>Landscape Design & Maintenance</h4>
+      <p>Professional gardens, lawns, irrigation, and outdoor improvement.</p>
+    </div>
+    <div class="service-card">
+      <h4>Horticulture & Nursery</h4>
+      <p>Plant supply, tree planting programs, nursery setup & plant care.</p>
+    </div>
+    <div class="service-card">
+      <h4>Bush Clearing & Environmental Works</h4>
+      <p>Invasive plant control, land rehabilitation & mechanical clearing.</p>
+    </div>
+    <div class="service-card">
+      <h4>Construction & Civil Works</h4>
+      <p>Fencing, paving, building works & property improvements.</p>
+    </div>
+    <div class="service-card">
+      <h4>Logistics & Supply</h4>
+      <p>Transport support, procurement & distribution solutions.</p>
+    </div>
+    <div class="service-card">
+      <h4>Consultancy & Project Management</h4>
+      <p>Advisory, planning & execution management for projects.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="container">
+  <h2 class="section-title">About Moofar</h2>
+  <p style="max-width:860px;margin:0 auto;text-align:center;color:#555;">
+    Moofar PTY LTD is a Botswana-based multi-disciplinary services provider. We combine skilled workmanship and practical knowledge to deliver sustainable, reliable solutions across landscaping, construction, environmental works, logistics, and consultancy.
+  </p>
+</section>
+
+<section id="contact" class="container">
+  <h2 class="section-title">Contact Us</h2>
+  <div class="contact-box">
+    <p>Call, WhatsApp or email us for a quotation or project consultation.</p>
+    <p><strong>📱 Farai:</strong> <a href="tel:+26777723232">+267 777 23232</a> | <a href="https://wa.me/26777723232">WhatsApp</a></p>
+    <p><strong>📱 Mooketsi:</strong> <a href="tel:+26772954794">+267 729 54794</a> | <a href="https://wa.me/26772954794">WhatsApp</a></p>
+    <p><strong>📧 Email:</strong> <a href="mailto:mookfara@gmail.com">mookfara@gmail.com</a></p>
+  </div>
+</section>
+
+<div class="whatsapp-float">
+  <a href="https://wa.me/26777723232?text=Hello,%20I%20would%20like%20a%20quotation">
+    💬 WhatsApp Us
+  </a>
+</div>
 
 </body>
 </html>
