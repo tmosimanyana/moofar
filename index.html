@@ -1,427 +1,270 @@
-import React, { useState } from 'react';
-import { Menu, X, Phone, Mail, MapPin, Leaf, Droplets, Trees, Home, Check, Users, Target, Award, Globe } from 'lucide-react';
-
-const MoofarWebsite = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSlide, setActiveSlide] = useState(0);
-
-  const heroSlides = [
-    "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1920&h=1080&fit=crop",
-    "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1920&h=1080&fit=crop",
-    "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920&h=1080&fit=crop"
-  ];
-
-  React.useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const services = [
-    {
-      image: "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=800&h=600&fit=crop",
-      title: "Landscaping",
-      items: [
-        "Landscape design, installation, and maintenance",
-        "Lawn establishment & irrigation systems",
-        "Hardscaping (pathways, paving, rock features)"
-      ]
-    },
-    {
-      image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&h=600&fit=crop",
-      title: "Horticulture Services",
-      items: [
-        "Cultivation and maintenance of gardens",
-        "Nursery development and plant supply",
-        "Tree planting, pruning, and disease control"
-      ]
-    },
-    {
-      image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&h=600&fit=crop",
-      title: "Bush Clearing & Environmental Management",
-      items: [
-        "Mechanical and manual bush clearing",
-        "Land rehabilitation and maintenance",
-        "Firebreaks and vegetation control"
-      ]
-    },
-    {
-      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=600&fit=crop",
-      title: "Construction & Maintenance",
-      items: [
-        "Building construction and renovations",
-        "Plumbing, electrical, roofing, painting",
-        "Site preparation, fencing, and civil works"
-      ]
-    },
-    {
-      image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=600&fit=crop",
-      title: "General Services",
-      items: [
-        "Cleaning services (commercial & residential)",
-        "Waste removal & site cleaning",
-        "Labour hire and manpower supply"
-      ]
-    },
-    {
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop",
-      title: "Supply & Distribution",
-      items: [
-        "Procurement and delivery of materials",
-        "Wholesale and retail supply services",
-        "Tailored sourcing solutions"
-      ]
-    },
-    {
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
-      title: "Consultancy & Business Support",
-      items: [
-        "Business advisory and administrative support",
-        "Project management and strategic planning",
-        "Office support services"
-      ]
-    },
-    {
-      image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=800&h=600&fit=crop",
-      title: "Logistics & Transport",
-      items: [
-        "Efficient transportation of goods nationwide",
-        "Fleet support and distribution planning",
-        "Courier services and delivery management"
-      ]
-    }
-  ];
-
-  const coreValues = [
-    { icon: <Users size={40} />, title: "Customer Focus", desc: "Tailoring services to meet and exceed expectations" },
-    { icon: <Award size={40} />, title: "Excellence", desc: "Committed to doing our best in every task" },
-    { icon: <Target size={40} />, title: "Integrity", desc: "Honesty, fairness, and transparency in all relationships" },
-    { icon: <Globe size={40} />, title: "Innovation", desc: "Bringing new ideas and improved solutions" }
-  ];
-
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
-    }
-  };
-
-  return (
-    <div className="min-h-screen bg-white font-sans">
-      {/* Top Bar */}
-      <div className="bg-gray-100 border-b border-gray-200">
-        <div className="container mx-auto px-4 py-3">
-          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-700">
-            <div className="flex items-center gap-2 mb-2 md:mb-0">
-              <MapPin size={16} className="text-green-600" />
-              <span>Location: Francistown, Botswana</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Phone size={16} className="text-green-600" />
-              <span>Call: (+267) 77723232 / 72954794</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Header */}
-      <header className="bg-white shadow-md sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
-            <div>
-              <h1 className="text-2xl md:text-3xl font-bold text-green-700">Moofar (PTY) LTD</h1>
-              <p className="text-sm text-gray-600">Multi-Disciplinary Services | UIN: BW00009410484</p>
-            </div>
-            
-            <button 
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-green-700"
-            >
-              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-
-            <nav className="hidden md:flex gap-8 text-gray-700 font-medium">
-              <button onClick={() => scrollToSection('home')} className="hover:text-green-600 transition">Home</button>
-              <button onClick={() => scrollToSection('about')} className="hover:text-green-600 transition">About</button>
-              <button onClick={() => scrollToSection('services')} className="hover:text-green-600 transition">Services</button>
-              <button onClick={() => scrollToSection('team')} className="hover:text-green-600 transition">Our Team</button>
-              <button onClick={() => scrollToSection('contact')} className="hover:text-green-600 transition">Contact</button>
-            </nav>
-          </div>
-
-          {isMenuOpen && (
-            <nav className="md:hidden mt-4 flex flex-col gap-3 border-t pt-4">
-              <button onClick={() => scrollToSection('home')} className="text-left py-2 hover:text-green-600">Home</button>
-              <button onClick={() => scrollToSection('about')} className="text-left py-2 hover:text-green-600">About</button>
-              <button onClick={() => scrollToSection('services')} className="text-left py-2 hover:text-green-600">Services</button>
-              <button onClick={() => scrollToSection('team')} className="text-left py-2 hover:text-green-600">Our Team</button>
-              <button onClick={() => scrollToSection('contact')} className="text-left py-2 hover:text-green-600">Contact</button>
-            </nav>
-          )}
-        </div>
-      </header>
-
-      {/* Hero Slider */}
-      <section id="home" className="relative h-[500px] md:h-[700px] overflow-hidden">
-        {heroSlides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === activeSlide ? 'opacity-100' : 'opacity-0'
-            }`}
-            style={{
-              backgroundImage: `url(${slide})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          >
-            <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-          </div>
-        ))}
-        <div className="relative h-full flex items-center justify-center text-center text-white px-4">
-          <div className="max-w-4xl">
-            <h2 className="text-4xl md:text-6xl font-bold mb-4">Innovative, Reliable, High-Quality Services</h2>
-            <p className="text-xl md:text-2xl mb-8">Multi-disciplinary solutions for businesses and communities across Botswana</p>
-          </div>
-        </div>
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2">
-          {heroSlides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveSlide(index)}
-              className={`w-3 h-3 rounded-full transition ${
-                index === activeSlide ? 'bg-white' : 'bg-white bg-opacity-50'
-              }`}
-            />
-          ))}
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-16 bg-[#eaefe4]">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-green-700 mb-6">
-              A Trusted Partner for Excellence
-            </h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-4">
-              Moofar (PTY) LTD is a Botswana-based, multi-disciplinary company dedicated to providing a wide range of innovative, reliable, and high-quality services. Established with a commitment to integrity, professionalism, and customer satisfaction, Moofar aims to be a trusted partner for individuals, organizations, and public entities across the country.
-            </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Our diverse service offerings allow us to meet the needs of various sectors, ensuring efficiency, sustainability, and exceptional value.
-            </p>
-          </div>
-
-          {/* Mission & Vision */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <Target className="text-green-600 mb-4" size={48} />
-              <h3 className="text-2xl font-bold mb-4 text-gray-800">Mission</h3>
-              <p className="text-gray-700">
-                To deliver outstanding services through operational excellence, skilled workmanship, innovation, and a commitment to improving the communities and industries we serve.
-              </p>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <Globe className="text-green-600 mb-4" size={48} />
-              <h3 className="text-2xl font-bold mb-4 text-gray-800">Vision</h3>
-              <p className="text-gray-700">
-                To become a leading and trusted provider of diversified, sustainable, and customer-focused solutions in Botswana and the region.
-              </p>
-            </div>
-          </div>
-
-          {/* Core Values */}
-          <div className="border-t border-gray-300 pt-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-10">Core Values</h3>
-            <div className="grid md:grid-cols-4 gap-6">
-              {coreValues.map((value, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition">
-                  <div className="text-green-600 mb-4 flex justify-center">
-                    {value.icon}
-                  </div>
-                  <h4 className="font-bold text-lg mb-2 text-gray-800">{value.title}</h4>
-                  <p className="text-sm text-gray-600">{value.desc}</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Moofar (PTY) LTD - Innovative, reliable, and high-quality multi-disciplinary services in Botswana">
+    <title>Moofar (PTY) LTD - Multi-Disciplinary Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="bg-gray-100 border-b border-gray-200">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-700">
+                <div class="flex items-center gap-2 mb-2 md:mb-0">
+                    <i data-lucide="map-pin" class="text-green-600" style="width: 16px; height: 16px;"></i>
+                    <span>Location: Francistown, Botswana</span>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-green-700 mb-4">
-            Key Services and Business Activities
-          </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-            We provide comprehensive solutions across multiple sectors with a commitment to quality and innovation
-          </p>
-          
-          <div className="grid md:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-200">
-                <div className="h-40 overflow-hidden">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover hover:scale-110 transition duration-500"
-                  />
+                <div class="flex items-center gap-2">
+                    <i data-lucide="phone" class="text-green-600" style="width: 16px; height: 16px;"></i>
+                    <span>Call: (+267) 77723232 / 72954794</span>
                 </div>
-                <div className="p-5">
-                  <h4 className="text-lg font-bold mb-3 text-gray-800">{service.title}</h4>
-                  <ul className="space-y-1.5">
-                    {service.items.map((item, idx) => (
-                      <li key={idx} className="flex items-start text-sm text-gray-700">
-                        <span className="text-green-600 mr-2 mt-0.5 text-xs">●</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
+            </div>
         </div>
-      </section>
-
-      {/* Team Section */}
-      <section id="team" className="py-16 bg-[#eaefe4]">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-green-700 mb-6">Our Team</h2>
-          <p className="text-center text-gray-700 mb-12 max-w-3xl mx-auto">
-            Moofar (PTY) LTD was established by two visionary co-founders who share a common passion for sustainable development, service excellence, and community empowerment.
-          </p>
-          
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white p-8 rounded-lg shadow-md text-center">
-              <div className="w-24 h-24 bg-green-600 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-3xl font-bold">
-                FM
-              </div>
-              <h3 className="text-2xl font-bold mb-2 text-gray-800">Farai Madorobo</h3>
-              <p className="text-green-600 font-semibold">Co-Founder</p>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-md text-center">
-              <div className="w-24 h-24 bg-green-600 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-3xl font-bold">
-                MM
-              </div>
-              <h3 className="text-2xl font-bold mb-2 text-gray-800">Mooketsi Mapugwa</h3>
-              <p className="text-green-600 font-semibold">Co-Founder</p>
-            </div>
-          </div>
-
-          <div className="bg-white p-8 rounded-lg shadow-md">
-            <p className="text-gray-700 leading-relaxed">
-              Their leadership is rooted in integrity, innovation, and a hands-on approach to building a company that not only delivers high-quality services but also creates employment opportunities, empowers youth, and supports environmental sustainability. Through their combined strengths, the co-founders ensure Moofar (PTY) LTD operates with a clear vision, strong values, and a dedication to real, measurable outcomes for clients and communities.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Future Outlook */}
-      <section className="py-16 bg-green-700 text-white">
-        <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Future Outlook</h2>
-          <p className="text-lg text-green-100">
-            Moofar aims to grow into one of Botswana's most reliable multi-service companies by expanding our operations, strengthening partnerships, and adopting innovative technologies. Our goal is to provide unmatched service excellence across all sectors we operate in.
-          </p>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-16 bg-green-700">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="text-white">
-              <h2 className="text-3xl md:text-5xl font-bold mb-8">Get In Touch!</h2>
-              <form className="space-y-4">
-                <input 
-                  type="text" 
-                  placeholder="Name" 
-                  className="w-full px-4 py-3 bg-white text-gray-800 rounded"
-                />
-                <input 
-                  type="tel" 
-                  placeholder="Phone" 
-                  className="w-full px-4 py-3 bg-white text-gray-800 rounded"
-                />
-                <input 
-                  type="email" 
-                  placeholder="Email" 
-                  className="w-full px-4 py-3 bg-white text-gray-800 rounded"
-                />
-                <textarea 
-                  placeholder="Message" 
-                  rows="4"
-                  className="w-full px-4 py-3 bg-white text-gray-800 rounded"
-                ></textarea>
-                <button className="bg-white text-green-700 px-8 py-3 rounded font-bold hover:bg-green-50 transition">
-                  Submit
-                </button>
-              </form>
-            </div>
-            <div className="flex items-center justify-center">
-              <img 
-                src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&h=600&fit=crop" 
-                alt="Get in touch"
-                className="rounded-full w-full max-w-md"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-[#eaefe4] py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h4 className="font-bold text-gray-800 border-b-2 border-green-600 pb-2 mb-4">Contact Us</h4>
-              <div className="space-y-2 text-gray-700 text-sm">
-                <p className="flex items-center gap-2"><Phone size={16} className="text-green-600" /> (+267) 77723232</p>
-                <p className="flex items-center gap-2"><Phone size={16} className="text-green-600" /> (+267) 72954794</p>
-                <p className="flex items-center gap-2"><Mail size={16} className="text-green-600" /> mookfara@gmail.com</p>
-                <p className="flex items-center gap-2"><MapPin size={16} className="text-green-600" /> Francistown, Botswana</p>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold text-gray-800 border-b-2 border-green-600 pb-2 mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-gray-700 text-sm">
-                <li><button onClick={() => scrollToSection('home')} className="hover:text-green-600">Home</button></li>
-                <li><button onClick={() => scrollToSection('about')} className="hover:text-green-600">About</button></li>
-                <li><button onClick={() => scrollToSection('services')} className="hover:text-green-600">Services</button></li>
-                <li><button onClick={() => scrollToSection('team')} className="hover:text-green-600">Our Team</button></li>
-                <li><button onClick={() => scrollToSection('contact')} className="hover:text-green-600">Contact</button></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold text-gray-800 border-b-2 border-green-600 pb-2 mb-4">Key Services</h4>
-              <ul className="space-y-2 text-gray-700 text-sm">
-                <li>Landscaping & Horticulture</li>
-                <li>Construction & Maintenance</li>
-                <li>Logistics & Transport</li>
-                <li>Business Consultancy</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold text-gray-800 border-b-2 border-green-600 pb-2 mb-4">Company Info</h4>
-              <div className="text-gray-700 text-sm space-y-2">
-                <p className="font-semibold">Moofar (PTY) LTD</p>
-                <p>UIN: BW00009410484</p>
-                <p>Incorporated: 18 Sept 2025</p>
-                <p className="text-xs pt-2">Registered under Companies Act CAP:42:01</p>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-gray-300 pt-6 text-center text-sm text-gray-600">
-            <p>© Moofar (PTY) LTD 2025. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
-  );
-};
 
-export default MoofarWebsite;
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold text-green-700">Moofar (PTY) LTD</h1>
+                    <p class="text-sm text-gray-600">Multi-Disciplinary Services | UIN: BW00009410484</p>
+                </div>
+                
+                <button id="menuToggle" class="md:hidden text-green-700">
+                    <i id="menuIcon" data-lucide="menu" style="width: 28px; height: 28px;"></i>
+                </button>
+
+                <nav id="desktopNav" class="hidden md:flex gap-8 text-gray-700 font-medium">
+                    <button class="navLink hover:text-green-600 transition" data-section="home">Home</button>
+                    <button class="navLink hover:text-green-600 transition" data-section="about">About</button>
+                    <button class="navLink hover:text-green-600 transition" data-section="services">Services</button>
+                    <button class="navLink hover:text-green-600 transition" data-section="team">Our Team</button>
+                    <button class="navLink hover:text-green-600 transition" data-section="contact">Contact</button>
+                </nav>
+            </div>
+
+            <nav id="mobileNav" class="md:hidden mt-4 flex flex-col gap-3 border-t pt-4 hidden">
+                <button class="navLink text-left py-2 hover:text-green-600" data-section="home">Home</button>
+                <button class="navLink text-left py-2 hover:text-green-600" data-section="about">About</button>
+                <button class="navLink text-left py-2 hover:text-green-600" data-section="services">Services</button>
+                <button class="navLink text-left py-2 hover:text-green-600" data-section="team">Our Team</button>
+                <button class="navLink text-left py-2 hover:text-green-600" data-section="contact">Contact</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Slider -->
+    <section id="home" class="relative h-[500px] md:h-[700px] overflow-hidden">
+        <div id="heroSlides" class="relative h-full">
+            <!-- Slides will be generated by JS -->
+        </div>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2" id="slideIndicators">
+            <!-- Indicators will be generated by JS -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-[#eaefe4]">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-green-700 mb-6">
+                    A Trusted Partner for Excellence
+                </h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    Moofar (PTY) LTD is a Botswana-based, multi-disciplinary company dedicated to providing a wide range of innovative, reliable, and high-quality services. Established with a commitment to integrity, professionalism, and customer satisfaction, Moofar aims to be a trusted partner for individuals, organizations, and public entities across the country.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Our diverse service offerings allow us to meet the needs of various sectors, ensuring efficiency, sustainability, and exceptional value.
+                </p>
+            </div>
+
+            <!-- Mission & Vision -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <i data-lucide="target" class="text-green-600 mb-4" style="width: 48px; height: 48px;"></i>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Mission</h3>
+                    <p class="text-gray-700">
+                        To deliver outstanding services through operational excellence, skilled workmanship, innovation, and a commitment to improving the communities and industries we serve.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <i data-lucide="globe" class="text-green-600 mb-4" style="width: 48px; height: 48px;"></i>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Vision</h3>
+                    <p class="text-gray-700">
+                        To become a leading and trusted provider of diversified, sustainable, and customer-focused solutions in Botswana and the region.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Core Values -->
+            <div class="border-t border-gray-300 pt-12">
+                <h3 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-10">Core Values</h3>
+                <div class="grid md:grid-cols-4 gap-6" id="coreValues">
+                    <!-- Values will be generated by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-green-700 mb-4">
+                Key Services and Business Activities
+            </h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                We provide comprehensive solutions across multiple sectors with a commitment to quality and innovation
+            </p>
+            
+            <div class="grid md:grid-cols-4 gap-6 max-w-7xl mx-auto" id="servicesGrid">
+                <!-- Services will be generated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-16 bg-[#eaefe4]">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-green-700 mb-6">Our Team</h2>
+            <p class="text-center text-gray-700 mb-12 max-w-3xl mx-auto">
+                Moofar (PTY) LTD was established by two visionary co-founders who share a common passion for sustainable development, service excellence, and community empowerment.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="w-24 h-24 bg-green-600 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-3xl font-bold">
+                        FM
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Farai Madorobo</h3>
+                    <p class="text-green-600 font-semibold">Co-Founder</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="w-24 h-24 bg-green-600 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-3xl font-bold">
+                        MM
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Mooketsi Mapugwa</h3>
+                    <p class="text-green-600 font-semibold">Co-Founder</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <p class="text-gray-700 leading-relaxed">
+                    Their leadership is rooted in integrity, innovation, and a hands-on approach to building a company that not only delivers high-quality services but also creates employment opportunities, empowers youth, and supports environmental sustainability. Through their combined strengths, the co-founders ensure Moofar (PTY) LTD operates with a clear vision, strong values, and a dedication to real, measurable outcomes for clients and communities.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Outlook -->
+    <section class="py-16 bg-green-700 text-white">
+        <div class="container mx-auto px-4 text-center max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Future Outlook</h2>
+            <p class="text-lg text-green-100">
+                Moofar aims to grow into one of Botswana's most reliable multi-service companies by expanding our operations, strengthening partnerships, and adopting innovative technologies. Our goal is to provide unmatched service excellence across all sectors we operate in.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-green-700">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="text-white">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-8">Get In Touch!</h2>
+                    <form id="contactForm" class="space-y-4">
+                        <input 
+                            type="text" 
+                            placeholder="Name" 
+                            class="w-full px-4 py-3 bg-white text-gray-800 rounded"
+                            required
+                        />
+                        <input 
+                            type="tel" 
+                            placeholder="Phone" 
+                            class="w-full px-4 py-3 bg-white text-gray-800 rounded"
+                            required
+                        />
+                        <input 
+                            type="email" 
+                            placeholder="Email" 
+                            class="w-full px-4 py-3 bg-white text-gray-800 rounded"
+                            required
+                        />
+                        <textarea 
+                            placeholder="Message" 
+                            rows="4"
+                            class="w-full px-4 py-3 bg-white text-gray-800 rounded"
+                            required
+                        ></textarea>
+                        <button type="submit" class="bg-white text-green-700 px-8 py-3 rounded font-bold hover:bg-green-50 transition">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+                <div class="flex items-center justify-center">
+                    <img 
+                        src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&h=600&fit=crop" 
+                        alt="Get in touch"
+                        class="rounded-full w-full max-w-md"
+                    />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#eaefe4] py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="font-bold text-gray-800 border-b-2 border-green-600 pb-2 mb-4">Contact Us</h4>
+                    <div class="space-y-2 text-gray-700 text-sm">
+                        <p class="flex items-center gap-2"><i data-lucide="phone" style="width: 16px; height: 16px;" class="text-green-600"></i> (+267) 77723232</p>
+                        <p class="flex items-center gap-2"><i data-lucide="phone" style="width: 16px; height: 16px;" class="text-green-600"></i> (+267) 72954794</p>
+                        <p class="flex items-center gap-2"><i data-lucide="mail" style="width: 16px; height: 16px;" class="text-green-600"></i> mookfara@gmail.com</p>
+                        <p class="flex items-center gap-2"><i data-lucide="map-pin" style="width: 16px; height: 16px;" class="text-green-600"></i> Francistown, Botswana</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800 border-b-2 border-green-600 pb-2 mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-700 text-sm">
+                        <li><button class="navLink hover:text-green-600" data-section="home">Home</button></li>
+                        <li><button class="navLink hover:text-green-600" data-section="about">About</button></li>
+                        <li><button class="navLink hover:text-green-600" data-section="services">Services</button></li>
+                        <li><button class="navLink hover:text-green-600" data-section="team">Our Team</button></li>
+                        <li><button class="navLink hover:text-green-600" data-section="contact">Contact</button></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800 border-b-2 border-green-600 pb-2 mb-4">Key Services</h4>
+                    <ul class="space-y-2 text-gray-700 text-sm">
+                        <li>Landscaping & Horticulture</li>
+                        <li>Construction & Maintenance</li>
+                        <li>Logistics & Transport</li>
+                        <li>Business Consultancy</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800 border-b-2 border-green-600 pb-2 mb-4">Company Info</h4>
+                    <div class="text-gray-700 text-sm space-y-2">
+                        <p class="font-semibold">Moofar (PTY) LTD</p>
+                        <p>UIN: BW00009410484</p>
+                        <p>Incorporated: 18 Sept 2025</p>
+                        <p class="text-xs pt-2">Registered under Companies Act CAP:42:01</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-300 pt-6 text-center text-sm text-gray-600">
+                <p>© Moofar (PTY) LTD 2025. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
