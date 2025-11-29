@@ -303,4 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCoreValues();
     setupNavigation();
     setupContactForm();
+    
+    // Re-initialize Lucide icons for WhatsApp buttons and all other icons
+    lucide.createIcons();
 });

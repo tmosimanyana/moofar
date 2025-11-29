@@ -174,6 +174,36 @@ section {
     animation: fadeIn 0.6s ease;
 }
 
+/* Floating WhatsApp Button */
+#whatsappFloat {
+    animation: pulse 2s infinite;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+#whatsappFloat:hover {
+    animation: none;
+    transform: scale(1.15);
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.6);
+}
+
+/* WhatsApp Contact Buttons */
+.whatsapp-button {
+    transition: all 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    transform: translateX(5px);
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     #desktopNav {
@@ -190,6 +220,12 @@ section {
     
     .grid-cols-4 {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    #whatsappFloat {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px;
     }
 }
 
@@ -214,6 +250,12 @@ section {
         padding-left: 1rem;
         padding-right: 1rem;
     }
+
+    #whatsappFloat {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px;
+    }
 }
 
 /* Print Styles */
@@ -221,6 +263,7 @@ section {
     header,
     nav,
     footer,
+    #whatsappFloat,
     .no-print {
         display: none;
     }
@@ -236,6 +279,10 @@ section {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+
+    #whatsappFloat {
+        animation: none;
     }
 }
 
